@@ -1,0 +1,15 @@
+{
+  "text": "A25风机接线图\n图号 FAN-A25-01\n名称 A25风机接线图\n电机编号 M-25\n断路器编号 [不可读]\n控制柜编号 ",
+  "blocks": [
+    {"text": "图号", "bbox": [60, 480, 160, 510], "confidence": 0.95},
+    {"text": "FAN-A25-01", "bbox": [170, 480, 400, 510], "confidence": 0.93},
+    {"text": "电机编号", "bbox": [60, 570, 160, 600], "confidence": 0.94},
+    {"text": "M-25", "bbox": [170, 570, 300, 600], "confidence": 0.92},
+    {"text": "断路器编号", "bbox": [60, 600, 160, 630], "confidence": 0.88},
+    {"text": "[不可读]", "bbox": [170, 600, 300, 630], "confidence": 0.08},
+    {"text": "控制柜编号", "bbox": [60, 630, 160, 660], "confidence": 0.86},
+    {"text": "", "bbox": [170, 630, 400, 660], "confidence": 0.0}
+  ],
+  "average_confidence": 0.7,
+  "_note": "holdout集：印章遮挡场景在一张dev集从未用过的新图上复现，用于检验dev集调好的规则是否对未见图片仍然成立"
+}

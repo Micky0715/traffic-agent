@@ -1,0 +1,16 @@
+# Secrets — never commit real credentials
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Generated at runtime, not source
+data/drawings/processed/
+outputs/.vlm_cache.json
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db

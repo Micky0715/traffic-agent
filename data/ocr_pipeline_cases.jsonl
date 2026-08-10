@@ -1,0 +1,11 @@
+{"id": "OCR01", "image": "FAN-A13-02.png", "category": "normal", "split": "dev", "gold_field_values": ["FAN-A13-02", "M-13", "QF-13", "FAN-CAB-3"], "description": "干净图纸，正例基线"}
+{"id": "OCR02", "image": "FAN-MULTI-01.png", "category": "complex_table", "split": "dev", "gold_field_values": ["A16", "A17", "A18", "45kW", "55kW"], "description": "多设备参数表（无网格线的示意框图布局，不是真正有框表格）"}
+{"id": "OCR03", "image": "FAN-A19-01.png", "category": "stamp", "split": "dev", "gold_field_values": ["FAN-A19-01", "M-19", "QF-19", "FAN-CAB-19"], "description": "红色印章遮挡断路器编号和控制柜编号"}
+{"id": "OCR04", "image": "FAN-A23-01.png", "category": "watermark", "split": "dev", "gold_field_values": ["FAN-A23-01", "M-23", "QF-23", "FAN-CAB-23"], "description": "密集水印覆盖全图"}
+{"id": "OCR05", "image": "FAN-A22-01-heavyblur.png", "category": "blur", "split": "dev", "gold_field_values": ["FAN-A22-01", "M-22", "QF-22", "FAN-CAB-22"], "description": "重度模糊（约1/7降采样再放大）"}
+{"id": "OCR06", "image": "FAN-A27-01-skewed.png", "category": "skew", "split": "dev", "gold_field_values": ["FAN-A27-01", "M-27", "QF-27", "FAN-CAB-27"], "description": "整图旋转4度，真实倾斜扫描件模拟"}
+{"id": "OCR07", "image": "FAN-A28-01-borderless.png", "category": "complex_table", "split": "dev", "gold_field_values": ["FAN-A28-01", "M-28", "QF-28", "FAN-CAB-28"], "description": "无框表格，纯左对齐文字，无网格线"}
+{"id": "OCR08", "image": "FAN-A25-01.png", "category": "stamp", "split": "holdout", "gold_field_values": ["FAN-A25-01", "M-25", "QF-25", "FAN-CAB-25"], "description": "holdout：印章遮挡场景在dev集从未用过的新图上复现"}
+{"id": "OCR09", "image": "PUMP-MULTI-02.png", "category": "complex_table", "split": "holdout", "gold_field_values": ["PUMP-MULTI-02", "2A", "2B", "20"], "description": "holdout：全新设备领域（水泵）+ 易混淆编号的多设备表"}
+{"id": "OCR10", "image": "FAN-A24-01.png", "category": "blur", "split": "holdout", "gold_field_values": ["FAN-A24-01", "M-24", "QF-24", "FAN-CAB-24"], "description": "holdout：模糊+水印复合退化"}
+{"id": "OCR11", "image": "FAN-A26-01.png", "category": "normal", "split": "holdout", "gold_field_values": ["FAN-A26-01", "V3", "M-26", "QF-26", "FAN-CAB-26"], "description": "holdout：图号和版本号同时褪色"}

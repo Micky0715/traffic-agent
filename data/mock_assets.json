@@ -1,0 +1,41 @@
+[
+  {
+    "asset_id": "A12风机",
+    "station": "天河站",
+    "status": "运行",
+    "alarm_count_3d": 7,
+    "vibration_mm_s": 4.8,
+    "temperature_c": 67,
+    "updated_at": "2026-08-06T17:30:00+08:00"
+  },
+  {
+    "asset_id": "2号水泵",
+    "station": "体育西路站",
+    "status": "停机",
+    "alarm_count_3d": 2,
+    "vibration_mm_s": 2.1,
+    "temperature_c": 45,
+    "updated_at": "2026-08-06T17:25:00+08:00"
+  },
+  {
+    "asset_id": "B07屏蔽门",
+    "station": "广州南站",
+    "status": "告警",
+    "alarm_count_3d": 5,
+    "updated_at": "2026-08-06T17:20:00+08:00"
+  },
+  {
+    "asset_id": "A16",
+    "station": "天河站",
+    "status": "运行",
+    "alarm_count_3d": 0,
+    "updated_at": "2026-08-06T17:30:00+08:00"
+  },
+  {
+    "asset_id": "A17",
+    "station": "天河站",
+    "status": "运行",
+    "alarm_count_3d": 1,
+    "updated_at": "2026-08-06T17:30:00+08:00"
+  }
+]

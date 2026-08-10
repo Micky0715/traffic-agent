@@ -1,0 +1,15 @@
+{
+  "text": "A13风机接线图\n图号 FAN-A13-02\n名称 A13风机接线图\n页码 4/6\n电机编号 M-13\n断路器编号 QF-I3\n控制柜编号 FAN-CAB-3",
+  "blocks": [
+    {"text": "图号", "bbox": [60, 480, 160, 510], "confidence": 0.97},
+    {"text": "FAN-A13-02", "bbox": [170, 480, 400, 510], "confidence": 0.95},
+    {"text": "电机编号", "bbox": [60, 570, 160, 600], "confidence": 0.96},
+    {"text": "M-13", "bbox": [170, 570, 300, 600], "confidence": 0.94},
+    {"text": "断路器编号", "bbox": [60, 600, 160, 630], "confidence": 0.93},
+    {"text": "QF-I3", "bbox": [170, 600, 300, 630], "confidence": 0.52},
+    {"text": "控制柜编号", "bbox": [60, 630, 160, 660], "confidence": 0.95},
+    {"text": "FAN-CAB-3", "bbox": [170, 630, 400, 660], "confidence": 0.9}
+  ],
+  "average_confidence": 0.87,
+  "_note": "断路器编号读成 QF-I3（数字1读成大写I），低置信度0.52 — 典型形近字符误读，供Validator OCR/VLM交叉校验测试用"
+}

@@ -1,0 +1,16 @@
+{
+  "text": "A16/A17/A18风机组\n电机A16 45kW 28000m³/h\n电机A17 55kW 32000m³/h\n电机A1B 37kW 24000m³/h",
+  "blocks": [
+    {"text": "A16", "bbox": [70, 250, 130, 280], "confidence": 0.95},
+    {"text": "45kW", "bbox": [140, 250, 220, 280], "confidence": 0.93},
+    {"text": "28000m³/h", "bbox": [230, 250, 360, 280], "confidence": 0.9},
+    {"text": "A17", "bbox": [70, 300, 130, 330], "confidence": 0.94},
+    {"text": "55kW", "bbox": [140, 300, 220, 330], "confidence": 0.92},
+    {"text": "32000m³/h", "bbox": [230, 300, 360, 330], "confidence": 0.89},
+    {"text": "A1B", "bbox": [70, 350, 130, 380], "confidence": 0.58},
+    {"text": "37kW", "bbox": [140, 350, 220, 380], "confidence": 0.9},
+    {"text": "24000m³/h", "bbox": [230, 350, 360, 380], "confidence": 0.88}
+  ],
+  "average_confidence": 0.87,
+  "_note": "第三台设备编号A18被OCR误读成A1B（8误读成B），低置信度0.58 — 台账里没有A1B，供Validator conflict分支测试用；A16/A17读对且在台账data/mock_assets.json里，供confirmed/suspected分支测试用"
+}

@@ -1,0 +1,1252 @@
+{
+  "case_count": 75,
+  "intent_set_exact": 0.7866666666666666,
+  "intent_micro_f1": 0.8466257668711656,
+  "tool_set_exact": 0.84,
+  "tool_micro_f1": 0.8760330578512396,
+  "clarification_accuracy": 0.8933333333333333,
+  "plan_mode_accuracy": 0.84,
+  "required_slot_accuracy": 0.8533333333333334,
+  "end_to_end_case_success": 0.6266666666666667,
+  "failures": [
+    {
+      "id": "B01",
+      "query": "不要查规范，只查询 A12风机现在状态。",
+      "gold_intents": [
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": "现在"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "negation_scope"
+      ]
+    },
+    {
+      "id": "B03",
+      "query": "查询 A12风机最近3天，也就是2026-08-01至2026-08-02的告警次数。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "time_conflict"
+      ]
+    },
+    {
+      "id": "B06",
+      "query": "查询 A12风机告警次数，但不要访问设备数据库。",
+      "gold_intents": [
+        "unsupported"
+      ],
+      "pred_intents": [],
+      "gold_tools": [],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "none",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "tool_prohibition"
+      ]
+    },
+    {
+      "id": "B11",
+      "query": "JTG D81–2017对应急照明有什么要求？",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [
+        "hybrid_search"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "regulation_code": "JTG D81-2017"
+      },
+      "predicted_slots": {
+        "query": [
+          "JTG D81–2017 应急照明 要求"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "regulation_code": "JTG D81–2017"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "normalization",
+        "dash_variant"
+      ]
+    },
+    {
+      "id": "B16",
+      "query": "TB10621—2014对轨道扣件间距有什么规定",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [
+        "hybrid_search"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "regulation_code": "TB 10621-2014"
+      },
+      "predicted_slots": {
+        "query": [
+          "TB10621—2014 轨道扣件间距规定"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "regulation_code": "TB10621—2014"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "normalization",
+        "dash_variant"
+      ]
+    },
+    {
+      "id": "B26",
+      "query": "查规范里“告警”这个词都出现在哪几条。",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "single",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "quoted_text",
+        "keyword_collision"
+      ]
+    },
+    {
+      "id": "B27",
+      "query": "帮我看下图纸里“接线图”这个标题下面写了什么。",
+      "gold_intents": [
+        "drawing_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "drawing_search"
+      ],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "single",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "quoted_text",
+        "keyword_collision"
+      ]
+    },
+    {
+      "id": "B28",
+      "query": "‘现在状态’这四个字在系统里对应哪个字段？",
+      "gold_intents": [
+        "general_qa"
+      ],
+      "pred_intents": [],
+      "gold_tools": [],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "none",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "quoted_text"
+      ]
+    },
+    {
+      "id": "B35",
+      "query": "昌岗站 5号扶梯最近一周工单记录。",
+      "gold_intents": [
+        "work_order_query"
+      ],
+      "pred_intents": [
+        "work_order_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "5号扶梯",
+        "time_range": "最近1周"
+      },
+      "predicted_slots": {
+        "domain": [
+          "work_order"
+        ],
+        "operation": [
+          "list"
+        ],
+        "station": [
+          "昌岗站"
+        ],
+        "asset_id": [
+          "5号扶梯"
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近7天"
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "unlisted_station"
+      ]
+    },
+    {
+      "id": "B37",
+      "query": "查一下沙园站的通风设备状态",
+      "gold_intents": [
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": true,
+      "pred_clarify": false,
+      "gold_mode": "clarify",
+      "pred_mode": "single",
+      "expected_slots": {},
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "list"
+        ],
+        "station": [
+          "沙园站"
+        ],
+        "equipment_type": [
+          "通风设备"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "unlisted_station",
+        "ambiguous_equipment_type"
+      ]
+    },
+    {
+      "id": "B39",
+      "query": "别连接设备数据库，只告诉我 A12风机的规范要求。",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [
+        "hybrid_search"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {
+        "query": [
+          "A12风机的规范要求"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "equipment_type": [
+          "风机"
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "no_conflict"
+      ]
+    },
+    {
+      "id": "B40",
+      "query": "禁止接入设备接口，查一下 A12风机最近3天告警次数。",
+      "gold_intents": [
+        "unsupported"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "none",
+      "pred_mode": "single",
+      "expected_slots": {},
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "filters": [
+          {
+            "asset_id": "A12风机"
+          }
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近3天"
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "phrasing_variant"
+      ]
+    },
+    {
+      "id": "B41",
+      "query": "不能查内部系统，统计 2号水泵故障次数。",
+      "gold_intents": [
+        "unsupported"
+      ],
+      "pred_intents": [
+        "unsupported"
+      ],
+      "gold_tools": [],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "none",
+      "pred_mode": "single",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "phrasing_variant"
+      ]
+    },
+    {
+      "id": "B42",
+      "query": "麻烦不要访问后台数据库，看看 B07屏蔽门工单历史。",
+      "gold_intents": [
+        "unsupported"
+      ],
+      "pred_intents": [
+        "work_order_query"
+      ],
+      "gold_tools": [],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "none",
+      "pred_mode": "single",
+      "expected_slots": {},
+      "predicted_slots": {
+        "domain": [
+          "work_order"
+        ],
+        "operation": [
+          "list"
+        ],
+        "asset_id": [
+          "B07屏蔽门"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "phrasing_variant"
+      ]
+    },
+    {
+      "id": "B44",
+      "query": "不许联网查询，只说说JTG D81-2017里怎么写的。",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "general_qa"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "regulation_code": "JTG D81-2017"
+      },
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "no_conflict"
+      ]
+    },
+    {
+      "id": "B46",
+      "query": "别用工单系统，查一下A12风机最近处理记录。",
+      "gold_intents": [
+        "unsupported"
+      ],
+      "pred_intents": [],
+      "gold_tools": [],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "none",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "tool_prohibition",
+        "phrasing_variant"
+      ]
+    },
+    {
+      "id": "B53",
+      "query": "查一下那个设备最近的工单和规范要求。",
+      "gold_intents": [
+        "regulation_lookup",
+        "work_order_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "clarify_retention",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "B54",
+      "query": "帮我查一下它这周异常几次，并且看看有没有相关规范。",
+      "gold_intents": [
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "clarify_retention",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "B55",
+      "query": "统计一下告警次数。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "clarify_retention",
+        "missing_asset_and_time"
+      ]
+    },
+    {
+      "id": "B56",
+      "query": "查一下检修规范和那台设备的工单，顺便给个建议。",
+      "gold_intents": [
+        "fault_diagnosis",
+        "regulation_lookup",
+        "work_order_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "clarify_retention",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "B57",
+      "query": "这台设备最近状态怎么样，需不需要停机。",
+      "gold_intents": [
+        "equipment_status",
+        "fault_diagnosis"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "adversarial",
+        "clarify_retention",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "B59",
+      "query": "查A12风机最近2小时和昨天同一时段的振动值对比。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "parallel",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric",
+          "metric"
+        ],
+        "operation": [
+          "list",
+          "list"
+        ],
+        "asset_id": [
+          "A12风机",
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "vibration"
+          ],
+          [
+            "vibration"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近2小时"
+          },
+          {
+            "type": "absolute",
+            "value": "昨天同一2小时时段"
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "multi_time"
+      ]
+    },
+    {
+      "id": "B66",
+      "query": "查 2号水泵最近一周的停机时长。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "2号水泵",
+        "time_range": "最近1周"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "asset_id": [
+          "2号水泵"
+        ],
+        "metrics": [
+          [
+            "downtime_duration"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近7天"
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "novel_metric_word"
+      ]
+    },
+    {
+      "id": "B67",
+      "query": "A12风机最近有没有出现异响预警。",
+      "gold_intents": [
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "single",
+      "pred_mode": "clarify",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "list"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "filters": [
+          {
+            "keywords": [
+              "异响"
+            ]
+          }
+        ],
+        "time_range": [
+          null
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "novel_status_word"
+      ]
+    },
+    {
+      "id": "B68",
+      "query": "查 B07屏蔽门达标率是多少。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "single",
+      "pred_mode": "clarify",
+      "expected_slots": {
+        "asset_id": "B07屏蔽门"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "B07屏蔽门"
+        ],
+        "metrics": [
+          [
+            "compliance_rate"
+          ]
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "novel_metric_word"
+      ]
+    },
+    {
+      "id": "B70",
+      "query": "A12风机振动值超过4.5mm/s就查检修规范。",
+      "gold_intents": [
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "threshold": "4.5mm/s"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "vibration"
+          ]
+        ],
+        "query": [
+          "风机振动值超过4.5mm/s的检修要求"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "equipment_type": [
+          "风机"
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "conditional_phrasing"
+      ]
+    },
+    {
+      "id": "B71",
+      "query": "B07屏蔽门告警次数达到5次时，立即给处理建议。",
+      "gold_intents": [
+        "fault_diagnosis",
+        "metric_query"
+      ],
+      "pred_intents": [
+        "fault_diagnosis",
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "B07屏蔽门",
+        "threshold": "5"
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "asset_id": [
+          "B07屏蔽门"
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近7天"
+          }
+        ],
+        "query": [
+          "屏蔽门 告警次数 5次 处理措施 检修规程"
+        ],
+        "corpus": [
+          "regulation|manual"
+        ],
+        "filters": [
+          {
+            "equipment_type": "屏蔽门"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "conditional_phrasing"
+      ]
+    },
+    {
+      "id": "B73",
+      "query": "先看A12风机温度，超过65度换成查检修规范，没超过就不用管。",
+      "gold_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "threshold": "65"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "temperature"
+          ]
+        ],
+        "query": [
+          "A12风机检修规范"
+        ],
+        "corpus": [
+          "manual"
+        ],
+        "equipment_type": [
+          "风机"
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "conditional_phrasing"
+      ]
+    }
+  ],
+  "tag_success": {
+    "absolute_time": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "adversarial": {
+      "success": 47,
+      "total": 75,
+      "rate": 0.6266666666666667
+    },
+    "aggregate": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "ambiguous_equipment_type": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "clarify_retention": {
+      "success": 0,
+      "total": 5,
+      "rate": 0.0
+    },
+    "conditional": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "conditional_phrasing": {
+      "success": 3,
+      "total": 6,
+      "rate": 0.5
+    },
+    "dash_variant": {
+      "success": 0,
+      "total": 2,
+      "rate": 0.0
+    },
+    "fullwidth": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "indirect": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "irrelevant_entity": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "keyword_collision": {
+      "success": 1,
+      "total": 3,
+      "rate": 0.3333333333333333
+    },
+    "lowercase_nospace": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "meta_question": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "missing_asset_and_time": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "multi_entity": {
+      "success": 4,
+      "total": 4,
+      "rate": 1.0
+    },
+    "multi_intent": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "multi_station": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "multi_time": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "negated_intent": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "negation_lookalike": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "negation_scope": {
+      "success": 9,
+      "total": 10,
+      "rate": 0.9
+    },
+    "no_conflict": {
+      "success": 0,
+      "total": 2,
+      "rate": 0.0
+    },
+    "no_explicit_id": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "normalization": {
+      "success": 4,
+      "total": 6,
+      "rate": 0.6666666666666666
+    },
+    "novel_metric_word": {
+      "success": 1,
+      "total": 3,
+      "rate": 0.3333333333333333
+    },
+    "novel_status_word": {
+      "success": 2,
+      "total": 3,
+      "rate": 0.6666666666666666
+    },
+    "phrasing_variant": {
+      "success": 2,
+      "total": 6,
+      "rate": 0.3333333333333333
+    },
+    "prompt_injection": {
+      "success": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "pronoun": {
+      "success": 0,
+      "total": 4,
+      "rate": 0.0
+    },
+    "quoted_text": {
+      "success": 4,
+      "total": 7,
+      "rate": 0.5714285714285714
+    },
+    "roleplay": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "safety": {
+      "success": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "space_instead_of_dash": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "time_conflict": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "tool_prohibition": {
+      "success": 2,
+      "total": 9,
+      "rate": 0.2222222222222222
+    },
+    "unlisted_station": {
+      "success": 6,
+      "total": 8,
+      "rate": 0.75
+    },
+    "unusual_time_unit": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "vague_time": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "word_variant": {
+      "success": 8,
+      "total": 8,
+      "rate": 1.0
+    },
+    "write_op_variant": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    }
+  }
+}

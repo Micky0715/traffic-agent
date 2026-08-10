@@ -1,0 +1,15 @@
+{
+  "text": "A28风机参数（无框表格）\n图号 FAN-A28-01\n名称 A28风机参数表\n电机编号 M-28\n断路器编号 QF-28\n控制柜编号 FAN-CAB-28",
+  "blocks": [
+    {"text": "图号", "bbox": [80, 120, 160, 145], "confidence": 0.93},
+    {"text": "FAN-A28-01", "bbox": [300, 120, 480, 145], "confidence": 0.92},
+    {"text": "电机编号", "bbox": [80, 220, 160, 245], "confidence": 0.94},
+    {"text": "M-28", "bbox": [300, 220, 400, 245], "confidence": 0.93},
+    {"text": "断路器编号", "bbox": [80, 270, 160, 295], "confidence": 0.92},
+    {"text": "QF-28", "bbox": [300, 270, 400, 295], "confidence": 0.91},
+    {"text": "控制柜编号", "bbox": [80, 320, 160, 345], "confidence": 0.93},
+    {"text": "FAN-CAB-28", "bbox": [300, 320, 480, 345], "confidence": 0.9}
+  ],
+  "average_confidence": 0.92,
+  "_note": "无框表格不影响文字识别本身（OCR照样读得清清楚楚），影响的是表格结构（行列关系）恢复——所以这条stub是干净的，用来验证'OCR读对了字但table_structure.py该拒绝的时候依然要拒绝，不能因为文字都读对了就误以为结构也恢复了'"
+}

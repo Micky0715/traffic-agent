@@ -1,0 +1,15 @@
+{
+  "text": "2A/2B/20号水泵组参数图\n图号 PUMP-MULTI-02\n2A设备编号 2A\n2A流量 80m3/h\n2A扬程 22m\n2B设备编号 28\n2B流量 80m3/h\n2B扬程 24m\n20设备编号 20\n20流量 150m3/h\n20扬程 40m",
+  "blocks": [
+    {"text": "图号", "bbox": [60, 220, 160, 250], "confidence": 0.95},
+    {"text": "PUMP-MULTI-02", "bbox": [170, 220, 400, 250], "confidence": 0.93},
+    {"text": "2A设备编号", "bbox": [60, 280, 220, 310], "confidence": 0.9},
+    {"text": "2A", "bbox": [230, 280, 300, 310], "confidence": 0.88},
+    {"text": "2B设备编号", "bbox": [60, 340, 220, 370], "confidence": 0.55},
+    {"text": "28", "bbox": [230, 340, 300, 370], "confidence": 0.5},
+    {"text": "20设备编号", "bbox": [60, 400, 220, 430], "confidence": 0.91},
+    {"text": "20", "bbox": [230, 400, 300, 430], "confidence": 0.89}
+  ],
+  "average_confidence": 0.79,
+  "_note": "holdout集：2B被OCR误读成28（B误读成8），台账里没有28，供Validator conflict分支在未见过图片上的复现测试"
+}

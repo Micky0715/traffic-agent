@@ -1,0 +1,157 @@
+{
+  "case_count": 37,
+  "sufficient_accuracy": 0.918918918918919,
+  "next_action_accuracy": 0.918918918918919,
+  "both_accuracy": 0.8918918918918919,
+  "failures": [
+    {
+      "id": "SUF08",
+      "description": "要求故障诊断，但证据任务全部失败，不能给确定性结论",
+      "query": "B07屏蔽门反复报故障，帮我分析原因并给处理建议。",
+      "tags": [
+        "negative",
+        "actionability",
+        "diagnosis"
+      ],
+      "gold_sufficient": false,
+      "gold_next_action": [
+        "refuse",
+        "partial_answer"
+      ],
+      "pred_sufficient": false,
+      "pred_next_action": "retry",
+      "judgment": {
+        "sufficient": false,
+        "scores": {
+          "coverage": 0.0,
+          "entity_match": 0.0,
+          "time_match": 0.0,
+          "source_quality": 0.0,
+          "consistency": 1.0,
+          "actionability": 0.0
+        },
+        "missing_evidence": [
+          "B07屏蔽门当前状态数据未获取到",
+          "缺少屏蔽门重复故障处理规范文档"
+        ],
+        "next_action": "retry",
+        "retry_plan": [
+          "确认B07屏蔽门资产编号是否正确并重新查询状态",
+          "扩展关键词重新检索屏蔽门重复故障相关规范"
+        ]
+      },
+      "error": null,
+      "sufficient_ok": true,
+      "next_action_ok": false
+    },
+    {
+      "id": "SUF24",
+      "description": "检索内容相关且evidence_score明确很高，正例对照",
+      "query": "查一下屏蔽门重复故障应该怎么处理。",
+      "tags": [
+        "positive",
+        "source_quality",
+        "high_evidence_score"
+      ],
+      "gold_sufficient": true,
+      "gold_next_action": [
+        "answer"
+      ],
+      "pred_sufficient": false,
+      "pred_next_action": "clarify",
+      "judgment": {
+        "sufficient": false,
+        "scores": {
+          "coverage": 0.6,
+          "entity_match": 1.0,
+          "time_match": 1.0,
+          "source_quality": 0.9,
+          "consistency": 1.0,
+          "actionability": 0.5
+        },
+        "missing_evidence": [
+          "未提供具体故障现象（如开关门失败、异响等）",
+          "缺少实际设备日志或传感器数据支持诊断"
+        ],
+        "next_action": "clarify",
+        "retry_plan": []
+      },
+      "error": null,
+      "sufficient_ok": false,
+      "next_action_ok": false
+    },
+    {
+      "id": "SUF25",
+      "description": "设备接口返回ok=true但evidence_score明确很低，数据可能不可靠",
+      "query": "查一下B07屏蔽门当前状态。",
+      "tags": [
+        "negative",
+        "source_quality",
+        "low_evidence_score"
+      ],
+      "gold_sufficient": false,
+      "gold_next_action": [
+        "retry",
+        "refuse",
+        "partial_answer"
+      ],
+      "pred_sufficient": true,
+      "pred_next_action": "answer",
+      "judgment": {
+        "sufficient": true,
+        "scores": {
+          "coverage": 1.0,
+          "entity_match": 1.0,
+          "time_match": 1.0,
+          "source_quality": 0.9,
+          "consistency": 1.0,
+          "actionability": 0.8
+        },
+        "missing_evidence": [],
+        "next_action": "answer",
+        "retry_plan": []
+      },
+      "error": null,
+      "sufficient_ok": false,
+      "next_action_ok": false
+    },
+    {
+      "id": "SUF27",
+      "description": "四个子任务，失败的那个不是诊断实际依赖的证据，诊断本身证据链完整，测试模型是否会被无关失败误伤",
+      "query": "查规范、查A12风机状态，并顺便看看工单历史，再判断是否需要停机。",
+      "tags": [
+        "ambiguous",
+        "coverage",
+        "diagnosis",
+        "multi_task",
+        "unrelated_failure"
+      ],
+      "gold_sufficient": true,
+      "gold_next_action": [
+        "answer",
+        "partial_answer"
+      ],
+      "pred_sufficient": false,
+      "pred_next_action": "partial_answer",
+      "judgment": {
+        "sufficient": false,
+        "scores": {
+          "coverage": 0.75,
+          "entity_match": 1.0,
+          "time_match": 1.0,
+          "source_quality": 0.9,
+          "consistency": 1.0,
+          "actionability": 0.6
+        },
+        "missing_evidence": [
+          "A12风机工单历史查询失败，无法确认近期维护情况"
+        ],
+        "next_action": "partial_answer",
+        "retry_plan": []
+      },
+      "error": null,
+      "sufficient_ok": false,
+      "next_action_ok": true
+    }
+  ]
+}

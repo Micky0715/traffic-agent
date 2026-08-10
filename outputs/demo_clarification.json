@@ -1,0 +1,47 @@
+{
+  "plan": {
+    "normalized_query": "查一下它最近报警几次，顺便看看规范要求。",
+    "user_goal": "查一下它最近报警几次，顺便看看规范要求。",
+    "needs_clarification": true,
+    "clarification_question": "请补充具体设备或设备编号，我再执行查询。",
+    "plan_mode": "clarify",
+    "subtasks": [
+      {
+        "id": "T1",
+        "intent": "metric_query",
+        "tool": "nl2api_query",
+        "query": "查一下它最近报警几次",
+        "entities": {},
+        "slots": {},
+        "missing_slots": [
+          "asset_id"
+        ],
+        "depends_on": [],
+        "condition": null,
+        "confidence": 0.9,
+        "reason": "出现统计/次数/趋势类信号"
+      },
+      {
+        "id": "T2",
+        "intent": "regulation_lookup",
+        "tool": "hybrid_search",
+        "query": "看看规范要求",
+        "entities": {},
+        "slots": {},
+        "missing_slots": [],
+        "depends_on": [],
+        "condition": null,
+        "confidence": 0.9,
+        "reason": "出现规范/条文/标准/编号类信号"
+      }
+    ],
+    "answer_constraints": [
+      "不得编造工具未返回的事实或数值",
+      "规范结论必须附来源编号或文档片段",
+      "实时数据与经验性建议分开表达",
+      "部分工具失败时明确说明缺失范围"
+    ]
+  },
+  "results": [],
+  "answer": "请补充具体设备或设备编号，我再执行查询。"
+}

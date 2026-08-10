@@ -1,0 +1,947 @@
+{
+  "elapsed_seconds": 41.3,
+  "case_count": 11,
+  "experiments": {
+    "A": {
+      "description": "Original -> OCR(mock) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.6454545454545454,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.675,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": false
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.525,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.6,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.87,
+          "table_confidence": 0.2805,
+          "real": false,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.87,
+          "table_confidence": 0.2805,
+          "real": false,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.5,
+          "ocr_confidence": 0.71,
+          "table_confidence": 0.2565,
+          "real": false,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.64,
+          "table_confidence": 0.246,
+          "real": false,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 0.5,
+          "ocr_confidence": 0.7,
+          "table_confidence": 0.255,
+          "real": false,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.79,
+          "table_confidence": 0.2685,
+          "real": false,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.92,
+          "table_confidence": 0.0,
+          "real": false,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.77,
+          "table_confidence": 0.0,
+          "real": false,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.1,
+          "table_confidence": 0.165,
+          "real": false,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.6,
+          "ocr_confidence": 0.64,
+          "table_confidence": 0.246,
+          "real": false,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.08,
+          "table_confidence": 0.162,
+          "real": false,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "B": {
+      "description": "Preprocess(real) -> OCR(mock) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.6454545454545454,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.675,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": false
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.525,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.5,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.6,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.87,
+          "table_confidence": 0.2805,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.87,
+          "table_confidence": 0.2805,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.5,
+          "ocr_confidence": 0.71,
+          "table_confidence": 0.2565,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.64,
+          "table_confidence": 0.246,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 0.5,
+          "ocr_confidence": 0.7,
+          "table_confidence": 0.255,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.79,
+          "table_confidence": 0.2685,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.92,
+          "table_confidence": 0.0,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.77,
+          "table_confidence": 0.2655,
+          "operations_applied": [
+            "deskew"
+          ],
+          "real": false,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.1,
+          "table_confidence": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "real": false,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.6,
+          "ocr_confidence": 0.64,
+          "table_confidence": 0.246,
+          "operations_applied": [],
+          "real": false,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.08,
+          "table_confidence": 0.162,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "real": false,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "C": {
+      "description": "Original -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7772727272727273,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.825,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 0.0,
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.8,
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "D": {
+      "description": "Preprocess(real) -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7090909090909091,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.6375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.8,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "E": {
+      "description": "OCR(mock)+TableParser(real) -> QualityJudge routing(real) -> VLM Fallback(real when triggered) -> Validator(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7772727272727273,
+        "by_category": {
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.825,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 1.0,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.75,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 0.75,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 0.75,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 0.0,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.8,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.75,
+          "need_vlm": true,
+          "source": "vlm_fallback",
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    }
+  }
+}

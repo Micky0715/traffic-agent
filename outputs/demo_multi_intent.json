@@ -1,0 +1,113 @@
+{
+  "plan": {
+    "normalized_query": "查 JTG D81-2017 的应急照明要求，再统计 A12风机最近3天告警次数，并给处理建议。",
+    "user_goal": "查 JTG D81-2017 的应急照明要求，再统计 A12风机最近3天告警次数，并给处理建议。",
+    "needs_clarification": false,
+    "clarification_question": null,
+    "plan_mode": "parallel_then_synthesize",
+    "subtasks": [
+      {
+        "id": "T1",
+        "intent": "regulation_lookup",
+        "tool": "hybrid_search",
+        "query": "查 JTG D81-2017 的应急照明要求",
+        "entities": {
+          "regulation_code": "JTG D81-2017"
+        },
+        "slots": {
+          "regulation_code": "JTG D81-2017"
+        },
+        "missing_slots": [],
+        "depends_on": [],
+        "condition": null,
+        "confidence": 0.9,
+        "reason": "出现规范/条文/标准/编号类信号"
+      },
+      {
+        "id": "T2",
+        "intent": "metric_query",
+        "tool": "nl2api_query",
+        "query": "再统计 A12风机最近3天告警次数，并给处理建议",
+        "entities": {
+          "asset_id": "A12风机"
+        },
+        "slots": {
+          "asset_id": "A12风机",
+          "time_range": "最近3天",
+          "metric": "告警次数"
+        },
+        "missing_slots": [],
+        "depends_on": [],
+        "condition": null,
+        "confidence": 0.9,
+        "reason": "出现统计/次数/趋势类信号"
+      },
+      {
+        "id": "T3",
+        "intent": "fault_diagnosis",
+        "tool": "none",
+        "query": "再统计 A12风机最近3天告警次数，并给处理建议",
+        "entities": {
+          "asset_id": "A12风机"
+        },
+        "slots": {
+          "asset_id": "A12风机",
+          "time_range": "最近3天",
+          "metric": "告警次数"
+        },
+        "missing_slots": [],
+        "depends_on": [
+          "T1",
+          "T2"
+        ],
+        "condition": null,
+        "confidence": 0.84,
+        "reason": "用户要求原因分析或处置建议"
+      }
+    ],
+    "answer_constraints": [
+      "不得编造工具未返回的事实或数值",
+      "规范结论必须附来源编号或文档片段",
+      "实时数据与经验性建议分开表达",
+      "部分工具失败时明确说明缺失范围"
+    ]
+  },
+  "results": [
+    {
+      "task_id": "T1",
+      "tool": "hybrid_search",
+      "ok": true,
+      "data": [
+        {
+          "doc_id": "REG-001",
+          "code": "JTG D81-2017",
+          "title": "公路交通安全设施设计规范（示例片段）",
+          "section": "照明与应急供电",
+          "content": "应急照明供电应具备独立或备用电源，并满足故障状态下的连续照明需求。",
+          "page": 42,
+          "score": 3
+        }
+      ],
+      "error": null,
+      "latency_ms": 0,
+      "evidence_score": 0.91
+    },
+    {
+      "task_id": "T2",
+      "tool": "nl2api_query",
+      "ok": true,
+      "data": {
+        "asset_id": "A12风机",
+        "metric": "告警次数",
+        "time_range": "最近3天",
+        "value": 7,
+        "unit": "次",
+        "source": "mock_ops_api"
+      },
+      "error": null,
+      "latency_ms": 0,
+      "evidence_score": 0.95
+    }
+  ],
+  "answer": "[T1] regulation_lookup 查询结果：[{'doc_id': 'REG-001', 'code': 'JTG D81-2017', 'title': '公路交通安全设施设计规范（示例片段）', 'section': '照明与应急供电', 'content': '应急照明供电应具备独立或备用电源，并满足故障状态下的连续照明需求。', 'page': 42, 'score': 3}]\n[T2] metric_query 查询结果：{'asset_id': 'A12风机', 'metric': '告警次数', 'time_range': '最近3天', 'value': 7, 'unit': '次', 'source': 'mock_ops_api'}\n处置建议：先核对实时告警与规范要求的一致性，再按设备手册执行停机、复位或检修；建议部分不作为工具事实。"
+}

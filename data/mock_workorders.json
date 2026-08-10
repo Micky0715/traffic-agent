@@ -1,0 +1,18 @@
+[
+  {
+    "work_order_id": "WO-1001",
+    "asset_id": "A12风机",
+    "created_at": "2026-08-04",
+    "status": "已闭环",
+    "fault": "振动偏高",
+    "action": "紧固基础并复测"
+  },
+  {
+    "work_order_id": "WO-1002",
+    "asset_id": "B07屏蔽门",
+    "created_at": "2026-08-05",
+    "status": "处理中",
+    "fault": "开门超时",
+    "action": "检查位置传感器"
+  }
+]

@@ -1,0 +1,15 @@
+pydantic>=2.7,<3
+openai>=1.40
+python-dotenv>=1.0
+PyYAML>=6.0
+pytest>=8.0
+opencv-python>=4.8
+numpy>=1.24
+# Optional: only required for the LangGraph workflow
+langgraph>=0.2
+langchain-core>=0.3
+# Optional: only required if configs/visual_parser.yaml sets ocr.engine=paddleocr
+# (real adapter code exists in src/vision/ocr_engine.py; on this dev machine
+# PaddleOCR's real inference crashes with an internal Paddle/oneDNN error —
+# see interview/ocr_bad_cases.md and MockOCREngine, the default).
+# paddleocr>=3.0

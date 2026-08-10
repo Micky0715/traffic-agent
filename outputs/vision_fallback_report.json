@@ -1,0 +1,1208 @@
+{
+  "case_count": 26,
+  "case_success_rate": 0.8846153846153846,
+  "by_method": {
+    "metadata": {
+      "total": 15,
+      "success": 14,
+      "rate": 0.9333333333333333
+    },
+    "table": {
+      "total": 6,
+      "success": 4,
+      "rate": 0.6666666666666666
+    },
+    "relations": {
+      "total": 5,
+      "success": 5,
+      "rate": 1.0
+    }
+  },
+  "results": [
+    {
+      "id": "VF01",
+      "image": "FAN-A13-02.png",
+      "method": "metadata",
+      "description": "干净图纸，无版本号字段，测试不编造revision",
+      "tags": [
+        "positive",
+        "metadata"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A13-02",
+          "got": "FAN-A13-02"
+        },
+        "revision": {
+          "ok": true,
+          "expected": null,
+          "got": null
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A13-02",
+        "drawing_name": "A13风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A13",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF02",
+      "image": "FAN-A16-02.png",
+      "method": "metadata",
+      "description": "版本号字段字迹很淡但仍可辨认，测试能否读对",
+      "tags": [
+        "degraded",
+        "faint_text"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A16-02",
+          "got": "FAN-A16-02"
+        },
+        "revision": {
+          "ok": true,
+          "expected": "V2",
+          "got": "V2"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A16-02",
+        "drawing_name": "A16风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": "V2",
+        "station_id": "A16",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF03",
+      "image": "FAN-A17-01-lowres.png",
+      "method": "metadata",
+      "description": "低分辨率模糊扫描件，测试图号能否正确读出",
+      "tags": [
+        "degraded",
+        "low_resolution"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A17-01",
+          "got": "FAN-A17-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A17-01",
+        "drawing_name": "A17风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A17",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF04",
+      "image": "FAN-A18-01.png",
+      "method": "metadata",
+      "description": "带水印，测试图号能否穿透水印正确读出",
+      "tags": [
+        "degraded",
+        "watermark"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A18-01",
+          "got": "FAN-A18-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A18-01",
+        "drawing_name": "A18风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A18",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF05",
+      "image": "FAN-A20-01.png",
+      "method": "metadata",
+      "description": "大图（1600x1200）中标题栏被压缩到很小的角落，测试小字号信息能否被读到",
+      "tags": [
+        "degraded",
+        "tiny_table_in_large_image"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A20-01",
+          "got": "FAN-A20-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A20-01",
+        "drawing_name": "A20风机系统总平面布置图",
+        "drawing_type": "equipment_layout",
+        "revision": null,
+        "station_id": "A20",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF06",
+      "image": "FAN-A21-01.png",
+      "method": "metadata",
+      "description": "同一设备两个图纸版本之一（V1），需与VF07区分不混淆",
+      "tags": [
+        "multi_version"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A21-01",
+          "got": "FAN-A21-01"
+        },
+        "revision": {
+          "ok": true,
+          "expected": "V1",
+          "got": "V1"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A21-01",
+        "drawing_name": "A21风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": "V1",
+        "station_id": "A21",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF07",
+      "image": "FAN-A21-02.png",
+      "method": "metadata",
+      "description": "同一设备两个图纸版本之二（V2，升级版），需与VF06区分不混淆",
+      "tags": [
+        "multi_version"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A21-02",
+          "got": "FAN-A21-02"
+        },
+        "revision": {
+          "ok": true,
+          "expected": "V2",
+          "got": "V2"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A21-02",
+        "drawing_name": "A21风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": "V2",
+        "station_id": "A21",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF08",
+      "image": "PSD-B08-01.png",
+      "method": "metadata",
+      "description": "拆分后的新版07 Prompt在已验证过的图纸上复测元信息抽取",
+      "tags": [
+        "regression",
+        "metadata"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "PSD-B08-01",
+          "got": "PSD-B08-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "PSD-B08-01",
+        "drawing_name": "B08屏蔽门控制原理图",
+        "drawing_type": "schematic",
+        "revision": null,
+        "station_id": "B08",
+        "device_type": "shielding_door",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF09",
+      "image": "FAN-MULTI-01.png",
+      "method": "table",
+      "description": "一个表格三台设备，同一参数名(功率/风量)出现在不同设备行，测试是否张冠李戴",
+      "tags": [
+        "multi_device_table"
+      ],
+      "success": true,
+      "detail": {
+        "A16": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "45kW",
+            "28000m³/h"
+          ]
+        },
+        "A17": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "55kW",
+            "32000m³/h"
+          ]
+        },
+        "A18": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "37kW",
+            "24000m³/h"
+          ]
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "A16",
+          "device_name": "风机",
+          "parameters": [
+            {
+              "name": "power",
+              "raw_name": "功率",
+              "raw_text": "45kW",
+              "value": 45.0,
+              "unit": "kW"
+            },
+            {
+              "name": "air_volume",
+              "raw_name": "风量",
+              "raw_text": "28000m³/h",
+              "value": 28000.0,
+              "unit": "m³/h"
+            }
+          ]
+        },
+        {
+          "device_id": "A17",
+          "device_name": "风机",
+          "parameters": [
+            {
+              "name": "power",
+              "raw_name": "功率",
+              "raw_text": "55kW",
+              "value": 55.0,
+              "unit": "kW"
+            },
+            {
+              "name": "air_volume",
+              "raw_name": "风量",
+              "raw_text": "32000m³/h",
+              "value": 32000.0,
+              "unit": "m³/h"
+            }
+          ]
+        },
+        {
+          "device_id": "A18",
+          "device_name": "风机",
+          "parameters": [
+            {
+              "name": "power",
+              "raw_name": "功率",
+              "raw_text": "37kW",
+              "value": 37.0,
+              "unit": "kW"
+            },
+            {
+              "name": "air_volume",
+              "raw_name": "风量",
+              "raw_text": "24000m³/h",
+              "value": 24000.0,
+              "unit": "m³/h"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF10",
+      "image": "FAN-A19-01.png",
+      "method": "table",
+      "description": "红色印章压住了断路器编号和控制柜编号的数值部分，测试遮挡下能否仍读对",
+      "tags": [
+        "degraded",
+        "stamp_occlusion"
+      ],
+      "success": false,
+      "detail": {
+        "A19": {
+          "found": false
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "M-19",
+          "device_name": "电机",
+          "parameters": [
+            {
+              "name": "motor_id",
+              "raw_name": "电机编号",
+              "raw_text": "M-19",
+              "value": null,
+              "unit": null
+            }
+          ]
+        },
+        {
+          "device_id": "QF-19",
+          "device_name": "断路器",
+          "parameters": [
+            {
+              "name": "breaker_id",
+              "raw_name": "断路器编号",
+              "raw_text": "QF-19",
+              "value": null,
+              "unit": null
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF11",
+      "image": "FAN-MULTI-01.png",
+      "method": "relations",
+      "description": "A16-A17有明确连线，A18完全独立没有连线，测试不会凭空编出A18的连接关系",
+      "tags": [
+        "relation",
+        "no_hallucination"
+      ],
+      "success": true,
+      "detail": {
+        "missing_gold": [],
+        "forbidden_hit": [],
+        "predicted": [
+          {
+            "source_id": "A16风机",
+            "relation": "connected_to",
+            "target_id": "A17风机",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          }
+        ]
+      },
+      "raw_prediction": [
+        {
+          "source_id": "A16风机",
+          "relation": "connected_to",
+          "target_id": "A17风机",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF12",
+      "image": "FAN-A13-02.png",
+      "method": "relations",
+      "description": "电机-断路器-控制柜之间画了明确连线，测试真实存在的连接关系会被识别出来（正例对照VF11）",
+      "tags": [
+        "relation",
+        "positive"
+      ],
+      "success": true,
+      "detail": {
+        "missing_gold": [],
+        "forbidden_hit": [],
+        "predicted": [
+          {
+            "source_id": "电机 M-13",
+            "relation": "connected_to",
+            "target_id": "断路器 QF-13",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          },
+          {
+            "source_id": "断路器 QF-13",
+            "relation": "connected_to",
+            "target_id": "控制柜 FAN-CAB-3",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          }
+        ]
+      },
+      "raw_prediction": [
+        {
+          "source_id": "电机 M-13",
+          "relation": "connected_to",
+          "target_id": "断路器 QF-13",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        },
+        {
+          "source_id": "断路器 QF-13",
+          "relation": "connected_to",
+          "target_id": "控制柜 FAN-CAB-3",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF13",
+      "image": "PUMP-02-01.png",
+      "method": "metadata",
+      "description": "普适性测试：全新设备领域（水泵，非风机），元信息抽取是否依旧稳定",
+      "tags": [
+        "generality",
+        "new_domain",
+        "metadata"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "PUMP-02-01",
+          "got": "PUMP-02-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "PUMP-02-01",
+        "drawing_name": "2号水泵设备参数图",
+        "drawing_type": "equipment_parameters",
+        "revision": null,
+        "station_id": "体育西路站",
+        "device_type": "pump",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF14",
+      "image": "PSD-MULTI-01.png",
+      "method": "metadata",
+      "description": "普适性测试：屏蔽门多设备图纸的元信息抽取",
+      "tags": [
+        "generality",
+        "new_domain",
+        "metadata"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "PSD-MULTI-01",
+          "got": "PSD-MULTI-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "PSD-MULTI-01",
+        "drawing_name": "B09/B10/B11屏蔽门组参数图",
+        "drawing_type": "equipment_layout",
+        "revision": null,
+        "station_id": null,
+        "device_type": "screen_door",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF15",
+      "image": "FAN-A22-01-heavyblur.png",
+      "method": "metadata",
+      "description": "普适性测试：比第一轮更严重的模糊退化（更小的降采样倍数），测试鲁棒性的真实上限在哪",
+      "tags": [
+        "generality",
+        "degraded",
+        "heavy_blur"
+      ],
+      "success": false,
+      "detail": {
+        "drawing_id": {
+          "ok": false,
+          "expected": "FAN-A22-01",
+          "got": "FAN-A12-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A12-01",
+        "drawing_name": "A22风机控制图",
+        "drawing_type": "schematic",
+        "revision": "V2",
+        "station_id": "A22",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF16",
+      "image": "FAN-A23-01.png",
+      "method": "metadata",
+      "description": "普适性测试：比第一轮更密、更深的水印",
+      "tags": [
+        "generality",
+        "degraded",
+        "heavy_watermark"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A23-01",
+          "got": "FAN-A23-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A23-01",
+        "drawing_name": "A23风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A23",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF17",
+      "image": "FAN-A24-01.png",
+      "method": "metadata",
+      "description": "普适性测试：模糊+水印复合退化，更接近真实扫描件的多重缺陷叠加",
+      "tags": [
+        "generality",
+        "degraded",
+        "compound"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A24-01",
+          "got": "FAN-A24-01"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A24-01",
+        "drawing_name": "A24风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A24",
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF18",
+      "image": "FAN-A26-01.png",
+      "method": "metadata",
+      "description": "普适性测试：图号和版本号同时褪色，测试多字段同时退化",
+      "tags": [
+        "generality",
+        "degraded",
+        "multi_field_faint"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "FAN-A26-01",
+          "got": "FAN-A26-01"
+        },
+        "revision": {
+          "ok": true,
+          "expected": "V3",
+          "got": "V3"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "FAN-A26-01",
+        "drawing_name": "A26风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": "V3",
+        "station_id": null,
+        "device_type": "fan",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF19",
+      "image": "PUMP-MULTI-02.png",
+      "method": "metadata",
+      "description": "普适性测试：新领域+易混淆编号图纸的元信息抽取",
+      "tags": [
+        "generality",
+        "new_domain",
+        "metadata"
+      ],
+      "success": true,
+      "detail": {
+        "drawing_id": {
+          "ok": true,
+          "expected": "PUMP-MULTI-02",
+          "got": "PUMP-MULTI-02"
+        }
+      },
+      "raw_prediction": {
+        "drawing_id": "PUMP-MULTI-02",
+        "drawing_name": "2A/2B/20号水泵组参数图",
+        "drawing_type": "equipment_layout",
+        "revision": null,
+        "station_id": null,
+        "device_type": "pump",
+        "date": null
+      },
+      "error": null
+    },
+    {
+      "id": "VF20",
+      "image": "PUMP-02-01.png",
+      "method": "table",
+      "description": "普适性测试：泵类参数（流量/扬程）而非风机参数（功率/风量），测试是否只是在套用已见过的词汇",
+      "tags": [
+        "generality",
+        "new_domain",
+        "table"
+      ],
+      "success": true,
+      "detail": {
+        "2号水泵": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "120m³/h",
+            "35m"
+          ]
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "2号水泵",
+          "device_name": "2号水泵",
+          "parameters": [
+            {
+              "name": "flow_rate",
+              "raw_name": "流量",
+              "raw_text": "120m³/h",
+              "value": 120.0,
+              "unit": "m³/h"
+            },
+            {
+              "name": "head",
+              "raw_name": "扬程",
+              "raw_text": "35m",
+              "value": 35.0,
+              "unit": "m"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF21",
+      "image": "PSD-MULTI-01.png",
+      "method": "table",
+      "description": "普适性测试：三台屏蔽门中B09和B10的开门宽度数值完全相同(1500mm)，只有响应时间不同，测试是否会因数值相同而张冠李戴",
+      "tags": [
+        "generality",
+        "new_domain",
+        "table",
+        "identical_value_confusion"
+      ],
+      "success": true,
+      "detail": {
+        "B09": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "1500mm",
+            "2.5s"
+          ]
+        },
+        "B10": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "1500mm",
+            "2.8s"
+          ]
+        },
+        "B11": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "1600mm",
+            "2.3s"
+          ]
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "B09",
+          "device_name": "屏蔽门",
+          "parameters": [
+            {
+              "name": "opening_width",
+              "raw_name": "开门宽度",
+              "raw_text": "1500mm",
+              "value": 1500.0,
+              "unit": "mm"
+            },
+            {
+              "name": "response_time",
+              "raw_name": "响应时间",
+              "raw_text": "2.5s",
+              "value": 2.5,
+              "unit": "s"
+            }
+          ]
+        },
+        {
+          "device_id": "B10",
+          "device_name": "屏蔽门",
+          "parameters": [
+            {
+              "name": "opening_width",
+              "raw_name": "开门宽度",
+              "raw_text": "1500mm",
+              "value": 1500.0,
+              "unit": "mm"
+            },
+            {
+              "name": "response_time",
+              "raw_name": "响应时间",
+              "raw_text": "2.8s",
+              "value": 2.8,
+              "unit": "s"
+            }
+          ]
+        },
+        {
+          "device_id": "B11",
+          "device_name": "屏蔽门",
+          "parameters": [
+            {
+              "name": "opening_width",
+              "raw_name": "开门宽度",
+              "raw_text": "1600mm",
+              "value": 1600.0,
+              "unit": "mm"
+            },
+            {
+              "name": "response_time",
+              "raw_name": "响应时间",
+              "raw_text": "2.3s",
+              "value": 2.3,
+              "unit": "s"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF22",
+      "image": "PUMP-MULTI-02.png",
+      "method": "table",
+      "description": "普适性测试：2A/2B/20三个编号形近，且2A与2B流量数值也相同(80m³/h)，双重混淆压力测试",
+      "tags": [
+        "generality",
+        "table",
+        "similar_id_confusion",
+        "identical_value_confusion"
+      ],
+      "success": true,
+      "detail": {
+        "2A": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "80m³/h",
+            "22m"
+          ]
+        },
+        "2B": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "80m³/h",
+            "24m"
+          ]
+        },
+        "20": {
+          "found": true,
+          "missing": [],
+          "raw_texts": [
+            "150m³/h",
+            "40m"
+          ]
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "2A",
+          "device_name": "2A号水泵",
+          "parameters": [
+            {
+              "name": "flow_rate",
+              "raw_name": "流量",
+              "raw_text": "80m³/h",
+              "value": 80.0,
+              "unit": "m³/h"
+            },
+            {
+              "name": "head",
+              "raw_name": "扬程",
+              "raw_text": "22m",
+              "value": 22.0,
+              "unit": "m"
+            }
+          ]
+        },
+        {
+          "device_id": "2B",
+          "device_name": "2B号水泵",
+          "parameters": [
+            {
+              "name": "flow_rate",
+              "raw_name": "流量",
+              "raw_text": "80m³/h",
+              "value": 80.0,
+              "unit": "m³/h"
+            },
+            {
+              "name": "head",
+              "raw_name": "扬程",
+              "raw_text": "24m",
+              "value": 24.0,
+              "unit": "m"
+            }
+          ]
+        },
+        {
+          "device_id": "20",
+          "device_name": "20号水泵",
+          "parameters": [
+            {
+              "name": "flow_rate",
+              "raw_name": "流量",
+              "raw_text": "150m³/h",
+              "value": 150.0,
+              "unit": "m³/h"
+            },
+            {
+              "name": "head",
+              "raw_name": "扬程",
+              "raw_text": "40m",
+              "value": 40.0,
+              "unit": "m"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF23",
+      "image": "FAN-A25-01.png",
+      "method": "table",
+      "description": "普适性测试：在全新的一张图上复现第一轮印章遮挡测试，检验漏填行为是否可重复而不是单张图的偶然",
+      "tags": [
+        "generality",
+        "degraded",
+        "stamp_occlusion",
+        "reproducibility"
+      ],
+      "success": false,
+      "detail": {
+        "A25": {
+          "found": false
+        }
+      },
+      "raw_prediction": [
+        {
+          "device_id": "M-25",
+          "device_name": "电机",
+          "parameters": []
+        },
+        {
+          "device_id": "QF-25",
+          "device_name": "断路器",
+          "parameters": []
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF24",
+      "image": "FAN-RELATION-01.png",
+      "method": "relations",
+      "description": "普适性测试：四台设备两两分组连接(A27-A28一组，A29-A30一组)，两组之间没有连线，测试不会把不同簇的设备连到一起",
+      "tags": [
+        "generality",
+        "relation",
+        "multi_cluster"
+      ],
+      "success": true,
+      "detail": {
+        "missing_gold": [],
+        "forbidden_hit": [],
+        "predicted": [
+          {
+            "source_id": "A27",
+            "relation": "connected_to",
+            "target_id": "A28",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          },
+          {
+            "source_id": "A29",
+            "relation": "connected_to",
+            "target_id": "A30",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          }
+        ]
+      },
+      "raw_prediction": [
+        {
+          "source_id": "A27",
+          "relation": "connected_to",
+          "target_id": "A28",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        },
+        {
+          "source_id": "A29",
+          "relation": "connected_to",
+          "target_id": "A30",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF25",
+      "image": "FAN-RELATION-02.png",
+      "method": "relations",
+      "description": "普适性测试：两条对角连线在画面中央视觉交叉但并不相连，测试是否会把交叉误判成连接（拓扑理解而非邻近判断）",
+      "tags": [
+        "generality",
+        "relation",
+        "crossing_lines_topology"
+      ],
+      "success": true,
+      "detail": {
+        "missing_gold": [],
+        "forbidden_hit": [],
+        "predicted": [
+          {
+            "source_id": "A31",
+            "relation": "connected_to",
+            "target_id": "A32",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          },
+          {
+            "source_id": "A33",
+            "relation": "connected_to",
+            "target_id": "A34",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          }
+        ]
+      },
+      "raw_prediction": [
+        {
+          "source_id": "A31",
+          "relation": "connected_to",
+          "target_id": "A32",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        },
+        {
+          "source_id": "A33",
+          "relation": "connected_to",
+          "target_id": "A34",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "VF26",
+      "image": "PSD-MULTI-01.png",
+      "method": "relations",
+      "description": "普适性测试：新领域图纸上的关系抽取，B09-B10有连线，B11完全独立",
+      "tags": [
+        "generality",
+        "relation",
+        "new_domain",
+        "no_hallucination"
+      ],
+      "success": true,
+      "detail": {
+        "missing_gold": [],
+        "forbidden_hit": [],
+        "predicted": [
+          {
+            "source_id": "B09屏蔽门",
+            "relation": "connected_to",
+            "target_id": "B10屏蔽门",
+            "confidence": 0.95,
+            "evidence_bbox": [],
+            "source_page": 0,
+            "source": "vlm_only"
+          }
+        ]
+      },
+      "raw_prediction": [
+        {
+          "source_id": "B09屏蔽门",
+          "relation": "connected_to",
+          "target_id": "B10屏蔽门",
+          "confidence": 0.95,
+          "evidence_bbox": [],
+          "source_page": 0,
+          "source": "vlm_only"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "validator_integration": {
+    "scenarios": [
+      {
+        "label": "matching_ocr_ledger_hit",
+        "device_id": "A16",
+        "ocr_hint": "A16",
+        "status": "confirmed",
+        "warnings": []
+      },
+      {
+        "label": "mismatched_ocr_ledger_hit",
+        "device_id": "A17",
+        "ocr_hint": "A1?",
+        "status": "suspected",
+        "warnings": [
+          "OCR 读取为 'A1?'，VLM 读取为 'A17' 且与台账匹配，倾向采用 VLM 结果，OCR 原始值已保留"
+        ]
+      },
+      {
+        "label": "no_ocr_no_ledger",
+        "device_id": "A18",
+        "ocr_hint": null,
+        "status": "suspected",
+        "warnings": [
+          "设备编号 A18 台账中未找到匹配，仅有 VLM 单一来源"
+        ]
+      }
+    ]
+  },
+  "stability_check": {
+    "image": "FAN-A13-02.png",
+    "repeats": 3,
+    "all_identical": true,
+    "runs": [
+      {
+        "drawing_id": "FAN-A13-02",
+        "drawing_name": "A13风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A13",
+        "device_type": "fan",
+        "date": null
+      },
+      {
+        "drawing_id": "FAN-A13-02",
+        "drawing_name": "A13风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A13",
+        "device_type": "fan",
+        "date": null
+      },
+      {
+        "drawing_id": "FAN-A13-02",
+        "drawing_name": "A13风机接线图",
+        "drawing_type": "wiring_diagram",
+        "revision": null,
+        "station_id": "A13",
+        "device_type": "fan",
+        "date": null
+      }
+    ]
+  }
+}

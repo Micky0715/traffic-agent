@@ -1,0 +1,1162 @@
+{
+  "case_count": 46,
+  "intent_set_exact": 0.782608695652174,
+  "intent_micro_f1": 0.9104477611940298,
+  "tool_set_exact": 0.8478260869565217,
+  "tool_micro_f1": 0.9183673469387755,
+  "clarification_accuracy": 0.9782608695652174,
+  "plan_mode_accuracy": 0.8695652173913043,
+  "required_slot_accuracy": 0.7608695652173914,
+  "end_to_end_case_success": 0.5217391304347826,
+  "failures": [
+    {
+      "id": "S01",
+      "query": "JTG D81—2017 对应急照明供电有什么要求？",
+      "gold_intents": [
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [
+        "hybrid_search"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "regulation_code": "JTG D81-2017"
+      },
+      "predicted_slots": {
+        "query": [
+          "JTG D81—2017 中应急照明供电要求"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "regulation_code": "JTG D81—2017"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "single",
+        "regulation",
+        "normalization"
+      ]
+    },
+    {
+      "id": "S02",
+      "query": "查一下 A12风机现在的运行状态。",
+      "gold_intents": [
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": "现在"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ]
+      },
+      "tags": [
+        "single",
+        "equipment"
+      ]
+    },
+    {
+      "id": "S03",
+      "query": "统计 A12风机最近3天告警次数。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": "最近3天",
+        "metric": "告警次数"
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "filters": [
+          {
+            "asset_id": "A12风机"
+          }
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近3天"
+          }
+        ]
+      },
+      "tags": [
+        "single",
+        "metric"
+      ]
+    },
+    {
+      "id": "S07",
+      "query": "A12风机振动偏高，查一下状态并给处理建议。",
+      "gold_intents": [
+        "equipment_status",
+        "fault_diagnosis"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "fault_diagnosis",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "serial",
+      "pred_mode": "parallel_then_synthesize",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "query": [
+          "风机振动限值 检修规程"
+        ],
+        "corpus": [
+          "regulation|manual"
+        ],
+        "equipment_type": [
+          "风机"
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "diagnosis",
+        "single_tool_synthesis"
+      ]
+    },
+    {
+      "id": "S09",
+      "query": "查一下 OPS-PSD-2025 中屏蔽门重复故障怎么处理。",
+      "gold_intents": [
+        "fault_diagnosis",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search"
+      ],
+      "pred_tools": [
+        "hybrid_search"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "serial",
+      "pred_mode": "single",
+      "expected_slots": {},
+      "predicted_slots": {
+        "query": [
+          "屏蔽门重复故障 处理"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "regulation_code": "OPS-PSD-2025",
+            "equipment_type": "屏蔽门"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "regulation",
+        "diagnosis"
+      ]
+    },
+    {
+      "id": "M02",
+      "query": "查 A12风机现在状态，同时打开 FAN-A12-01 接线图。",
+      "gold_intents": [
+        "drawing_lookup",
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "drawing_lookup",
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "drawing_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "drawing_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "parallel",
+      "pred_mode": "parallel",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": "现在",
+        "drawing_no": "FAN-A12-01"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "drawing_no": [
+          "FAN-A12-01"
+        ],
+        "keywords": [
+          [
+            "接线图"
+          ]
+        ]
+      },
+      "tags": [
+        "multi_intent",
+        "parallel"
+      ]
+    },
+    {
+      "id": "M03",
+      "query": "查询 B07屏蔽门最近7天工单，并检索重复故障处理规范。",
+      "gold_intents": [
+        "regulation_lookup",
+        "work_order_query"
+      ],
+      "pred_intents": [
+        "regulation_lookup",
+        "work_order_query"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "parallel",
+      "pred_mode": "parallel_then_synthesize",
+      "expected_slots": {
+        "asset_id": "B07屏蔽门",
+        "time_range": "最近7天"
+      },
+      "predicted_slots": {
+        "domain": [
+          "work_order"
+        ],
+        "operation": [
+          "list"
+        ],
+        "asset_id": [
+          "B07屏蔽门"
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近7天"
+          }
+        ],
+        "query": [
+          "重复故障处理规范"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "equipment_type": "屏蔽门"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "multi_intent",
+        "parallel"
+      ]
+    },
+    {
+      "id": "M05",
+      "query": "查天河站 A12风机当前温度，再查风机温度异常的检修要求。",
+      "gold_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "parallel",
+      "pred_mode": "parallel_then_synthesize",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "station": [
+          "天河站"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "temperature"
+          ]
+        ],
+        "query": [
+          "风机温度异常的检修要求"
+        ],
+        "corpus": [
+          "manual"
+        ],
+        "filters": [
+          {
+            "equipment_type": "风机"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "multi_intent",
+        "parallel"
+      ]
+    },
+    {
+      "id": "M12",
+      "query": "对比 A12风机和 2号水泵最近3天告警次数，并给出异常设备。",
+      "gold_intents": [
+        "fault_diagnosis",
+        "metric_query"
+      ],
+      "pred_intents": [
+        "fault_diagnosis",
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "serial",
+      "pred_mode": "parallel_then_synthesize",
+      "expected_slots": {
+        "asset_id": [
+          "A12风机",
+          "2号水泵"
+        ],
+        "time_range": "最近3天"
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm",
+          "alarm"
+        ],
+        "operation": [
+          "aggregate",
+          "aggregate"
+        ],
+        "filters": [
+          {
+            "asset_id": "A12风机"
+          },
+          {
+            "asset_id": "2号水泵"
+          }
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ],
+          [
+            "alarm_count"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近3天"
+          },
+          {
+            "type": "relative",
+            "value": "最近3天"
+          }
+        ]
+      },
+      "tags": [
+        "multi_entity",
+        "diagnosis"
+      ]
+    },
+    {
+      "id": "M13",
+      "query": "查询 A12风机昨天和今天告警次数分别是多少。",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [
+        "metric_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": [
+          "昨天",
+          "今天"
+        ]
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "filters": [
+          {
+            "asset_id": "A12风机"
+          }
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ]
+        ],
+        "group_by": [
+          [
+            "date"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "absolute",
+            "value": "昨天至今天"
+          }
+        ]
+      },
+      "tags": [
+        "multi_time",
+        "metric"
+      ]
+    },
+    {
+      "id": "C01",
+      "query": "先查 A12风机最近3天振动值，如果超过4.5mm/s再查检修规范。",
+      "gold_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "time_range": "最近3天",
+        "threshold": "4.5mm/s"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric"
+        ],
+        "operation": [
+          "trend"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "vibration"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近3天"
+          }
+        ],
+        "query": [
+          "风机 振动 超过 4.5mm/s 检修规范"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "equipment_type": "风机"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "conditional",
+        "serial"
+      ]
+    },
+    {
+      "id": "C02",
+      "query": "若 B07屏蔽门今天告警超过3次，就查询重复故障规范并给处理建议。",
+      "gold_intents": [
+        "fault_diagnosis",
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "fault_diagnosis",
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "B07屏蔽门",
+        "time_range": "今天",
+        "threshold": "3"
+      },
+      "predicted_slots": {
+        "domain": [
+          "alarm"
+        ],
+        "operation": [
+          "aggregate"
+        ],
+        "asset_id": [
+          "B07屏蔽门"
+        ],
+        "metrics": [
+          [
+            "alarm_count"
+          ]
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "今天"
+          }
+        ],
+        "query": [
+          "屏蔽门重复故障处理规范"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "equipment_type": "屏蔽门"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "conditional",
+        "diagnosis"
+      ]
+    },
+    {
+      "id": "C03",
+      "query": "当 2号水泵当前状态为停机时，再查询最近7天工单。",
+      "gold_intents": [
+        "equipment_status",
+        "work_order_query"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "work_order_query"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "2号水泵",
+        "time_range": "当前"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset",
+          "work_order"
+        ],
+        "operation": [
+          "get",
+          "list"
+        ],
+        "asset_id": [
+          "2号水泵",
+          "2号水泵"
+        ],
+        "time_range": [
+          {
+            "type": "relative",
+            "value": "最近7天"
+          }
+        ]
+      },
+      "tags": [
+        "conditional",
+        "same_tool"
+      ]
+    },
+    {
+      "id": "C04",
+      "query": "如果 A12风机温度高于65C，则查温度异常处置规范，否则只返回当前温度。",
+      "gold_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "pred_intents": [
+        "equipment_status",
+        "regulation_lookup"
+      ],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "conditional",
+      "pred_mode": "conditional",
+      "expected_slots": {
+        "asset_id": "A12风机",
+        "threshold": "65C"
+      },
+      "predicted_slots": {
+        "domain": [
+          "metric"
+        ],
+        "operation": [
+          "get"
+        ],
+        "asset_id": [
+          "A12风机"
+        ],
+        "metrics": [
+          [
+            "temperature"
+          ]
+        ],
+        "query": [
+          "风机温度异常处置规范"
+        ],
+        "corpus": [
+          "regulation"
+        ],
+        "filters": [
+          {
+            "equipment_type": "风机"
+          }
+        ],
+        "top_k": [
+          10
+        ]
+      },
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "Q01",
+      "query": "查一下它最近报警几次，顺便看看规范要求。",
+      "gold_intents": [
+        "metric_query",
+        "regulation_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "hybrid_search",
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "pronoun",
+        "multi_intent"
+      ]
+    },
+    {
+      "id": "Q02",
+      "query": "查一下这个设备的工单。",
+      "gold_intents": [
+        "work_order_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "Q03",
+      "query": "查图纸。",
+      "gold_intents": [
+        "drawing_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "drawing_search"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "drawing"
+      ]
+    },
+    {
+      "id": "Q04",
+      "query": "A12风机报警多少次？",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {
+        "asset_id": "A12风机"
+      },
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "missing_time"
+      ]
+    },
+    {
+      "id": "Q05",
+      "query": "最近告警次数是多少？",
+      "gold_intents": [
+        "metric_query"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "missing_asset"
+      ]
+    },
+    {
+      "id": "Q07",
+      "query": "看看这个图纸里的控制柜编号。",
+      "gold_intents": [
+        "drawing_lookup"
+      ],
+      "pred_intents": [],
+      "gold_tools": [
+        "drawing_search"
+      ],
+      "pred_tools": [],
+      "gold_clarify": true,
+      "pred_clarify": true,
+      "gold_mode": "clarify",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "clarification",
+        "drawing",
+        "pronoun"
+      ]
+    },
+    {
+      "id": "N05",
+      "query": "查询天河站风机温度和电流。",
+      "gold_intents": [
+        "equipment_status"
+      ],
+      "pred_intents": [
+        "equipment_status"
+      ],
+      "gold_tools": [
+        "nl2api_query"
+      ],
+      "pred_tools": [
+        "nl2api_query"
+      ],
+      "gold_clarify": false,
+      "pred_clarify": false,
+      "gold_mode": "single",
+      "pred_mode": "single",
+      "expected_slots": {
+        "asset_id": "天河站风机"
+      },
+      "predicted_slots": {
+        "domain": [
+          "asset"
+        ],
+        "operation": [
+          "get"
+        ],
+        "station": [
+          "天河站"
+        ],
+        "equipment_type": [
+          "风机"
+        ],
+        "metrics": [
+          [
+            "temperature",
+            "current"
+          ]
+        ]
+      },
+      "tags": [
+        "negative_split",
+        "equipment"
+      ]
+    },
+    {
+      "id": "U05",
+      "query": "A12。",
+      "gold_intents": [
+        "general_qa"
+      ],
+      "pred_intents": [],
+      "gold_tools": [],
+      "pred_tools": [],
+      "gold_clarify": false,
+      "pred_clarify": true,
+      "gold_mode": "none",
+      "pred_mode": "clarify",
+      "expected_slots": {},
+      "predicted_slots": {},
+      "tags": [
+        "ambiguous",
+        "general"
+      ]
+    }
+  ],
+  "tag_success": {
+    "ambiguous": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "chinese_numeral": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "clarification": {
+      "success": 1,
+      "total": 7,
+      "rate": 0.14285714285714285
+    },
+    "conditional": {
+      "success": 0,
+      "total": 4,
+      "rate": 0.0
+    },
+    "control": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "diagnosis": {
+      "success": 5,
+      "total": 9,
+      "rate": 0.5555555555555556
+    },
+    "drawing": {
+      "success": 1,
+      "total": 3,
+      "rate": 0.3333333333333333
+    },
+    "equipment": {
+      "success": 1,
+      "total": 3,
+      "rate": 0.3333333333333333
+    },
+    "general": {
+      "success": 2,
+      "total": 3,
+      "rate": 0.6666666666666666
+    },
+    "metric": {
+      "success": 0,
+      "total": 2,
+      "rate": 0.0
+    },
+    "missing_asset": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "missing_time": {
+      "success": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "multi_entity": {
+      "success": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "multi_intent": {
+      "success": 8,
+      "total": 12,
+      "rate": 0.6666666666666666
+    },
+    "multi_time": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "negative_split": {
+      "success": 4,
+      "total": 5,
+      "rate": 0.8
+    },
+    "normalization": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "parallel": {
+      "success": 4,
+      "total": 7,
+      "rate": 0.5714285714285714
+    },
+    "pronoun": {
+      "success": 0,
+      "total": 3,
+      "rate": 0.0
+    },
+    "regulation": {
+      "success": 2,
+      "total": 4,
+      "rate": 0.5
+    },
+    "safety": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "same_intent": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "same_tool": {
+      "success": 3,
+      "total": 4,
+      "rate": 0.75
+    },
+    "serial": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "single": {
+      "success": 4,
+      "total": 7,
+      "rate": 0.5714285714285714
+    },
+    "single_tool_synthesis": {
+      "success": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "slot": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "station": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "work_order": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "write": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    }
+  }
+}

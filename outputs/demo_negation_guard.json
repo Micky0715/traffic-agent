@@ -1,0 +1,33 @@
+{
+  "normalized_query": "不要查规范，只查询 A12风机现在状态。",
+  "user_goal": "不要查规范，只查询 A12风机现在状态。",
+  "needs_clarification": false,
+  "clarification_question": null,
+  "plan_mode": "single",
+  "subtasks": [
+    {
+      "id": "T1",
+      "intent": "equipment_status",
+      "tool": "nl2api_query",
+      "query": "只查询 A12风机现在状态",
+      "entities": {
+        "asset_id": "A12风机"
+      },
+      "slots": {
+        "asset_id": "A12风机",
+        "time_range": "现在"
+      },
+      "missing_slots": [],
+      "depends_on": [],
+      "condition": null,
+      "confidence": 0.9,
+      "reason": "出现设备实时/运行状态类信号"
+    }
+  ],
+  "answer_constraints": [
+    "不得编造工具未返回的事实或数值",
+    "规范结论必须附来源编号或文档片段",
+    "实时数据与经验性建议分开表达",
+    "部分工具失败时明确说明缺失范围"
+  ]
+}

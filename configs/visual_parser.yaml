@@ -1,0 +1,43 @@
+# Thresholds for src/vision/page_router.py. Nothing in that module should
+# hard-code a number that lives here.
+visual_fallback:
+  min_ocr_confidence: 0.75
+  max_garbled_ratio: 0.15
+  min_image_ratio: 0.3
+  enable_complex_table: true
+  enable_engineering_drawing: true
+
+# Unit whitelist per normalized DeviceParameter.name, used by
+# src/vision/validator.py to catch unit-magnitude conflicts (e.g. kW vs MW)
+# without ever silently rewriting a value.
+parameter_units:
+  power: ["kW", "W", "MW"]
+  air_volume: ["m3/h", "m³/h"]
+  pressure: ["Pa", "kPa"]
+  vibration: ["mm/s"]
+  temperature: ["C", "°C"]
+
+# How much a relation's confidence is boosted when corroborated by ledger or
+# OCR text, and the cap on that boost. VLM-only relations never reach the cap.
+relation_confidence:
+  corroboration_boost: 0.15
+  max_confidence: 0.95
+
+# Thresholds for src/vision/image_quality.py. ImageQualityAnalyzer computes
+# these metrics for real with cv2; PreprocessDecision compares them against
+# these numbers to pick only the operations a given image actually needs.
+preprocess:
+  min_sharpness_for_skip_denoise: 80.0
+  min_contrast_for_skip_binarize: 35.0
+  skew_angle_threshold_deg: 1.5
+  min_brightness_uniformity: 0.85
+
+# engine: "mock" uses src/vision/ocr_engine.py::MockOCREngine (stub results
+# from data/ocr_stub/*.json). "paddleocr" uses the real PaddleOCREngine
+# adapter — on this development machine its predict() call raises an
+# internal Paddle/oneDNN framework error (see interview/ocr_bad_cases.md),
+# so switching this to paddleocr here will fail until that environment issue
+# is fixed elsewhere. The adapter code itself is real, not a stub.
+ocr:
+  engine: mock
+  min_confidence: 0.6

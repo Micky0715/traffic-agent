@@ -1,0 +1,16 @@
+[
+  {
+    "drawing_no": "FAN-A12-01",
+    "asset_id": "A12风机",
+    "title": "A12风机接线图",
+    "page": 3,
+    "key_fields": {"motor": "M-12", "breaker": "QF-12", "cabinet": "FAN-CAB-2"}
+  },
+  {
+    "drawing_no": "PSD-B07-02",
+    "asset_id": "B07屏蔽门",
+    "title": "B07屏蔽门控制原理图",
+    "page": 5,
+    "key_fields": {"controller": "DCU-B07", "sensor": "PS-07"}
+  }
+]

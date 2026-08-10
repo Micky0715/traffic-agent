@@ -1,0 +1,163 @@
+{
+  "$defs": {
+    "Intent": {
+      "enum": [
+        "regulation_lookup",
+        "equipment_status",
+        "work_order_query",
+        "metric_query",
+        "drawing_lookup",
+        "fault_diagnosis",
+        "general_qa",
+        "unsupported"
+      ],
+      "title": "Intent",
+      "type": "string"
+    },
+    "SubTask": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "intent": {
+          "$ref": "#/$defs/Intent"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolName"
+        },
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "entities": {
+          "additionalProperties": true,
+          "title": "Entities",
+          "type": "object"
+        },
+        "slots": {
+          "additionalProperties": true,
+          "title": "Slots",
+          "type": "object"
+        },
+        "missing_slots": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Slots",
+          "type": "array"
+        },
+        "depends_on": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depends On",
+          "type": "array"
+        },
+        "condition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        },
+        "confidence": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "intent",
+        "tool",
+        "query"
+      ],
+      "title": "SubTask",
+      "type": "object"
+    },
+    "ToolName": {
+      "enum": [
+        "hybrid_search",
+        "nl2api_query",
+        "drawing_search",
+        "none"
+      ],
+      "title": "ToolName",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "normalized_query": {
+      "title": "Normalized Query",
+      "type": "string"
+    },
+    "user_goal": {
+      "title": "User Goal",
+      "type": "string"
+    },
+    "needs_clarification": {
+      "default": false,
+      "title": "Needs Clarification",
+      "type": "boolean"
+    },
+    "clarification_question": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Clarification Question"
+    },
+    "plan_mode": {
+      "default": "none",
+      "enum": [
+        "none",
+        "single",
+        "parallel",
+        "serial",
+        "conditional",
+        "parallel_then_synthesize",
+        "clarify"
+      ],
+      "title": "Plan Mode",
+      "type": "string"
+    },
+    "subtasks": {
+      "items": {
+        "$ref": "#/$defs/SubTask"
+      },
+      "title": "Subtasks",
+      "type": "array"
+    },
+    "answer_constraints": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Answer Constraints",
+      "type": "array"
+    }
+  },
+  "required": [
+    "normalized_query",
+    "user_goal"
+  ],
+  "title": "IntentPlan",
+  "type": "object"
+}

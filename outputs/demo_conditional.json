@@ -1,0 +1,100 @@
+{
+  "plan": {
+    "normalized_query": "先查 A12风机最近3天振动值，如果超过4.5MM/S再查检修规范。",
+    "user_goal": "先查 A12风机最近3天振动值，如果超过4.5MM/S再查检修规范。",
+    "needs_clarification": false,
+    "clarification_question": null,
+    "plan_mode": "conditional",
+    "subtasks": [
+      {
+        "id": "T1",
+        "intent": "regulation_lookup",
+        "tool": "hybrid_search",
+        "query": "先查 A12风机最近3天振动值，如果超过4.5MM/S再查检修规范",
+        "entities": {
+          "asset_id": "A12风机"
+        },
+        "slots": {
+          "asset_id": "A12风机",
+          "time_range": "最近3天",
+          "metric": "振动值",
+          "threshold": "4.5MM/S"
+        },
+        "missing_slots": [],
+        "depends_on": [
+          "T2"
+        ],
+        "condition": "仅当上游结果满足用户给定条件时执行",
+        "confidence": 0.9,
+        "reason": "出现规范/条文/标准/编号类信号"
+      },
+      {
+        "id": "T2",
+        "intent": "equipment_status",
+        "tool": "nl2api_query",
+        "query": "先查 A12风机最近3天振动值，如果超过4.5MM/S再查检修规范",
+        "entities": {
+          "asset_id": "A12风机"
+        },
+        "slots": {
+          "asset_id": "A12风机",
+          "time_range": "最近3天",
+          "metric": "振动值",
+          "threshold": "4.5MM/S"
+        },
+        "missing_slots": [],
+        "depends_on": [],
+        "condition": null,
+        "confidence": 0.9,
+        "reason": "出现设备实时/运行状态类信号"
+      }
+    ],
+    "answer_constraints": [
+      "不得编造工具未返回的事实或数值",
+      "规范结论必须附来源编号或文档片段",
+      "实时数据与经验性建议分开表达",
+      "部分工具失败时明确说明缺失范围"
+    ]
+  },
+  "results": [
+    {
+      "task_id": "T2",
+      "tool": "nl2api_query",
+      "ok": true,
+      "data": [
+        {
+          "asset_id": "A12风机",
+          "station": "天河站",
+          "status": "运行",
+          "alarm_count_3d": 7,
+          "vibration_mm_s": 4.8,
+          "temperature_c": 67,
+          "updated_at": "2026-08-06T17:30:00+08:00"
+        }
+      ],
+      "error": null,
+      "latency_ms": 0,
+      "evidence_score": 0.95
+    },
+    {
+      "task_id": "T1",
+      "tool": "hybrid_search",
+      "ok": true,
+      "data": [
+        {
+          "doc_id": "REG-002",
+          "code": "OPS-FAN-2025",
+          "title": "车站通风设备检修规程（模拟）",
+          "section": "振动异常处理",
+          "content": "风机振动值超过预警阈值时，应复核轴承、联轴器与基础紧固状态，并结合趋势判断是否停机检修。",
+          "page": 18,
+          "score": 3
+        }
+      ],
+      "error": null,
+      "latency_ms": 0,
+      "evidence_score": 0.91
+    }
+  ],
+  "answer": "[T1] regulation_lookup 查询结果：[{'doc_id': 'REG-002', 'code': 'OPS-FAN-2025', 'title': '车站通风设备检修规程（模拟）', 'section': '振动异常处理', 'content': '风机振动值超过预警阈值时，应复核轴承、联轴器与基础紧固状态，并结合趋势判断是否停机检修。', 'page': 18, 'score': 3}]\n[T2] equipment_status 查询结果：[{'asset_id': 'A12风机', 'station': '天河站', 'status': '运行', 'alarm_count_3d': 7, 'vibration_mm_s': 4.8, 'temperature_c': 67, 'updated_at': '2026-08-06T17:30:00+08:00'}]"
+}
