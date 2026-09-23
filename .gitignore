@@ -14,3 +14,15 @@ outputs/.vlm_cache.json
 # OS/editor cruft
 .DS_Store
 Thumbs.db
+
+# Public CAD corpus binaries: ~324 MB, and the source agency / URL / licence of
+# every one of the 10 PDFs is still unverified (provenance_status =
+# needs_manual_review). The manifests under data/cad_public_corpus/manifests/
+# keep each file's SHA256, so every reported number stays auditable and the
+# corpus can be rebuilt: re-download the PDFs, then run
+#   python scripts/render_cad_pdf.py --manifest <source manifest> --dpi 300
+# pdftoppm 25.07.0 at 300 DPI was verified to be byte-deterministic.
+data/*.pdf
+data/cad_public_corpus/rendered_png_300dpi/
+outputs/cad_render_qa_pack/thumbs/
+outputs/cad_render_qa_pack_supplement_v1/thumbs/

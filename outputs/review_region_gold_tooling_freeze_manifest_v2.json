@@ -1,0 +1,86 @@
+{
+  "stage": "review_region_localization_eval/phase1",
+  "evaluator_version": 2,
+  "supersedes": {
+    "manifest": "outputs/review_region_gold_tooling_freeze_manifest.json",
+    "v1_left_unmodified": true,
+    "intentionally_changed": {
+      "scripts/evaluate_review_region_localization.py": {
+        "v1_sha256": "cd403b4e7048ea949655dccd9fa0b04a81eb420999d1c46df443b22d8cce39ae",
+        "why": "Phase 1: --gold/--output-json/--output-md, refusal to overwrite historical reports, schema check on input, gold coverage and prediction precision, per-record verdicts, and the unlocatable safety/cost split. Legacy evaluate() and its outputs unchanged."
+      }
+    },
+    "consequence": "verify on v1 reports exactly one CHANGED file; that is expected and is the reason v2 exists"
+  },
+  "v1_residual": {
+    "v1_manifest_sha256": "208f824b2ac93a82f8943db11bdee1f63d582232b80ba0e2e364ca60167c8693",
+    "undeclared_drift": [],
+    "declared_changes": {
+      "scripts/evaluate_review_region_localization.py": {
+        "v1_sha256": "cd403b4e7048ea949655dccd9fa0b04a81eb420999d1c46df443b22d8cce39ae",
+        "recorded_in_v1": "cd403b4e7048ea949655dccd9fa0b04a81eb420999d1c46df443b22d8cce39ae",
+        "current_sha256": "5c4e106b9cde33cb7e4fe56dfe3dd6a812bc80e275f8937a70e016f52ca81363"
+      }
+    }
+  },
+  "measured_facts": {
+    "real_ocr_calls": 0,
+    "real_vlm_calls": 0,
+    "external_api_calls": 0,
+    "resolver_modified": false,
+    "thresholds_modified": false,
+    "gold_modified": false
+  },
+  "groups": {
+    "evaluator": {
+      "files": {
+        "scripts/evaluate_review_region_localization.py": "5c4e106b9cde33cb7e4fe56dfe3dd6a812bc80e275f8937a70e016f52ca81363"
+      },
+      "file_count": 1,
+      "sha256": "a3016de7bf9db3d5f0762f966eb234711196e91a5ab3b98a6d2314a4415c389f"
+    },
+    "phase1_tests": {
+      "files": {
+        "tests/test_localization_eval_phase1.py": "cc502c5e9fe8e7652e7cb3e056ef3953004b0b7affcb8bcb32ac48e00adfdd09"
+      },
+      "file_count": 1,
+      "sha256": "5f1ed37c7f91f8b40f11cd7507a04f7d5b0b78b08a8457bdd09da73eff6b4926"
+    },
+    "phase1_outputs": {
+      "files": {
+        "outputs/review_region_localization_eval_phase1_gold_test.json": "979652e85f69bd769651f1067af8496e91cf17d8e316755e644c6fb247391d72",
+        "outputs/review_region_localization_eval_phase1_gold_test.md": "5714390de55da76d3569493b03824d6f2f5383c2f6021408773d2e47c75f9c1d"
+      },
+      "file_count": 2,
+      "sha256": "4bca2a8fb3f01560afa9fdcc4332925e6ee9c19df617fd63a51c3c2d7b9cb0e3"
+    },
+    "human_gold_read_only": {
+      "files": {
+        "data/review_region_gold_test.jsonl": "dbfc794a9ae188bfdaa9ba8cc68eb6133ebcd0ed1f88f144606feba469583953"
+      },
+      "file_count": 1,
+      "sha256": "fb0807d49f8872f5f93fc4eec83e486e90e9b1a725b254835066aba00636711e"
+    },
+    "historical_reports_untouched": {
+      "files": {
+        "outputs/review_region_localization_eval.json": "b25908d526c4b8c337f9bba63dd6abf5108747ee018563d08454bb441cf246d2",
+        "outputs/review_region_localization_eval.md": "b436150cb3860f51b7cefddc5abfa0ce4e92023a93e67748e630fd935d30a161",
+        "outputs/review_region_localization_eval_gold_test.json": "2d0a0ea084b28c80360e6dd53732bb54837b7cdc22e2ca49f5b3e8ebec6a8541",
+        "outputs/review_region_localization_eval_gold_test.md": "67b7d24a85abbda4caef806af3671d80d707b901214eaa5136317e20335d2372"
+      },
+      "file_count": 4,
+      "sha256": "db17fb7ec163d6b667cef9b0d11d91bac3acea5d87a507b5095aa98f2beed352"
+    },
+    "not_modified_this_phase": {
+      "files": {
+        "src/vision/review_region_resolver.py": "5418c421b6c858062568ec408dce1ec98dd788b63b9223b13dd33b613a54c3d5",
+        "configs/review_regions.yaml": "e7d180adfbeda302c6615435f5ae7cbcd94057d7eda6b849681e1670d0930595",
+        "data/multimodal_cache/vision_review_cache.json": "318c5e401c127364e73ad4d44fc1d8be5327cc9259b8cdfced968781d07fef17",
+        "outputs/review_region_annotation_pack/manifest.json": "7ca949053d376eca3eec28370cfaf4e311713b28b9dd8c61af20db3121f89f16"
+      },
+      "file_count": 4,
+      "sha256": "bde174e2cf77a5382f9421f721fc9d35bd88c960be059e4205e512ab135ae10c"
+    }
+  },
+  "frozen_at": "2026-09-18T06:01:34+00:00"
+}

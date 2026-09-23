@@ -1,0 +1,48 @@
+{
+  "automated_integrity_check": {
+    "blank_suspected": 0,
+    "crop_risk_suspected": 0,
+    "documents": [],
+    "documents_complete": 0,
+    "near_duplicate_status": "near_duplicate_not_computed_no_rendered_pages",
+    "near_duplicates_computed": false,
+    "original_pdf_hashes": {
+      "all_match": true,
+      "checked": 10,
+      "mismatched": []
+    },
+    "pages_failed": 0,
+    "pages_rendered_and_readable": 0,
+    "pdf_count": 10,
+    "pdfinfo_total_pages": null,
+    "png_unchanged_by_qa": true,
+    "provisional_total_pages": 131,
+    "qa_status_counts": {
+      "failed": 0,
+      "pass": 0,
+      "warning": 0
+    },
+    "reason_code_counts": {},
+    "severe_blur_suspected": 0,
+    "sheet_size_distribution": {},
+    "thresholds": "uncalibrated (configs/cad_render_qa.yaml)",
+    "what_this_cannot_confirm": [
+      "thin line breaks",
+      "title block cropped",
+      "text legibility",
+      "page content matches the PDF"
+    ]
+  },
+  "block_reason": "Poppler (pdftoppm/pdfinfo) is not installed; no page was rendered and no other renderer was substituted.",
+  "human_visual_review": {
+    "human_verified": false,
+    "note": "No person has reviewed the sample. Unfilled answers are not passes.",
+    "sample_pages": 0,
+    "status": "pending"
+  },
+  "network_calls": 0,
+  "ocr_calls": 0,
+  "pages": [],
+  "status": "blocked_poppler_unavailable",
+  "vlm_calls": 0
+}

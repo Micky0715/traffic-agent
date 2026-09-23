@@ -1,0 +1,77 @@
+# Graded review-region resolution.
+#
+# THRESHOLD PROVENANCE: every number below is an engineering starting value.
+# None of it is calibrated against human-reviewed bbox gold, because no such
+# gold exists in this repo. They were NOT tuned per-sample to make 11 targets
+# pass — doing that would fit the thresholds to the five pages on hand and tell
+# you nothing about the sixth.
+
+review_region_resolution:
+  enable_alias_match: true
+  # Similarity a damaged label must reach before it may stand in for a field
+  # name. Deliberately high: a loose match silently renames one field to
+  # another, and the crop that follows looks perfectly valid.
+  alias_similarity_threshold: 0.72
+  # Padding as a fraction of the region's own short side, so a small cell and a
+  # whole title block do not get the same absolute margin.
+  crop_padding_ratio: 0.12
+  min_crop_padding_px: 8
+  max_crop_padding_px: 48
+  dedup_iou_threshold: 0.60
+  max_regions_per_page: 8
+  # A "local" crop that covers most of the page is a full-page call wearing a
+  # different label. Above this it is re-graded to contextual at best.
+  max_context_area_ratio: 0.45
+
+  min_region_width: 48
+  min_region_height: 24
+
+  # How far right of a label its value is looked for, as a fraction of page
+  # width, and how much vertical slack a same-row match allows.
+  label_right_extension_ratio: 0.35
+  same_row_overlap_ratio: 0.45
+
+  enable_full_page_diagnostic: true
+  diagnostic_max_long_edge: 1600
+  diagnostic_max_pixels: 2200000
+
+  # An OCR page this sparse cannot be localised field by field.
+  sparse_page_max_blocks: 3
+
+  # Field name -> other spellings that mean the SAME field. These are label
+  # variants, never values: putting an answer here would make the resolver find
+  # what it was told to find.
+  field_aliases:
+    控制柜编号:
+      - 控制柜编号
+      - 控制柜编码
+      - 柜体编号
+      - 控制柜号
+    电机编号:
+      - 电机编号
+      - 电动机编号
+      - 电机号
+    断路器编号:
+      - 断路器编号
+      - 断路器号
+      - 空开编号
+    图号:
+      - 图号
+      - 图纸编号
+      - 设备图号
+    名称:
+      - 名称
+      - 图纸名称
+      - 设备名称
+
+  # Order fields normally appear down a title block. Used ONLY to tell which
+  # row of a key/value table a damaged label is likely to be, and only when the
+  # neighbours above and below are themselves identified.
+  title_block_field_order:
+    - 图号
+    - 名称
+    - 电机编号
+    - 断路器编号
+    - 控制柜编号
+    - 页码
+    - 版本

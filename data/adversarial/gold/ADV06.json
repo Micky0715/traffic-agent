@@ -1,0 +1,39 @@
+{
+  "id": "ADV06",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "ESC-05-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-ESC5",
+      "fields": {
+        "电机编号": "M-ESC5"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-ESC5",
+      "fields": {
+        "断路器编号": "QF-ESC5"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "ESC-CAB-5",
+      "fields": {
+        "控制柜编号": "ESC-CAB-5"
+      }
+    }
+  ],
+  "expected_values": [
+    "ESC-05-01",
+    "5号自动扶梯接线图",
+    "1/1",
+    "M-ESC5",
+    "QF-ESC5",
+    "ESC-CAB-5"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "unknown_type",
+  "notes": "escalator and brake: unmapped types"
+}

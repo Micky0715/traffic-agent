@@ -1,0 +1,732 @@
+{
+  "note": "Pre-registered BEFORE any vision call in this round. Expectations state what the SYSTEM must do, never what the model must answer — a case whose expectation is 'the model returns X' can only be met by adjusting it afterwards, which is the failure this file exists to prevent.",
+  "not_a_blind_test": "All five documents were already examined in earlier rounds of this repo. This is a seen regression set.",
+  "inference_mode": "cache_replay",
+  "allow_live_vlm_flag": false,
+  "config_allow_live_vlm": false,
+  "max_live_calls": 5,
+  "live_calls_made": 0,
+  "model_name": null,
+  "prompt_version": "vision_field_review_v1",
+  "schema_version": "vision_review_v1",
+  "cache_provenance": {
+    "entries": 2,
+    "recorded_from_live_inference": 2,
+    "models": [
+      "qwen-vl-max"
+    ],
+    "prompt_versions": [
+      "vision_field_review_v1"
+    ]
+  },
+  "latency_note": "cache_replay latency is file I/O and is NOT model latency; it is not reported as such anywhere in this file.",
+  "totals": {
+    "total_review_requests": 11,
+    "disabled": 0,
+    "cache_replay": 2,
+    "real_inference": 0,
+    "success": 2,
+    "schema_failure": 0,
+    "unreadable": 0,
+    "crop_unavailable": 9,
+    "call_failed": 0,
+    "budget_exhausted": 0,
+    "not_invoked": 0
+  },
+  "decision_transitions": {
+    "changed_laterally": 2,
+    "unchanged": 2,
+    "downgraded": 1
+  },
+  "expectation_checks": {
+    "total": 11,
+    "passed": 11,
+    "failed": 0
+  },
+  "cases": [
+    {
+      "case_id": "MM1_watermark_silent_miss",
+      "document_id": "FAN-A23-01",
+      "data_kind": "REAL",
+      "drawing_type": "fan_wiring",
+      "ocr_average_confidence": 0.9957,
+      "ocr_blocks": 11,
+      "field_completeness": 0.1667,
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号"
+      ],
+      "invalid_fields": [],
+      "review_triggered": true,
+      "targets": [
+        {
+          "field_name": "名称",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "图号",
+          "review_reasons": [
+            "required_field_missing",
+            "isolated_label_without_value"
+          ]
+        },
+        {
+          "field_name": "控制柜编号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "断路器编号",
+          "review_reasons": [
+            "required_field_missing",
+            "isolated_label_without_value"
+          ]
+        },
+        {
+          "field_name": "电机编号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        }
+      ],
+      "crops": [
+        {
+          "field_name": "名称",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "图号",
+          "review_reasons": [
+            "required_field_missing",
+            "isolated_label_without_value"
+          ],
+          "available": true,
+          "region_scope": "label_right",
+          "reason": "",
+          "crop_path": "C:/Users/jdh07/Desktop/traffic_rag_full/metro_agent_repro/metro_agent_repro/data/multimodal_cache/crops/FAN-A23-01_label_right_e5be1d190ef7c033.png",
+          "crop_sha256": "a49f1879d302cff1dc1947672532378b5ed6b1261a19379a6957e595c1808f4a",
+          "source_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+          "page": 1,
+          "bbox_original": [
+            35.0,
+            478.0,
+            446.0,
+            528.0
+          ],
+          "bbox_with_padding": [
+            11.0,
+            454.0,
+            470.0,
+            552.0
+          ]
+        },
+        {
+          "field_name": "控制柜编号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "断路器编号",
+          "review_reasons": [
+            "required_field_missing",
+            "isolated_label_without_value"
+          ],
+          "available": true,
+          "region_scope": "label_right",
+          "reason": "",
+          "crop_path": "C:/Users/jdh07/Desktop/traffic_rag_full/metro_agent_repro/metro_agent_repro/data/multimodal_cache/crops/FAN-A23-01_label_right_b4bc59f5c3dbf582.png",
+          "crop_sha256": "6335a83c2dc3ce9e2414146ad4fcacce0426c4687ca16e981a493a82da6b5f98",
+          "source_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+          "page": 1,
+          "bbox_original": [
+            37.0,
+            608.0,
+            500.0,
+            652.0
+          ],
+          "bbox_with_padding": [
+            13.0,
+            584.0,
+            524.0,
+            676.0
+          ]
+        },
+        {
+          "field_name": "电机编号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        }
+      ],
+      "review": {
+        "total_review_requests": 5,
+        "disabled": 0,
+        "cache_replay": 2,
+        "real_inference": 0,
+        "success": 2,
+        "schema_failure": 0,
+        "unreadable": 0,
+        "crop_unavailable": 3,
+        "call_failed": 0,
+        "budget_exhausted": 0,
+        "not_invoked": 0
+      },
+      "review_statuses": [
+        "crop_unavailable",
+        "success",
+        "crop_unavailable",
+        "success",
+        "crop_unavailable"
+      ],
+      "inference_modes": [
+        "cache_replay"
+      ],
+      "vlm_fields": [
+        {
+          "field_name": "图号",
+          "raw_value": "FAN-A23-01",
+          "validation_status": "valid",
+          "bbox": [
+            25.0,
+            492.0,
+            167.0,
+            511.0
+          ]
+        },
+        {
+          "field_name": "断路器编号",
+          "raw_value": "QF-23",
+          "validation_status": "valid",
+          "bbox": [
+            61.0,
+            640.0,
+            192.0,
+            662.0
+          ]
+        }
+      ],
+      "fields_recovered": [
+        "图号",
+        "断路器编号"
+      ],
+      "conflicts": [],
+      "single_source": {
+        "ocr_only": [
+          "页码"
+        ],
+        "vlm_only": [
+          "图号",
+          "断路器编号"
+        ]
+      },
+      "conflict_is_injected": false,
+      "decision_before_review": "fallback",
+      "decision_after_review": "abstain",
+      "decision_transition": "changed_laterally",
+      "single_source_vlm_fields": [
+        "图号",
+        "断路器编号"
+      ],
+      "review_rounds": 1,
+      "expectations": {
+        "ocr_confidence_high": true,
+        "field_completeness_low": true,
+        "review_triggered": true,
+        "crop_must_be_local": true,
+        "whole_page_fallback_forbidden": true,
+        "if_vlm_returns_nothing": "record not recovered; inventing a value is a failure of this case"
+      },
+      "checks": [
+        {
+          "check": "review_triggered",
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        {
+          "check": "no_whole_page_fallback",
+          "expected": "no page-scope crop",
+          "observed": [
+            "label_right",
+            "unavailable"
+          ],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "case_id": "MM2_stamp_contaminated_value",
+      "document_id": "FAN-A24-01",
+      "data_kind": "REAL",
+      "drawing_type": "fan_wiring",
+      "ocr_average_confidence": 0.6141,
+      "ocr_blocks": 16,
+      "field_completeness": 0.0,
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码|版本"
+      ],
+      "invalid_fields": [],
+      "review_triggered": true,
+      "targets": [
+        {
+          "field_name": "名称",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "图号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "控制柜编号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "断路器编号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "电机编号",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        },
+        {
+          "field_name": "页码|版本",
+          "review_reasons": [
+            "required_field_missing"
+          ]
+        }
+      ],
+      "crops": [
+        {
+          "field_name": "名称",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "图号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "控制柜编号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "断路器编号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "电机编号",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        },
+        {
+          "field_name": "页码|版本",
+          "review_reasons": [
+            "required_field_missing"
+          ],
+          "available": false,
+          "region_scope": "unavailable",
+          "reason": "no value, label, cell or row bbox is known",
+          "crop_path": null,
+          "crop_sha256": null,
+          "source_image_sha256": null,
+          "page": 1,
+          "bbox_original": [],
+          "bbox_with_padding": []
+        }
+      ],
+      "review": {
+        "total_review_requests": 6,
+        "disabled": 0,
+        "cache_replay": 0,
+        "real_inference": 0,
+        "success": 0,
+        "schema_failure": 0,
+        "unreadable": 0,
+        "crop_unavailable": 6,
+        "call_failed": 0,
+        "budget_exhausted": 0,
+        "not_invoked": 0
+      },
+      "review_statuses": [
+        "crop_unavailable",
+        "crop_unavailable",
+        "crop_unavailable",
+        "crop_unavailable",
+        "crop_unavailable",
+        "crop_unavailable"
+      ],
+      "inference_modes": [
+        "cache_replay"
+      ],
+      "vlm_fields": [],
+      "fields_recovered": [],
+      "conflicts": [],
+      "single_source": {
+        "ocr_only": [],
+        "vlm_only": []
+      },
+      "conflict_is_injected": false,
+      "decision_before_review": "fallback",
+      "decision_after_review": "abstain",
+      "decision_transition": "changed_laterally",
+      "single_source_vlm_fields": [],
+      "review_rounds": 1,
+      "expectations": {
+        "review_triggered": true,
+        "if_vlm_has_no_valid_value": "decision stays abstain",
+        "vlm_value_must_be_validated": true,
+        "auto_accept_vlm_forbidden": true
+      },
+      "checks": [
+        {
+          "check": "review_triggered",
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        {
+          "check": "vlm_not_auto_adopted",
+          "expected": "all unresolved",
+          "observed": "0 resolved",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "case_id": "MM3_heavy_blur",
+      "document_id": "FAN-A22-01-heavyblur",
+      "data_kind": "REAL",
+      "drawing_type": "unknown",
+      "ocr_average_confidence": 0.0,
+      "ocr_blocks": 0,
+      "field_completeness": 0.0,
+      "missing_fields": [],
+      "invalid_fields": [],
+      "review_triggered": false,
+      "targets": [],
+      "crops": [],
+      "review": {
+        "total_review_requests": 0,
+        "disabled": 0,
+        "cache_replay": 0,
+        "real_inference": 0,
+        "success": 0,
+        "schema_failure": 0,
+        "unreadable": 0,
+        "crop_unavailable": 0,
+        "call_failed": 0,
+        "budget_exhausted": 0,
+        "not_invoked": 0
+      },
+      "review_statuses": [],
+      "inference_modes": [],
+      "vlm_fields": [],
+      "fields_recovered": [],
+      "conflicts": [],
+      "single_source": {
+        "ocr_only": [],
+        "vlm_only": []
+      },
+      "conflict_is_injected": false,
+      "decision_before_review": "fallback",
+      "decision_after_review": "fallback",
+      "decision_transition": "unchanged",
+      "single_source_vlm_fields": [],
+      "review_rounds": 0,
+      "expectations": {
+        "blind_whole_page_vlm_forbidden": true,
+        "acceptable_outcomes": [
+          "crop_unavailable",
+          "human_review",
+          "abstain"
+        ]
+      },
+      "checks": [
+        {
+          "check": "no_whole_page_fallback",
+          "expected": "no page-scope crop",
+          "observed": [
+            "(no crop)"
+          ],
+          "pass": true
+        },
+        {
+          "check": "degraded_page_does_not_guess",
+          "expected": [
+            "crop_unavailable",
+            "human_review",
+            "abstain"
+          ],
+          "observed": [
+            "(no review)"
+          ],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "case_id": "MM4_ocr_right_vlm_wrong",
+      "document_id": "FAN-MULTI-01",
+      "data_kind": "REAL image, SYNTHETIC injected conflict",
+      "drawing_type": "fan_group",
+      "ocr_average_confidence": 0.9998,
+      "ocr_blocks": 28,
+      "field_completeness": 1.0,
+      "missing_fields": [],
+      "invalid_fields": [],
+      "review_triggered": false,
+      "targets": [],
+      "crops": [],
+      "review": {
+        "total_review_requests": 0,
+        "disabled": 0,
+        "cache_replay": 0,
+        "real_inference": 0,
+        "success": 0,
+        "schema_failure": 0,
+        "unreadable": 0,
+        "crop_unavailable": 0,
+        "call_failed": 0,
+        "budget_exhausted": 0,
+        "not_invoked": 0
+      },
+      "review_statuses": [],
+      "inference_modes": [],
+      "vlm_fields": [
+        {
+          "field_name": "图号",
+          "raw_value": "FAN-FS3-01",
+          "validation_status": "valid",
+          "bbox": []
+        }
+      ],
+      "fields_recovered": [],
+      "conflicts": [
+        {
+          "field_name": "图号",
+          "ocr_value": "FAN-F53-01",
+          "vlm_value": "FAN-FS3-01",
+          "resolution": "unresolved"
+        }
+      ],
+      "single_source": {
+        "ocr_only": [
+          "A16.功率",
+          "A16.设备编号",
+          "A16.风量",
+          "A17.功率",
+          "A17.设备编号",
+          "A17.风量",
+          "A18.功率",
+          "A18.设备编号",
+          "A18.风量"
+        ],
+        "vlm_only": []
+      },
+      "conflict_is_injected": true,
+      "decision_before_review": "execute",
+      "decision_after_review": "human_review",
+      "decision_transition": "downgraded",
+      "single_source_vlm_fields": [],
+      "review_rounds": 1,
+      "expectations": {
+        "conflict_recorded": true,
+        "resolution": "unresolved",
+        "vlm_not_auto_adopted": true,
+        "decision_must_not_be_execute": true
+      },
+      "checks": [
+        {
+          "check": "conflict_recorded",
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        {
+          "check": "conflict_blocks_execute",
+          "expected": "not execute",
+          "observed": "human_review",
+          "pass": true
+        },
+        {
+          "check": "vlm_not_auto_adopted",
+          "expected": "all unresolved",
+          "observed": "0 resolved",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "case_id": "MM5_clean_page",
+      "document_id": "FAN-A13-02",
+      "data_kind": "REAL",
+      "drawing_type": "fan_wiring",
+      "ocr_average_confidence": 0.9976,
+      "ocr_blocks": 16,
+      "field_completeness": 1.0,
+      "missing_fields": [],
+      "invalid_fields": [],
+      "review_triggered": false,
+      "targets": [],
+      "crops": [],
+      "review": {
+        "total_review_requests": 0,
+        "disabled": 0,
+        "cache_replay": 0,
+        "real_inference": 0,
+        "success": 0,
+        "schema_failure": 0,
+        "unreadable": 0,
+        "crop_unavailable": 0,
+        "call_failed": 0,
+        "budget_exhausted": 0,
+        "not_invoked": 0
+      },
+      "review_statuses": [],
+      "inference_modes": [],
+      "vlm_fields": [],
+      "fields_recovered": [],
+      "conflicts": [],
+      "single_source": {
+        "ocr_only": [
+          "名称",
+          "图号",
+          "控制柜编号",
+          "断路器编号",
+          "电机编号",
+          "页码"
+        ],
+        "vlm_only": []
+      },
+      "conflict_is_injected": false,
+      "decision_before_review": "execute",
+      "decision_after_review": "execute",
+      "decision_transition": "unchanged",
+      "single_source_vlm_fields": [],
+      "review_rounds": 0,
+      "expectations": {
+        "review_triggered": false,
+        "vlm_calls": 0,
+        "reason": "a simple page must keep taking the cheap path"
+      },
+      "checks": [
+        {
+          "check": "review_triggered",
+          "expected": false,
+          "observed": false,
+          "pass": true
+        },
+        {
+          "check": "no_vlm_call",
+          "expected": 0,
+          "observed": 0,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

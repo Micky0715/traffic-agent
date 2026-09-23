@@ -1,0 +1,95 @@
+{
+  "stage": "review_region_gold_tooling/1.0",
+  "measured_facts": {
+    "human_reviewed_gold_count": 0,
+    "gold_status_summary": {
+      "unreviewed": 11,
+      "human_reviewed": 0,
+      "excluded": 0
+    },
+    "real_vlm_calls": 0,
+    "external_api_calls": 0,
+    "model_downloads": 0,
+    "production_behavior_changed": false,
+    "shipped_availability_numbers_unchanged": true,
+    "shadow_candidates_are_isolated": true
+  },
+  "does_not_modify": [
+    "outputs/vision_freeze_manifest.json",
+    "outputs/table_freeze_manifest.json",
+    "outputs/routing_freeze_manifest.json",
+    "outputs/multimodal_freeze_manifest.json",
+    "outputs/multimodal_region_resolution_freeze_manifest.json",
+    "data/multimodal_cache/vision_review_cache.json"
+  ],
+  "prior_manifest_hashes_observed": {
+    "outputs/vision_freeze_manifest.json": "1039fcc2b5d1bfaf765a269ea3d68902318822f942cdd743de00a3cfd7377db5",
+    "outputs/table_freeze_manifest.json": "de4cb8f24ab1993d9fab2c1edf7574df0e9d2ebbd736150c1a76e548973e23f2",
+    "outputs/routing_freeze_manifest.json": "1353f85886c9e949b3d657ac60ea1f1b848501bb6b762b25214523250d04bb80",
+    "outputs/multimodal_freeze_manifest.json": "7d32b9cc1a22f91515c0caf1e82bb8c3cc3ce298c35cb707611fce7e6bd45050",
+    "outputs/multimodal_region_resolution_freeze_manifest.json": "8179a59f9d55bb53417ec8333365868ef8b4f338ac09ed94221622c9c7c34556"
+  },
+  "groups": {
+    "gold_schema_and_shadow_code": {
+      "files": {
+        "src/tables/cells.py": "1006d0b48ab1e6d18b63131536cd93cd279ce8753a0b0f23ddc35b30306f262b",
+        "src/tables/config.py": "9f1ea601e2af1bcaebe6d3f404d29d0e11e3de12ff9b6273a68f86d1773df034",
+        "src/tables/schemas.py": "9e86ae350e96260e70034bcb0bf810da14352c8116f4df94a1db0a22fd995e3e",
+        "src/vision/region_gold.py": "2522dc10978e1b02e218b245001706fb3ec9e950964f27e8d0a444e3582e3bd9",
+        "src/vision/review_queue.py": "60f8c76c38d55c6bf2ed2f0ae9b73d82c4b539027428b658a107470d81fecc1b",
+        "src/vision/structural_region_candidates.py": "5c151429b0a533d70d3a3ca759ccef1fbd00c31a937fe45ca2ebe152a2741b66"
+      },
+      "file_count": 6,
+      "sha256": "d5e532d889c71e95a3e67a2766a47e5cb838c477dea0605e975801c261d4c4ac"
+    },
+    "shadow_config": {
+      "files": {
+        "configs/structural_shadow.yaml": "69d622bac4ab8923c877343b258e7107a66b135a61d18bee14af2063278100d5"
+      },
+      "file_count": 1,
+      "sha256": "348540d4d372987dabe5855dbf14f6cc1cddf7f2ce3c2ebe8c84589ba42be3de"
+    },
+    "gold_tooling": {
+      "files": {
+        "scripts/build_review_region_annotation_pack.py": "914cd9f15259d2574a1f927cd7b26b1e55d9cf932451b1c5cc1e2da1440ea4d1",
+        "scripts/validate_review_region_gold.py": "ee385bccc74d96b63ec169977c1d0a1c0e398fe2026eea41662f147b01de6e0b",
+        "scripts/evaluate_review_region_localization.py": "cd403b4e7048ea949655dccd9fa0b04a81eb420999d1c46df443b22d8cce39ae",
+        "scripts/structural_region_shadow_report.py": "8e9a8162fefcb1dbf46a9618a2f88fd743d7238fd58b824105f536e961074f1c"
+      },
+      "file_count": 4,
+      "sha256": "4f0b0540e0e2bca11f1702b5a4735c23a3a7778b42dede44c76252fd5109a1d3"
+    },
+    "tests": {
+      "files": {
+        "tests/test_region_gold_and_shadow.py": "a7a190bae0e95619c09346ee30ebe9688b695dee750a357b19edc057906be47c"
+      },
+      "file_count": 1,
+      "sha256": "e99adf94c562b4e35fdd09e538fff98ddd9811f9b17380808b68ad6be943cb9c"
+    },
+    "unreviewed_gold_data": {
+      "files": {
+        "data/review_region_gold_unreviewed.jsonl": "3684b9e7e40728282c843d83dc154b4831cebb6189e228ae05fb99fc54f1bbff"
+      },
+      "file_count": 1,
+      "sha256": "40a519d38ce9ecbf8d9d9e4f39f7bddc456d1ad72feacac97c9bc38049805f39"
+    },
+    "reports": {
+      "files": {
+        "outputs/review_region_localization_eval.json": "b25908d526c4b8c337f9bba63dd6abf5108747ee018563d08454bb441cf246d2",
+        "outputs/structural_region_shadow_report.json": "a65c86e826aed9dec695153a403d42491c5e8175133ad4ddbfb586863c07fe61",
+        "outputs/review_region_annotation_pack/manifest.json": "7ca949053d376eca3eec28370cfaf4e311713b28b9dd8c61af20db3121f89f16"
+      },
+      "file_count": 3,
+      "sha256": "8e411d5bccd409b789613ed2b137b717cd1fa7670223e54a3c154add2824ff3b"
+    },
+    "annotation_guide": {
+      "files": {
+        "docs/review_region_annotation_guide.md": "64102660853be713abbcd35d8c27ada0c17eb7b24c3a219ea864647fb2a94ae4"
+      },
+      "file_count": 1,
+      "sha256": "9d5941ccfbec5e852cd4f93638d6d9cac0b5435bc88c83b8bb37362fccb0a566"
+    }
+  },
+  "human_reviewed_gold_group_is_empty_by_design": "no human-reviewed record exists yet; unreviewed_gold_data holds pending records only. No localisation metric may be reported until that changes.",
+  "frozen_at": "2026-09-16T13:10:11+00:00"
+}

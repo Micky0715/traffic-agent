@@ -1,0 +1,39 @@
+{
+  "id": "ADV01",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "PSD/2026/017",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M/12",
+      "fields": {
+        "电机编号": "M/12"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF/12",
+      "fields": {
+        "断路器编号": "QF/12"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "PSD/CAB/12",
+      "fields": {
+        "控制柜编号": "PSD/CAB/12"
+      }
+    }
+  ],
+  "expected_values": [
+    "PSD/2026/017",
+    "B12屏蔽门接线图",
+    "1/2",
+    "M/12",
+    "QF/12",
+    "PSD/CAB/12"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "heterogeneous_id",
+  "notes": "slash-separated scheme; drawing-number rule expects hyphen segments"
+}

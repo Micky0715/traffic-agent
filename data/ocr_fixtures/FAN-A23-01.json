@@ -1,0 +1,144 @@
+{
+  "provenance": {
+    "image": "FAN-A23-01.png",
+    "image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+    "generated_at": "2026-09-14T14:31:38+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 33.38,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A23风机接线图\n电机 M-23\n严禁外传内部资料严禁外传内部资料\n部资料严禁外传内部资料严禁外传内部资料\n内部资料严禁外传内部资料严禁外传内部资料\n图号\n页码\n1/1\n断路器编号\n内部资料严禁外传内部资料\n严禁外传内部资料",
+    "blocks": [
+      {
+        "text": "A23风机接线图",
+        "bbox": [
+          18.0,
+          19.0,
+          238.0,
+          61.0
+        ],
+        "confidence": 0.9999784231185913
+      },
+      {
+        "text": "电机 M-23",
+        "bbox": [
+          53.0,
+          97.0,
+          143.0,
+          121.0
+        ],
+        "confidence": 0.9828374981880188
+      },
+      {
+        "text": "严禁外传内部资料严禁外传内部资料",
+        "bbox": [
+          0.0,
+          0.0,
+          416.0,
+          257.0
+        ],
+        "confidence": 0.9998657703399658
+      },
+      {
+        "text": "部资料严禁外传内部资料严禁外传内部资料",
+        "bbox": [
+          0.0,
+          118.0,
+          489.0,
+          433.0
+        ],
+        "confidence": 0.9999222755432129
+      },
+      {
+        "text": "内部资料严禁外传内部资料严禁外传内部资料",
+        "bbox": [
+          2.0,
+          185.0,
+          526.0,
+          509.0
+        ],
+        "confidence": 0.9999178647994995
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          43.0,
+          486.0,
+          96.0,
+          520.0
+        ],
+        "confidence": 0.9999769926071167
+      },
+      {
+        "text": "页码",
+        "bbox": [
+          43.0,
+          555.0,
+          91.0,
+          582.0
+        ],
+        "confidence": 0.9721235036849976
+      },
+      {
+        "text": "1/1",
+        "bbox": [
+          214.0,
+          553.0,
+          254.0,
+          583.0
+        ],
+        "confidence": 0.9991099238395691
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          45.0,
+          616.0,
+          150.0,
+          644.0
+        ],
+        "confidence": 0.999876856803894
+      },
+      {
+        "text": "内部资料严禁外传内部资料",
+        "bbox": [
+          385.0,
+          508.0,
+          711.0,
+          700.0
+        ],
+        "confidence": 0.9997818470001221
+      },
+      {
+        "text": "严禁外传内部资料",
+        "bbox": [
+          528.0,
+          574.0,
+          745.0,
+          700.0
+        ],
+        "confidence": 0.9997402429580688
+      }
+    ],
+    "average_confidence": 0.9957391998984597,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

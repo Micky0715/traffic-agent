@@ -1,0 +1,2230 @@
+{
+  "note": "Structured BM25 vertical slice over REAL parsed drawing output. Zero API calls.",
+  "capabilities": {
+    "retriever": {
+      "name": "bm25_local",
+      "algorithm": "okapi_bm25",
+      "backend": "in_process",
+      "tokenizer": "latin_code_runs_plus_cjk_unigram",
+      "stopwords_enabled": true
+    },
+    "elasticsearch": "not_connected",
+    "milvus": "not_connected",
+    "bge_embedding": "not_loaded",
+    "reranker": "not_invoked",
+    "vlm": "not_invoked",
+    "dense_retriever": "not_used_in_this_mode",
+    "human_reviewed_gold": false,
+    "recall_at_5": "not_computed_no_independent_gold",
+    "cache_used": "ocr fixtures are a replay of a recorded real PaddleOCR run; no live OCR in this path"
+  },
+  "corpus": {
+    "source": "data/ocr_fixtures/*.json — replay of a recorded real PaddleOCR 3.7.0 run, stamped with image sha256, library and model versions, device and generation time",
+    "is_live_inference": false,
+    "is_enterprise_data": false,
+    "real_documents": 11,
+    "real_chunks": 63,
+    "synthetic_chunks": 0,
+    "mock_chunks": 0,
+    "field_pairs": 54,
+    "pairs_with_bbox": 54,
+    "chunk_type_distribution": {
+      "drawing_metadata": 9,
+      "drawing_field": 54
+    },
+    "documents": [
+      {
+        "document_id": "FAN-A13-02",
+        "drawing_no": "FAN-A13-02",
+        "drawing_type": "fan_wiring",
+        "chunk_count": 7,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9976,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A19-01",
+        "drawing_no": "FAN-A19-01",
+        "drawing_type": "fan_wiring",
+        "chunk_count": 7,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9857,
+        "invalid_fields": [
+          "控制柜编号"
+        ],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A22-01-heavyblur",
+        "drawing_no": null,
+        "drawing_type": "unknown",
+        "chunk_count": 0,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.0,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A23-01",
+        "drawing_no": null,
+        "drawing_type": "fan_wiring",
+        "chunk_count": 2,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9957,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A24-01",
+        "drawing_no": null,
+        "drawing_type": "fan_wiring",
+        "chunk_count": 0,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.6141,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A25-01",
+        "drawing_no": "FAN-A25-01",
+        "drawing_type": "fan_wiring",
+        "chunk_count": 7,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9978,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A26-01",
+        "drawing_no": "FAN-A26-01",
+        "drawing_type": "fan_wiring",
+        "chunk_count": 7,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.998,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A27-01-skewed",
+        "drawing_no": "FAN-A27-01",
+        "drawing_type": "fan_wiring",
+        "chunk_count": 7,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9969,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-A28-01-borderless",
+        "drawing_no": "FAN-A28-01",
+        "drawing_type": "fan_param_table",
+        "chunk_count": 6,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9977,
+        "invalid_fields": [],
+        "entities": []
+      },
+      {
+        "document_id": "FAN-MULTI-01",
+        "drawing_no": null,
+        "drawing_type": "fan_group",
+        "chunk_count": 10,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9998,
+        "invalid_fields": [],
+        "entities": [
+          "A16",
+          "A17",
+          "A18"
+        ]
+      },
+      {
+        "document_id": "PUMP-MULTI-02",
+        "drawing_no": null,
+        "drawing_type": "pump_group",
+        "chunk_count": 10,
+        "ocr_engine": "paddleocr-fixture",
+        "ocr_confidence": 0.9995,
+        "invalid_fields": [],
+        "entities": [
+          "20",
+          "2A",
+          "2B"
+        ]
+      }
+    ],
+    "skipped": []
+  },
+  "traceability": {
+    "page_coverage": {
+      "numerator": 63,
+      "denominator": 63
+    },
+    "bbox_coverage_field_chunks": {
+      "numerator": 54,
+      "denominator": 54
+    }
+  },
+  "irrelevant_recall_root_cause": {
+    "query": "完全不存在的查询词组合",
+    "tokens_without_stopwords": [
+      "完",
+      "全",
+      "不",
+      "存",
+      "在",
+      "的",
+      "查",
+      "询",
+      "词",
+      "组",
+      "合"
+    ],
+    "tokens_with_stopwords": [
+      "完",
+      "全",
+      "存",
+      "询",
+      "词",
+      "组",
+      "合"
+    ],
+    "explanation": "CJK tokenizes per character; 的/不 are shared with almost any Chinese text, so BM25 scored above zero against everything and returned its top K",
+    "primary_defence": "eligibility gate — a chunk must be about the right entity and cover a requested field",
+    "secondary_defence": "configured stopwords in the tokenizer",
+    "score_threshold": {
+      "value": null,
+      "status": "uncalibrated",
+      "reason": "a floor needs calibration on a dev set; choosing one because a single query misbehaved is guesswork"
+    }
+  },
+  "showcase": {
+    "execute": {
+      "query": "查询A13风机接线图的电机编号",
+      "query_plan": {
+        "raw_query": "查询A13风机接线图的电机编号",
+        "normalized_query": "查询A13风机接线图的电机编号",
+        "task_type": "drawing_field_query",
+        "asset_id": "A13风机",
+        "asset_candidates": [
+          "A13风机"
+        ],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [
+          "电机编号"
+        ],
+        "field_requests": [
+          {
+            "surface": "电机编号",
+            "field_name": "电机编号",
+            "match_method": "exact"
+          }
+        ],
+        "unmatched_field_terms": [],
+        "notes": []
+      },
+      "entity_resolution": {
+        "status": "present",
+        "entity": "A13风机接线图",
+        "matched_by": "partial",
+        "queried": "A13风机",
+        "matched_names": [
+          "A13风机接线图"
+        ],
+        "document_ids": [
+          "FAN-A13-02"
+        ]
+      },
+      "retrieved_candidate_count": 20,
+      "eligible_evidence_count": 1,
+      "retrieved_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:360cd40f938b5678",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；名称 A13风机接线图",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            534.0,
+            341.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A13风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 12.43042,
+          "bm25_rank": 1
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:91e14567ef13abc1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；名称 A19风机接线图",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            207.0,
+            533.0,
+            342.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A19风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 2
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:50bcad95ca4318b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；名称 A25风机接线图",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            206.0,
+            535.0,
+            340.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A25风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 3
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:450087c7015e4d9f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；名称 A26风机接线图",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            209.0,
+            532.0,
+            343.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A26风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 4
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:3eaf6b2311df783c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；名称 A27风机接线图",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            228.0,
+            572.0,
+            368.0,
+            600.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A27风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 5
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:360cd40f938b5678",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；名称 A13风机接线图",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            534.0,
+            341.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A13风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 12.43042,
+          "bm25_rank": 1,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:91e14567ef13abc1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；名称 A19风机接线图",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            207.0,
+            533.0,
+            342.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A19风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 2,
+          "rejected_because": [
+            "ENTITY_MISMATCH",
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:50bcad95ca4318b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；名称 A25风机接线图",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            206.0,
+            535.0,
+            340.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A25风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 3,
+          "rejected_because": [
+            "ENTITY_MISMATCH",
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:450087c7015e4d9f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；名称 A26风机接线图",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            209.0,
+            532.0,
+            343.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A26风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 4,
+          "rejected_because": [
+            "ENTITY_MISMATCH",
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:3eaf6b2311df783c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；名称 A27风机接线图",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            228.0,
+            572.0,
+            368.0,
+            600.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A27风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 9.280699,
+          "bm25_rank": 5,
+          "rejected_because": [
+            "ENTITY_MISMATCH",
+            "FIELD_NOT_COVERED"
+          ]
+        }
+      ],
+      "eligible_evidence": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；电机编号 M-13",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-13",
+          "parser_source": "ocr",
+          "bm25_score": 7.375818,
+          "bm25_rank": 6,
+          "matched_fields": [
+            "电机编号"
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "execute",
+        "routing_decision": "execute",
+        "answerable_fields": {
+          "电机编号": "M-13"
+        },
+        "missing_fields": [],
+        "conflicts": [],
+        "unmet_requirements": [],
+        "reason_codes": [],
+        "evidence_refs": [
+          {
+            "document_id": "FAN-A13-02",
+            "page": 1,
+            "bbox": [
+              206.0,
+              597.0,
+              261.0,
+              622.0
+            ],
+            "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+            "source": "ocr"
+          }
+        ],
+        "remediation": [],
+        "retrieved_candidate_count": 20,
+        "eligible_evidence_count": 1
+      },
+      "latency_ms": 4.144
+    },
+    "clarify_missing_device": {
+      "query": "查询电机编号",
+      "query_plan": {
+        "raw_query": "查询电机编号",
+        "normalized_query": "查询电机编号",
+        "task_type": "drawing_field_query",
+        "asset_id": null,
+        "asset_candidates": [],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [
+          "电机编号"
+        ],
+        "field_requests": [
+          {
+            "surface": "电机编号",
+            "field_name": "电机编号",
+            "match_method": "exact"
+          }
+        ],
+        "unmatched_field_terms": [],
+        "notes": [
+          "no_entity_in_query"
+        ]
+      },
+      "entity_resolution": {
+        "status": "absent_from_query",
+        "entity": null,
+        "document_ids": []
+      },
+      "retrieved_candidate_count": 20,
+      "eligible_evidence_count": 6,
+      "retrieved_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；电机编号 M-13",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-13",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 1
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:1036d3da958def64",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；电机编号 M-19",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            598.0,
+            263.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-19",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 2
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:324ad1753ea6c3e5",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；电机编号 M-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            204.0,
+            598.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-25",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 3
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:21d2e698d63d7a3f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；电机编号 M-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            597.0,
+            263.0,
+            621.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-26",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 4
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:ac30b63574c41e0e",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；电机编号 M-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            229.0,
+            643.0,
+            287.0,
+            669.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-27",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 5
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:360cd40f938b5678",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；名称 A13风机接线图",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            534.0,
+            341.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A13风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 1.733995,
+          "bm25_rank": 7,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:91e14567ef13abc1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；名称 A19风机接线图",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            207.0,
+            533.0,
+            342.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A19风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 1.733995,
+          "bm25_rank": 8,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:50bcad95ca4318b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；名称 A25风机接线图",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            206.0,
+            535.0,
+            340.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A25风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 1.733995,
+          "bm25_rank": 9,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:450087c7015e4d9f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；名称 A26风机接线图",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            209.0,
+            532.0,
+            343.0,
+            558.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A26风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 1.733995,
+          "bm25_rank": 10,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:3eaf6b2311df783c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；名称 A27风机接线图",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            228.0,
+            572.0,
+            368.0,
+            600.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A27风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 1.733995,
+          "bm25_rank": 11,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        }
+      ],
+      "eligible_evidence": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；电机编号 M-13",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-13",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 1,
+          "matched_fields": [
+            "电机编号"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:1036d3da958def64",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；电机编号 M-19",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            598.0,
+            263.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-19",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 2,
+          "matched_fields": [
+            "电机编号"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:324ad1753ea6c3e5",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；电机编号 M-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            204.0,
+            598.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-25",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 3,
+          "matched_fields": [
+            "电机编号"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:21d2e698d63d7a3f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；电机编号 M-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            597.0,
+            263.0,
+            621.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-26",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 4,
+          "matched_fields": [
+            "电机编号"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:ac30b63574c41e0e",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；电机编号 M-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            229.0,
+            643.0,
+            287.0,
+            669.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-27",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 5,
+          "matched_fields": [
+            "电机编号"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A28-01-borderless:4fb9ac3163c9d3a7",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A28-01；电机编号 M-28",
+          "document_id": "FAN-A28-01-borderless",
+          "page": 1,
+          "bbox": [
+            280.0,
+            210.0,
+            346.0,
+            250.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-28",
+          "parser_source": "ocr",
+          "bm25_score": 5.412,
+          "bm25_rank": 6,
+          "matched_fields": [
+            "电机编号"
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "clarify",
+        "routing_decision": "clarify",
+        "answerable_fields": {},
+        "missing_fields": [
+          "电机编号"
+        ],
+        "conflicts": [],
+        "unmet_requirements": [],
+        "reason_codes": [
+          "ENTITY_MISSING_FROM_QUERY"
+        ],
+        "evidence_refs": [],
+        "remediation": [
+          "ask_user"
+        ],
+        "retrieved_candidate_count": 20,
+        "eligible_evidence_count": 6
+      },
+      "latency_ms": 0.747
+    },
+    "partial": {
+      "query": "查询A28风机参数表的控制柜编号和页码",
+      "query_plan": {
+        "raw_query": "查询A28风机参数表的控制柜编号和页码",
+        "normalized_query": "查询A28风机参数表的控制柜编号和页码",
+        "task_type": "drawing_field_query",
+        "asset_id": "A28风机",
+        "asset_candidates": [
+          "A28风机"
+        ],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [
+          "控制柜编号",
+          "页码"
+        ],
+        "field_requests": [
+          {
+            "surface": "控制柜编号",
+            "field_name": "控制柜编号",
+            "match_method": "exact"
+          },
+          {
+            "surface": "页码",
+            "field_name": "页码",
+            "match_method": "exact"
+          }
+        ],
+        "unmatched_field_terms": [],
+        "notes": []
+      },
+      "entity_resolution": {
+        "status": "present",
+        "entity": "A28风机参数表",
+        "matched_by": "partial",
+        "queried": "A28风机",
+        "matched_names": [
+          "A28风机参数表"
+        ],
+        "document_ids": [
+          "FAN-A28-01-borderless"
+        ]
+      },
+      "retrieved_candidate_count": 20,
+      "eligible_evidence_count": 1,
+      "retrieved_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A28-01-borderless:08f9ba494b0943a4",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A28-01；名称 A28风机参数表",
+          "document_id": "FAN-A28-01-borderless",
+          "page": 1,
+          "bbox": [
+            283.0,
+            158.0,
+            434.0,
+            190.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A28风机参数表",
+          "parser_source": "ocr",
+          "bm25_score": 15.933656,
+          "bm25_rank": 1
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:b3890ab86a82b802",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；控制柜编号 FAN-CAB-3",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            660.0,
+            315.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-3",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 2
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:e79987d79a3d7d76",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；控制柜编号 FAN-CAB-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            203.0,
+            658.0,
+            330.0,
+            689.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-25",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 3
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:30fe1badde13b5b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；控制柜编号 FAN-CAB-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            659.0,
+            327.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-26",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 4
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:0f1a3700f89e7fcc",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；控制柜编号 FAN-CAB-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            233.0,
+            714.0,
+            357.0,
+            735.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-27",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 5
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A28-01-borderless:08f9ba494b0943a4",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A28-01；名称 A28风机参数表",
+          "document_id": "FAN-A28-01-borderless",
+          "page": 1,
+          "bbox": [
+            283.0,
+            158.0,
+            434.0,
+            190.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A28风机参数表",
+          "parser_source": "ocr",
+          "bm25_score": 15.933656,
+          "bm25_rank": 1,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:b3890ab86a82b802",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；控制柜编号 FAN-CAB-3",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            660.0,
+            315.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-3",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 2,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:e79987d79a3d7d76",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；控制柜编号 FAN-CAB-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            203.0,
+            658.0,
+            330.0,
+            689.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-25",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 3,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:30fe1badde13b5b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；控制柜编号 FAN-CAB-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            659.0,
+            327.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-26",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 4,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:0f1a3700f89e7fcc",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；控制柜编号 FAN-CAB-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            233.0,
+            714.0,
+            357.0,
+            735.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-27",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 5,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        }
+      ],
+      "eligible_evidence": [
+        {
+          "chunk_id": "drawing_field:FAN-A28-01-borderless:c63fb78134bbbdc6",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A28-01；控制柜编号 FAN-CAB-28",
+          "document_id": "FAN-A28-01-borderless",
+          "page": 1,
+          "bbox": [
+            280.0,
+            322.0,
+            414.0,
+            354.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-28",
+          "parser_source": "ocr",
+          "bm25_score": 7.863146,
+          "bm25_rank": 6,
+          "matched_fields": [
+            "控制柜编号"
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "partial",
+        "routing_decision": "partial",
+        "answerable_fields": {
+          "控制柜编号": "FAN-CAB-28"
+        },
+        "missing_fields": [
+          "页码"
+        ],
+        "conflicts": [],
+        "unmet_requirements": [],
+        "reason_codes": [
+          "PARTIAL_FIELD_COVERAGE"
+        ],
+        "evidence_refs": [
+          {
+            "document_id": "FAN-A28-01-borderless",
+            "page": 1,
+            "bbox": [
+              280.0,
+              322.0,
+              414.0,
+              354.0
+            ],
+            "chunk_id": "drawing_field:FAN-A28-01-borderless:c63fb78134bbbdc6",
+            "source": "ocr"
+          }
+        ],
+        "remediation": [],
+        "retrieved_candidate_count": 20,
+        "eligible_evidence_count": 1
+      },
+      "latency_ms": 1.098
+    },
+    "abstain_unknown_device": {
+      "query": "查询A99风机的电机编号",
+      "query_plan": {
+        "raw_query": "查询A99风机的电机编号",
+        "normalized_query": "查询A99风机的电机编号",
+        "task_type": "drawing_field_query",
+        "asset_id": "A99风机",
+        "asset_candidates": [
+          "A99风机"
+        ],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [
+          "电机编号"
+        ],
+        "field_requests": [
+          {
+            "surface": "电机编号",
+            "field_name": "电机编号",
+            "match_method": "exact"
+          }
+        ],
+        "unmatched_field_terms": [],
+        "notes": []
+      },
+      "entity_resolution": {
+        "status": "unknown_entity",
+        "entity": "A99风机",
+        "document_ids": []
+      },
+      "retrieved_candidate_count": 20,
+      "eligible_evidence_count": 0,
+      "retrieved_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；电机编号 M-13",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-13",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 1
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:1036d3da958def64",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；电机编号 M-19",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            598.0,
+            263.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-19",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 2
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:324ad1753ea6c3e5",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；电机编号 M-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            204.0,
+            598.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-25",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 3
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:21d2e698d63d7a3f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；电机编号 M-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            597.0,
+            263.0,
+            621.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-26",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 4
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:ac30b63574c41e0e",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；电机编号 M-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            229.0,
+            643.0,
+            287.0,
+            669.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-27",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 5
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:09006c464cd6f04c",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；电机编号 M-13",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-13",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 1,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:1036d3da958def64",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；电机编号 M-19",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            598.0,
+            263.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-19",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 2,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:324ad1753ea6c3e5",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；电机编号 M-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            204.0,
+            598.0,
+            261.0,
+            622.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-25",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 3,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:21d2e698d63d7a3f",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；电机编号 M-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            597.0,
+            263.0,
+            621.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-26",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 4,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:ac30b63574c41e0e",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；电机编号 M-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            229.0,
+            643.0,
+            287.0,
+            669.0
+          ],
+          "entity_id": null,
+          "field_name": "电机编号",
+          "field_value": "M-27",
+          "parser_source": "ocr",
+          "bm25_score": 7.018381,
+          "bm25_rank": 5,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        }
+      ],
+      "eligible_evidence": [],
+      "decision": {
+        "decision": "abstain",
+        "routing_decision": "fallback",
+        "answerable_fields": {},
+        "missing_fields": [
+          "电机编号"
+        ],
+        "conflicts": [],
+        "unmet_requirements": [],
+        "reason_codes": [
+          "ENTITY_NOT_IN_CORPUS"
+        ],
+        "evidence_refs": [],
+        "remediation": [],
+        "retrieved_candidate_count": 20,
+        "eligible_evidence_count": 0
+      },
+      "latency_ms": 0.663
+    },
+    "abstain_invalid_value": {
+      "query": "查询A19风机接线图的控制柜编号",
+      "query_plan": {
+        "raw_query": "查询A19风机接线图的控制柜编号",
+        "normalized_query": "查询A19风机接线图的控制柜编号",
+        "task_type": "drawing_field_query",
+        "asset_id": "A19风机",
+        "asset_candidates": [
+          "A19风机"
+        ],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [
+          "控制柜编号"
+        ],
+        "field_requests": [
+          {
+            "surface": "控制柜编号",
+            "field_name": "控制柜编号",
+            "match_method": "exact"
+          }
+        ],
+        "unmatched_field_terms": [],
+        "notes": []
+      },
+      "entity_resolution": {
+        "status": "present",
+        "entity": "A19风机接线图",
+        "matched_by": "partial",
+        "queried": "A19风机",
+        "matched_names": [
+          "A19风机接线图"
+        ],
+        "document_ids": [
+          "FAN-A19-01"
+        ]
+      },
+      "retrieved_candidate_count": 20,
+      "eligible_evidence_count": 0,
+      "retrieved_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:91e14567ef13abc1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；名称 A19风机接线图",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            207.0,
+            533.0,
+            342.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A19风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 11.059941,
+          "bm25_rank": 1
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:b3890ab86a82b802",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；控制柜编号 FAN-CAB-3",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            660.0,
+            315.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-3",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 2
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:e79987d79a3d7d76",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；控制柜编号 FAN-CAB-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            203.0,
+            658.0,
+            330.0,
+            689.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-25",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 3
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:30fe1badde13b5b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；控制柜编号 FAN-CAB-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            659.0,
+            327.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-26",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 4
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:0f1a3700f89e7fcc",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；控制柜编号 FAN-CAB-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            233.0,
+            714.0,
+            357.0,
+            735.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-27",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 5
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "chunk_id": "drawing_field:FAN-A19-01:91e14567ef13abc1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A19-01；名称 A19风机接线图",
+          "document_id": "FAN-A19-01",
+          "page": 1,
+          "bbox": [
+            207.0,
+            533.0,
+            342.0,
+            559.0
+          ],
+          "entity_id": null,
+          "field_name": "名称",
+          "field_value": "A19风机接线图",
+          "parser_source": "ocr",
+          "bm25_score": 11.059941,
+          "bm25_rank": 1,
+          "rejected_because": [
+            "FIELD_NOT_COVERED"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A13-02:b3890ab86a82b802",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A13-02；控制柜编号 FAN-CAB-3",
+          "document_id": "FAN-A13-02",
+          "page": 1,
+          "bbox": [
+            207.0,
+            660.0,
+            315.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-3",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 2,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A25-01:e79987d79a3d7d76",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A25-01；控制柜编号 FAN-CAB-25",
+          "document_id": "FAN-A25-01",
+          "page": 1,
+          "bbox": [
+            203.0,
+            658.0,
+            330.0,
+            689.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-25",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 3,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A26-01:30fe1badde13b5b1",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A26-01；控制柜编号 FAN-CAB-26",
+          "document_id": "FAN-A26-01",
+          "page": 1,
+          "bbox": [
+            208.0,
+            659.0,
+            327.0,
+            683.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-26",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 4,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        },
+        {
+          "chunk_id": "drawing_field:FAN-A27-01-skewed:0f1a3700f89e7fcc",
+          "content_type": "drawing_field",
+          "text": "图号 FAN-A27-01；控制柜编号 FAN-CAB-27",
+          "document_id": "FAN-A27-01-skewed",
+          "page": 1,
+          "bbox": [
+            233.0,
+            714.0,
+            357.0,
+            735.0
+          ],
+          "entity_id": null,
+          "field_name": "控制柜编号",
+          "field_value": "FAN-CAB-27",
+          "parser_source": "ocr",
+          "bm25_score": 8.201187,
+          "bm25_rank": 5,
+          "rejected_because": [
+            "ENTITY_MISMATCH"
+          ]
+        }
+      ],
+      "eligible_evidence": [],
+      "decision": {
+        "decision": "abstain",
+        "routing_decision": "fallback",
+        "answerable_fields": {},
+        "missing_fields": [
+          "控制柜编号"
+        ],
+        "conflicts": [],
+        "unmet_requirements": [
+          "target_field_present",
+          "source_traceable"
+        ],
+        "reason_codes": [
+          "REQUIRED_EVIDENCE_MISSING",
+          "NO_ELIGIBLE_EVIDENCE"
+        ],
+        "evidence_refs": [],
+        "remediation": [
+          "hybrid_retrieval",
+          "parent_expansion",
+          "local_vlm_reidentify:not_invoked"
+        ],
+        "retrieved_candidate_count": 20,
+        "eligible_evidence_count": 0
+      },
+      "latency_ms": 0.762
+    },
+    "irrelevant_query": {
+      "query": "完全不存在的查询词组合",
+      "query_plan": {
+        "raw_query": "完全不存在的查询词组合",
+        "normalized_query": "完全不存在的查询词组合",
+        "task_type": "drawing_field_query",
+        "asset_id": null,
+        "asset_candidates": [],
+        "drawing_no": null,
+        "regulation_code": null,
+        "required_fields": [],
+        "field_requests": [],
+        "unmatched_field_terms": [],
+        "notes": [
+          "no_target_field_specified",
+          "no_entity_in_query"
+        ]
+      },
+      "entity_resolution": {
+        "status": "absent_from_query",
+        "entity": null,
+        "document_ids": []
+      },
+      "retrieved_candidate_count": 0,
+      "eligible_evidence_count": 0,
+      "retrieved_candidates": [],
+      "rejected_candidates": [],
+      "eligible_evidence": [],
+      "decision": {
+        "decision": "clarify",
+        "routing_decision": "clarify",
+        "answerable_fields": {},
+        "missing_fields": [],
+        "conflicts": [],
+        "unmet_requirements": [],
+        "reason_codes": [
+          "ENTITY_MISSING_FROM_QUERY"
+        ],
+        "evidence_refs": [],
+        "remediation": [
+          "ask_user"
+        ],
+        "retrieved_candidate_count": 0,
+        "eligible_evidence_count": 0
+      },
+      "latency_ms": 0.215
+    }
+  },
+  "derived_regression": {
+    "label_source": "derived_from_existing_gold",
+    "purpose": "regression_only",
+    "caveat": "questions were written FROM the answers; this catches regressions and cannot show generalization",
+    "case_count": 30,
+    "decision_distribution": {
+      "execute": 22,
+      "abstain": 5,
+      "clarify": 3
+    },
+    "execute_count": 22,
+    "value_match_within_execute": {
+      "numerator": 22,
+      "denominator": 22
+    },
+    "document_match_within_execute": {
+      "numerator": 22,
+      "denominator": 22
+    },
+    "retrieved_vs_eligible": {
+      "mean_retrieved": 18.27,
+      "mean_eligible": 1.13
+    },
+    "latency_ms": {
+      "p50": 0.737,
+      "p95": 0.907
+    },
+    "rows": [
+      {
+        "case_id": "DRV-000",
+        "query": "查询A13风机接线图的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A13-02",
+        "decision": "execute",
+        "answered_value": "FAN-A13-02",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A13-02",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-001",
+        "query": "查询A13风机接线图的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "FAN-CAB-3",
+        "decision": "execute",
+        "answered_value": "FAN-CAB-3",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A13-02",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-002",
+        "query": "查询A13风机接线图的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-13",
+        "decision": "execute",
+        "answered_value": "QF-13",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A13-02",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-003",
+        "query": "查询A13风机接线图的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-13",
+        "decision": "execute",
+        "answered_value": "M-13",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A13-02",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-004",
+        "query": "查询A19风机接线图的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A19-01",
+        "decision": "execute",
+        "answered_value": "FAN-A19-01",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A19-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-005",
+        "query": "查询A19风机接线图的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "审核专用毫AB9",
+        "decision": "abstain",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 20,
+        "eligible": 0,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-006",
+        "query": "查询A19风机接线图的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-19",
+        "decision": "execute",
+        "answered_value": "QF-19",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A19-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-007",
+        "query": "查询A19风机接线图的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-19",
+        "decision": "execute",
+        "answered_value": "M-19",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A19-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-008",
+        "query": "查询A25风机接线图的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A25-01",
+        "decision": "execute",
+        "answered_value": "FAN-A25-01",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A25-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-009",
+        "query": "查询A25风机接线图的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "FAN-CAB-25",
+        "decision": "execute",
+        "answered_value": "FAN-CAB-25",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A25-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-010",
+        "query": "查询A25风机接线图的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-25",
+        "decision": "execute",
+        "answered_value": "QF-25",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A25-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-011",
+        "query": "查询A25风机接线图的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-25",
+        "decision": "execute",
+        "answered_value": "M-25",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A25-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-012",
+        "query": "查询A26风机接线图的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A26-01",
+        "decision": "execute",
+        "answered_value": "FAN-A26-01",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A26-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-013",
+        "query": "查询A26风机接线图的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "FAN-CAB-26",
+        "decision": "execute",
+        "answered_value": "FAN-CAB-26",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A26-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-014",
+        "query": "查询A26风机接线图的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-26",
+        "decision": "execute",
+        "answered_value": "QF-26",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A26-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-015",
+        "query": "查询A26风机接线图的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-26",
+        "decision": "execute",
+        "answered_value": "M-26",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A26-01",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-016",
+        "query": "查询A27风机接线图的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A27-01",
+        "decision": "execute",
+        "answered_value": "FAN-A27-01",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A27-01-skewed",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-017",
+        "query": "查询A27风机接线图的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "FAN-CAB-27",
+        "decision": "execute",
+        "answered_value": "FAN-CAB-27",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A27-01-skewed",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-018",
+        "query": "查询A27风机接线图的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-27",
+        "decision": "execute",
+        "answered_value": "QF-27",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A27-01-skewed",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-019",
+        "query": "查询A27风机接线图的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-27",
+        "decision": "execute",
+        "answered_value": "M-27",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A27-01-skewed",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-020",
+        "query": "查询A28风机参数表的图号",
+        "expected_field": "图号",
+        "expected_value": "FAN-A28-01",
+        "decision": "abstain",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 20,
+        "eligible": 0,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-021",
+        "query": "查询A28风机参数表的控制柜编号",
+        "expected_field": "控制柜编号",
+        "expected_value": "FAN-CAB-28",
+        "decision": "execute",
+        "answered_value": "FAN-CAB-28",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A28-01-borderless",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-022",
+        "query": "查询A28风机参数表的断路器编号",
+        "expected_field": "断路器编号",
+        "expected_value": "QF-28",
+        "decision": "execute",
+        "answered_value": "QF-28",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A28-01-borderless",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-023",
+        "query": "查询A28风机参数表的电机编号",
+        "expected_field": "电机编号",
+        "expected_value": "M-28",
+        "decision": "execute",
+        "answered_value": "M-28",
+        "value_matches": true,
+        "retrieved": 20,
+        "eligible": 1,
+        "evidence_document": "FAN-A28-01-borderless",
+        "document_matches": true
+      },
+      {
+        "case_id": "DRV-024",
+        "query": "查询FAN-MULTI-01的功率",
+        "expected_field": "功率",
+        "expected_value": "37kW",
+        "decision": "abstain",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 4,
+        "eligible": 0,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-025",
+        "query": "查询FAN-MULTI-01的设备编号",
+        "expected_field": "设备编号",
+        "expected_value": "A18",
+        "decision": "abstain",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 20,
+        "eligible": 0,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-026",
+        "query": "查询FAN-MULTI-01的风量",
+        "expected_field": "风量",
+        "expected_value": "24000m³/h",
+        "decision": "abstain",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 13,
+        "eligible": 0,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-027",
+        "query": "查询PUMP-MULTI-02的扬程",
+        "expected_field": "扬程",
+        "expected_value": "24m",
+        "decision": "clarify",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 4,
+        "eligible": 3,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-028",
+        "query": "查询PUMP-MULTI-02的流量",
+        "expected_field": "流量",
+        "expected_value": "80m³/h",
+        "decision": "clarify",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 7,
+        "eligible": 3,
+        "evidence_document": null,
+        "document_matches": false
+      },
+      {
+        "case_id": "DRV-029",
+        "query": "查询PUMP-MULTI-02的设备编号",
+        "expected_field": "设备编号",
+        "expected_value": "2B",
+        "decision": "clarify",
+        "answered_value": null,
+        "value_matches": false,
+        "retrieved": 20,
+        "eligible": 6,
+        "evidence_document": null,
+        "document_matches": false
+      }
+    ]
+  },
+  "unreviewed_candidates": {
+    "path": "data/rag_eval_candidates_unreviewed.jsonl",
+    "count": 42,
+    "label_status": "unreviewed",
+    "human_reviewed_gold": false,
+    "warning": "machine-proposed expectations. No Recall@5, refusal rate or accuracy may be computed from these until a person has reviewed them. They are NOT gold."
+  },
+  "recall_at_5": "not_computed_no_human_reviewed_gold"
+}

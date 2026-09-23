@@ -1,0 +1,2745 @@
+{
+  "elapsed_seconds": 20.7,
+  "case_count": 11,
+  "ocr_engine": "fixture",
+  "experiments": {
+    "A": {
+      "description": "Original -> OCR(fixture) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7954545454545454,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.9375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.25,
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9969040314356487,
+          "table_confidence": 0.0,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.6141112623736262,
+          "table_confidence": 0.2421166893560439,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "B": {
+      "description": "Preprocess(real) -> OCR(fixture) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7272727272727273,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.25,
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.997427237033844,
+          "table_confidence": 0.29961408555507657,
+          "operations_applied": [
+            "deskew"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.30964305996894836,
+          "table_confidence": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "C": {
+      "description": "Original -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7772727272727273,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.825,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 0.8,
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "D": {
+      "description": "Preprocess(real) -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7090909090909091,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.6375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 0.8,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "E": {
+      "description": "OCR(fixture)+TableParser(real) -> QualityJudge routing(real) -> VLM Fallback(real when triggered) -> Validator(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.8409090909090909,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7857142857142857,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.9375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "results": [
+        {
+          "legacy_containment_hit_rate": 0.75,
+          "structured_candidate_recall": 0.75,
+          "conflict_free_exact_rate": 0.75,
+          "ocr_only_score": 0.75,
+          "need_vlm": true,
+          "route_reasons": [
+            "invalid_field_value"
+          ],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 0.8,
+          "invalid_fields": [
+            "控制柜编号"
+          ],
+          "invalid_details": [
+            {
+              "field_name": "控制柜编号",
+              "entity_id": null,
+              "observed_value": "审核专用毫AB9",
+              "normalized_value": "审核专用毫AB9",
+              "violated_rule": "equipment_code_charset",
+              "rule_pattern": "^[A-Za-z0-9][A-Za-z0-9 /-]*$",
+              "rule_origin": "character_structure",
+              "reason": "设备编号在本项目图纸中由拉丁字母、数字与连字符组成；出现中文或其他非编码字符，通常意味着该位置被印章、水印或噪声覆盖后被误识别"
+            }
+          ],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A19-01",
+              "normalized_value": "FAN-A19-01",
+              "source": "ocr",
+              "confidence": 0.999991238117218,
+              "validation_status": "valid",
+              "bbox": [
+                209.0,
+                503.0,
+                326.0,
+                524.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A19风机接线图",
+              "normalized_value": "A19风机接线图",
+              "source": "ocr",
+              "confidence": 0.9999807476997375,
+              "validation_status": "unknown",
+              "bbox": [
+                207.0,
+                533.0,
+                342.0,
+                559.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-19",
+              "normalized_value": "M-19",
+              "source": "ocr",
+              "confidence": 0.9999626278877258,
+              "validation_status": "valid",
+              "bbox": [
+                208.0,
+                598.0,
+                263.0,
+                622.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-19",
+              "normalized_value": "QF-19",
+              "source": "ocr",
+              "confidence": 0.9999798536300659,
+              "validation_status": "valid",
+              "bbox": [
+                207.0,
+                626.0,
+                270.0,
+                655.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "审核专用毫AB9",
+              "normalized_value": "审核专用毫AB9",
+              "source": "ocr",
+              "confidence": 0.9048073291778564,
+              "validation_status": "invalid",
+              "bbox": [
+                159.0,
+                644.0,
+                333.0,
+                689.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:5:页码",
+              "field_name": "页码",
+              "raw_value": "1/1",
+              "normalized_value": "1/1",
+              "source": "ocr",
+              "confidence": 0.9991706013679504,
+              "validation_status": "valid",
+              "bbox": [
+                210.0,
+                568.0,
+                241.0,
+                584.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A19-01",
+              "normalized_value": "FAN-A19-01",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "A19风机接线图",
+              "normalized_value": "A19风机接线图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:dev0:p0:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-19",
+              "normalized_value": "M-19",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:dev1:p0:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-19",
+              "normalized_value": "QF-19",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A19-01",
+            "M-19",
+            "QF-19"
+          ],
+          "ocr_only_missed": [
+            "FAN-CAB-19"
+          ],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "real": true,
+          "score": 0.75,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A13-02",
+              "normalized_value": "FAN-A13-02",
+              "source": "ocr",
+              "confidence": 0.9999904632568359,
+              "validation_status": "valid",
+              "bbox": [
+                208.0,
+                503.0,
+                326.0,
+                524.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A13风机接线图",
+              "normalized_value": "A13风机接线图",
+              "source": "ocr",
+              "confidence": 0.9999823570251465,
+              "validation_status": "unknown",
+              "bbox": [
+                207.0,
+                534.0,
+                341.0,
+                558.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-13",
+              "normalized_value": "M-13",
+              "source": "ocr",
+              "confidence": 0.9999624490737915,
+              "validation_status": "valid",
+              "bbox": [
+                206.0,
+                597.0,
+                261.0,
+                622.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-13",
+              "normalized_value": "QF-13",
+              "source": "ocr",
+              "confidence": 0.9999738931655884,
+              "validation_status": "valid",
+              "bbox": [
+                205.0,
+                627.0,
+                268.0,
+                656.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "FAN-CAB-3",
+              "normalized_value": "FAN-CAB-3",
+              "source": "ocr",
+              "confidence": 0.9999855756759644,
+              "validation_status": "valid",
+              "bbox": [
+                207.0,
+                660.0,
+                315.0,
+                683.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:5:页码",
+              "field_name": "页码",
+              "raw_value": "4/6",
+              "normalized_value": "4/6",
+              "source": "ocr",
+              "confidence": 0.9999813437461853,
+              "validation_status": "valid",
+              "bbox": [
+                205.0,
+                564.0,
+                244.0,
+                592.0
+              ],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A13-02",
+            "M-13",
+            "QF-13",
+            "FAN-CAB-3"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "real": false,
+          "score": 1.0,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "group_cardinality_uncertain"
+          ],
+          "drawing_type": "fan_group",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.054878048780487805,
+          "group_cardinality_uncertain": true,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "A16功率",
+            "A16风量",
+            "A17功率",
+            "A17风量",
+            "A18功率",
+            "A18风量"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": "A16",
+              "occurrence_id": "ocr:0:A16设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A16",
+              "normalized_value": "A16",
+              "source": "ocr",
+              "confidence": 0.9999960064888,
+              "validation_status": "valid",
+              "bbox": [
+                213.0,
+                290.0,
+                256.0,
+                312.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A16",
+              "occurrence_id": "ocr:1:A16功率",
+              "field_name": "功率",
+              "raw_value": "45kW",
+              "normalized_value": "45kW",
+              "source": "ocr",
+              "confidence": 0.9999852180480957,
+              "validation_status": "unknown",
+              "bbox": [
+                214.0,
+                316.0,
+                272.0,
+                338.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A16",
+              "occurrence_id": "ocr:2:A16风量",
+              "field_name": "风量",
+              "raw_value": "28000m³/h",
+              "normalized_value": "28000m3/h",
+              "source": "ocr",
+              "confidence": 0.9998931884765625,
+              "validation_status": "unknown",
+              "bbox": [
+                214.0,
+                343.0,
+                320.0,
+                363.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "ocr:3:A17设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A17",
+              "normalized_value": "A17",
+              "source": "ocr",
+              "confidence": 0.9999974370002747,
+              "validation_status": "valid",
+              "bbox": [
+                211.0,
+                368.0,
+                254.0,
+                391.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "ocr:4:A17功率",
+              "field_name": "功率",
+              "raw_value": "55kW",
+              "normalized_value": "55kW",
+              "source": "ocr",
+              "confidence": 0.9999697208404541,
+              "validation_status": "unknown",
+              "bbox": [
+                211.0,
+                395.0,
+                269.0,
+                416.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "ocr:5:A17风量",
+              "field_name": "风量",
+              "raw_value": "32000m³/h",
+              "normalized_value": "32000m3/h",
+              "source": "ocr",
+              "confidence": 0.9997901916503906,
+              "validation_status": "unknown",
+              "bbox": [
+                212.0,
+                422.0,
+                318.0,
+                442.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "ocr:6:A18设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A18",
+              "normalized_value": "A18",
+              "source": "ocr",
+              "confidence": 0.9999979138374329,
+              "validation_status": "valid",
+              "bbox": [
+                209.0,
+                447.0,
+                252.0,
+                469.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "ocr:7:A18功率",
+              "field_name": "功率",
+              "raw_value": "37kW",
+              "normalized_value": "37kW",
+              "source": "ocr",
+              "confidence": 0.9999649524688721,
+              "validation_status": "unknown",
+              "bbox": [
+                210.0,
+                473.0,
+                268.0,
+                495.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "ocr:8:A18风量",
+              "field_name": "风量",
+              "raw_value": "24000m³/h",
+              "normalized_value": "24000m3/h",
+              "source": "ocr",
+              "confidence": 0.9967820644378662,
+              "validation_status": "unknown",
+              "bbox": [
+                210.0,
+                501.0,
+                317.0,
+                522.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-MULTI-01",
+              "normalized_value": "FAN-MULTI-01",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "A16/A17/A18风机组接线图",
+              "normalized_value": "A16/A17/A18风机组接线图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A16",
+              "occurrence_id": "vlm:dev0:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A16",
+              "normalized_value": "A16",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A16",
+              "occurrence_id": "vlm:dev0:p0:功率",
+              "field_name": "功率",
+              "raw_value": "45kW",
+              "normalized_value": "45kW",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A16",
+              "occurrence_id": "vlm:dev0:p1:风量",
+              "field_name": "风量",
+              "raw_value": "28000m³/h",
+              "normalized_value": "28000m3/h",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "vlm:dev1:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A17",
+              "normalized_value": "A17",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "vlm:dev1:p0:功率",
+              "field_name": "功率",
+              "raw_value": "55kW",
+              "normalized_value": "55kW",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A17",
+              "occurrence_id": "vlm:dev1:p1:风量",
+              "field_name": "风量",
+              "raw_value": "32000m³/h",
+              "normalized_value": "32000m3/h",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "vlm:dev2:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "A18",
+              "normalized_value": "A18",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "vlm:dev2:p0:功率",
+              "field_name": "功率",
+              "raw_value": "37kW",
+              "normalized_value": "37kW",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "A18",
+              "occurrence_id": "vlm:dev2:p1:风量",
+              "field_name": "风量",
+              "raw_value": "24000m³/h",
+              "normalized_value": "24000m3/h",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "A16",
+            "A17",
+            "A18",
+            "45kW",
+            "55kW"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "real": true,
+          "score": 1.0,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "legacy_containment_hit_rate": 0.75,
+          "structured_candidate_recall": 0.25,
+          "conflict_free_exact_rate": 0.25,
+          "ocr_only_score": 0.25,
+          "need_vlm": true,
+          "route_reasons": [
+            "field_completeness_below_threshold",
+            "isolated_labels_without_values",
+            "repeated_boilerplate_text"
+          ],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 0.16666666666666666,
+          "isolated_labels": [
+            "图号",
+            "断路器编号"
+          ],
+          "watermark_repetition": 0.5729166666666666,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:页码",
+              "field_name": "页码",
+              "raw_value": "1/1",
+              "normalized_value": "1/1",
+              "source": "ocr",
+              "confidence": 0.9991099238395691,
+              "validation_status": "valid",
+              "bbox": [
+                214.0,
+                553.0,
+                254.0,
+                583.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A23-01",
+              "normalized_value": "FAN-A23-01",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "A23风机接线图",
+              "normalized_value": "A23风机接线图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "M-23"
+          ],
+          "ocr_only_missed": [
+            "FAN-A23-01",
+            "QF-23",
+            "FAN-CAB-23"
+          ],
+          "vlm_recovered": [
+            "FAN-A23-01",
+            "QF-23"
+          ],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "real": true,
+          "score": 0.75,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_param_table",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A28-01",
+              "normalized_value": "FAN-A28-01",
+              "source": "ocr",
+              "confidence": 0.9999958872795105,
+              "validation_status": "valid",
+              "bbox": [
+                285.0,
+                106.0,
+                416.0,
+                138.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A28风机参数表",
+              "normalized_value": "A28风机参数表",
+              "source": "ocr",
+              "confidence": 0.9999589920043945,
+              "validation_status": "unknown",
+              "bbox": [
+                283.0,
+                158.0,
+                434.0,
+                190.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-28",
+              "normalized_value": "M-28",
+              "source": "ocr",
+              "confidence": 0.9999825358390808,
+              "validation_status": "valid",
+              "bbox": [
+                280.0,
+                210.0,
+                346.0,
+                250.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-28",
+              "normalized_value": "QF-28",
+              "source": "ocr",
+              "confidence": 0.9999746084213257,
+              "validation_status": "valid",
+              "bbox": [
+                280.0,
+                264.0,
+                351.0,
+                303.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "FAN-CAB-28",
+              "normalized_value": "FAN-CAB-28",
+              "source": "ocr",
+              "confidence": 0.9999949336051941,
+              "validation_status": "valid",
+              "bbox": [
+                280.0,
+                322.0,
+                414.0,
+                354.0
+              ],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A28-01",
+            "M-28",
+            "QF-28",
+            "FAN-CAB-28"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "real": false,
+          "score": 1.0,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A25-01",
+              "normalized_value": "FAN-A25-01",
+              "source": "ocr",
+              "confidence": 0.9999923706054688,
+              "validation_status": "valid",
+              "bbox": [
+                207.0,
+                504.0,
+                324.0,
+                524.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A25风机接线图",
+              "normalized_value": "A25风机接线图",
+              "source": "ocr",
+              "confidence": 0.9999863505363464,
+              "validation_status": "unknown",
+              "bbox": [
+                206.0,
+                535.0,
+                340.0,
+                559.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-25",
+              "normalized_value": "M-25",
+              "source": "ocr",
+              "confidence": 0.9999489188194275,
+              "validation_status": "valid",
+              "bbox": [
+                204.0,
+                598.0,
+                261.0,
+                622.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-25",
+              "normalized_value": "QF-25",
+              "source": "ocr",
+              "confidence": 0.9997442364692688,
+              "validation_status": "valid",
+              "bbox": [
+                206.0,
+                630.0,
+                263.0,
+                655.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "FAN-CAB-25",
+              "normalized_value": "FAN-CAB-25",
+              "source": "ocr",
+              "confidence": 0.9999275207519531,
+              "validation_status": "valid",
+              "bbox": [
+                203.0,
+                658.0,
+                330.0,
+                689.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:5:页码",
+              "field_name": "页码",
+              "raw_value": "1/1",
+              "normalized_value": "1/1",
+              "source": "ocr",
+              "confidence": 0.9997766613960266,
+              "validation_status": "valid",
+              "bbox": [
+                204.0,
+                565.0,
+                242.0,
+                593.0
+              ],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A25-01",
+            "M-25",
+            "QF-25",
+            "FAN-CAB-25"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "real": false,
+          "score": 1.0,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A27-01",
+              "normalized_value": "FAN-A27-01",
+              "source": "ocr",
+              "confidence": 0.9999924898147583,
+              "validation_status": "valid",
+              "bbox": [
+                229.0,
+                539.0,
+                351.0,
+                563.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A27风机接线图",
+              "normalized_value": "A27风机接线图",
+              "source": "ocr",
+              "confidence": 0.9999874830245972,
+              "validation_status": "unknown",
+              "bbox": [
+                228.0,
+                572.0,
+                368.0,
+                600.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-27",
+              "normalized_value": "M-27",
+              "source": "ocr",
+              "confidence": 0.9999784231185913,
+              "validation_status": "valid",
+              "bbox": [
+                229.0,
+                643.0,
+                287.0,
+                669.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-27",
+              "normalized_value": "QF-27",
+              "source": "ocr",
+              "confidence": 0.9999702572822571,
+              "validation_status": "valid",
+              "bbox": [
+                231.0,
+                678.0,
+                295.0,
+                704.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "FAN-CAB-27",
+              "normalized_value": "FAN-CAB-27",
+              "source": "ocr",
+              "confidence": 0.9999929666519165,
+              "validation_status": "valid",
+              "bbox": [
+                233.0,
+                714.0,
+                357.0,
+                735.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:5:页码",
+              "field_name": "页码",
+              "raw_value": "1/1",
+              "normalized_value": "1/1",
+              "source": "ocr",
+              "confidence": 0.9997603297233582,
+              "validation_status": "valid",
+              "bbox": [
+                228.0,
+                608.0,
+                266.0,
+                637.0
+              ],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A27-01",
+            "M-27",
+            "QF-27",
+            "FAN-CAB-27"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9969040314356487,
+          "table_confidence": 0.0,
+          "real": false,
+          "score": 1.0,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "group_cardinality_uncertain"
+          ],
+          "drawing_type": "pump_group",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.022556390977443608,
+          "group_cardinality_uncertain": true,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "20流量",
+            "20扬程",
+            "2A流量",
+            "2A扬程",
+            "2B流量",
+            "2B扬程"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": "20",
+              "occurrence_id": "ocr:0:20设备编号",
+              "field_name": "设备编号",
+              "raw_value": "20",
+              "normalized_value": "20",
+              "source": "ocr",
+              "confidence": 0.9999990463256836,
+              "validation_status": "valid",
+              "bbox": [
+                199.0,
+                467.0,
+                229.0,
+                492.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "20",
+              "occurrence_id": "ocr:1:20流量",
+              "field_name": "流量",
+              "raw_value": "150m³/h",
+              "normalized_value": "150m3/h",
+              "source": "ocr",
+              "confidence": 0.9876720309257507,
+              "validation_status": "unknown",
+              "bbox": [
+                198.0,
+                498.0,
+                286.0,
+                524.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "20",
+              "occurrence_id": "ocr:2:20扬程",
+              "field_name": "扬程",
+              "raw_value": "40m",
+              "normalized_value": "40m",
+              "source": "ocr",
+              "confidence": 0.9999959468841553,
+              "validation_status": "unknown",
+              "bbox": [
+                199.0,
+                530.0,
+                247.0,
+                558.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2A",
+              "occurrence_id": "ocr:3:2A设备编号",
+              "field_name": "设备编号",
+              "raw_value": "2A",
+              "normalized_value": "2A",
+              "source": "ocr",
+              "confidence": 0.9999954104423523,
+              "validation_status": "valid",
+              "bbox": [
+                204.0,
+                276.0,
+                236.0,
+                301.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2A",
+              "occurrence_id": "ocr:4:2A流量",
+              "field_name": "流量",
+              "raw_value": "80m³/h",
+              "normalized_value": "80m3/h",
+              "source": "ocr",
+              "confidence": 0.9999462962150574,
+              "validation_status": "unknown",
+              "bbox": [
+                205.0,
+                310.0,
+                277.0,
+                332.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2A",
+              "occurrence_id": "ocr:5:2A扬程",
+              "field_name": "扬程",
+              "raw_value": "22m",
+              "normalized_value": "22m",
+              "source": "ocr",
+              "confidence": 0.9999975562095642,
+              "validation_status": "unknown",
+              "bbox": [
+                203.0,
+                339.0,
+                250.0,
+                365.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2B",
+              "occurrence_id": "ocr:6:2B设备编号",
+              "field_name": "设备编号",
+              "raw_value": "2B",
+              "normalized_value": "2B",
+              "source": "ocr",
+              "confidence": 0.9999823570251465,
+              "validation_status": "valid",
+              "bbox": [
+                202.0,
+                372.0,
+                232.0,
+                396.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2B",
+              "occurrence_id": "ocr:7:2B流量",
+              "field_name": "流量",
+              "raw_value": "80m³/h",
+              "normalized_value": "80m3/h",
+              "source": "ocr",
+              "confidence": 0.999939501285553,
+              "validation_status": "unknown",
+              "bbox": [
+                203.0,
+                404.0,
+                275.0,
+                426.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2B",
+              "occurrence_id": "ocr:8:2B扬程",
+              "field_name": "扬程",
+              "raw_value": "24m",
+              "normalized_value": "24m",
+              "source": "ocr",
+              "confidence": 0.9999974370002747,
+              "validation_status": "unknown",
+              "bbox": [
+                199.0,
+                435.0,
+                247.0,
+                460.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "PUMP-MULTI-02",
+              "normalized_value": "PUMP-MULTI-02",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "2A/2B/20号水泵组参数图",
+              "normalized_value": "2A/2B/20号水泵组参数图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2A",
+              "occurrence_id": "vlm:dev0:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "2A",
+              "normalized_value": "2A",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2A",
+              "occurrence_id": "vlm:dev0:p1:扬程",
+              "field_name": "扬程",
+              "raw_value": "22m",
+              "normalized_value": "22m",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2B",
+              "occurrence_id": "vlm:dev1:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "2B",
+              "normalized_value": "2B",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "2B",
+              "occurrence_id": "vlm:dev1:p1:扬程",
+              "field_name": "扬程",
+              "raw_value": "24m",
+              "normalized_value": "24m",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "20",
+              "occurrence_id": "vlm:dev2:设备编号",
+              "field_name": "设备编号",
+              "raw_value": "20",
+              "normalized_value": "20",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": "20",
+              "occurrence_id": "vlm:dev2:p1:扬程",
+              "field_name": "扬程",
+              "raw_value": "40m",
+              "normalized_value": "40m",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "PUMP-MULTI-02",
+            "2A",
+            "2B",
+            "20"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "real": true,
+          "score": 1.0,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "legacy_containment_hit_rate": 1.0,
+          "structured_candidate_recall": 1.0,
+          "conflict_free_exact_rate": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": 1.0,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [
+            "名称"
+          ],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:0:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A26-01",
+              "normalized_value": "FAN-A26-01",
+              "source": "ocr",
+              "confidence": 0.9999946355819702,
+              "validation_status": "valid",
+              "bbox": [
+                211.0,
+                503.0,
+                326.0,
+                524.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:1:名称",
+              "field_name": "名称",
+              "raw_value": "A26风机接线图",
+              "normalized_value": "A26风机接线图",
+              "source": "ocr",
+              "confidence": 0.9999837875366211,
+              "validation_status": "unknown",
+              "bbox": [
+                209.0,
+                532.0,
+                343.0,
+                558.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:2:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-26",
+              "normalized_value": "M-26",
+              "source": "ocr",
+              "confidence": 0.999962568283081,
+              "validation_status": "valid",
+              "bbox": [
+                208.0,
+                597.0,
+                263.0,
+                621.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:3:断路器编号",
+              "field_name": "断路器编号",
+              "raw_value": "QF-26",
+              "normalized_value": "QF-26",
+              "source": "ocr",
+              "confidence": 0.9999841451644897,
+              "validation_status": "valid",
+              "bbox": [
+                209.0,
+                628.0,
+                269.0,
+                653.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:4:控制柜编号",
+              "field_name": "控制柜编号",
+              "raw_value": "FAN-CAB-26",
+              "normalized_value": "FAN-CAB-26",
+              "source": "ocr",
+              "confidence": 0.9999929666519165,
+              "validation_status": "valid",
+              "bbox": [
+                208.0,
+                659.0,
+                327.0,
+                683.0
+              ],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "ocr:5:版本",
+              "field_name": "版本",
+              "raw_value": "V3",
+              "normalized_value": "V3",
+              "source": "ocr",
+              "confidence": 0.9978018999099731,
+              "validation_status": "valid",
+              "bbox": [
+                207.0,
+                565.0,
+                237.0,
+                590.0
+              ],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A26-01",
+            "V3",
+            "M-26",
+            "QF-26",
+            "FAN-CAB-26"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "real": false,
+          "score": 1.0,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "legacy_containment_hit_rate": 0.0,
+          "structured_candidate_recall": 0.0,
+          "conflict_free_exact_rate": 0.0,
+          "ocr_only_score": 0.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "ocr_confidence_below_threshold",
+            "drawing_type_unknown",
+            "field_completeness_below_threshold"
+          ],
+          "drawing_type": "unknown",
+          "type_source": "none",
+          "field_completeness": 0.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": null,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A12-01",
+              "normalized_value": "FAN-A12-01",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "A22风机控制图",
+              "normalized_value": "A22风机控制图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:版本",
+              "field_name": "版本",
+              "raw_value": "V2",
+              "normalized_value": "V2",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:dev0:p2:图号",
+              "field_name": "图号",
+              "raw_value": "A22",
+              "normalized_value": "A22",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [],
+          "ocr_only_missed": [
+            "FAN-A22-01",
+            "M-22",
+            "QF-22",
+            "FAN-CAB-22"
+          ],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "real": true,
+          "score": 0.0,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "legacy_containment_hit_rate": 0.75,
+          "structured_candidate_recall": 0.5,
+          "conflict_free_exact_rate": 0.5,
+          "ocr_only_score": 0.75,
+          "need_vlm": true,
+          "route_reasons": [
+            "ocr_confidence_below_threshold",
+            "field_completeness_below_threshold"
+          ],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 0.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "valid_ratio": null,
+          "invalid_fields": [],
+          "invalid_details": [],
+          "unknown_fields": [],
+          "field_conflicts": [],
+          "entity_assignment_uncertain_count": 0,
+          "evidence": [
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:图号",
+              "field_name": "图号",
+              "raw_value": "FAN-A24-01",
+              "normalized_value": "FAN-A24-01",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:meta:名称",
+              "field_name": "名称",
+              "raw_value": "A24风机接线图",
+              "normalized_value": "A24风机接线图",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            },
+            {
+              "entity_id": null,
+              "occurrence_id": "vlm:dev0:p3:电机编号",
+              "field_name": "电机编号",
+              "raw_value": "M-24",
+              "normalized_value": "M-24",
+              "source": "vlm",
+              "confidence": 0.0,
+              "validation_status": "unknown",
+              "bbox": [],
+              "entity_assignment_uncertain": false
+            }
+          ],
+          "ocr_only_found": [
+            "FAN-A24-01",
+            "M-24",
+            "FAN-CAB-24"
+          ],
+          "ocr_only_missed": [
+            "QF-24"
+          ],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.6141112623736262,
+          "table_confidence": 0.2421166893560439,
+          "real": true,
+          "score": 0.75,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ],
+      "routing": {
+        "overall": {
+          "fallback_trigger_rate": 0.5454545454545454,
+          "fallback_proxy_positive_count": 4,
+          "fallback_proxy_negative_count": 7,
+          "proxy_fallback_recall": 1.0,
+          "proxy_false_trigger_rate": 0.2857142857142857,
+          "vlm_field_recovery_rate": 0.2222222222222222,
+          "vlm_fields_missed_by_ocr": 9,
+          "vlm_fields_recovered": 2,
+          "legacy_containment_hit_rate": 0.8409090909090909,
+          "structured_candidate_recall": 0.7727272727272727,
+          "conflict_free_exact_rate": 0.7727272727272727,
+          "ocr_only_field_hit_rate": 0.7954545454545454,
+          "field_conflict_count": 0,
+          "invalid_value_count": 1,
+          "entity_assignment_uncertain_count": 0,
+          "reason_counts": {
+            "drawing_type_unknown": 1,
+            "field_completeness_below_threshold": 3,
+            "group_cardinality_uncertain": 2,
+            "invalid_field_value": 1,
+            "isolated_labels_without_values": 1,
+            "ocr_confidence_below_threshold": 2,
+            "repeated_boilerplate_text": 1
+          }
+        },
+        "dev": {
+          "fallback_trigger_rate": 0.5714285714285714,
+          "fallback_proxy_positive_count": 3,
+          "fallback_proxy_negative_count": 4,
+          "proxy_fallback_recall": 1.0,
+          "proxy_false_trigger_rate": 0.25,
+          "vlm_field_recovery_rate": 0.25,
+          "vlm_fields_missed_by_ocr": 8,
+          "vlm_fields_recovered": 2,
+          "legacy_containment_hit_rate": 0.7857142857142857,
+          "structured_candidate_recall": 0.7142857142857143,
+          "conflict_free_exact_rate": 0.7142857142857143,
+          "ocr_only_field_hit_rate": 0.7142857142857143,
+          "field_conflict_count": 0,
+          "invalid_value_count": 1,
+          "entity_assignment_uncertain_count": 0,
+          "reason_counts": {
+            "drawing_type_unknown": 1,
+            "field_completeness_below_threshold": 2,
+            "group_cardinality_uncertain": 1,
+            "invalid_field_value": 1,
+            "isolated_labels_without_values": 1,
+            "ocr_confidence_below_threshold": 1,
+            "repeated_boilerplate_text": 1
+          }
+        },
+        "regression": {
+          "fallback_trigger_rate": 0.5,
+          "fallback_proxy_positive_count": 1,
+          "fallback_proxy_negative_count": 3,
+          "proxy_fallback_recall": 1.0,
+          "proxy_false_trigger_rate": 0.3333333333333333,
+          "vlm_field_recovery_rate": 0.0,
+          "vlm_fields_missed_by_ocr": 1,
+          "vlm_fields_recovered": 0,
+          "legacy_containment_hit_rate": 0.9375,
+          "structured_candidate_recall": 0.875,
+          "conflict_free_exact_rate": 0.875,
+          "ocr_only_field_hit_rate": 0.9375,
+          "field_conflict_count": 0,
+          "invalid_value_count": 0,
+          "entity_assignment_uncertain_count": 0,
+          "reason_counts": {
+            "field_completeness_below_threshold": 1,
+            "group_cardinality_uncertain": 1,
+            "ocr_confidence_below_threshold": 1
+          }
+        }
+      }
+    }
+  }
+}

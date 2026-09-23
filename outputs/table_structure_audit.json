@@ -1,0 +1,253 @@
+{
+  "note": "Real drawings with recorded PaddleOCR fixtures replayed over them. No VLM, no live OCR, no human-reviewed gold.",
+  "capabilities": {
+    "vlm_invoked": false,
+    "live_ocr": false,
+    "ocr_source": "paddleocr fixture replay (version-stamped)",
+    "human_reviewed_structure_gold": false,
+    "structure_accuracy": "not_computed — no human-reviewed gold; a number derived from the parser's own output would be circular"
+  },
+  "real_documents_examined": 11,
+  "real_tables_recovered": 8,
+  "real_multilevel_header_tables": 0,
+  "real_merged_cell_tables": 0,
+  "real_cross_page_tables": 0,
+  "synthetic_only_behaviours": [
+    "multi-level header expansion",
+    "merged-cell detection",
+    "cross-page continuation"
+  ],
+  "chunk_counts": {
+    "table_parent": 8,
+    "table_row": 48
+  },
+  "coverage": {
+    "page_traceable": {
+      "numerator": 56,
+      "denominator": 56
+    },
+    "bbox_traceable": {
+      "numerator": 56,
+      "denominator": 56
+    },
+    "row_chunks_with_entity": {
+      "numerator": 0,
+      "denominator": 48
+    },
+    "cross_device_contamination": {
+      "numerator": 0,
+      "denominator": 48
+    }
+  },
+  "crops_saved": {
+    "table": 8,
+    "row": 24,
+    "cell": 8
+  },
+  "review_requests": {
+    "count": 60,
+    "status_summary": {
+      "not_required": 0,
+      "requested_not_invoked": 60,
+      "cache_replay": 0,
+      "real_inference": 0
+    },
+    "by_reason": {
+      "CELL_SPANS_COLUMNS": 57,
+      "HEADER_ATTRIBUTION_UNCERTAIN": 3
+    }
+  },
+  "documents": [
+    {
+      "document_id": "FAN-A13-02",
+      "grid_recovered": true,
+      "grid": "6x2",
+      "cells": 12,
+      "structure_confidence": 0.3573,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 10,
+      "empty_cells": 2,
+      "ambiguous_assignments": 7,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 1,
+      "chunks": 6,
+      "review_requests": 7,
+      "table_crop": "outputs/table_crops/FAN-A13-02_p1_table_a4c409b92e38f56b.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A19-01",
+      "grid_recovered": true,
+      "grid": "6x2",
+      "cells": 12,
+      "structure_confidence": 0.3573,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 10,
+      "empty_cells": 2,
+      "ambiguous_assignments": 7,
+      "blocks_outside_table": 3,
+      "unassigned_blocks": 0,
+      "chunks": 6,
+      "review_requests": 7,
+      "table_crop": "outputs/table_crops/FAN-A19-01_p1_table_9beedfeb8c0f020e.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A22-01-heavyblur",
+      "grid_recovered": false,
+      "reason": "no internal grid found"
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "grid_recovered": true,
+      "grid": "6x2",
+      "cells": 12,
+      "structure_confidence": 0.3573,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 6,
+      "empty_cells": 6,
+      "ambiguous_assignments": 6,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 1,
+      "chunks": 5,
+      "review_requests": 6,
+      "table_crop": "outputs/table_crops/FAN-A23-01_p1_table_05d205e1734c0a07.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "grid_recovered": true,
+      "grid": "4x2",
+      "cells": 8,
+      "structure_confidence": 0.2373,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 8,
+      "empty_cells": 0,
+      "ambiguous_assignments": 7,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 0,
+      "chunks": 5,
+      "review_requests": 6,
+      "table_crop": "outputs/table_crops/FAN-A24-01_p1_table_2234935438f16ea2.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A25-01",
+      "grid_recovered": true,
+      "grid": "6x2",
+      "cells": 12,
+      "structure_confidence": 0.3573,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 10,
+      "empty_cells": 2,
+      "ambiguous_assignments": 4,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 2,
+      "chunks": 6,
+      "review_requests": 4,
+      "table_crop": "outputs/table_crops/FAN-A25-01_p1_table_97fecefd72223137.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A26-01",
+      "grid_recovered": true,
+      "grid": "6x2",
+      "cells": 12,
+      "structure_confidence": 0.3573,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 10,
+      "empty_cells": 2,
+      "ambiguous_assignments": 7,
+      "blocks_outside_table": 3,
+      "unassigned_blocks": 1,
+      "chunks": 6,
+      "review_requests": 7,
+      "table_crop": "outputs/table_crops/FAN-A26-01_p1_table_fda59b9382a8f626.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "FAN-A27-01-skewed",
+      "grid_recovered": false,
+      "reason": "no internal grid found"
+    },
+    {
+      "document_id": "FAN-A28-01-borderless",
+      "grid_recovered": false,
+      "reason": "no internal grid found"
+    },
+    {
+      "document_id": "FAN-MULTI-01",
+      "grid_recovered": true,
+      "grid": "12x2",
+      "cells": 24,
+      "structure_confidence": 0.3578,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 24,
+      "empty_cells": 0,
+      "ambiguous_assignments": 6,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 0,
+      "chunks": 13,
+      "review_requests": 6,
+      "table_crop": "outputs/table_crops/FAN-MULTI-01_p1_table_21b70ae32e041e86.png",
+      "continuation_status": "same_page"
+    },
+    {
+      "document_id": "PUMP-MULTI-02",
+      "grid_recovered": true,
+      "grid": "11x2",
+      "cells": 22,
+      "structure_confidence": 0.3275,
+      "structure_uncertain": true,
+      "entity_column": null,
+      "header_paths": [
+        "第1列",
+        "第2列"
+      ],
+      "assigned_cells": 19,
+      "empty_cells": 3,
+      "ambiguous_assignments": 15,
+      "blocks_outside_table": 4,
+      "unassigned_blocks": 0,
+      "chunks": 9,
+      "review_requests": 17,
+      "table_crop": "outputs/table_crops/PUMP-MULTI-02_p1_table_2460020c5fc23d67.png",
+      "continuation_status": "same_page"
+    }
+  ]
+}

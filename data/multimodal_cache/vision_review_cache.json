@@ -1,0 +1,94 @@
+{
+  "ed9a684ecb551fb95a872cbd01b1565d27ba5ff37449b8ec75b1e992330a8adf": {
+    "input_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+    "crop_sha256": "a49f1879d302cff1dc1947672532378b5ed6b1261a19379a6957e595c1808f4a",
+    "crop_path": "C:/Users/jdh07/Desktop/traffic_rag_full/metro_agent_repro/metro_agent_repro/data/multimodal_cache/crops/FAN-A23-01_label_right_e5be1d190ef7c033.png",
+    "model_name": "qwen-vl-max",
+    "prompt_version": "vision_field_review_v1",
+    "schema_version": "vision_review_v1",
+    "document_id": "FAN-A23-01",
+    "field_names": [
+      "图号"
+    ],
+    "recorded_at": "2026-09-16T10:26:28+00:00",
+    "recorded_from": "live_inference",
+    "result": {
+      "request_id": "review:FAN-A23-01:图号",
+      "status": "success",
+      "inference_mode": "live",
+      "fields": [
+        {
+          "canonical_field_name": "图号",
+          "raw_name": "图号",
+          "raw_value": "FAN-A23-01",
+          "readable": true,
+          "evidence_bbox_in_crop": [
+            14.0,
+            38.0,
+            156.0,
+            57.0
+          ],
+          "notes": null
+        }
+      ],
+      "unreadable_reasons": [],
+      "provider": "openai-compatible-gateway",
+      "model_name": "qwen-vl-max",
+      "model_version": null,
+      "prompt_version": "vision_field_review_v1",
+      "schema_version": "vision_review_v1",
+      "started_at": "2026-09-16T10:26:20+00:00",
+      "latency_ms": 8586.16730000358,
+      "input_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+      "crop_sha256": "a49f1879d302cff1dc1947672532378b5ed6b1261a19379a6957e595c1808f4a",
+      "error_type": null,
+      "raw_response": "```json\n{\n  \"request_id\": \"review:FAN-A23-01:图号\",\n  \"fields\": [\n    {\n      \"canonical_field_name\": \"图号\",\n      \"raw_name\": \"图号\",\n      \"raw_value\": \"FAN-A23-01\",\n      \"readable\": true,\n      \"evidence_bbox_in_crop\": [14, 38, 156, 57],\n      \"notes\": null\n    }\n  ],\n  \"unreadable_reasons\": []\n}\n```"
+    }
+  },
+  "a517218e341f43422f074c960a8e9537cb39e638af20f7e90b401fa2155a8ac3": {
+    "input_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+    "crop_sha256": "6335a83c2dc3ce9e2414146ad4fcacce0426c4687ca16e981a493a82da6b5f98",
+    "crop_path": "C:/Users/jdh07/Desktop/traffic_rag_full/metro_agent_repro/metro_agent_repro/data/multimodal_cache/crops/FAN-A23-01_label_right_b4bc59f5c3dbf582.png",
+    "model_name": "qwen-vl-max",
+    "prompt_version": "vision_field_review_v1",
+    "schema_version": "vision_review_v1",
+    "document_id": "FAN-A23-01",
+    "field_names": [
+      "断路器编号"
+    ],
+    "recorded_at": "2026-09-16T10:26:34+00:00",
+    "recorded_from": "live_inference",
+    "result": {
+      "request_id": "review:FAN-A23-01:断路器编号",
+      "status": "success",
+      "inference_mode": "live",
+      "fields": [
+        {
+          "canonical_field_name": "断路器编号",
+          "raw_name": "断路器编号",
+          "raw_value": "QF-23",
+          "readable": true,
+          "evidence_bbox_in_crop": [
+            48.0,
+            56.0,
+            179.0,
+            78.0
+          ],
+          "notes": null
+        }
+      ],
+      "unreadable_reasons": [],
+      "provider": "openai-compatible-gateway",
+      "model_name": "qwen-vl-max",
+      "model_version": null,
+      "prompt_version": "vision_field_review_v1",
+      "schema_version": "vision_review_v1",
+      "started_at": "2026-09-16T10:26:28+00:00",
+      "latency_ms": 5737.050199997611,
+      "input_image_sha256": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+      "crop_sha256": "6335a83c2dc3ce9e2414146ad4fcacce0426c4687ca16e981a493a82da6b5f98",
+      "error_type": null,
+      "raw_response": "```json\n{\n  \"request_id\": \"review:FAN-A23-01:断路器编号\",\n  \"fields\": [\n    {\n      \"canonical_field_name\": \"断路器编号\",\n      \"raw_name\": \"断路器编号\",\n      \"raw_value\": \"QF-23\",\n      \"readable\": true,\n      \"evidence_bbox_in_crop\": [48, 56, 179, 78],\n      \"notes\": null\n    }\n  ],\n  \"unreadable_reasons\": []\n}\n```"
+    }
+  }
+}

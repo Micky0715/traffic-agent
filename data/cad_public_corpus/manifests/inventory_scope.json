@@ -1,0 +1,21 @@
+{
+  "by_class": {
+    "native_cad": 0,
+    "pdf": 10,
+    "raster": 0
+  },
+  "excluded_directory_names": [
+    "drawings",
+    "processed",
+    "adversarial",
+    "ocr_fixtures",
+    "ocr_stub",
+    "multimodal_cache",
+    "review_region_annotation_pack",
+    "cad_public_corpus"
+  ],
+  "files_registered": 10,
+  "input_dir": "data",
+  "note": "Only files directly under input_dir are registered unless recursive is true. Nothing was copied, moved or deleted.",
+  "recursive": false
+}

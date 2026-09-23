@@ -95,3 +95,119 @@ def test_route_regions_only_selects_eligible_types():
     assert "r2" not in selected  # legend is never VLM-eligible
     assert "r3" in selected  # low OCR confidence region
     assert "r4" not in selected  # annotation region with fine OCR confidence
+
+
+# ---------------------------------------------------------------------------
+# route_ocr_page: VLM fallback decided from OCR evidence rather than
+# confidence alone
+# ---------------------------------------------------------------------------
+
+from src.vision.config import load_config  # noqa: E402
+from src.vision.page_router import route_ocr_page  # noqa: E402
+from src.vision.schemas import FieldCompleteness, OCRResult, TableStructure  # noqa: E402
+
+
+def _clean_completeness(**overrides) -> FieldCompleteness:
+    base = dict(drawing_type="fan_wiring", type_source="title", completeness=1.0,
+                watermark_repetition=0.0)
+    base.update(overrides)
+    return FieldCompleteness(**base)
+
+
+def _confident_ocr() -> OCRResult:
+    return OCRResult(text="x", average_confidence=0.99, engine="test")
+
+
+def _recovered_table() -> TableStructure:
+    return TableStructure(rows=[["a"]], confidence=0.8)
+
+
+def test_clean_confident_complete_page_is_not_escalated():
+    cfg = load_config()
+    decision = route_ocr_page(_confident_ocr(), _recovered_table(), _clean_completeness(), cfg)
+    assert decision.need_vlm is False
+    assert decision.reasons == []
+
+
+def test_failed_table_recovery_alone_does_not_escalate():
+    """Table recovery is a MEANS of getting fields; completeness measures the
+    END. Most drawings here are title blocks, not bordered tables, and scoring
+    grid regularity as a fallback trigger fired on 7 of 7 development pages —
+    reproducing the 100% fallback rate this router exists to fix."""
+    cfg = load_config()
+    no_table = TableStructure(rows=[], confidence=0.0)
+    decision = route_ocr_page(_confident_ocr(), no_table, _clean_completeness(), cfg)
+    assert decision.need_vlm is False
+
+
+def test_high_confidence_but_incomplete_page_is_escalated():
+    """The silent-miss case: OCR is sure about what it returned and returned
+    almost nothing. Confidence-only routing waves this straight through."""
+    cfg = load_config()
+    damaged = _clean_completeness(completeness=0.17, isolated_labels=["图号", "断路器编号"],
+                                  watermark_repetition=0.57)
+    decision = route_ocr_page(_confident_ocr(), _recovered_table(), damaged, cfg)
+    assert decision.need_vlm is True
+    assert "field_completeness_below_threshold" in decision.reasons
+    assert "isolated_labels_without_values" in decision.reasons
+    assert "repeated_boilerplate_text" in decision.reasons
+    assert "ocr_confidence_below_threshold" not in decision.reasons
+
+
+def test_low_confidence_still_escalates():
+    cfg = load_config()
+    blurred = OCRResult(text="", average_confidence=0.0, engine="test")
+    decision = route_ocr_page(blurred, _recovered_table(), _clean_completeness(), cfg)
+    assert decision.need_vlm is True
+    assert "ocr_confidence_below_threshold" in decision.reasons
+
+
+def test_unknown_drawing_type_escalates():
+    cfg = load_config()
+    unknown = _clean_completeness(drawing_type="unknown", type_source="none", completeness=0.0)
+    decision = route_ocr_page(_confident_ocr(), _recovered_table(), unknown, cfg)
+    assert decision.need_vlm is True
+    assert "drawing_type_unknown" in decision.reasons
+
+
+def test_uncertain_device_count_escalates_even_when_everything_found_looks_complete():
+    cfg = load_config()
+    group = _clean_completeness(drawing_type="fan_group", completeness=1.0,
+                                group_device_count=3, group_cardinality_uncertain=True)
+    decision = route_ocr_page(_confident_ocr(), _recovered_table(), group, cfg)
+    assert decision.need_vlm is True
+    assert decision.reasons == ["group_cardinality_uncertain"]
+
+
+def test_invalid_field_value_escalates_even_when_every_other_signal_is_clean():
+    """The round-3 gap: label present, value present, completeness 1.0, OCR
+    confidence high — and the value is stamp text rather than an equipment
+    code. Nothing before this signal notices."""
+    from src.vision.schemas import ValueValidationResult
+    cfg = load_config()
+    validation = ValueValidationResult(
+        checked_fields=["控制柜编号"], invalid_fields=["控制柜编号"], valid_ratio=0.0)
+    decision = route_ocr_page(
+        _confident_ocr(), _recovered_table(), _clean_completeness(), cfg, validation)
+    assert decision.need_vlm is True
+    assert decision.reasons == ["invalid_field_value"]
+
+
+def test_validity_rate_trigger_is_separate_from_the_per_field_trigger():
+    from src.vision.schemas import ValueValidationResult
+    cfg = load_config()
+    validation = ValueValidationResult(
+        checked_fields=["a", "b", "c"], valid_fields=["a"],
+        invalid_fields=["b", "c"], valid_ratio=1 / 3)
+    decision = route_ocr_page(
+        _confident_ocr(), _recovered_table(), _clean_completeness(), cfg, validation)
+    assert "invalid_field_value" in decision.reasons
+    assert "value_validity_below_threshold" in decision.reasons
+
+
+def test_no_validation_supplied_leaves_the_decision_unchanged():
+    """Callers that have not run value validation must not be handed a
+    different routing verdict by accident."""
+    cfg = load_config()
+    assert route_ocr_page(
+        _confident_ocr(), _recovered_table(), _clean_completeness(), cfg).need_vlm is False

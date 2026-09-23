@@ -1,0 +1,60 @@
+<!doctype html><meta charset="utf-8"><title>补充抽查包</title>
+<style>body{font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif;margin:24px;max-width:1100px}
+section{border-top:2px solid #ddd;padding-top:14px;margin-top:24px}img{max-width:100%;border:1px solid #bbb}
+.note{background:#fffbe6;border-left:4px solid #d9a400;padding:8px 12px}
+button{font-size:16px;padding:6px 16px}textarea{width:100%}</style>
+<h1>CAD 渲染补充抽查包 v1</h1>
+<p class="note">insufficient evidence: only [&#x27;D&amp;OM-25.pdf&#x27;] had a crop-warning page reviewed. The result cannot be generalised to [&#x27;RCD-25.pdf&#x27;, &#x27;SMD.pdf&#x27;, &#x27;TSR.pdf&#x27;]; their warnings stay unreviewed.<br>只针对裁切报警：请重点看第 4 项（标题栏或边缘是否被裁切），
+但 5 项都请作答。<b>填完点页面底部"导出"按钮</b>，会下载
+<code>cad_render_human_review_supplement_v1.jsonl</code>；未填写的项按 null 导出，不算通过。</p><section><h2>RCD-25.pdf · 第 1 页</h2>
+<p>自动 QA：<b>warning</b> · crop_risk_suspected ·
+边缘非白比例 上 0.19 / 下 0.19 / 左 0.12 / 右 0.12
+· 5100×3300 @ 300 DPI · PNG sha256 <code>f78dd4fed1fc…</code></p>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-496b767a24bc-557c37__p0001.png" target="_blank"><img src="thumbs/cad-496b767a24bc-557c37_p0001.jpg"></a>
+<p>点击缩略图打开原始 300 DPI PNG，重点看四条边。</p><div>1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|text_not_obviously_blurred" value="pass"> 通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|text_not_obviously_blurred" value="fail"> 不通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|text_not_obviously_blurred" value="uncertain"> 不确定</label> </div><div>2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|thin_lines_not_obviously_missing" value="pass"> 通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|thin_lines_not_obviously_missing" value="fail"> 不通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|thin_lines_not_obviously_missing" value="uncertain"> 不确定</label> </div><div>3. 页面方向是否正确？ <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|orientation_correct" value="pass"> 通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|orientation_correct" value="fail"> 不通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|orientation_correct" value="uncertain"> 不确定</label> </div><div>4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|title_block_and_edges_not_cropped" value="pass"> 通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|title_block_and_edges_not_cropped" value="fail"> 不通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|title_block_and_edges_not_cropped" value="uncertain"> 不确定</label> </div><div>5. PNG 是否与对应 PDF 页面一致？ <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|page_matches_pdf" value="pass"> 通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|page_matches_pdf" value="fail"> 不通过</label> <label><input type="radio" name="cad-496b767a24bc-557c37:p0001|page_matches_pdf" value="uncertain"> 不确定</label> </div>
+<p>备注：<textarea id="notes-cad-496b767a24bc-557c37:p0001" rows="2"></textarea></p></section><section><h2>SMD.pdf · 第 1 页</h2>
+<p>自动 QA：<b>warning</b> · crop_risk_suspected ·
+边缘非白比例 上 0.19 / 下 0.19 / 左 0.12 / 右 0.12
+· 5100×3300 @ 300 DPI · PNG sha256 <code>ca6faa6cef42…</code></p>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0001.png" target="_blank"><img src="thumbs/cad-03796f2a4d01-d0b38d_p0001.jpg"></a>
+<p>点击缩略图打开原始 300 DPI PNG，重点看四条边。</p><div>1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|text_not_obviously_blurred" value="pass"> 通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|text_not_obviously_blurred" value="fail"> 不通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|text_not_obviously_blurred" value="uncertain"> 不确定</label> </div><div>2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|thin_lines_not_obviously_missing" value="pass"> 通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|thin_lines_not_obviously_missing" value="fail"> 不通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|thin_lines_not_obviously_missing" value="uncertain"> 不确定</label> </div><div>3. 页面方向是否正确？ <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|orientation_correct" value="pass"> 通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|orientation_correct" value="fail"> 不通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|orientation_correct" value="uncertain"> 不确定</label> </div><div>4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|title_block_and_edges_not_cropped" value="pass"> 通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|title_block_and_edges_not_cropped" value="fail"> 不通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|title_block_and_edges_not_cropped" value="uncertain"> 不确定</label> </div><div>5. PNG 是否与对应 PDF 页面一致？ <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|page_matches_pdf" value="pass"> 通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|page_matches_pdf" value="fail"> 不通过</label> <label><input type="radio" name="cad-03796f2a4d01-d0b38d:p0001|page_matches_pdf" value="uncertain"> 不确定</label> </div>
+<p>备注：<textarea id="notes-cad-03796f2a4d01-d0b38d:p0001" rows="2"></textarea></p></section><section><h2>TSR.pdf · 第 1 页</h2>
+<p>自动 QA：<b>warning</b> · crop_risk_suspected ·
+边缘非白比例 上 0.19 / 下 0.19 / 左 0.12 / 右 0.12
+· 5100×3300 @ 300 DPI · PNG sha256 <code>2fb6c092ca79…</code></p>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0001.png" target="_blank"><img src="thumbs/cad-12009bc07789-5253c7_p0001.jpg"></a>
+<p>点击缩略图打开原始 300 DPI PNG，重点看四条边。</p><div>1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|text_not_obviously_blurred" value="pass"> 通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|text_not_obviously_blurred" value="fail"> 不通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|text_not_obviously_blurred" value="uncertain"> 不确定</label> </div><div>2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|thin_lines_not_obviously_missing" value="pass"> 通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|thin_lines_not_obviously_missing" value="fail"> 不通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|thin_lines_not_obviously_missing" value="uncertain"> 不确定</label> </div><div>3. 页面方向是否正确？ <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|orientation_correct" value="pass"> 通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|orientation_correct" value="fail"> 不通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|orientation_correct" value="uncertain"> 不确定</label> </div><div>4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|title_block_and_edges_not_cropped" value="pass"> 通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|title_block_and_edges_not_cropped" value="fail"> 不通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|title_block_and_edges_not_cropped" value="uncertain"> 不确定</label> </div><div>5. PNG 是否与对应 PDF 页面一致？ <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|page_matches_pdf" value="pass"> 通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|page_matches_pdf" value="fail"> 不通过</label> <label><input type="radio" name="cad-12009bc07789-5253c7:p0001|page_matches_pdf" value="uncertain"> 不确定</label> </div>
+<p>备注：<textarea id="notes-cad-12009bc07789-5253c7:p0001" rows="2"></textarea></p></section><section><p>审核人：<input id="annotator" size="20"></p>
+<button onclick="exportReview()">导出</button>
+<p>若下载被浏览器拦截，可复制下框内容保存为同名文件：</p>
+<textarea id="out" rows="6" readonly></textarea></section>
+<script>
+const PAGES = [{"page_id": "cad-496b767a24bc-557c37:p0001", "file_name": "RCD-25.pdf", "page_no": 1, "page_sha256": "f78dd4fed1fcc40254120e1a13ab2906d124678e8848cfcb9bb508e7243e9c33"}, {"page_id": "cad-03796f2a4d01-d0b38d:p0001", "file_name": "SMD.pdf", "page_no": 1, "page_sha256": "ca6faa6cef42b8df642ec2e1dbdb3959d7883ce4eff2cf371a75c45a8d9e59e6"}, {"page_id": "cad-12009bc07789-5253c7:p0001", "file_name": "TSR.pdf", "page_no": 1, "page_sha256": "2fb6c092ca79a8eee3d9dea2f624319c765107e48c60c08a8f12cf3f435b37e4"}];
+function exportReview() {
+  const annotator = document.getElementById('annotator').value.trim();
+  if (!annotator) { alert('请先填写审核人'); return; }
+  const now = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+  let unanswered = 0;
+  const lines = PAGES.map(p => {
+    const rec = {page_id: p.page_id, file_name: p.file_name, page_no: p.page_no,
+                 page_sha256: p.page_sha256};
+    for (const key of ["text_not_obviously_blurred", "thin_lines_not_obviously_missing", "orientation_correct", "title_block_and_edges_not_cropped", "page_matches_pdf"]) {
+      const hit = document.querySelector(`input[name="${p.page_id}|${key}"]:checked`);
+      rec[key] = hit ? hit.value : null;           // unanswered stays null, never pass
+      if (!hit) unanswered++;
+    }
+    rec.annotator = annotator; rec.reviewed_at = now;
+    rec.notes = document.getElementById('notes-' + p.page_id).value;
+    rec.review_capture = 'html_export';
+    return JSON.stringify(rec);
+  });
+  const text = lines.join('\n') + '\n';
+  document.getElementById('out').value = text;
+  const blob = new Blob([text], {type: 'application/x-ndjson'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cad_render_human_review_supplement_v1.jsonl';
+  a.click();
+  if (unanswered) alert(unanswered + ' 项未填写，已按 null 导出（不算通过）');
+}
+</script>

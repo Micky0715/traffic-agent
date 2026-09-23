@@ -1,0 +1,166 @@
+{
+  "note": "Failure-mode audit for table structure recovery. REAL cases use recorded PaddleOCR fixtures replayed over the original images; SYNTHETIC cases are constructed inline because the repo has no real multi-level header, merged cell or cross-page table.",
+  "vlm_invoked": false,
+  "case_count": 11,
+  "passed": 5,
+  "failed": 6,
+  "real_cases": 6,
+  "synthetic_cases": 5,
+  "cases": [
+    {
+      "case": "1_label_destroyed_value_readable",
+      "data": "REAL",
+      "document": "FAN-A24-01",
+      "input_ocr_text": "A24风机接线图\n电.M.26\n QF 14\n资料仅供参考\nN\nFAN-A24-01\nne\nA4R\n\n1\n电r编号\nM-24\nE银行\nOF-24\n制编\nFAN-CAB-24",
+      "observation": "OCR returned FAN-CAB-24 correctly, but its label was blurred to '制编' rather than '控制柜编号', so label->value pairing never fired",
+      "field_pairs": [],
+      "succeeded": false,
+      "failing_layer": "label recognition -> field pairing",
+      "vlm_recoverable": true,
+      "vlm_reason": "LABEL_VALUE_PAIRING_FAILED"
+    },
+    {
+      "case": "2_value_in_body_not_in_title_block",
+      "data": "REAL",
+      "document": "FAN-A23-01",
+      "observation": "the drawing prints 电机 M-23 as a body annotation above the table; the title block row for it is covered by the watermark",
+      "body_annotation_present": true,
+      "value_inside_table": false,
+      "succeeded": false,
+      "failing_layer": "table scope — a body annotation is outside the table region",
+      "vlm_recoverable": true,
+      "vlm_reason": "WATERMARK_OVER_FIELD"
+    },
+    {
+      "case": "3_watermark_covers_values",
+      "data": "REAL",
+      "document": "FAN-A23-01",
+      "grid": "6x2",
+      "recovered_cells": [
+        "图号",
+        "",
+        "",
+        "内部资料严禁外传内部资料",
+        "页码",
+        "1/1",
+        "",
+        ""
+      ],
+      "observation": "watermark text occupies the value column; cells recover the notice",
+      "succeeded": false,
+      "failing_layer": "OCR recognition — the covering text is what was on the pixels",
+      "vlm_recoverable": true,
+      "vlm_reason": "WATERMARK_OVER_FIELD"
+    },
+    {
+      "case": "4_whole_device_missing_from_table",
+      "data": "SYNTHETIC",
+      "observation": "C22's row is absent from the page entirely; nothing in the grid indicates a row was ever there",
+      "entities_recovered": [
+        "C21",
+        "C23"
+      ],
+      "succeeded": false,
+      "failing_layer": "undetectable at this layer — the grid has no gap to see",
+      "vlm_recoverable": false,
+      "vlm_reason": "a vision pass on a region that contains nothing cannot recover it"
+    },
+    {
+      "case": "5_remarks_column_inherits_neighbour_header",
+      "data": "SYNTHETIC",
+      "header_paths": [
+        "设备",
+        "参数.功率",
+        "参数.风量",
+        "备注"
+      ],
+      "observation": "regression: an earlier version carried the blank sub-header leftward across a top-level boundary and produced 备注.风量",
+      "succeeded": true,
+      "failing_layer": "header expansion (fixed)",
+      "vlm_recoverable": false,
+      "vlm_reason": "a logic defect, not a recognition one"
+    },
+    {
+      "case": "6_block_straddles_two_cells",
+      "data": "SYNTHETIC",
+      "ambiguous": [
+        {
+          "block_index": 0,
+          "text": "45kW",
+          "assigned_cell": "S:r1c0",
+          "best_ratio": 0.5,
+          "runner_up_cell": "S:r1c1",
+          "runner_up_ratio": 0.5,
+          "resolution": "assigned_to_best_and_flagged"
+        }
+      ],
+      "observation": "centre-point assignment would place this silently in one cell",
+      "succeeded": true,
+      "failing_layer": "handled — flagged with both candidates retained",
+      "vlm_recoverable": true,
+      "vlm_reason": "CELL_SPANS_COLUMNS"
+    },
+    {
+      "case": "7_skew_breaks_cell_assignment",
+      "data": "REAL",
+      "document": "FAN-A27-01-skewed",
+      "grid_recovered": false,
+      "observation": "the page is rotated, so the morphological line pass finds no axis-aligned rules and no grid is produced",
+      "succeeded": false,
+      "failing_layer": "grid detection — lines are not axis-aligned",
+      "vlm_recoverable": true,
+      "vlm_reason": "a deskew pass or a vision read of the region could recover it"
+    },
+    {
+      "case": "8_repeated_header_as_data_row",
+      "data": "SYNTHETIC",
+      "row_entities": [
+        "A16"
+      ],
+      "observation": "a header reprinted at the top of a continued page is not a device",
+      "succeeded": true,
+      "failing_layer": "handled — repeated header rows are dropped",
+      "vlm_recoverable": false,
+      "vlm_reason": "structural, not a recognition problem"
+    },
+    {
+      "case": "9_different_tables_merged_on_column_count",
+      "data": "SYNTHETIC",
+      "continuation_status": "separate_table",
+      "reasons": [
+        "not_header_path_compatible"
+      ],
+      "observation": "same column count, same extent, adjacent pages, different headers",
+      "succeeded": true,
+      "failing_layer": "handled — header compatibility is a required signal",
+      "vlm_recoverable": false,
+      "vlm_reason": "structural"
+    },
+    {
+      "case": "10_crop_out_of_bounds_or_degenerate",
+      "data": "REAL",
+      "document": "FAN-MULTI-01",
+      "clipped_crop_saved": true,
+      "clipped_flag": true,
+      "degenerate_crop_returned_none": true,
+      "observation": "a negative-origin box is clipped; a 2px box returns None",
+      "succeeded": true,
+      "failing_layer": "handled",
+      "vlm_recoverable": false,
+      "vlm_reason": "not a recognition problem"
+    },
+    {
+      "case": "11_false_uncertainty_from_tall_ocr_boxes",
+      "data": "REAL",
+      "document": "FAN-MULTI-01",
+      "ambiguous_count": 6,
+      "total_cells": 24,
+      "sampled_cells_all_correct": true,
+      "observation": "every cell's text is correct, yet several are flagged uncertain because PaddleOCR's boxes are taller than the printed rows and coverage falls below min_coverage_ratio",
+      "succeeded": false,
+      "failing_layer": "threshold calibration, not assignment",
+      "vlm_recoverable": false,
+      "vlm_reason": "min_coverage_ratio needs calibrating against human-confirmed cells; it was NOT tuned on this sample"
+    }
+  ]
+}

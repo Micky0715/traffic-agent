@@ -1,0 +1,43 @@
+{
+  "id": "ADV09",
+  "drawing_type": "fan_group",
+  "drawing_no": "FAN-MULTI-E4",
+  "entities": [
+    {
+      "entity_type": "fan",
+      "identifier": "E43",
+      "fields": {
+        "设备编号": "E43",
+        "功率": "37kW",
+        "风量": "24000m3/h"
+      }
+    },
+    {
+      "entity_type": "fan",
+      "identifier": "E41",
+      "fields": {
+        "设备编号": "E41",
+        "功率": "45kW",
+        "风量": "28000m3/h"
+      }
+    },
+    {
+      "entity_type": "fan",
+      "identifier": "E42",
+      "fields": {
+        "设备编号": "E42",
+        "功率": "55kW",
+        "风量": "32000m3/h"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-MULTI-E4",
+    "E43",
+    "E41",
+    "E42"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "entity_count_mismatch",
+  "notes": "devices drawn out of numeric order; pairing must not use position"
+}

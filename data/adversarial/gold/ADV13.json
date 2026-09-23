@@ -1,0 +1,39 @@
+{
+  "id": "ADV13",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-A77-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-777",
+      "fields": {
+        "电机编号": "M-777"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-888",
+      "fields": {
+        "断路器编号": "QF-888"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-999",
+      "fields": {
+        "控制柜编号": "FAN-CAB-999"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-A77-01",
+    "A77风机接线图",
+    "1/1",
+    "M-777",
+    "QF-888",
+    "FAN-CAB-999"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "format_valid_nonexistent",
+  "notes": "every code passes its shape rule; none of this equipment exists"
+}

@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "image": "FAN-A26-01.png",
+    "image_sha256": "308d657fc5f4b178549a6d9acb70c359f3835c6315e844629a501346675624d7",
+    "generated_at": "2026-09-14T14:35:28+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 31.69,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A26风机接线图\n电机 M-26\n断路器 QF-26\n图号\nFAN-A26-01\n名称\nA26风机接线图\n版本\nV3\n电机编号\nM-26\n断路器编号\nQF-26\n控制柜编号\nFAN-CAB-26",
+    "blocks": [
+      {
+        "text": "A26风机接线图",
+        "bbox": [
+          14.0,
+          23.0,
+          232.0,
+          58.0
+        ],
+        "confidence": 0.9999654293060303
+      },
+      {
+        "text": "电机 M-26",
+        "bbox": [
+          49.0,
+          100.0,
+          136.0,
+          121.0
+        ],
+        "confidence": 0.9810602068901062
+      },
+      {
+        "text": "断路器 QF-26",
+        "bbox": [
+          299.0,
+          103.0,
+          408.0,
+          123.0
+        ],
+        "confidence": 0.9910027980804443
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          41.0,
+          502.0,
+          85.0,
+          525.0
+        ],
+        "confidence": 0.9999932646751404
+      },
+      {
+        "text": "FAN-A26-01",
+        "bbox": [
+          211.0,
+          503.0,
+          326.0,
+          524.0
+        ],
+        "confidence": 0.9999946355819702
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          41.0,
+          533.0,
+          85.0,
+          557.0
+        ],
+        "confidence": 0.9999934434890747
+      },
+      {
+        "text": "A26风机接线图",
+        "bbox": [
+          209.0,
+          532.0,
+          343.0,
+          558.0
+        ],
+        "confidence": 0.9999837875366211
+      },
+      {
+        "text": "版本",
+        "bbox": [
+          41.0,
+          564.0,
+          85.0,
+          588.0
+        ],
+        "confidence": 0.9999948740005493
+      },
+      {
+        "text": "V3",
+        "bbox": [
+          207.0,
+          565.0,
+          237.0,
+          590.0
+        ],
+        "confidence": 0.9978018999099731
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          41.0,
+          595.0,
+          122.0,
+          619.0
+        ],
+        "confidence": 0.999984622001648
+      },
+      {
+        "text": "M-26",
+        "bbox": [
+          208.0,
+          597.0,
+          263.0,
+          621.0
+        ],
+        "confidence": 0.999962568283081
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          40.0,
+          624.0,
+          140.0,
+          651.0
+        ],
+        "confidence": 0.9999521970748901
+      },
+      {
+        "text": "QF-26",
+        "bbox": [
+          209.0,
+          628.0,
+          269.0,
+          653.0
+        ],
+        "confidence": 0.9999841451644897
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          40.0,
+          653.0,
+          141.0,
+          680.0
+        ],
+        "confidence": 0.9998800158500671
+      },
+      {
+        "text": "FAN-CAB-26",
+        "bbox": [
+          208.0,
+          659.0,
+          327.0,
+          683.0
+        ],
+        "confidence": 0.9999929666519165
+      }
+    ],
+    "average_confidence": 0.9979697902997334,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

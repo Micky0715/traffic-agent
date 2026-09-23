@@ -1,0 +1,194 @@
+{
+  "provenance": {
+    "image": "FAN-A13-02.png",
+    "image_sha256": "bba517ec1b22ea2b739cce0f3d1175d6c1b3f08b022f3bcce2050157ad28fa37",
+    "generated_at": "2026-09-14T14:29:44+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 39.54,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A13风机接线图\n电机 M-13\n断路器 QF-13\n控制柜 FAN-CAB-3\n图号\nFAN-A13-02\n名称\nA13风机接线图\n页码\n4/6\n电机编号\nM-13\n断路器编号\nQF-13\n控制柜编号\nFAN-CAB-3",
+    "blocks": [
+      {
+        "text": "A13风机接线图",
+        "bbox": [
+          16.0,
+          24.0,
+          233.0,
+          55.0
+        ],
+        "confidence": 0.9999758005142212
+      },
+      {
+        "text": "电机 M-13",
+        "bbox": [
+          48.0,
+          97.0,
+          136.0,
+          121.0
+        ],
+        "confidence": 0.989403247833252
+      },
+      {
+        "text": "断路器 QF-13",
+        "bbox": [
+          299.0,
+          98.0,
+          410.0,
+          122.0
+        ],
+        "confidence": 0.9772771000862122
+      },
+      {
+        "text": "控制柜 FAN-CAB-3",
+        "bbox": [
+          553.0,
+          102.0,
+          705.0,
+          122.0
+        ],
+        "confidence": 0.9953893423080444
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          39.0,
+          502.0,
+          84.0,
+          525.0
+        ],
+        "confidence": 0.9999903440475464
+      },
+      {
+        "text": "FAN-A13-02",
+        "bbox": [
+          208.0,
+          503.0,
+          326.0,
+          524.0
+        ],
+        "confidence": 0.9999904632568359
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          38.0,
+          532.0,
+          85.0,
+          558.0
+        ],
+        "confidence": 0.9999948143959045
+      },
+      {
+        "text": "A13风机接线图",
+        "bbox": [
+          207.0,
+          534.0,
+          341.0,
+          558.0
+        ],
+        "confidence": 0.9999823570251465
+      },
+      {
+        "text": "页码",
+        "bbox": [
+          39.0,
+          565.0,
+          83.0,
+          589.0
+        ],
+        "confidence": 0.9999308586120605
+      },
+      {
+        "text": "4/6",
+        "bbox": [
+          205.0,
+          564.0,
+          244.0,
+          592.0
+        ],
+        "confidence": 0.9999813437461853
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          39.0,
+          593.0,
+          120.0,
+          622.0
+        ],
+        "confidence": 0.9999813437461853
+      },
+      {
+        "text": "M-13",
+        "bbox": [
+          206.0,
+          597.0,
+          261.0,
+          622.0
+        ],
+        "confidence": 0.9999624490737915
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          39.0,
+          624.0,
+          139.0,
+          651.0
+        ],
+        "confidence": 0.9999598264694214
+      },
+      {
+        "text": "QF-13",
+        "bbox": [
+          205.0,
+          627.0,
+          268.0,
+          656.0
+        ],
+        "confidence": 0.9999738931655884
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          39.0,
+          653.0,
+          140.0,
+          681.0
+        ],
+        "confidence": 0.9997455477714539
+      },
+      {
+        "text": "FAN-CAB-3",
+        "bbox": [
+          207.0,
+          660.0,
+          315.0,
+          683.0
+        ],
+        "confidence": 0.9999855756759644
+      }
+    ],
+    "average_confidence": 0.9975952692329884,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

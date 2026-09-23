@@ -1,0 +1,87 @@
+{
+  "note": "Pre-registered BEFORE any vision call in this round. Expectations state what the SYSTEM must do, never what the model must answer — a case whose expectation is 'the model returns X' can only be met by adjusting it afterwards, which is the failure this file exists to prevent.",
+  "registered_at": "2026-09-16",
+  "not_a_blind_test": "All five documents were already examined in earlier rounds of this repo. This is a seen regression set.",
+  "cases": [
+    {
+      "case_id": "MM1_watermark_silent_miss",
+      "document_id": "FAN-A23-01",
+      "image": "data/drawings/FAN-A23-01.png",
+      "data_kind": "REAL",
+      "target_field": "控制柜编号",
+      "situation": "watermark text occupies the value column; OCR confidence stays high while the field is absent",
+      "expectations": {
+        "ocr_confidence_high": true,
+        "field_completeness_low": true,
+        "review_triggered": true,
+        "crop_must_be_local": true,
+        "whole_page_fallback_forbidden": true,
+        "if_vlm_returns_nothing": "record not recovered; inventing a value is a failure of this case"
+      }
+    },
+    {
+      "case_id": "MM2_stamp_contaminated_value",
+      "document_id": "FAN-A24-01",
+      "image": "data/drawings/FAN-A24-01.png",
+      "data_kind": "REAL",
+      "target_field": "控制柜编号",
+      "situation": "the label was destroyed to '制编' so label->value pairing never fired, though FAN-CAB-24 is legible on the page",
+      "expectations": {
+        "review_triggered": true,
+        "if_vlm_has_no_valid_value": "decision stays abstain",
+        "vlm_value_must_be_validated": true,
+        "auto_accept_vlm_forbidden": true
+      }
+    },
+    {
+      "case_id": "MM3_heavy_blur",
+      "document_id": "FAN-A22-01-heavyblur",
+      "image": "data/drawings/FAN-A22-01-heavyblur.png",
+      "data_kind": "REAL",
+      "target_field": "控制柜编号",
+      "situation": "OCR recovers little or no text, so no reliable bbox exists",
+      "expectations": {
+        "blind_whole_page_vlm_forbidden": true,
+        "acceptable_outcomes": [
+          "crop_unavailable",
+          "human_review",
+          "abstain"
+        ]
+      }
+    },
+    {
+      "case_id": "MM4_ocr_right_vlm_wrong",
+      "document_id": "FAN-MULTI-01",
+      "image": "data/drawings/FAN-MULTI-01.png",
+      "data_kind": "REAL image, SYNTHETIC injected conflict",
+      "target_field": "图号",
+      "situation": "a recorded disagreement of the shape OCR=FAN-F53-01 / VLM=FAN-FS3-01 (S vs 5)",
+      "conflict_is_injected": true,
+      "expectations": {
+        "conflict_recorded": true,
+        "resolution": "unresolved",
+        "vlm_not_auto_adopted": true,
+        "decision_must_not_be_execute": true
+      },
+      "injected_conflict": {
+        "field_name": "图号",
+        "ocr_value": "FAN-F53-01",
+        "vlm_value": "FAN-FS3-01",
+        "note": "synthetic S-vs-5 confusion; NOT produced by any model run"
+      }
+    },
+    {
+      "case_id": "MM5_clean_page",
+      "document_id": "FAN-A13-02",
+      "image": "data/drawings/FAN-A13-02.png",
+      "data_kind": "REAL",
+      "target_field": "图号",
+      "situation": "ordinary page, evidence complete",
+      "expectations": {
+        "review_triggered": false,
+        "vlm_calls": 0,
+        "reason": "a simple page must keep taking the cheap path"
+      }
+    }
+  ]
+}

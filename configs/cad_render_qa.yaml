@@ -1,0 +1,59 @@
+# Automated render QA for the public CAD corpus.
+#
+# A SEPARATE file so configs/cad_corpus.yaml — which fixes the 300 DPI render
+# and is frozen — is not touched. DPI is read from there, never set here.
+#
+# EVERY threshold below is uncalibrated. No human-labelled blank / blurred /
+# cropped pages exist to calibrate against, and none of these values was tuned
+# on this corpus's results. They flag pages for a person to look at; a flag is
+# a suspicion, never a finding.
+
+cad_render_qa:
+  threshold_provenance: uncalibrated
+  calibrated_with_human_labels: false
+
+  # A pixel at or above this grey level counts as paper.
+  near_white_level: 245
+  # A pixel at or below this grey level counts as ink.
+  dark_level: 64
+
+  dimension:
+    # |actual - expected| / expected, per axis, worst axis taken.
+    warn_error_ratio: 0.01
+    fail_error_ratio: 0.05
+    aspect_tolerance: 0.01
+    # A page whose size differs from its document's most common size.
+    document_size_tolerance_ratio: 0.01
+
+  blank:
+    # All three must hold. Mean brightness alone would call a sparse but
+    # legitimate drawing blank.
+    min_near_white_ratio: 0.995
+    max_grayscale_std: 6.0
+    max_non_white_ratio: 0.003
+
+  edge:
+    # Band width as a fraction of that side's length.
+    band_fraction: 0.005
+    min_band_px: 4
+    # Share of non-white pixels in a band that makes content "touch" the edge.
+    # Drawing frames normally sit inset from the paper edge; content hugging
+    # the edge is a SUSPICION of cropping, not proof.
+    crop_risk_non_white_ratio: 0.10
+
+  blur:
+    method: laplacian_variance_on_full_resolution_tiles
+    tile_px: 1024
+    # Fractional tile centres; deterministic, not random.
+    tile_centres: [[0.5, 0.5], [0.25, 0.25], [0.75, 0.25], [0.25, 0.75], [0.75, 0.75]]
+    # A tile with less ink than this is paper, and its variance says nothing.
+    min_tile_non_white_ratio: 0.01
+    severe_blur_max_score: 15.0
+
+  thumbnail:
+    max_long_edge: 1400
+    jpeg_quality: 85
+
+  sample:
+    max_pages: 10
+    min_pages_when_no_warning: 6

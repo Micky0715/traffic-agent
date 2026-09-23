@@ -1,0 +1,39 @@
+{
+  "id": "ADV18",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-F53-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-F53",
+      "fields": {
+        "电机编号": "M-F53"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-F53",
+      "fields": {
+        "断路器编号": "QF-F53"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-F53",
+      "fields": {
+        "控制柜编号": "FAN-CAB-F53"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-F53-01",
+    "F53风机接线图",
+    "1/1",
+    "M-F53",
+    "QF-F53",
+    "FAN-CAB-F53"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "visual_blur",
+  "notes": "heavy gaussian blur"
+}

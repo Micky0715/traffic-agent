@@ -1,0 +1,68 @@
+# Multimodal field review: crop a region, ask a vision model, merge, re-decide.
+#
+# mode defaults to `disabled` and allow_live_vlm to false. Both must be turned
+# on AND the CLI must be given --allow-live-vlm before any paid call happens.
+# Two switches rather than one because a config file gets committed by accident
+# and a command-line flag does not.
+
+multimodal_review:
+  mode: disabled            # disabled | cache_replay | live
+  allow_live_vlm: false
+  max_live_calls: 5
+  max_attempts_per_field: 1
+  crop_padding_px: 24
+  min_crop_width: 64
+  min_crop_height: 32
+  prompt_version: vision_field_review_v1
+  schema_version: vision_review_v1
+  require_crop_hash_match: true
+  require_image_hash_match: true
+
+  # Only these reasons may spend a VLM call. A field with complete, valid,
+  # unambiguous evidence is not on this list and never will be.
+  eligible_reasons:
+    - required_field_missing
+    - invalid_field_value
+    - label_value_pairing_failed
+    - isolated_label_without_value
+    - ocr_vlm_conflict
+    - cell_assignment_uncertain
+    - watermark_overlap
+    - low_ocr_confidence_on_required_field
+
+  # Lowest number goes first when max_live_calls forces a choice.
+  # cell_assignment_uncertain is last on purpose: it is 57 of this repo's 60
+  # current requests and bad case 11 measured it as a false positive — the OCR
+  # boxes are taller than the row, the text is correct. Eligible, but it does
+  # not get to crowd out a genuinely missing field.
+  reason_priority:
+    required_field_missing: 10
+    invalid_field_value: 20
+    label_value_pairing_failed: 30
+    isolated_label_without_value: 40
+    ocr_vlm_conflict: 50
+    watermark_overlap: 60
+    low_ocr_confidence_on_required_field: 70
+    cell_assignment_uncertain: 99
+
+  low_confidence_threshold: 0.60
+  max_crop_candidates: 2
+  # How far right of a lone label to look for its value, as a fraction of the
+  # page width. A label with no value is the case this exists for.
+  label_right_extension_fraction: 0.35
+  label_context_padding_px: 8
+
+  # A VLM value that is the ONLY source for one of these does not by itself
+  # justify execute. Configurable because which fields are high-risk is a
+  # project decision, not a property of the parser.
+  single_source_vlm_high_risk_decision: human_review   # partial | human_review
+  high_risk_fields:
+    - 电机编号
+    - 断路器编号
+    - 控制柜编号
+    - 设备编号
+    - 图号
+
+cache:
+  path: data/multimodal_cache/vision_review_cache.json
+  crop_dir: data/multimodal_cache/crops

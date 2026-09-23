@@ -1,0 +1,293 @@
+{
+  "status": "evaluated",
+  "human_reviewed_count": 11,
+  "locatable_records": 6,
+  "unlocatable_records": 5,
+  "small_sample_warning": "6 locatable reviewed record(s). Every rate below moves by 16.7% per record; these are counts, not performance estimates, and generalisation must not be inferred.",
+  "metrics": {
+    "all": {
+      "n": 6,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": 0.2677
+    },
+    "precise": {
+      "n": 2,
+      "precise_localization_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      }
+    },
+    "structural": {
+      "n": 0,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": null
+    },
+    "contextual": {
+      "n": 4,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": 0.079
+    },
+    "diagnostic": {
+      "n": 0,
+      "note": "full-page diagnostics are excluded from every localisation success count"
+    },
+    "by_strategy": {
+      "exact_label_right": {
+        "n": 2,
+        "candidate_oracle_recall": {
+          "iou@0.3": 1.0,
+          "iou@0.5": 1.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 1.0,
+          "iou@0.5": 1.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.6451
+      },
+      "table_or_title_block": {
+        "n": 4,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.079
+      }
+    },
+    "by_drawing_type": {
+      "fan_wiring": {
+        "n": 6,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.3333,
+          "iou@0.5": 0.3333,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.3333,
+          "iou@0.5": 0.3333,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.2677
+      }
+    },
+    "by_gold_region_type": {
+      "title_block": {
+        "n": 1,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.0
+      },
+      "value_cell": {
+        "n": 5,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.4,
+          "iou@0.5": 0.4,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.4,
+          "iou@0.5": 0.4,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.3213
+      }
+    },
+    "unlocatable_detection_accuracy": 0.0,
+    "average_candidate_count": 1,
+    "area_ratio_p50": 0.2927,
+    "area_ratio_p95": 0.2927
+  },
+  "records": [
+    {
+      "record_id": "FAN-A23-01:p1:名称",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "名称",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A23-01:p1:图号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "图号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.6522,
+      "best_strategy": "exact_label_right",
+      "best_trust": "precise",
+      "top1_iou": 0.6522,
+      "top1_strategy": "exact_label_right",
+      "top1_trust": "precise",
+      "precise_best_iou": 0.6522,
+      "area_ratio_top1": 0.047314
+    },
+    {
+      "record_id": "FAN-A23-01:p1:控制柜编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "控制柜编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A23-01:p1:断路器编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "断路器编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.638,
+      "best_strategy": "exact_label_right",
+      "best_trust": "precise",
+      "top1_iou": 0.638,
+      "top1_strategy": "exact_label_right",
+      "top1_trust": "precise",
+      "precise_best_iou": 0.638,
+      "area_ratio_top1": 0.048366
+    },
+    {
+      "record_id": "FAN-A23-01:p1:电机编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "电机编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A24-01:p1:名称",
+      "kind": "locatable",
+      "document_id": "FAN-A24-01",
+      "target_field": "名称",
+      "gold_region_type": "title_block",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.0,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.0,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.295644
+    },
+    {
+      "record_id": "FAN-A24-01:p1:图号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:控制柜编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:断路器编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:电机编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:页码|版本",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    }
+  ],
+  "gold_status_summary": {
+    "unreviewed": 0,
+    "human_reviewed": 11,
+    "excluded": 0
+  },
+  "real_vlm_calls": 0,
+  "excluded_from_denominator": {
+    "unreviewed": 0,
+    "excluded": 0
+  }
+}

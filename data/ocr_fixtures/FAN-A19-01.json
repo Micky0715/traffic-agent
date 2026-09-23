@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "image": "FAN-A19-01.png",
+    "image_sha256": "1289d886bc6243378541018d9ccf5152159db2a428d2040b75bb8b5c4d7ba385",
+    "generated_at": "2026-09-14T14:31:04+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 32.27,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A19风机接线图\n电机 M-19\n断路器 QF-19\n图号\nFAN-A19-01\n名称\nA19风机接线图\n页码\n1/1\n电机编号\nM-19\n断路器编号\nQF-19\n控制柜编号\n审核专用毫AB9",
+    "blocks": [
+      {
+        "text": "A19风机接线图",
+        "bbox": [
+          14.0,
+          23.0,
+          234.0,
+          60.0
+        ],
+        "confidence": 0.9999752044677734
+      },
+      {
+        "text": "电机 M-19",
+        "bbox": [
+          49.0,
+          98.0,
+          139.0,
+          122.0
+        ],
+        "confidence": 0.9901696443557739
+      },
+      {
+        "text": "断路器 QF-19",
+        "bbox": [
+          301.0,
+          102.0,
+          410.0,
+          123.0
+        ],
+        "confidence": 0.9914403557777405
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          38.0,
+          501.0,
+          85.0,
+          527.0
+        ],
+        "confidence": 0.9999914169311523
+      },
+      {
+        "text": "FAN-A19-01",
+        "bbox": [
+          209.0,
+          503.0,
+          326.0,
+          524.0
+        ],
+        "confidence": 0.999991238117218
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          38.0,
+          533.0,
+          85.0,
+          559.0
+        ],
+        "confidence": 0.999994695186615
+      },
+      {
+        "text": "A19风机接线图",
+        "bbox": [
+          207.0,
+          533.0,
+          342.0,
+          559.0
+        ],
+        "confidence": 0.9999807476997375
+      },
+      {
+        "text": "页码",
+        "bbox": [
+          38.0,
+          562.0,
+          85.0,
+          591.0
+        ],
+        "confidence": 0.9006537199020386
+      },
+      {
+        "text": "1/1",
+        "bbox": [
+          210.0,
+          568.0,
+          241.0,
+          584.0
+        ],
+        "confidence": 0.9991706013679504
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          40.0,
+          596.0,
+          122.0,
+          620.0
+        ],
+        "confidence": 0.9999848008155823
+      },
+      {
+        "text": "M-19",
+        "bbox": [
+          208.0,
+          598.0,
+          263.0,
+          622.0
+        ],
+        "confidence": 0.9999626278877258
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          41.0,
+          624.0,
+          141.0,
+          651.0
+        ],
+        "confidence": 0.9999464750289917
+      },
+      {
+        "text": "QF-19",
+        "bbox": [
+          207.0,
+          626.0,
+          270.0,
+          655.0
+        ],
+        "confidence": 0.9999798536300659
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          42.0,
+          653.0,
+          137.0,
+          679.0
+        ],
+        "confidence": 0.9998540878295898
+      },
+      {
+        "text": "审核专用毫AB9",
+        "bbox": [
+          159.0,
+          644.0,
+          333.0,
+          689.0
+        ],
+        "confidence": 0.9048073291778564
+      }
+    ],
+    "average_confidence": 0.9857268532117208,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

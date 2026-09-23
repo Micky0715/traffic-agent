@@ -1,0 +1,51 @@
+{
+  "scope": "transitive src.* import closure of the declared vision entry points, plus the parser configuration",
+  "entry_points": [
+    "src/vision/ocr_engine.py",
+    "src/vision/page_router.py",
+    "src/vision/field_completeness.py",
+    "src/vision/value_validation.py",
+    "src/vision/entity_ref.py",
+    "src/vision/evidence.py",
+    "src/vision/config.py",
+    "src/vision/table_structure.py",
+    "src/vision/qwen_vl_adapter.py",
+    "src/vision/image_quality.py",
+    "src/vision/preprocess.py",
+    "src/vision/validator.py",
+    "src/vision/quality_judge.py",
+    "src/vision/chunk_builder.py",
+    "src/vision/cache.py",
+    "src/vision/base.py",
+    "src/vision/schemas.py"
+  ],
+  "code_files": {
+    "src/drawing_extractor.py": "f34c053e08f530528a2d6d34e362c4039862824eb8b66f5dd755f60b3bf4aecb",
+    "src/llm_router.py": "3f3328c60bb8e71d08c2f0ca6f28a4bc7036089efaf1ff20d6ffdf2f05766fb0",
+    "src/models.py": "04acf61c7cba92dcb6e72d3ee71bd816d3653e048cb76018692ee6bcc5ae3478",
+    "src/tools.py": "98ab793a09e5ef5b32031e21fcdee855fdf781c1ce0096562f8106c22c067958",
+    "src/vision/base.py": "0b703d70f033a8d0d5d622ff79e498876a732e526189b4bc95c5c1cbdae1b418",
+    "src/vision/cache.py": "11535282435c03c602e3d0714b584e9a9042c7110c989d10613f356fe3cd0613",
+    "src/vision/chunk_builder.py": "fb7587a8776c5bfccb38f96fb218ea7421f1e96f3a2e51a6fca94e08d79c38a7",
+    "src/vision/config.py": "0808f350ed33980f85587b544e2d0dd71f0990ea7f1b2169ae3d16f1a0dd023f",
+    "src/vision/entity_ref.py": "2461000a76fb68b231b58dc2ecc471d205ee70030e28bca3709b7b959dcb10d5",
+    "src/vision/evidence.py": "2d1cd0c50f0df5a5d0438c3c439d86eef6eb2b0a12343f8715cebd618a9e6163",
+    "src/vision/field_completeness.py": "e0b3522991904cebe9aa22af265d291a8b9e636227db101714d30c70d68e908b",
+    "src/vision/image_quality.py": "07df98aef8f5d627ddbf38ce5a525781313abc1a0250050ab3f44dfef93fb65e",
+    "src/vision/ocr_engine.py": "3e1307e84e702b062204f03e6d13689faecdb5e640b2ec3b40482902bc92c541",
+    "src/vision/page_router.py": "f74889e32cdac59deecf546dfd58d98c19f7ba1c14e9398337b070b1592a4398",
+    "src/vision/preprocess.py": "8eb7a58baab24de7dbd02e0a75e736d253d42cd105126f23a5070471dcf28806",
+    "src/vision/quality_judge.py": "a68e2eb38d19534984a7d1de44a5537540093b3bf08764a264a266acc099111f",
+    "src/vision/qwen_vl_adapter.py": "a56341bb5cb01c6fb9183a46c25970407f7625e4274f6d9220e44e89bb44d1b5",
+    "src/vision/schemas.py": "663cd753bb254cd1ca59f03b4dc38eb420ca6f3d0fdc01cd1f8774946378dd27",
+    "src/vision/table_structure.py": "4fe6840afda7581c1fbf91c19670321aadfba64ac1a9c726b0f1aee710b3d76c",
+    "src/vision/validator.py": "b21692c79ca9bd528b53487ef9c49aec295bac5ecad2b80688d3dbd21e21f1ae",
+    "src/vision/value_validation.py": "c30217fffb700575456a6dfeadb9acf3d543df67f8f724c8634a54873f1a5183"
+  },
+  "config_files": {
+    "configs/visual_parser.yaml": "b6f5f1c4bf17cfe697d63eb868f2a72f56aa1d9fccbf4b92c8b60c67b3be6bf4"
+  },
+  "code_file_count": 21,
+  "combined_sha256": "1231065b015c935b267b8519c1c5419a420d4ae2c58f5c26cf3b16a3b949ee9a",
+  "frozen_at": "2026-09-15T10:01:35+00:00"
+}

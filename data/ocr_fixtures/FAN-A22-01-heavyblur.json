@@ -1,0 +1,33 @@
+{
+  "provenance": {
+    "image": "FAN-A22-01-heavyblur.png",
+    "image_sha256": "f84516a96b11075a5096ec358395dcc2819464ed16a655b72a0332662c83c561",
+    "generated_at": "2026-09-14T14:31:57+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 19.45,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "",
+    "blocks": [],
+    "average_confidence": 0.0,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

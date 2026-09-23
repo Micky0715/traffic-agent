@@ -1,0 +1,1709 @@
+{
+  "note": "Every candidate the resolver produced is shown, not only the one it selected. A gold drawn on top of the prediction is the prediction.",
+  "real_vlm_calls": 0,
+  "external_api_calls": 0,
+  "pages": 5,
+  "pending_records_created": 11,
+  "human_reviewed_records_preserved": 0,
+  "total_records": 11,
+  "status_summary": {
+    "unreviewed": 11,
+    "human_reviewed": 0,
+    "excluded": 0
+  },
+  "candidates_by_strategy": {
+    "full_page_diagnostic": 1,
+    "exact_label_right": 2,
+    "table_or_title_block": 2,
+    "alias_label_right": 1
+  },
+  "gold_file": "data/review_region_gold_unreviewed.jsonl",
+  "page_details": [
+    {
+      "document_id": "FAN-A13-02",
+      "image_path": "data/drawings/FAN-A13-02.png",
+      "image_size": [
+        1000,
+        700
+      ],
+      "preview_scale": 1.0,
+      "page_file": "pages/FAN-A13-02.png",
+      "overlay_file": "overlays/FAN-A13-02.overlay.png",
+      "preview_file": null,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "ocr_block_count": 16,
+      "ocr_blocks": [
+        {
+          "text": "A13风机接线图",
+          "bbox": [
+            16.0,
+            24.0,
+            233.0,
+            55.0
+          ]
+        },
+        {
+          "text": "电机 M-13",
+          "bbox": [
+            48.0,
+            97.0,
+            136.0,
+            121.0
+          ]
+        },
+        {
+          "text": "断路器 QF-13",
+          "bbox": [
+            299.0,
+            98.0,
+            410.0,
+            122.0
+          ]
+        },
+        {
+          "text": "控制柜 FAN-CAB-3",
+          "bbox": [
+            553.0,
+            102.0,
+            705.0,
+            122.0
+          ]
+        },
+        {
+          "text": "图号",
+          "bbox": [
+            39.0,
+            502.0,
+            84.0,
+            525.0
+          ]
+        },
+        {
+          "text": "FAN-A13-02",
+          "bbox": [
+            208.0,
+            503.0,
+            326.0,
+            524.0
+          ]
+        },
+        {
+          "text": "名称",
+          "bbox": [
+            38.0,
+            532.0,
+            85.0,
+            558.0
+          ]
+        },
+        {
+          "text": "A13风机接线图",
+          "bbox": [
+            207.0,
+            534.0,
+            341.0,
+            558.0
+          ]
+        },
+        {
+          "text": "页码",
+          "bbox": [
+            39.0,
+            565.0,
+            83.0,
+            589.0
+          ]
+        },
+        {
+          "text": "4/6",
+          "bbox": [
+            205.0,
+            564.0,
+            244.0,
+            592.0
+          ]
+        },
+        {
+          "text": "电机编号",
+          "bbox": [
+            39.0,
+            593.0,
+            120.0,
+            622.0
+          ]
+        },
+        {
+          "text": "M-13",
+          "bbox": [
+            206.0,
+            597.0,
+            261.0,
+            622.0
+          ]
+        },
+        {
+          "text": "断路器编号",
+          "bbox": [
+            39.0,
+            624.0,
+            139.0,
+            651.0
+          ]
+        },
+        {
+          "text": "QF-13",
+          "bbox": [
+            205.0,
+            627.0,
+            268.0,
+            656.0
+          ]
+        },
+        {
+          "text": "控制柜编号",
+          "bbox": [
+            39.0,
+            653.0,
+            140.0,
+            681.0
+          ]
+        },
+        {
+          "text": "FAN-CAB-3",
+          "bbox": [
+            207.0,
+            660.0,
+            315.0,
+            683.0
+          ]
+        }
+      ],
+      "table_bbox": [
+        61.0,
+        481.0,
+        941.0,
+        660.0
+      ],
+      "table_shape": "6x2",
+      "cell_bboxes": [
+        {
+          "row": 0,
+          "col": 0,
+          "bbox": [
+            61.0,
+            481.0,
+            220.0,
+            510.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bbox": [
+            220.0,
+            481.0,
+            940.0,
+            510.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bbox": [
+            61.0,
+            510.0,
+            220.0,
+            540.0
+          ],
+          "text": "图号"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bbox": [
+            220.0,
+            510.0,
+            940.0,
+            540.0
+          ],
+          "text": "FAN-A13-02"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bbox": [
+            61.0,
+            540.0,
+            220.0,
+            570.0
+          ],
+          "text": "名称"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bbox": [
+            220.0,
+            540.0,
+            940.0,
+            570.0
+          ],
+          "text": "A13风机接线图"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bbox": [
+            61.0,
+            570.0,
+            220.0,
+            600.0
+          ],
+          "text": "页码"
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bbox": [
+            220.0,
+            570.0,
+            940.0,
+            600.0
+          ],
+          "text": "4/6"
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bbox": [
+            61.0,
+            600.0,
+            220.0,
+            630.0
+          ],
+          "text": "电机编号"
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bbox": [
+            220.0,
+            600.0,
+            940.0,
+            630.0
+          ],
+          "text": "M-13"
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bbox": [
+            61.0,
+            630.0,
+            220.0,
+            660.0
+          ],
+          "text": "断路器编号 控制柜编号"
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bbox": [
+            220.0,
+            630.0,
+            940.0,
+            660.0
+          ],
+          "text": "QF-13"
+        }
+      ],
+      "missing_fields": [],
+      "field_reasons": {},
+      "target_fields": [],
+      "candidates": [],
+      "crops": []
+    },
+    {
+      "document_id": "FAN-A22-01-heavyblur",
+      "image_path": "data/drawings/FAN-A22-01-heavyblur.png",
+      "image_size": [
+        1000,
+        700
+      ],
+      "preview_scale": 1.0,
+      "page_file": "pages/FAN-A22-01-heavyblur.png",
+      "overlay_file": "overlays/FAN-A22-01-heavyblur.overlay.png",
+      "preview_file": null,
+      "drawing_type": "unknown",
+      "drawing_type_known": false,
+      "ocr_block_count": 0,
+      "ocr_blocks": [],
+      "table_bbox": null,
+      "table_shape": null,
+      "cell_bboxes": [],
+      "missing_fields": [],
+      "field_reasons": {},
+      "target_fields": [],
+      "candidates": [
+        {
+          "request_id": "region:FAN-A22-01-heavyblur:p1:*",
+          "document_id": "FAN-A22-01-heavyblur",
+          "page_no": 1,
+          "target_fields": [
+            "*"
+          ],
+          "bbox": [
+            0.0,
+            0.0,
+            1000.0,
+            700.0
+          ],
+          "strategy": "full_page_diagnostic",
+          "trust_level": "diagnostic",
+          "source_anchors": [
+            "whole page"
+          ],
+          "area_ratio": 1.0,
+          "reasons": [
+            "drawing type unknown: no required-field list",
+            "OCR returned 0 blocks (<= 3)",
+            "no table structure recovered"
+          ],
+          "localization_uncertain": true,
+          "answer_eligible": false,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": null
+        }
+      ],
+      "crops": [
+        {
+          "file": "crops/FAN-A22-01-heavyblur.0.full_page_diagnostic.png",
+          "region_index": 0
+        }
+      ]
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "image_path": "data/drawings/FAN-A23-01.png",
+      "image_size": [
+        1000,
+        700
+      ],
+      "preview_scale": 1.0,
+      "page_file": "pages/FAN-A23-01.png",
+      "overlay_file": "overlays/FAN-A23-01.overlay.png",
+      "preview_file": null,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "ocr_block_count": 11,
+      "ocr_blocks": [
+        {
+          "text": "A23风机接线图",
+          "bbox": [
+            18.0,
+            19.0,
+            238.0,
+            61.0
+          ]
+        },
+        {
+          "text": "电机 M-23",
+          "bbox": [
+            53.0,
+            97.0,
+            143.0,
+            121.0
+          ]
+        },
+        {
+          "text": "严禁外传内部资料严禁外传内部资料",
+          "bbox": [
+            0.0,
+            0.0,
+            416.0,
+            257.0
+          ]
+        },
+        {
+          "text": "部资料严禁外传内部资料严禁外传内部资料",
+          "bbox": [
+            0.0,
+            118.0,
+            489.0,
+            433.0
+          ]
+        },
+        {
+          "text": "内部资料严禁外传内部资料严禁外传内部资料",
+          "bbox": [
+            2.0,
+            185.0,
+            526.0,
+            509.0
+          ]
+        },
+        {
+          "text": "图号",
+          "bbox": [
+            43.0,
+            486.0,
+            96.0,
+            520.0
+          ]
+        },
+        {
+          "text": "页码",
+          "bbox": [
+            43.0,
+            555.0,
+            91.0,
+            582.0
+          ]
+        },
+        {
+          "text": "1/1",
+          "bbox": [
+            214.0,
+            553.0,
+            254.0,
+            583.0
+          ]
+        },
+        {
+          "text": "断路器编号",
+          "bbox": [
+            45.0,
+            616.0,
+            150.0,
+            644.0
+          ]
+        },
+        {
+          "text": "内部资料严禁外传内部资料",
+          "bbox": [
+            385.0,
+            508.0,
+            711.0,
+            700.0
+          ]
+        },
+        {
+          "text": "严禁外传内部资料",
+          "bbox": [
+            528.0,
+            574.0,
+            745.0,
+            700.0
+          ]
+        }
+      ],
+      "table_bbox": [
+        61.0,
+        481.0,
+        941.0,
+        660.0
+      ],
+      "table_shape": "6x2",
+      "cell_bboxes": [
+        {
+          "row": 0,
+          "col": 0,
+          "bbox": [
+            61.0,
+            481.0,
+            220.0,
+            510.0
+          ],
+          "text": "图号"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bbox": [
+            220.0,
+            481.0,
+            940.0,
+            510.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bbox": [
+            61.0,
+            510.0,
+            220.0,
+            540.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bbox": [
+            220.0,
+            510.0,
+            940.0,
+            540.0
+          ],
+          "text": "内部资料严禁外传内部资料"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bbox": [
+            61.0,
+            540.0,
+            220.0,
+            570.0
+          ],
+          "text": "页码"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bbox": [
+            220.0,
+            540.0,
+            940.0,
+            570.0
+          ],
+          "text": "1/1"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bbox": [
+            61.0,
+            570.0,
+            220.0,
+            600.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bbox": [
+            220.0,
+            570.0,
+            940.0,
+            600.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bbox": [
+            61.0,
+            600.0,
+            220.0,
+            630.0
+          ],
+          "text": "断路器编号"
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bbox": [
+            220.0,
+            600.0,
+            940.0,
+            630.0
+          ],
+          "text": "严禁外传内部资料"
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bbox": [
+            61.0,
+            630.0,
+            220.0,
+            660.0
+          ],
+          "text": ""
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bbox": [
+            220.0,
+            630.0,
+            940.0,
+            660.0
+          ],
+          "text": ""
+        }
+      ],
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号"
+      ],
+      "field_reasons": {
+        "图号": [
+          "required_field_missing",
+          "isolated_label_without_value"
+        ],
+        "名称": [
+          "required_field_missing"
+        ],
+        "电机编号": [
+          "required_field_missing"
+        ],
+        "断路器编号": [
+          "required_field_missing",
+          "isolated_label_without_value"
+        ],
+        "控制柜编号": [
+          "required_field_missing"
+        ]
+      },
+      "target_fields": [
+        "名称",
+        "图号",
+        "控制柜编号",
+        "断路器编号",
+        "电机编号"
+      ],
+      "candidates": [
+        {
+          "request_id": "region:FAN-A23-01:p1:图号",
+          "document_id": "FAN-A23-01",
+          "page_no": 1,
+          "target_fields": [
+            "图号"
+          ],
+          "bbox": [
+            212.0,
+            473.0,
+            948.0,
+            518.0
+          ],
+          "strategy": "exact_label_right",
+          "trust_level": "precise",
+          "source_anchors": [
+            "label:图号"
+          ],
+          "area_ratio": 0.047314,
+          "reasons": [
+            "required_field_missing",
+            "isolated_label_without_value",
+            "exact label text found"
+          ],
+          "localization_uncertain": false,
+          "answer_eligible": true,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": null
+        },
+        {
+          "request_id": "region:FAN-A23-01:p1:断路器编号",
+          "document_id": "FAN-A23-01",
+          "page_no": 1,
+          "target_fields": [
+            "断路器编号"
+          ],
+          "bbox": [
+            212.0,
+            592.0,
+            948.0,
+            638.0
+          ],
+          "strategy": "exact_label_right",
+          "trust_level": "precise",
+          "source_anchors": [
+            "label:断路器编号"
+          ],
+          "area_ratio": 0.048366,
+          "reasons": [
+            "required_field_missing",
+            "isolated_label_without_value",
+            "exact label text found"
+          ],
+          "localization_uncertain": false,
+          "answer_eligible": true,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": null
+        },
+        {
+          "request_id": "region:FAN-A23-01:p1:名称+控制柜编号+电机编号",
+          "document_id": "FAN-A23-01",
+          "page_no": 1,
+          "target_fields": [
+            "名称",
+            "控制柜编号",
+            "电机编号"
+          ],
+          "bbox": [
+            39.519999999999996,
+            459.52,
+            962.48,
+            681.48
+          ],
+          "strategy": "table_or_title_block",
+          "trust_level": "contextual",
+          "source_anchors": [
+            "table:T0:3d527d661ae44ba4"
+          ],
+          "area_ratio": 0.292657,
+          "reasons": [
+            "required_field_missing",
+            "field could not be located; the table containing it was"
+          ],
+          "localization_uncertain": true,
+          "answer_eligible": false,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": null
+        }
+      ],
+      "crops": [
+        {
+          "file": "crops/FAN-A23-01.0.exact_label_right.png",
+          "region_index": 0
+        },
+        {
+          "file": "crops/FAN-A23-01.1.exact_label_right.png",
+          "region_index": 1
+        },
+        {
+          "file": "crops/FAN-A23-01.2.table_or_title_block.png",
+          "region_index": 2
+        }
+      ]
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "image_path": "data/drawings/FAN-A24-01.png",
+      "image_size": [
+        1000,
+        700
+      ],
+      "preview_scale": 1.0,
+      "page_file": "pages/FAN-A24-01.png",
+      "overlay_file": "overlays/FAN-A24-01.overlay.png",
+      "preview_file": null,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "ocr_block_count": 16,
+      "ocr_blocks": [
+        {
+          "text": "A24风机接线图",
+          "bbox": [
+            14.0,
+            18.0,
+            244.0,
+            63.0
+          ]
+        },
+        {
+          "text": "电.M.26",
+          "bbox": [
+            53.0,
+            96.0,
+            149.0,
+            125.0
+          ]
+        },
+        {
+          "text": " QF 14",
+          "bbox": [
+            302.0,
+            96.0,
+            420.0,
+            128.0
+          ]
+        },
+        {
+          "text": "资料仅供参考",
+          "bbox": [
+            6.0,
+            238.0,
+            195.0,
+            369.0
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            47.0,
+            490.0,
+            99.0,
+            524.0
+          ]
+        },
+        {
+          "text": "FAN-A24-01",
+          "bbox": [
+            213.0,
+            487.0,
+            342.0,
+            519.0
+          ]
+        },
+        {
+          "text": "ne",
+          "bbox": [
+            46.0,
+            521.0,
+            100.0,
+            556.0
+          ]
+        },
+        {
+          "text": "A4R",
+          "bbox": [
+            212.0,
+            518.0,
+            357.0,
+            553.0
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            45.0,
+            552.0,
+            101.0,
+            587.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            211.0,
+            550.0,
+            278.0,
+            584.0
+          ]
+        },
+        {
+          "text": "电r编号",
+          "bbox": [
+            44.0,
+            583.0,
+            136.0,
+            619.0
+          ]
+        },
+        {
+          "text": "M-24",
+          "bbox": [
+            211.0,
+            579.0,
+            279.0,
+            616.0
+          ]
+        },
+        {
+          "text": "E银行",
+          "bbox": [
+            43.0,
+            615.0,
+            154.0,
+            650.0
+          ]
+        },
+        {
+          "text": "OF-24",
+          "bbox": [
+            209.0,
+            613.0,
+            284.0,
+            647.0
+          ]
+        },
+        {
+          "text": "制编",
+          "bbox": [
+            42.0,
+            649.0,
+            152.0,
+            681.0
+          ]
+        },
+        {
+          "text": "FAN-CAB-24",
+          "bbox": [
+            209.0,
+            646.0,
+            342.0,
+            678.0
+          ]
+        }
+      ],
+      "table_bbox": [
+        59.0,
+        480.0,
+        943.0,
+        660.0
+      ],
+      "table_shape": "4x2",
+      "cell_bboxes": [
+        {
+          "row": 0,
+          "col": 0,
+          "bbox": [
+            61.0,
+            482.0,
+            220.0,
+            511.0
+          ],
+          "text": "N"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bbox": [
+            220.0,
+            482.0,
+            939.0,
+            511.0
+          ],
+          "text": "FAN-A24-01"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bbox": [
+            61.0,
+            511.0,
+            220.0,
+            570.0
+          ],
+          "text": "ne"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bbox": [
+            220.0,
+            511.0,
+            939.0,
+            570.0
+          ],
+          "text": "A4R 1"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bbox": [
+            61.0,
+            570.0,
+            220.0,
+            630.0
+          ],
+          "text": "电r编号"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bbox": [
+            220.0,
+            570.0,
+            939.0,
+            630.0
+          ],
+          "text": "M-24 OF-24"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bbox": [
+            61.0,
+            630.0,
+            220.0,
+            659.0
+          ],
+          "text": "E银行 制编"
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bbox": [
+            220.0,
+            630.0,
+            939.0,
+            659.0
+          ],
+          "text": "FAN-CAB-24"
+        }
+      ],
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码|版本"
+      ],
+      "field_reasons": {
+        "图号": [
+          "required_field_missing"
+        ],
+        "名称": [
+          "required_field_missing"
+        ],
+        "电机编号": [
+          "required_field_missing"
+        ],
+        "断路器编号": [
+          "required_field_missing"
+        ],
+        "控制柜编号": [
+          "required_field_missing"
+        ],
+        "页码|版本": [
+          "required_field_missing"
+        ]
+      },
+      "target_fields": [
+        "名称",
+        "图号",
+        "控制柜编号",
+        "断路器编号",
+        "电机编号",
+        "页码|版本"
+      ],
+      "candidates": [
+        {
+          "request_id": "region:FAN-A24-01:p1:电机编号",
+          "document_id": "FAN-A24-01",
+          "page_no": 1,
+          "target_fields": [
+            "电机编号"
+          ],
+          "bbox": [
+            212.0,
+            562.0,
+            947.0,
+            638.0
+          ],
+          "strategy": "alias_label_right",
+          "trust_level": "structural",
+          "source_anchors": [
+            "alias:电r编号"
+          ],
+          "area_ratio": 0.0798,
+          "reasons": [
+            "required_field_missing",
+            "alias match '电机编号' score=0.75"
+          ],
+          "localization_uncertain": true,
+          "answer_eligible": false,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": {
+            "matched_text": "电r编号",
+            "matched_alias": "电机编号",
+            "score": 0.75,
+            "ambiguous": false
+          }
+        },
+        {
+          "request_id": "region:FAN-A24-01:p1:名称+图号+控制柜编号+断路器编号+页码|版本",
+          "document_id": "FAN-A24-01",
+          "page_no": 1,
+          "target_fields": [
+            "名称",
+            "图号",
+            "控制柜编号",
+            "断路器编号",
+            "页码|版本"
+          ],
+          "bbox": [
+            37.400000000000006,
+            458.4,
+            964.6,
+            681.6
+          ],
+          "strategy": "table_or_title_block",
+          "trust_level": "contextual",
+          "source_anchors": [
+            "table:T0:48b59e1067ee8fab"
+          ],
+          "area_ratio": 0.295644,
+          "reasons": [
+            "required_field_missing",
+            "no identified field both above and below this one",
+            "field could not be located; the table containing it was",
+            "field is not in the configured title-block order"
+          ],
+          "localization_uncertain": true,
+          "answer_eligible": false,
+          "scale": 1.0,
+          "unavailable_reason": null,
+          "alias_match": null
+        }
+      ],
+      "crops": [
+        {
+          "file": "crops/FAN-A24-01.0.alias_label_right.png",
+          "region_index": 0
+        },
+        {
+          "file": "crops/FAN-A24-01.1.table_or_title_block.png",
+          "region_index": 1
+        }
+      ]
+    },
+    {
+      "document_id": "FAN-MULTI-01",
+      "image_path": "data/drawings/FAN-MULTI-01.png",
+      "image_size": [
+        1000,
+        800
+      ],
+      "preview_scale": 1.0,
+      "page_file": "pages/FAN-MULTI-01.png",
+      "overlay_file": "overlays/FAN-MULTI-01.overlay.png",
+      "preview_file": null,
+      "drawing_type": "fan_group",
+      "drawing_type_known": true,
+      "ocr_block_count": 28,
+      "ocr_blocks": [
+        {
+          "text": "A16/A17/A18风机组接线图",
+          "bbox": [
+            23.0,
+            23.0,
+            357.0,
+            50.0
+          ]
+        },
+        {
+          "text": "A16风机",
+          "bbox": [
+            55.0,
+            107.0,
+            127.0,
+            132.0
+          ]
+        },
+        {
+          "text": "A17风机",
+          "bbox": [
+            305.0,
+            109.0,
+            375.0,
+            134.0
+          ]
+        },
+        {
+          "text": "A18风机",
+          "bbox": [
+            678.0,
+            109.0,
+            747.0,
+            131.0
+          ]
+        },
+        {
+          "text": "图号",
+          "bbox": [
+            47.0,
+            210.0,
+            92.0,
+            233.0
+          ]
+        },
+        {
+          "text": "FAN-MULTI-01",
+          "bbox": [
+            216.0,
+            212.0,
+            355.0,
+            232.0
+          ]
+        },
+        {
+          "text": "名称",
+          "bbox": [
+            43.0,
+            234.0,
+            92.0,
+            262.0
+          ]
+        },
+        {
+          "text": "A16/A17/A18风机组接线图",
+          "bbox": [
+            216.0,
+            238.0,
+            457.0,
+            258.0
+          ]
+        },
+        {
+          "text": "页码",
+          "bbox": [
+            44.0,
+            263.0,
+            89.0,
+            286.0
+          ]
+        },
+        {
+          "text": "1/1",
+          "bbox": [
+            214.0,
+            263.0,
+            251.0,
+            286.0
+          ]
+        },
+        {
+          "text": "A16设备编号",
+          "bbox": [
+            44.0,
+            290.0,
+            162.0,
+            311.0
+          ]
+        },
+        {
+          "text": "A16",
+          "bbox": [
+            213.0,
+            290.0,
+            256.0,
+            312.0
+          ]
+        },
+        {
+          "text": "A16功率",
+          "bbox": [
+            41.0,
+            315.0,
+            125.0,
+            339.0
+          ]
+        },
+        {
+          "text": "45kW",
+          "bbox": [
+            214.0,
+            316.0,
+            272.0,
+            338.0
+          ]
+        },
+        {
+          "text": "A16风量",
+          "bbox": [
+            40.0,
+            342.0,
+            124.0,
+            366.0
+          ]
+        },
+        {
+          "text": "28000m³/h",
+          "bbox": [
+            214.0,
+            343.0,
+            320.0,
+            363.0
+          ]
+        },
+        {
+          "text": "A17设备编号",
+          "bbox": [
+            39.0,
+            368.0,
+            160.0,
+            392.0
+          ]
+        },
+        {
+          "text": "A17",
+          "bbox": [
+            211.0,
+            368.0,
+            254.0,
+            391.0
+          ]
+        },
+        {
+          "text": "A17功率",
+          "bbox": [
+            38.0,
+            395.0,
+            122.0,
+            419.0
+          ]
+        },
+        {
+          "text": "55kW",
+          "bbox": [
+            211.0,
+            395.0,
+            269.0,
+            416.0
+          ]
+        },
+        {
+          "text": "A17风量",
+          "bbox": [
+            37.0,
+            423.0,
+            120.0,
+            444.0
+          ]
+        },
+        {
+          "text": "32000m³/h",
+          "bbox": [
+            212.0,
+            422.0,
+            318.0,
+            442.0
+          ]
+        },
+        {
+          "text": "A18设备编号",
+          "bbox": [
+            36.0,
+            448.0,
+            157.0,
+            469.0
+          ]
+        },
+        {
+          "text": "A18",
+          "bbox": [
+            209.0,
+            447.0,
+            252.0,
+            469.0
+          ]
+        },
+        {
+          "text": "A18功率",
+          "bbox": [
+            35.0,
+            474.0,
+            118.0,
+            495.0
+          ]
+        },
+        {
+          "text": "37kW",
+          "bbox": [
+            210.0,
+            473.0,
+            268.0,
+            495.0
+          ]
+        },
+        {
+          "text": "A18风量",
+          "bbox": [
+            34.0,
+            500.0,
+            118.0,
+            521.0
+          ]
+        },
+        {
+          "text": "24000m³/h",
+          "bbox": [
+            210.0,
+            501.0,
+            317.0,
+            522.0
+          ]
+        }
+      ],
+      "table_bbox": [
+        61.0,
+        221.0,
+        941.0,
+        520.0
+      ],
+      "table_shape": "12x2",
+      "cell_bboxes": [
+        {
+          "row": 0,
+          "col": 0,
+          "bbox": [
+            61.0,
+            221.0,
+            220.0,
+            245.0
+          ],
+          "text": "图号"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "bbox": [
+            220.0,
+            221.0,
+            940.0,
+            245.0
+          ],
+          "text": "FAN-MULTI-01"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "bbox": [
+            61.0,
+            245.0,
+            220.0,
+            270.0
+          ],
+          "text": "名称"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "bbox": [
+            220.0,
+            245.0,
+            940.0,
+            270.0
+          ],
+          "text": "A16/A17/A18风机组接线图"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "bbox": [
+            61.0,
+            270.0,
+            220.0,
+            295.0
+          ],
+          "text": "页码"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "bbox": [
+            220.0,
+            270.0,
+            940.0,
+            295.0
+          ],
+          "text": "1/1"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "bbox": [
+            61.0,
+            295.0,
+            220.0,
+            320.0
+          ],
+          "text": "A16设备编号"
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "bbox": [
+            220.0,
+            295.0,
+            940.0,
+            320.0
+          ],
+          "text": "A16"
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "bbox": [
+            61.0,
+            320.0,
+            220.0,
+            345.0
+          ],
+          "text": "A16功率"
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "bbox": [
+            220.0,
+            320.0,
+            940.0,
+            345.0
+          ],
+          "text": "45kW"
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "bbox": [
+            61.0,
+            345.0,
+            220.0,
+            370.0
+          ],
+          "text": "A16风量"
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "bbox": [
+            220.0,
+            345.0,
+            940.0,
+            370.0
+          ],
+          "text": "28000m3/h"
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "bbox": [
+            61.0,
+            370.0,
+            220.0,
+            395.0
+          ],
+          "text": "A17设备编号"
+        },
+        {
+          "row": 6,
+          "col": 1,
+          "bbox": [
+            220.0,
+            370.0,
+            940.0,
+            395.0
+          ],
+          "text": "A17"
+        },
+        {
+          "row": 7,
+          "col": 0,
+          "bbox": [
+            61.0,
+            395.0,
+            220.0,
+            420.0
+          ],
+          "text": "A17功率"
+        },
+        {
+          "row": 7,
+          "col": 1,
+          "bbox": [
+            220.0,
+            395.0,
+            940.0,
+            420.0
+          ],
+          "text": "55kW"
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "bbox": [
+            61.0,
+            420.0,
+            220.0,
+            445.0
+          ],
+          "text": "A17风量"
+        },
+        {
+          "row": 8,
+          "col": 1,
+          "bbox": [
+            220.0,
+            420.0,
+            940.0,
+            445.0
+          ],
+          "text": "32000m3/h"
+        },
+        {
+          "row": 9,
+          "col": 0,
+          "bbox": [
+            61.0,
+            445.0,
+            220.0,
+            470.0
+          ],
+          "text": "A18设备编号"
+        },
+        {
+          "row": 9,
+          "col": 1,
+          "bbox": [
+            220.0,
+            445.0,
+            940.0,
+            470.0
+          ],
+          "text": "A18"
+        },
+        {
+          "row": 10,
+          "col": 0,
+          "bbox": [
+            61.0,
+            470.0,
+            220.0,
+            495.0
+          ],
+          "text": "A18功率"
+        },
+        {
+          "row": 10,
+          "col": 1,
+          "bbox": [
+            220.0,
+            470.0,
+            940.0,
+            495.0
+          ],
+          "text": "37kW"
+        },
+        {
+          "row": 11,
+          "col": 0,
+          "bbox": [
+            61.0,
+            495.0,
+            220.0,
+            520.0
+          ],
+          "text": "A18风量"
+        },
+        {
+          "row": 11,
+          "col": 1,
+          "bbox": [
+            220.0,
+            495.0,
+            940.0,
+            520.0
+          ],
+          "text": "24000m3/h"
+        }
+      ],
+      "missing_fields": [],
+      "field_reasons": {},
+      "target_fields": [],
+      "candidates": [],
+      "crops": []
+    }
+  ]
+}

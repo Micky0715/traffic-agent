@@ -1,0 +1,116 @@
+{
+  "static_analysis_limitation": "代码范围来自静态 import 闭包；配置、Prompt、图片、裁剪图与缓存无法由 import 分析发现，因此显式列入。",
+  "does_not_touch": [
+    "outputs/vision_freeze_manifest.json",
+    "outputs/table_freeze_manifest.json",
+    "outputs/routing_freeze_manifest.json"
+  ],
+  "groups": {
+    "multimodal_runtime_code": {
+      "source": "static import closure",
+      "files": {
+        "src/drawing_extractor.py": "f34c053e08f530528a2d6d34e362c4039862824eb8b66f5dd755f60b3bf4aecb",
+        "src/llm_router.py": "3f3328c60bb8e71d08c2f0ca6f28a4bc7036089efaf1ff20d6ffdf2f05766fb0",
+        "src/models.py": "04acf61c7cba92dcb6e72d3ee71bd816d3653e048cb76018692ee6bcc5ae3478",
+        "src/multimodal/cache.py": "167bf7de6f3c8a1ddeb06c4af6b157f520a9d468e3a1cb15d5eb5251b504117c",
+        "src/multimodal/config.py": "8cde61d85ab68bd3c891d6be6e8b27f9630fc7df8f415bc03b0b4f2f53e464aa",
+        "src/multimodal/crop.py": "c37404ef04115a24e9cfde19441e427badf6a4d504d2c6275375e1c93fb87696",
+        "src/multimodal/decision.py": "fc2db3a335f141127b42d5782b39c50a1f283ea8758400b03f17006e48cc8667",
+        "src/multimodal/executor.py": "ee4b05011a8f3552ad071845dfbc6345491980aff58a8467e5d70ffeb7bb16bd",
+        "src/multimodal/fusion.py": "867c9be29b32fac903ca5073de2ad240c1bd5ec55c631e62ca9d4ff87dc86e85",
+        "src/multimodal/pipeline.py": "1eea0474a8125b985203fdf83babe6c02031db0fd8f45a47e54e0d25dab3fe5c",
+        "src/multimodal/reasons.py": "73526094e8dd161da893d260ab68d940064e9065f095a937f851c2cefa32de57",
+        "src/multimodal/response_schema.py": "30bac6083813d3550a7e0753e3dd71967f8d0e1a15ab6ad81674bfc7239aa1d6",
+        "src/multimodal/schemas.py": "6436da78a7be4ecbab80e791d3f51c8cd52c0bca2802277f1be22550ffdae54e",
+        "src/multimodal/triggers.py": "59ed42ff91a7a4402216e1c043028a25f3d4e9c643248877498c5b8e95727d17",
+        "src/rag/config.py": "8a8d05240914d05ecee69c88d8fc065a02af66fc26011806967bf53c3a98b261",
+        "src/rag/policy.py": "8f590ed9d620af80fc3571fb7339fcfd8bb22f17c66364e791b22af36d674053",
+        "src/vision/base.py": "0b703d70f033a8d0d5d622ff79e498876a732e526189b4bc95c5c1cbdae1b418",
+        "src/vision/cache.py": "11535282435c03c602e3d0714b584e9a9042c7110c989d10613f356fe3cd0613",
+        "src/vision/config.py": "0808f350ed33980f85587b544e2d0dd71f0990ea7f1b2169ae3d16f1a0dd023f",
+        "src/vision/evidence.py": "2d1cd0c50f0df5a5d0438c3c439d86eef6eb2b0a12343f8715cebd618a9e6163",
+        "src/vision/qwen_vl_adapter.py": "a56341bb5cb01c6fb9183a46c25970407f7625e4274f6d9220e44e89bb44d1b5",
+        "src/vision/schemas.py": "7d3dddb4e122bcba537fdbf46d7af8f62b7a6514d48d0b2cf4c37ecbdd726889",
+        "src/vision/value_validation.py": "c30217fffb700575456a6dfeadb9acf3d543df67f8f724c8634a54873f1a5183"
+      },
+      "file_count": 23,
+      "sha256": "cf9d63fb11b99f8add4b6d4aed2701975e4806ace3c92d5153f9d8478c3a16bc"
+    },
+    "multimodal_config": {
+      "source": "explicit list",
+      "files": {
+        "configs/multimodal.yaml": "7ee8efa9d287bdf6752f5fb5b158bb80c7da6c3db83a7c102ad7bdb33ef1c615"
+      },
+      "file_count": 1,
+      "sha256": "2d8985ee64c1b2819f4d1e54874cad5746affac8e20c923ec53b02f6dd9432d1"
+    },
+    "multimodal_prompts": {
+      "source": "explicit list",
+      "files": {
+        "prompts/10_vision_field_review.md": "2ab5d2471e4bfd4dde0d0a1887798f1fef020669c788f9524e9362a136278216"
+      },
+      "file_count": 1,
+      "sha256": "90520c8e38d11e0b46a6fbb6b97d40ac9b15d707e97a563551c3f00f435fb7c6"
+    },
+    "multimodal_images": {
+      "source": "registered cases",
+      "files": {
+        "data/drawings/FAN-A13-02.png": "bba517ec1b22ea2b739cce0f3d1175d6c1b3f08b022f3bcce2050157ad28fa37",
+        "data/drawings/FAN-A22-01-heavyblur.png": "f84516a96b11075a5096ec358395dcc2819464ed16a655b72a0332662c83c561",
+        "data/drawings/FAN-A23-01.png": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+        "data/drawings/FAN-A24-01.png": "f4eb7b169841b144d3f99a6ed8ecfccc540a84c67256d9cfd42e7c9123e30849",
+        "data/drawings/FAN-MULTI-01.png": "b2d6b5c9f91610eda7d474a06c85943378aa1d0f22521625102ac9257c9a4bd4"
+      },
+      "file_count": 5,
+      "sha256": "f388613503d433cc52a920f10d3dd236014c4b129a724001ae9fbaffa11da5a3"
+    },
+    "multimodal_crops": {
+      "source": "explicit glob",
+      "files": {
+        "data/multimodal_cache/crops/FAN-A23-01_label_right_b4bc59f5c3dbf582.png": "6335a83c2dc3ce9e2414146ad4fcacce0426c4687ca16e981a493a82da6b5f98",
+        "data/multimodal_cache/crops/FAN-A23-01_label_right_e5be1d190ef7c033.png": "a49f1879d302cff1dc1947672532378b5ed6b1261a19379a6957e595c1808f4a"
+      },
+      "file_count": 2,
+      "sha256": "6f3daa359e1c3ccc955197e8ec77ffb7c3841b89f835f7df7a67769267b723aa"
+    },
+    "multimodal_cache": {
+      "source": "explicit list",
+      "files": {
+        "data/multimodal_cache/vision_review_cache.json": "318c5e401c127364e73ad4d44fc1d8be5327cc9259b8cdfced968781d07fef17"
+      },
+      "file_count": 1,
+      "sha256": "43128c3b52faa67d20e812e2153f90d13b8669fb3df3c52c7b2c1c5f137846c4",
+      "provenance": {
+        "entries": 2,
+        "recorded_from_live_inference": 2,
+        "models": [
+          "qwen-vl-max"
+        ],
+        "prompt_versions": [
+          "vision_field_review_v1"
+        ],
+        "every_entry_carries_image_and_crop_hash": true,
+        "note": "entries were produced by real live calls and are replayed offline; a replay is not inference"
+      }
+    },
+    "multimodal_gold": {
+      "source": "explicit list",
+      "files": {},
+      "file_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "human_reviewed": false,
+      "note": "empty: no human-reviewed field gold for this stage. No VLM recovery RATE may be reported while this group is empty."
+    },
+    "multimodal_evaluator": {
+      "source": "explicit list",
+      "files": {
+        "scripts/multimodal_review_eval.py": "e9725a0a4686478eeecef5503a585f1df0da15665a407d3592e83bd4478201fb",
+        "data/multimodal_cases_registered.json": "c89eeef9acd737f9d234169ac6821d036dee31e4e04545076855d9989d2a288d"
+      },
+      "file_count": 2,
+      "sha256": "115e90a46295381e6dfe8886537a5bc5f3cdbafc558f4250c5f9aed0e556aa3b"
+    }
+  },
+  "stage_version": "multimodal/1.0",
+  "frozen_at": "2026-09-16T10:33:13+00:00"
+}

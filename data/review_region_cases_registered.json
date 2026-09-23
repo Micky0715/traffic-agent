@@ -1,0 +1,95 @@
+{
+  "note": "Pre-registered BEFORE resolve_review_regions was run on any real page in this round. Expectations state what the SYSTEM must do — which grade of region it may claim and what it may not claim — never which bbox is correct. There is no human-reviewed bbox gold in this repo, so no expectation here asserts that a crop is in the right place.",
+  "registered_at": "2026-09-16",
+  "threshold_provenance": "engineering starting values, not calibrated on these five pages",
+  "not_a_blind_test": "All five documents were examined in earlier rounds. This is a seen regression set.",
+  "cases": [
+    {
+      "case_id": "RR1_exact_label_present",
+      "document_id": "FAN-A23-01",
+      "situation": "labels 图号 and 断路器编号 survive intact; the baseline already cropped these two",
+      "expectations": {
+        "strategies_allowed": ["exact_label_right", "table_value_cell"],
+        "min_trust_level": "precise",
+        "must_not_produce_full_page_diagnostic": true,
+        "bbox_must_be_valid": true
+      }
+    },
+    {
+      "case_id": "RR2_label_damaged_table_present",
+      "document_id": "FAN-A24-01",
+      "situation": "控制柜编号's label was degraded to 制编; the page IS a confirmed key/value table with cell bboxes",
+      "expectations": {
+        "must_not_claim_precise": true,
+        "strategies_allowed": ["table_value_cell", "structural_row_inference",
+                               "table_or_title_block", "alias_label_right"],
+        "localization_uncertain": true,
+        "answer_eligible": false,
+        "must_not_hardcode_damaged_label": "制编 must not appear in configs/review_regions.yaml"
+      }
+    },
+    {
+      "case_id": "RR3_heavy_blur_unknown_type",
+      "document_id": "FAN-A22-01-heavyblur",
+      "situation": "OCR returns 0 blocks, drawing type unknown, no required-field list, no grid; the baseline produced ZERO requests",
+      "expectations": {
+        "request_count_must_exceed_zero": true,
+        "strategies_allowed": ["full_page_diagnostic"],
+        "trust_level": "diagnostic",
+        "answer_eligible": false,
+        "decision_must_remain": ["abstain", "human_review", "fallback"]
+      }
+    },
+    {
+      "case_id": "RR4_clean_page",
+      "document_id": "FAN-A13-02",
+      "situation": "evidence complete; the baseline produced 0 targets and 0 calls",
+      "expectations": {
+        "region_count": 0,
+        "vlm_calls": 0,
+        "must_not_produce_full_page_diagnostic": true,
+        "decision_unchanged": true
+      }
+    },
+    {
+      "case_id": "RR5_ocr_vlm_conflict",
+      "document_id": "FAN-MULTI-01",
+      "situation": "injected S-vs-5 disagreement from the previous round",
+      "expectations": {
+        "conflict_blocks_execute": true,
+        "resolution": "unresolved"
+      }
+    },
+    {
+      "case_id": "RR6_cell_spans_columns_only",
+      "document_id": "*",
+      "situation": "57 CELL_SPANS_COLUMNS requests exist at the table stage and were measured as false positives",
+      "expectations": {
+        "must_not_be_high_priority": true,
+        "must_not_bulk_produce_vlm_requests": true,
+        "multimodal_targets_from_this_reason": 0
+      }
+    },
+    {
+      "case_id": "RR7_multiple_fields_one_region",
+      "document_id": "*",
+      "situation": "several missing fields resolve to the same title block",
+      "expectations": {
+        "merged_into_one_region": true,
+        "target_fields_length_greater_than_one": true,
+        "all_reasons_preserved": true
+      }
+    },
+    {
+      "case_id": "RR8_bbox_out_of_bounds",
+      "document_id": "*",
+      "situation": "a bbox extends past the page edge or has zero area",
+      "expectations": {
+        "must_not_crash": true,
+        "outcome_allowed": ["clipped_to_image", "unavailable"],
+        "no_negative_coordinates": true,
+        "no_zero_area": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ADV05",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "TR-02-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-TR2",
+      "fields": {
+        "电机编号": "M-TR2"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-TR2",
+      "fields": {
+        "断路器编号": "QF-TR2"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "TR-CAB-2",
+      "fields": {
+        "控制柜编号": "TR-CAB-2"
+      }
+    }
+  ],
+  "expected_values": [
+    "TR-02-01",
+    "2号变压器接线图",
+    "1/1",
+    "M-TR2",
+    "QF-TR2",
+    "TR-CAB-2"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "unknown_type",
+  "notes": "transformer and isolator: unmapped types"
+}

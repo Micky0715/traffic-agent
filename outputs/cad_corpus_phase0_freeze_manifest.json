@@ -1,0 +1,93 @@
+{
+  "stage": "cad_public_corpus/phase0",
+  "facts": {
+    "source_files": 10,
+    "by_class": {
+      "pdf": 10,
+      "raster": 0,
+      "native_cad": 0
+    },
+    "pdf_pages_provisional": 131,
+    "pages_rendered": 0,
+    "conversion_failures": 10,
+    "render_state": "blocked_renderer_unavailable",
+    "manifest_sha256_matches_files": true,
+    "ocr_runs": 0,
+    "vlm_runs": 0,
+    "network_calls": 0,
+    "human_gold_created": false,
+    "accuracy_reported": false,
+    "native_cad_parsed": false,
+    "original_files_copied_or_moved": false
+  },
+  "groups": {
+    "cad_original_sources": {
+      "files": {
+        "data/70101-70183.pdf": "0bbefc174073794270c7f308d591e4e463a3ab81c88e6024909674951fe19b2c",
+        "data/70301-70311.pdf": "bb9180ba6d206d783d39ed4cc623ff5a2da9ca27e3a38ccfeed872eb446f3832",
+        "data/71001-71070.pdf": "a40dcf07392642e263a7c09ec463df94e9529d57f27b31a130577a9796bf66a7",
+        "data/72901-72933.pdf": "fc77d33e4972cbbc8d2b669dd4a170215c056ac800dc43a8481dfb96ad18917c",
+        "data/73001-73087.pdf": "4ff9dadac09b3db4654f1b968d1396c28bd6979087cef0b6d2e990b5b31d85a3",
+        "data/D&OM-25.pdf": "1f5b9bc4b24f686dde7e407f8ff5f7e9d22b54da933fa5704e21408aa904188e",
+        "data/DET4700_All.pdf": "f737837ade76c722df75115d14f50ec68c60df4d30128931cc45b4b506e3006f",
+        "data/RCD-25.pdf": "496b767a24bcfad5f5e5c63449958f3de5d192052521b4286b3150da7c5eadc2",
+        "data/SMD.pdf": "03796f2a4d017b8bf75c298d27c504e626593eb5333556ec6645a9912bb839e8",
+        "data/TSR.pdf": "12009bc077896d467db5f0294467e5587a503cc05d833c532d38c713530034ad"
+      },
+      "file_count": 10,
+      "total_bytes": 98189426,
+      "sha256": "766d62f3c8136e8c4dbfc8a243eed204a4efae567fe62e9e1fcd5ee7faaf719a"
+    },
+    "cad_rendered_pages": {
+      "files": {},
+      "file_count": 0,
+      "total_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "empty: rendering blocked, pdftoppm not installed"
+    },
+    "cad_manifests": {
+      "files": {
+        "data/cad_public_corpus/README.md": "66e78df80b639c37ce0286aaa9cb991417b57bd41da2aabcf6514535533a49f3",
+        "data/cad_public_corpus/manifests/conversion_failures.jsonl": "1518ea6593cd7b8a01922683deecff49efa2fd9e7db66f6c4b94c09179404653",
+        "data/cad_public_corpus/manifests/duplicate_clusters.json": "2286e87f8977eac3c58b2442ffd71861603b2383b21b4ff43b73f4fcdbf8af1a",
+        "data/cad_public_corpus/manifests/inventory_scope.json": "4589485edb430cb3e7278e6d6e36579e3f266b3bc05c757fc844c9cc66d89760",
+        "data/cad_public_corpus/manifests/source_manifest_unreviewed.jsonl": "f1fb2ee1485887e904ac7b68c328df16064f2d5a791ec155e6dff3764320bd85",
+        "data/cad_public_corpus/splits/split_candidates_unreviewed.jsonl": "72c5d77ada45b336daa1410ab211a8d5f2b860e5714995d6da13eba7592a2c4d"
+      },
+      "file_count": 6,
+      "total_bytes": 15322,
+      "sha256": "ae25647946a5950864177c0283d9b7a686b218ce1c78b7cd27242c11f9ace222"
+    },
+    "cad_phase0_code": {
+      "files": {
+        "src/cad_corpus/__init__.py": "ae87db43f7e6aaff85d47f33aa70af3a9cfc014ab434404964bb5cff87477dc3",
+        "src/cad_corpus/corpus.py": "e2b5f87940983ad7774772f76f1657944230718d978f31528cddc80b7602cec1",
+        "scripts/cad_corpus_inventory.py": "143565e7c17f499ed4ecb3010f0b9f47f7f1badca2935075237dee9872460f5a",
+        "scripts/render_cad_pdf.py": "672efcb6ff495c4fcb7974e16f4d2f764ebabd8f9cbe8b361de14444e20ecc2a",
+        "scripts/cad_corpus_freeze.py": "151daa7046fdf8c1c4358983d6bcfd9375ee694810aa3e2807d376909c1aef07",
+        "tests/test_cad_corpus_phase0.py": "90d60aaa56e08a6ff6dbb51dfe940f94560dfa56164d0e126370775d2c8bb288",
+        "docs/cad_source_metadata_review.md": "f22add15eb646bac8b2b5433175d543bed406df5a89522f1af5fdc131e523fdf"
+      },
+      "file_count": 7,
+      "total_bytes": 69300,
+      "sha256": "0e1023ff3f9d3515a7a8331ba70409673287a4b83312b31fbbe9e6955c063036"
+    },
+    "cad_phase0_config": {
+      "files": {
+        "configs/cad_corpus.yaml": "94e47ed6693d7b8edb73cd4f81c7c6994857cf6853694b871048a63630db350b"
+      },
+      "file_count": 1,
+      "total_bytes": 2138,
+      "sha256": "06353ff1e050d9cee2aeaf515421a3072311e14418b764b2e6ffa75d5da796d1"
+    },
+    "cad_renderer_environment": {
+      "renderer": "pdftoppm",
+      "available": false,
+      "version": null,
+      "dpi": 300,
+      "color_mode": "rgb",
+      "substitute_renderer_used": false
+    }
+  },
+  "frozen_at": "2026-09-18T06:38:06+00:00"
+}

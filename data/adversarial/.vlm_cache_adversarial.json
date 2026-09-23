@@ -1,0 +1,392 @@
+{
+  "d02a9e684992215b137f01887d98763b3a6f43c31de22bbc0aea65eeab4c0d68": {
+    "drawing_id": "PSD/2026/017",
+    "drawing_name": "B12屏蔽门接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": "B12",
+    "device_type": "psd",
+    "date": null
+  },
+  "521aa03ab8437aac180aca8e202681dfdd550d04adb6fd2d5c8ab1ca1b2dc9b8": {
+    "devices": [
+      {
+        "device_id": "M/12",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "QF/12",
+        "device_name": "断路器",
+        "parameters": []
+      }
+    ]
+  },
+  "957b76b10d92ab78d5d91172af399f8a7e354bfdba3435d0e34d3a3f54d2f4da": {
+    "drawing_id": "TR_01_A",
+    "drawing_name": "1号主变压器接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": "V2",
+    "station_id": null,
+    "device_type": "transformer",
+    "date": null
+  },
+  "e7d035ea6b2fb229b1a63c612c2a247d3a0a387d47139ea6ab8cbbd4d2f363d9": {
+    "devices": [
+      {
+        "device_id": "M_01_A",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "QF_01_A",
+        "device_name": "断路器",
+        "parameters": []
+      }
+    ]
+  },
+  "36601a099eaab3d6eef854476c0c6c40eb62236430498ec22bc01f72850449bb": {
+    "drawing_id": "SIG.03.2026",
+    "drawing_name": "三号信号机接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": "三号",
+    "device_type": "signal_machine",
+    "date": null
+  },
+  "3530a92ade79dc0b09c9d9b2a8497df717564bb67b74e1ffc938d89d116f71a0": {
+    "devices": [
+      {
+        "device_id": "电机三号",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "QF.03",
+        "device_name": "断路器",
+        "parameters": []
+      }
+    ]
+  },
+  "ad98b098c4beb69016e33584c8853c74cbc77dfe436af8d023c2a7a19a11329a": {
+    "drawing_id": "FAN-MULTI-C2",
+    "drawing_name": "C21/C22/C23风机组接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "4f45289bc75d527e8decb184af3db07fcebf52137473fc18061cc9601cab197d": {
+    "devices": [
+      {
+        "device_id": "C21",
+        "device_name": "风机组",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "45kW",
+            "value": 45,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "28000m3/h",
+            "value": 28000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "C23",
+        "device_name": "风机组",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "37kW",
+            "value": 37,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "24000m3/h",
+            "value": 24000,
+            "unit": "m3/h"
+          }
+        ]
+      }
+    ]
+  },
+  "a2238a46469dc16c0b9617a897bc4ed02accb2eaeeb73a4aa6ca439aa2c7ea22": {
+    "drawing_id": "FAN-MULTI-D3",
+    "drawing_name": "D31/D32/D33风机组接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "a6164d31296df18aef3dc2d7d6557f79eb356c25b61ff8a9150f03e8033fcfcf": {
+    "devices": [
+      {
+        "device_id": "D31",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "45kW",
+            "value": 45,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "28000m3/h",
+            "value": 28000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "D32",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "55kW",
+            "value": 55,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "32000m3/h",
+            "value": 32000,
+            "unit": "m3/h"
+          }
+        ]
+      }
+    ]
+  },
+  "7c69d5c36490bfcc6a7fb3b9754fa28405014ef3d33a346cc2387d3d30f8cc60": {
+    "drawing_id": "FAN-MULTI-E4",
+    "drawing_name": "E41/E42/E43风机组接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "e780e2e6363e159c9127044660abbfc9e5a2fa63f22d169c38a3c3b81257490e": {
+    "devices": [
+      {
+        "device_id": "E43",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "37kW",
+            "value": 37,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "24000m3/h",
+            "value": 24000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "E41",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "45kW",
+            "value": 45,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "28000m3/h",
+            "value": 28000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "E42",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "55kW",
+            "value": 55,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "32000m3/h",
+            "value": 32000,
+            "unit": "m3/h"
+          }
+        ]
+      }
+    ]
+  },
+  "047e8671f316835865557d16713b58dceb5a090c2d969d546ffc60e149ae53ed": {
+    "drawing_id": "FAN-MULTI-A1",
+    "drawing_name": "A16/A1G/A18风机组接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "830df6e311ad0cb33eeceec15578c4b1e83008e48bd87d5939d9dc41253866ae": {
+    "devices": [
+      {
+        "device_id": "A16",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "45kW",
+            "value": 45,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "28000m3/h",
+            "value": 28000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "A1G",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "55kW",
+            "value": 55,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "32000m3/h",
+            "value": 32000,
+            "unit": "m3/h"
+          }
+        ]
+      },
+      {
+        "device_id": "A18",
+        "device_name": "风机",
+        "parameters": [
+          {
+            "name": "power",
+            "raw_name": "功率",
+            "raw_text": "37kW",
+            "value": 37,
+            "unit": "kW"
+          },
+          {
+            "name": "air_volume",
+            "raw_name": "风量",
+            "raw_text": "24000m3/h",
+            "value": 24000,
+            "unit": "m3/h"
+          }
+        ]
+      }
+    ]
+  },
+  "9b2ec8a51378df50988fe89cb02095eb4d1cfa85ad92868e773633f7aafdc467": {
+    "drawing_id": "FAN-F52-01",
+    "drawing_name": "F52风机接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "3ccf21d24698e05016c3b567311cf8aff4aea1b025858600a8fa024b4b484378": {
+    "devices": [
+      {
+        "device_id": "M-F52",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "QF-F52",
+        "device_name": "断路器",
+        "parameters": []
+      }
+    ]
+  },
+  "3e95963172f6d68efc33f75174dee9d642cf5ad47a751d03e4a0073a740a3f6e": {
+    "drawing_id": "FAN-FS3-01",
+    "drawing_name": "FS3风机接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "a12faef7dc685f7e0001fd10fb06758f5794ed39d4bb15e004d09b71ea7b3176": {
+    "devices": [
+      {
+        "device_id": "M-F53",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "VF-F53",
+        "device_name": "软启动器",
+        "parameters": []
+      }
+    ]
+  },
+  "a98df8ebce14b40e40db1543ba99d3c47b2eab0682b0cf251b104ba0295908ab": {
+    "drawing_id": "FAN-F56-01",
+    "drawing_name": "F56风机接线图",
+    "drawing_type": "wiring_diagram",
+    "revision": null,
+    "station_id": null,
+    "device_type": "fan",
+    "date": null
+  },
+  "1b62fbc6e387cfba870eb7e853e63e805085c99ac0a67907618d1e5d77b5cad2": {
+    "devices": [
+      {
+        "device_id": "M-F56",
+        "device_name": "电机",
+        "parameters": []
+      },
+      {
+        "device_id": "QF-F56",
+        "device_name": "断路器",
+        "parameters": []
+      }
+    ]
+  }
+}

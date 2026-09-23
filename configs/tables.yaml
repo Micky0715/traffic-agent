@@ -1,0 +1,55 @@
+# Table structure recovery.
+# Every structure-deciding threshold lives here; src/tables hard-codes none.
+
+grid:
+  # Hunting for the table BAND on a full page.
+  region_line_fraction: 0.30
+  # Used INSIDE a located region, relative to that region. This is the whole
+  # point of region-aware detection: a table's internal column divider spans
+  # its own height, not the page's. Measured on this repo's drawings, a
+  # page-relative threshold found two vertical lines — the page borders — for
+  # tables that visibly have two columns and a dozen rows.
+  cell_line_fraction: 0.40
+  line_cluster_tolerance_px: 6
+  page_frame_margin_fraction: 0.02
+  min_rules_for_table: 3
+  row_gap_break_ratio: 2.5
+  min_rows: 2
+  min_cols: 2
+
+assignment:
+  # Share of an OCR block inside one cell for the text to be assigned outright.
+  min_coverage_ratio: 0.60
+  # Below this against every cell the block stays unassigned. Pushing it into
+  # the nearest cell is how a value silently lands in the wrong column.
+  min_candidate_ratio: 0.15
+  # Covering two cells by at least this much each is ambiguous: both candidates
+  # are kept and the cell is flagged, never split on a guess.
+  ambiguous_ratio: 0.30
+  outside_table_tolerance_px: 8
+
+header:
+  default_header_rows: 1
+  max_header_rows: 3
+  numeric_ratio_for_data_row: 0.5
+
+continuation:
+  # Cross-page merging is conservative by design. Matching column counts is NOT
+  # sufficient: two unrelated 3-column tables on facing pages would merge and
+  # invent rows belonging to a different table. Wrongly splitting only loses
+  # continuity; wrongly merging fabricates data.
+  required_signals: ["adjacent_pages", "same_document", "column_count_compatible",
+                     "header_path_compatible", "horizontal_extent_compatible"]
+  supporting_signals: ["same_section", "repeated_header_on_next_page",
+                       "continuation_marker", "previous_unterminated"]
+  min_supporting: 1
+  horizontal_extent_tolerance_px: 40
+
+crop:
+  padding_px: 8
+  min_crop_size_px: 4
+  output_dir: outputs/table_crops
+
+# Fields where a wrong value sends somebody to the wrong equipment. Used to
+# decide whether an uncertain cell warrants a local vision review request.
+high_risk_fields: ["电机编号", "断路器编号", "控制柜编号", "设备编号", "图号"]

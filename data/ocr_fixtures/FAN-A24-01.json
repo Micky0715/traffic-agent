@@ -1,0 +1,194 @@
+{
+  "provenance": {
+    "image": "FAN-A24-01.png",
+    "image_sha256": "f4eb7b169841b144d3f99a6ed8ecfccc540a84c67256d9cfd42e7c9123e30849",
+    "generated_at": "2026-09-14T14:34:56+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 33.25,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A24风机接线图\n电.M.26\n QF 14\n资料仅供参考\nN\nFAN-A24-01\nne\nA4R\n\n1\n电r编号\nM-24\nE银行\nOF-24\n制编\nFAN-CAB-24",
+    "blocks": [
+      {
+        "text": "A24风机接线图",
+        "bbox": [
+          14.0,
+          18.0,
+          244.0,
+          63.0
+        ],
+        "confidence": 0.9994160532951355
+      },
+      {
+        "text": "电.M.26",
+        "bbox": [
+          53.0,
+          96.0,
+          149.0,
+          125.0
+        ],
+        "confidence": 0.5658562779426575
+      },
+      {
+        "text": " QF 14",
+        "bbox": [
+          302.0,
+          96.0,
+          420.0,
+          128.0
+        ],
+        "confidence": 0.6756877899169922
+      },
+      {
+        "text": "资料仅供参考",
+        "bbox": [
+          6.0,
+          238.0,
+          195.0,
+          369.0
+        ],
+        "confidence": 0.9574154019355774
+      },
+      {
+        "text": "N",
+        "bbox": [
+          47.0,
+          490.0,
+          99.0,
+          524.0
+        ],
+        "confidence": 0.1671176701784134
+      },
+      {
+        "text": "FAN-A24-01",
+        "bbox": [
+          213.0,
+          487.0,
+          342.0,
+          519.0
+        ],
+        "confidence": 0.8328363299369812
+      },
+      {
+        "text": "ne",
+        "bbox": [
+          46.0,
+          521.0,
+          100.0,
+          556.0
+        ],
+        "confidence": 0.5644530653953552
+      },
+      {
+        "text": "A4R",
+        "bbox": [
+          212.0,
+          518.0,
+          357.0,
+          553.0
+        ],
+        "confidence": 0.809654951095581
+      },
+      {
+        "text": "",
+        "bbox": [
+          45.0,
+          552.0,
+          101.0,
+          587.0
+        ],
+        "confidence": 0.0
+      },
+      {
+        "text": "1",
+        "bbox": [
+          211.0,
+          550.0,
+          278.0,
+          584.0
+        ],
+        "confidence": 0.5361484885215759
+      },
+      {
+        "text": "电r编号",
+        "bbox": [
+          44.0,
+          583.0,
+          136.0,
+          619.0
+        ],
+        "confidence": 0.4867461323738098
+      },
+      {
+        "text": "M-24",
+        "bbox": [
+          211.0,
+          579.0,
+          279.0,
+          616.0
+        ],
+        "confidence": 0.8320077657699585
+      },
+      {
+        "text": "E银行",
+        "bbox": [
+          43.0,
+          615.0,
+          154.0,
+          650.0
+        ],
+        "confidence": 0.1900804042816162
+      },
+      {
+        "text": "OF-24",
+        "bbox": [
+          209.0,
+          613.0,
+          284.0,
+          647.0
+        ],
+        "confidence": 0.8783246874809265
+      },
+      {
+        "text": "制编",
+        "bbox": [
+          42.0,
+          649.0,
+          152.0,
+          681.0
+        ],
+        "confidence": 0.4090249836444855
+      },
+      {
+        "text": "FAN-CAB-24",
+        "bbox": [
+          209.0,
+          646.0,
+          342.0,
+          678.0
+        ],
+        "confidence": 0.9210101962089539
+      }
+    ],
+    "average_confidence": 0.6141112623736262,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

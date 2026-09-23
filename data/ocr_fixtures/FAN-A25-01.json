@@ -1,0 +1,194 @@
+{
+  "provenance": {
+    "image": "FAN-A25-01.png",
+    "image_sha256": "4c081b8c50fc436c583e89726fe8b05afabb1ea4f8b380339ac9f0ee25708582",
+    "generated_at": "2026-09-14T14:33:35+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 33.23,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A25风机接线图\n电机 M-25\n断路器 QF-25\n图号\nFAN-A25-01\n名称\nA25风机接线图\n页码\n1/1\n电机编号\nM-25\n断路器编号\nQF-25\n控制柜编号\nFAN-CAB-25\n审核专用章",
+    "blocks": [
+      {
+        "text": "A25风机接线图",
+        "bbox": [
+          14.0,
+          22.0,
+          233.0,
+          59.0
+        ],
+        "confidence": 0.9999779462814331
+      },
+      {
+        "text": "电机 M-25",
+        "bbox": [
+          47.0,
+          98.0,
+          137.0,
+          122.0
+        ],
+        "confidence": 0.981134831905365
+      },
+      {
+        "text": "断路器 QF-25",
+        "bbox": [
+          300.0,
+          102.0,
+          409.0,
+          123.0
+        ],
+        "confidence": 0.9953370690345764
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          34.0,
+          502.0,
+          81.0,
+          528.0
+        ],
+        "confidence": 0.9999892711639404
+      },
+      {
+        "text": "FAN-A25-01",
+        "bbox": [
+          207.0,
+          504.0,
+          324.0,
+          524.0
+        ],
+        "confidence": 0.9999923706054688
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          34.0,
+          533.0,
+          81.0,
+          559.0
+        ],
+        "confidence": 0.9999940395355225
+      },
+      {
+        "text": "A25风机接线图",
+        "bbox": [
+          206.0,
+          535.0,
+          340.0,
+          559.0
+        ],
+        "confidence": 0.9999863505363464
+      },
+      {
+        "text": "页码",
+        "bbox": [
+          34.0,
+          565.0,
+          81.0,
+          592.0
+        ],
+        "confidence": 0.9999633431434631
+      },
+      {
+        "text": "1/1",
+        "bbox": [
+          204.0,
+          565.0,
+          242.0,
+          593.0
+        ],
+        "confidence": 0.9997766613960266
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          36.0,
+          598.0,
+          118.0,
+          622.0
+        ],
+        "confidence": 0.9999892711639404
+      },
+      {
+        "text": "M-25",
+        "bbox": [
+          204.0,
+          598.0,
+          261.0,
+          622.0
+        ],
+        "confidence": 0.9999489188194275
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          36.0,
+          626.0,
+          138.0,
+          653.0
+        ],
+        "confidence": 0.999954104423523
+      },
+      {
+        "text": "QF-25",
+        "bbox": [
+          206.0,
+          630.0,
+          263.0,
+          655.0
+        ],
+        "confidence": 0.9997442364692688
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          38.0,
+          657.0,
+          140.0,
+          681.0
+        ],
+        "confidence": 0.999900221824646
+      },
+      {
+        "text": "FAN-CAB-25",
+        "bbox": [
+          203.0,
+          658.0,
+          330.0,
+          689.0
+        ],
+        "confidence": 0.9999275207519531
+      },
+      {
+        "text": "审核专用章",
+        "bbox": [
+          154.0,
+          676.0,
+          261.0,
+          700.0
+        ],
+        "confidence": 0.9897401928901672
+      }
+    ],
+    "average_confidence": 0.9978347718715668,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

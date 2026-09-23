@@ -1,0 +1,92 @@
+{
+  "stage": "cad_public_corpus/human_render_review_v1",
+  "facts": {
+    "human_reviewed_pages": 6,
+    "pass_pages": 6,
+    "failed_pages": 0,
+    "review_capture": [
+      "chat_statement"
+    ],
+    "crop_warning": {
+      "crop_warning_total": 21,
+      "crop_warning_true_positive": 0,
+      "crop_warning_false_positive": 1,
+      "crop_warning_unreviewed": 20
+    },
+    "human_verified_corpus_level": false,
+    "human_verified_scope_pages": 6,
+    "supplement_pages_pending": [
+      "cad-496b767a24bc-557c37:p0001",
+      "cad-03796f2a4d01-d0b38d:p0001",
+      "cad-12009bc07789-5253c7:p0001"
+    ],
+    "thresholds_changed": false,
+    "ocr_calls": 0,
+    "vlm_calls": 0
+  },
+  "prior_manifests": {
+    "cad_corpus_render_run_freeze_manifest_v1": {
+      "left_unmodified": true,
+      "expected_difference": [
+        "CHANGED  page_and_corpus_manifests: data/cad_public_corpus/manifests/cad_render_human_review_v1.jsonl"
+      ],
+      "why": "the human review file was added to the manifests directory it snapshots"
+    }
+  },
+  "groups": {
+    "human_review_source": {
+      "files": {
+        "data/cad_public_corpus/manifests/cad_render_human_review_v1.jsonl": "b23f20ad7474b8296989c4809a09af3dc41807474f9545cf29fc5a122197d213"
+      },
+      "file_count": 1
+    },
+    "reports": {
+      "files": {
+        "outputs/cad_render_human_review_report_v1.json": "4b5c4b638eec51a507dd6e8509bf83dc194067c35d30b0fc86d1cb8c87b48920",
+        "outputs/cad_render_human_review_report_v1.md": "5493db48b0aeee2c5d0fe8a3a7093f846e8637e8ff267af8f7791a015eff8278",
+        "outputs/cad_render_quality_report_v2.json": "29827d212ab142988230f46023c39a9ec395b19e697039d52a1c50fe0db045cc",
+        "outputs/cad_render_quality_report_v2.md": "f7ee62b2401480bd7b5c010120940e59ec6c3836dd045bcd0dff4608e6bfc887"
+      },
+      "file_count": 4
+    },
+    "first_round_pack_unchanged": {
+      "files": {
+        "outputs/cad_render_qa_pack/qa_sample_manifest.jsonl": "7e35313d6e1df601684b73af1b50f1b80cf72280cf44bd52f805c6379210145c",
+        "outputs/cad_render_quality_report_v1.json": "a62236d3665eed66bb72da34d1bd1a6f49564257da306fc6598b71aec329281d",
+        "outputs/cad_render_quality_report_v1.md": "942240c4c690db06fd5c5b47715b5e784047973d99dd3540626d13b66315af76"
+      },
+      "file_count": 3
+    },
+    "runtime_code": {
+      "files": {
+        "src/cad_corpus/human_review.py": "982197bc485e3df3e4d986d5179e9dcb3625617a6c8747429fb5e98080fa1ff3",
+        "scripts/cad_render_human_review.py": "fa166c0feb7e726fc98492fe28de402ece59320264194f81e731f45906ab66ca",
+        "scripts/cad_render_human_review_freeze.py": "b40f6eb9b4329deb3d01eb18c571ced567fe6ef7303b8d90e9169c58b5840220",
+        "tests/test_cad_human_review.py": "743bc5de7b1cc847529f82e97d5951dac869a04f6054e50f149c9c268523d669"
+      },
+      "file_count": 4
+    },
+    "reviewed_page_pngs": {
+      "files": {
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0001.png": "170170e9730aef63bfdcfbd4d7909c9dc4ce19167b9cfb9f92fdc840949a2386",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0001.png": "d0704d9eea2160b4e660e59e2c13ce597b053e26dfce5f157407083e52383884",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0001.png": "8b90bc58fcdcfea18c595aebde61ffd903de81f1f332e55b41b16097559b14ae",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0016.png": "bf5f56a433f2be111959b15950285a34fed2ab958b3e913c8b384e937e868ea9",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0031.png": "e2cb5842bb2a8107aa5f0aa1b9c654b8ccc80ea018bfc89d61dab1c9a396607e",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0001.png": "05287f4154153be2f35848a349beb68d30b2d9aec44d1416cfbd724537cb2f36"
+      },
+      "file_count": 6
+    },
+    "supplement_pack": {
+      "files": {
+        "outputs/cad_render_qa_pack_supplement_v1/index.html": "8e6a751d1f628708c2baad6ee2a20fc2c23e3fc66c68f9ac0de2ade8493a9450",
+        "outputs/cad_render_qa_pack_supplement_v1/qa_sample_manifest.jsonl": "139928acf49f944ce43fc42c71ad9c9201b9e240df83d7edb0b3de81da08a77a",
+        "outputs/cad_render_qa_pack_supplement_v1/thumbs/cad-03796f2a4d01-d0b38d_p0001.jpg": "59e9cc32e1b43d33163a6917a75f9d51c9c7d0eaf48e91c5bfadbf638dc04a1f",
+        "outputs/cad_render_qa_pack_supplement_v1/thumbs/cad-12009bc07789-5253c7_p0001.jpg": "9b94ff87b647bdb304026f4f05c3989e5179720017049d477bba951ba5aea1a4",
+        "outputs/cad_render_qa_pack_supplement_v1/thumbs/cad-496b767a24bc-557c37_p0001.jpg": "7df247d023daa1a387bb070441b053cb39f9f5866401a770ae0dc0a7d8f42876"
+      },
+      "file_count": 5
+    }
+  },
+  "frozen_at": "2026-09-18T10:21:38+00:00"
+}

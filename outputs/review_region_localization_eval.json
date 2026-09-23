@@ -1,0 +1,32 @@
+{
+  "status": "not_evaluated",
+  "reason": "no_human_reviewed_bbox_gold",
+  "gold_status_summary": {
+    "unreviewed": 11,
+    "human_reviewed": 0,
+    "excluded": 0
+  },
+  "human_reviewed_count": 0,
+  "metrics": null,
+  "note": "No metric is emitted. A 0% or 100% here would be read as a measurement; there is nothing to measure against. The system's own output is not an answer key.",
+  "next_step": "annotate data/review_region_gold_unreviewed.jsonl using docs/review_region_annotation_guide.md, then run scripts/validate_review_region_gold.py",
+  "metrics_unlocked_after_review": [
+    "IoU",
+    "IoU@0.3",
+    "IoU@0.5",
+    "IoU@0.75",
+    "field_localization_recall",
+    "precise_localization_recall",
+    "candidate_oracle_recall",
+    "top1_localization_recall",
+    "unlocatable_detection_accuracy",
+    "average_candidate_count",
+    "area_ratio_p50",
+    "area_ratio_p95"
+  ],
+  "real_vlm_calls": 0,
+  "excluded_from_denominator": {
+    "unreviewed": 11,
+    "excluded": 0
+  }
+}

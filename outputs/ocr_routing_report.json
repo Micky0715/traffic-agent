@@ -1,0 +1,1264 @@
+{
+  "elapsed_seconds": 48.7,
+  "case_count": 11,
+  "ocr_engine": "fixture",
+  "experiments": {
+    "A": {
+      "description": "Original -> OCR(fixture) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7954545454545454,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.9375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 0.25,
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9969040314356487,
+          "table_confidence": 0.0,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.6141112623736262,
+          "table_confidence": 0.2421166893560439,
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "B": {
+      "description": "Preprocess(real) -> OCR(fixture) -> TableParser(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7272727272727273,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7142857142857143,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.25,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 0.25,
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.997427237033844,
+          "table_confidence": 0.29961408555507657,
+          "operations_applied": [
+            "deskew"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "operations_applied": [],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.30964305996894836,
+          "table_confidence": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "ocr_engine": "paddleocr-fixture",
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "C": {
+      "description": "Original -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7772727272727273,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.825,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 0.8,
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.75,
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "D": {
+      "description": "Preprocess(real) -> VLM(real) -> JSON",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.7090909090909091,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 0.9,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 2
+          }
+        },
+        "real": true
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.75,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "skew": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.6375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 0.8,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": true
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 0.75,
+          "operations_applied": [
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 0.8,
+          "operations_applied": [],
+          "real": true,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize",
+            "deskew"
+          ],
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.0,
+          "operations_applied": [
+            "denoise",
+            "binarize"
+          ],
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ]
+    },
+    "E": {
+      "description": "OCR(fixture)+TableParser(real) -> QualityJudge routing(real) -> VLM Fallback(real when triggered) -> Validator(real)",
+      "overall": {
+        "count": 11,
+        "avg_score": 0.8409090909090909,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.875,
+            "count": 2
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 3
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.375,
+            "count": 2
+          }
+        },
+        "real": false
+      },
+      "dev": {
+        "count": 7,
+        "avg_score": 0.7857142857142857,
+        "by_category": {
+          "stamp": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "watermark": {
+            "avg_score": 0.75,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 2
+          },
+          "skew": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.0,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "holdout": {
+        "count": 4,
+        "avg_score": 0.9375,
+        "by_category": {
+          "stamp": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "complex_table": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "normal": {
+            "avg_score": 1.0,
+            "count": 1
+          },
+          "blur": {
+            "avg_score": 0.75,
+            "count": 1
+          }
+        },
+        "real": false
+      },
+      "results": [
+        {
+          "score": 0.75,
+          "ocr_only_score": 0.75,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A19-01",
+            "M-19",
+            "QF-19"
+          ],
+          "ocr_only_missed": [
+            "FAN-CAB-19"
+          ],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9857268532117208,
+          "table_confidence": 0.2978590279817581,
+          "real": false,
+          "id": "OCR03",
+          "category": "stamp",
+          "image": "FAN-A19-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A13-02",
+            "M-13",
+            "QF-13",
+            "FAN-CAB-3"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9975952692329884,
+          "table_confidence": 0.29963929038494824,
+          "real": false,
+          "id": "OCR01",
+          "category": "normal",
+          "image": "FAN-A13-02.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_only_score": 0.25,
+          "need_vlm": true,
+          "route_reasons": [
+            "field_completeness_below_threshold",
+            "isolated_labels_without_values",
+            "repeated_boilerplate_text"
+          ],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 0.16666666666666666,
+          "isolated_labels": [
+            "图号",
+            "断路器编号"
+          ],
+          "watermark_repetition": 0.5729166666666666,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "M-23"
+          ],
+          "ocr_only_missed": [
+            "FAN-A23-01",
+            "QF-23",
+            "FAN-CAB-23"
+          ],
+          "vlm_recovered": [
+            "FAN-A23-01",
+            "QF-23"
+          ],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9957391998984597,
+          "table_confidence": 0.29936087998476896,
+          "real": true,
+          "id": "OCR04",
+          "category": "watermark",
+          "image": "FAN-A23-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "group_cardinality_uncertain"
+          ],
+          "drawing_type": "fan_group",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.054878048780487805,
+          "group_cardinality_uncertain": true,
+          "ocr_only_found": [
+            "A16",
+            "A17",
+            "A18",
+            "45kW",
+            "55kW"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9998290198189872,
+          "table_confidence": 0.2999743529728481,
+          "real": true,
+          "id": "OCR02",
+          "category": "complex_table",
+          "image": "FAN-MULTI-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_param_table",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A28-01",
+            "M-28",
+            "QF-28",
+            "FAN-CAB-28"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9976994937116449,
+          "table_confidence": 0.0,
+          "real": false,
+          "id": "OCR07",
+          "category": "complex_table",
+          "image": "FAN-A28-01-borderless.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A25-01",
+            "M-25",
+            "QF-25",
+            "FAN-CAB-25"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9978347718715668,
+          "table_confidence": 0.299675215780735,
+          "real": false,
+          "id": "OCR08",
+          "category": "stamp",
+          "image": "FAN-A25-01.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A27-01",
+            "M-27",
+            "QF-27",
+            "FAN-CAB-27"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9969040314356487,
+          "table_confidence": 0.0,
+          "real": false,
+          "id": "OCR06",
+          "category": "skew",
+          "image": "FAN-A27-01-skewed.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "group_cardinality_uncertain"
+          ],
+          "drawing_type": "pump_group",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.022556390977443608,
+          "group_cardinality_uncertain": true,
+          "ocr_only_found": [
+            "PUMP-MULTI-02",
+            "2A",
+            "2B",
+            "20"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9994830924731034,
+          "table_confidence": 0.2999224638709655,
+          "real": true,
+          "id": "OCR09",
+          "category": "complex_table",
+          "image": "PUMP-MULTI-02.png"
+        },
+        {
+          "score": 1.0,
+          "ocr_only_score": 1.0,
+          "need_vlm": false,
+          "route_reasons": [],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 1.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A26-01",
+            "V3",
+            "M-26",
+            "QF-26",
+            "FAN-CAB-26"
+          ],
+          "ocr_only_missed": [],
+          "vlm_recovered": [],
+          "source": "ocr_only",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.9979697902997334,
+          "table_confidence": 0.29969546854496004,
+          "real": false,
+          "id": "OCR11",
+          "category": "normal",
+          "image": "FAN-A26-01.png"
+        },
+        {
+          "score": 0.0,
+          "ocr_only_score": 0.0,
+          "need_vlm": true,
+          "route_reasons": [
+            "ocr_confidence_below_threshold",
+            "drawing_type_unknown",
+            "field_completeness_below_threshold"
+          ],
+          "drawing_type": "unknown",
+          "type_source": "none",
+          "field_completeness": 0.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [],
+          "ocr_only_missed": [
+            "FAN-A22-01",
+            "M-22",
+            "QF-22",
+            "FAN-CAB-22"
+          ],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.0,
+          "table_confidence": 0.15,
+          "real": true,
+          "id": "OCR05",
+          "category": "blur",
+          "image": "FAN-A22-01-heavyblur.png"
+        },
+        {
+          "score": 0.75,
+          "ocr_only_score": 0.75,
+          "need_vlm": true,
+          "route_reasons": [
+            "ocr_confidence_below_threshold",
+            "field_completeness_below_threshold"
+          ],
+          "drawing_type": "fan_wiring",
+          "type_source": "title",
+          "field_completeness": 0.0,
+          "isolated_labels": [],
+          "watermark_repetition": 0.0,
+          "group_cardinality_uncertain": false,
+          "ocr_only_found": [
+            "FAN-A24-01",
+            "M-24",
+            "FAN-CAB-24"
+          ],
+          "ocr_only_missed": [
+            "QF-24"
+          ],
+          "vlm_recovered": [],
+          "source": "vlm_fallback",
+          "ocr_engine": "paddleocr-fixture",
+          "ocr_confidence": 0.6141112623736262,
+          "table_confidence": 0.2421166893560439,
+          "real": true,
+          "id": "OCR10",
+          "category": "blur",
+          "image": "FAN-A24-01.png"
+        }
+      ],
+      "routing": {
+        "overall": {
+          "fallback_trigger_rate": 0.45454545454545453,
+          "fallback_proxy_positive_count": 4,
+          "fallback_proxy_negative_count": 7,
+          "proxy_fallback_recall": 0.75,
+          "proxy_false_trigger_rate": 0.2857142857142857,
+          "vlm_field_recovery_rate": 0.25,
+          "vlm_fields_missed_by_ocr": 8,
+          "vlm_fields_recovered": 2,
+          "final_field_hit_rate": 0.8409090909090909,
+          "ocr_only_field_hit_rate": 0.7954545454545454,
+          "reason_counts": {
+            "drawing_type_unknown": 1,
+            "field_completeness_below_threshold": 3,
+            "group_cardinality_uncertain": 2,
+            "isolated_labels_without_values": 1,
+            "ocr_confidence_below_threshold": 2,
+            "repeated_boilerplate_text": 1
+          }
+        },
+        "dev": {
+          "fallback_trigger_rate": 0.42857142857142855,
+          "fallback_proxy_positive_count": 3,
+          "fallback_proxy_negative_count": 4,
+          "proxy_fallback_recall": 0.6666666666666666,
+          "proxy_false_trigger_rate": 0.25,
+          "vlm_field_recovery_rate": 0.2857142857142857,
+          "vlm_fields_missed_by_ocr": 7,
+          "vlm_fields_recovered": 2,
+          "final_field_hit_rate": 0.7857142857142857,
+          "ocr_only_field_hit_rate": 0.7142857142857143,
+          "reason_counts": {
+            "drawing_type_unknown": 1,
+            "field_completeness_below_threshold": 2,
+            "group_cardinality_uncertain": 1,
+            "isolated_labels_without_values": 1,
+            "ocr_confidence_below_threshold": 1,
+            "repeated_boilerplate_text": 1
+          }
+        },
+        "regression": {
+          "fallback_trigger_rate": 0.5,
+          "fallback_proxy_positive_count": 1,
+          "fallback_proxy_negative_count": 3,
+          "proxy_fallback_recall": 1.0,
+          "proxy_false_trigger_rate": 0.3333333333333333,
+          "vlm_field_recovery_rate": 0.0,
+          "vlm_fields_missed_by_ocr": 1,
+          "vlm_fields_recovered": 0,
+          "final_field_hit_rate": 0.9375,
+          "ocr_only_field_hit_rate": 0.9375,
+          "reason_counts": {
+            "field_completeness_below_threshold": 1,
+            "group_cardinality_uncertain": 1,
+            "ocr_confidence_below_threshold": 1
+          }
+        }
+      }
+    }
+  }
+}

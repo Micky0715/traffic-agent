@@ -1,0 +1,98 @@
+{
+  "stage": "review_region_resolution/1.0",
+  "real_vlm_calls": 0,
+  "human_reviewed_bbox_gold": false,
+  "threshold_calibration": "engineering starting values; NOT calibrated against human-reviewed bbox gold",
+  "does_not_modify": [
+    "outputs/multimodal_freeze_manifest.json",
+    "outputs/vision_freeze_manifest.json",
+    "outputs/table_freeze_manifest.json",
+    "outputs/routing_freeze_manifest.json",
+    "data/multimodal_cache/vision_review_cache.json"
+  ],
+  "previous_round_cache": {
+    "checked": true,
+    "unchanged": true,
+    "recorded_sha256": "318c5e401c127364e73ad4d44fc1d8be5327cc9259b8cdfced968781d07fef17",
+    "current_sha256": "318c5e401c127364e73ad4d44fc1d8be5327cc9259b8cdfced968781d07fef17",
+    "entries": 2,
+    "recorded_from_live_inference": 2
+  },
+  "dependency_drift": {
+    "comparable": true,
+    "new_dependencies_vs_previous_round": [
+      "src/tables/cells.py",
+      "src/tables/config.py",
+      "src/tables/schemas.py",
+      "src/vision/review_region_config.py",
+      "src/vision/review_region_resolver.py"
+    ],
+    "note": "listed explicitly rather than absorbed into an updated hash; the previous manifest is unmodified"
+  },
+  "groups": {
+    "region_runtime_code": {
+      "source": "static import closure",
+      "files": {
+        "src/tables/cells.py": "1006d0b48ab1e6d18b63131536cd93cd279ce8753a0b0f23ddc35b30306f262b",
+        "src/tables/config.py": "9f1ea601e2af1bcaebe6d3f404d29d0e11e3de12ff9b6273a68f86d1773df034",
+        "src/tables/schemas.py": "9e86ae350e96260e70034bcb0bf810da14352c8116f4df94a1db0a22fd995e3e",
+        "src/vision/review_region_config.py": "5ad3a09bfdba4aafb4f54957b8931b50a65ab045f67426e2943a57f661a65ccf",
+        "src/vision/review_region_resolver.py": "5418c421b6c858062568ec408dce1ec98dd788b63b9223b13dd33b613a54c3d5"
+      },
+      "file_count": 5,
+      "sha256": "9afbecddb8abcfaa5e605145227cf0edfc9b4268d1fe63ef05559c1b8e880916"
+    },
+    "region_config": {
+      "source": "explicit list",
+      "files": {
+        "configs/review_regions.yaml": "e7d180adfbeda302c6615435f5ae7cbcd94057d7eda6b849681e1670d0930595"
+      },
+      "file_count": 1,
+      "sha256": "0204d50799933e22a15b1fa0381036614980367cb14205126739d84ca3aa5237"
+    },
+    "region_tests": {
+      "source": "explicit list",
+      "files": {
+        "tests/test_review_region_resolver.py": "a00fe0ff6ccb15dc0ced987cc1d05cdce9473af7c3cb88a76d8d99cb9da14840"
+      },
+      "file_count": 1,
+      "sha256": "ca73e5bdc4587e8b73f9635ba0283963ab56ca86e8612b2f6fe4748611829170"
+    },
+    "region_eval_inputs": {
+      "source": "explicit list",
+      "files": {
+        "data/review_region_cases_registered.json": "33438b89b9731e8aedcbe3c2c72c18f623c5624ff7fd9fcbf8ea9be22d70e937",
+        "data/multimodal_cases_registered.json": "c89eeef9acd737f9d234169ac6821d036dee31e4e04545076855d9989d2a288d"
+      },
+      "file_count": 2,
+      "sha256": "51d99a25be4175e9c94193c14b40c66cd0a57e164f346ce1b2f9c033467991f3"
+    },
+    "region_evaluators": {
+      "source": "explicit list",
+      "files": {
+        "scripts/review_region_baseline_audit.py": "829d97e084c1442aea173189e9d48f2888034adb0e1940bab5d5d75af7977ca1",
+        "scripts/review_region_resolution_report.py": "0ba9f42bbb94a6add1016de8caf4bae4a4cb09c268b6815eca843a20e0f2a61d"
+      },
+      "file_count": 2,
+      "sha256": "3c60bbafd1c9597478c33d745077e76777f4c116eb8ca30d04ffc8f9b106b61c"
+    },
+    "region_reports": {
+      "source": "explicit list",
+      "files": {
+        "outputs/review_region_baseline_audit.json": "82b9d06f82b8df33acf720fddab86e176c64a3d8b7843aa54385c8e26b56ae16",
+        "outputs/review_region_resolution_report.json": "a21a2f75a154637144e3a1a088d8d7253b9c2a6f3e685d24137003b21177a3f1"
+      },
+      "file_count": 2,
+      "sha256": "47c5befa4d62c7463133ff92cc7cd52c8f6965b12a452442d1d27878c12db934"
+    },
+    "region_bbox_gold": {
+      "source": "explicit list",
+      "files": {},
+      "file_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "human_reviewed": false,
+      "note": "empty: no human-reviewed bbox gold. No localisation accuracy, crop recall or field recovery rate may be reported while this group is empty."
+    }
+  },
+  "frozen_at": "2026-09-16T11:05:11+00:00"
+}

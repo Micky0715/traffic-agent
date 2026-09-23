@@ -1,0 +1,92 @@
+# Feature flag for the structured-BM25 slice.
+# `legacy` is the default and keeps every existing entry point unchanged; this
+# module is not imported by pipeline.py at all. `structured_bm25` is reached
+# only through src/run_structured_rag_query.py.
+rag:
+  mode: legacy
+
+# Canonical field names and the surface forms users actually type.
+# Configured, never learned. A field the user did not ask for must never be
+# filled in by a guess.
+query_parsing:
+  canonical_fields: ["图号", "名称", "页码", "版本", "电机编号", "断路器编号",
+                     "控制柜编号", "设备编号", "功率", "风量", "流量", "扬程"]
+  field_synonyms:
+    功率: ["额定功率", "电机功率", "输出功率"]
+    风量: ["排风量", "送风量", "风量参数"]
+    控制柜编号: ["控制柜", "控制柜号", "配电柜编号"]
+    电机编号: ["电机号", "马达编号"]
+    断路器编号: ["断路器号", "开关编号"]
+    图号: ["图纸编号", "图纸号"]
+    设备编号: ["设备号", "资产编号"]
+
+# Structured chunking, hybrid retrieval and evidence policy.
+# Every behaviour-deciding number lives here; src/rag hard-codes none.
+
+chunking:
+  # Prose is split only when it exceeds this, and then at sentence boundaries.
+  section_max_tokens: 600
+  section_overlap_tokens: 80
+
+  # Cross-page table continuation.
+  #
+  # Matching column counts is NOT sufficient evidence: two unrelated 3-column
+  # tables on facing pages would merge, inventing rows that belong to a
+  # different table. Every required signal must hold AND at least
+  # continuation_min_supporting of the supporting signals. When the required
+  # signals hold but support is thin, the tables stay separate and the pair is
+  # marked continuation_uncertain for a human — wrongly splitting only loses
+  # continuity, wrongly merging fabricates data.
+  continuation_required_signals: ["adjacent_pages", "header_compatible", "column_count_compatible"]
+  continuation_supporting_signals: ["same_section", "continuation_marker", "previous_unterminated"]
+  continuation_min_supporting: 1
+
+retrieval:
+  # Recorded so reports can state how text was split instead of leaving it to
+  # be assumed. No Chinese segmenter is installed and none is auto-installed;
+  # Latin/code runs stay whole and CJK falls back to per-character unigrams.
+  tokenizer_name: latin_code_runs_plus_cjk_unigram
+
+  # CJK function words. Root cause of "an unrelated query still returns three
+  # results": 的 / 不 are shared with almost any Chinese text, so an unrelated
+  # question scored above zero against everything. Removing them is a property
+  # of the tokenizer, not a per-query fix — the actual defence is the
+  # eligibility gate in src/rag/eligibility.py.
+  stopwords: ["的", "了", "是", "在", "和", "与", "或", "不", "有", "个", "这",
+              "那", "我", "你", "他", "它", "们", "一", "下", "上", "就", "也",
+              "都", "而", "及", "为", "对", "中", "到", "请", "问", "吗", "呢",
+              "查", "看", "说"]
+
+  # NOT applied. A score floor needs calibration on a dev set; choosing one
+  # because a single query misbehaved is guesswork dressed as a threshold.
+  uncalibrated_min_bm25_score: null
+  uncalibrated_status: uncalibrated
+
+  bm25_k1: 1.5
+  bm25_b: 0.75
+  sparse_top_k: 20
+  dense_top_k: 20
+  # RRF constant. This is a rank-fusion weight, NOT a probability — see
+  # src/rag/retrieval.py.
+  rrf_k: 60
+  final_top_k: 10
+  rerank_top_k: 10
+  parent_expansion: true
+
+evidence_policy:
+  # What must be present before a task type may be answered unaided.
+  # A single blended score cannot express this: "0.8 overall" does not say
+  # whether the missing 0.2 was the device id or a nice-to-have field.
+  required_evidence:
+    equipment_metric_query: ["entity_resolved", "metric_named", "time_range_satisfied",
+                             "tool_available", "no_unresolved_conflict"]
+    drawing_field_query: ["entity_resolved", "target_field_present", "source_traceable",
+                          "field_value_valid", "no_unresolved_conflict"]
+    regulation_lookup: ["clause_located", "source_traceable"]
+
+  # Fields where a wrong answer dispatches someone to the wrong equipment.
+  # An unresolved conflict on one of these blocks execute outright.
+  high_risk_fields: ["电机编号", "断路器编号", "控制柜编号", "设备编号", "图号"]
+
+  max_remediation_rounds: 2
+  min_field_confidence: 0.5

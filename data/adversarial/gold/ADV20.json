@@ -1,0 +1,39 @@
+{
+  "id": "ADV20",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-F55-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-F55",
+      "fields": {
+        "电机编号": "M-F55"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-F55",
+      "fields": {
+        "断路器编号": "QF-F55"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-F55",
+      "fields": {
+        "控制柜编号": "FAN-CAB-F55"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-F55-01",
+    "F55风机接线图",
+    "1/1",
+    "M-F55",
+    "QF-F55",
+    "FAN-CAB-F55"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "visual_low_contrast",
+  "notes": "washed-out print"
+}

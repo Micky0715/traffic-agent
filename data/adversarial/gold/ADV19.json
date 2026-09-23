@@ -1,0 +1,39 @@
+{
+  "id": "ADV19",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-F54-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-F54",
+      "fields": {
+        "电机编号": "M-F54"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-F54",
+      "fields": {
+        "断路器编号": "QF-F54"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-F54",
+      "fields": {
+        "控制柜编号": "FAN-CAB-F54"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-F54-01",
+    "F54风机接线图",
+    "1/1",
+    "M-F54",
+    "QF-F54",
+    "FAN-CAB-F54"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "visual_skew",
+  "notes": "rotated page"
+}

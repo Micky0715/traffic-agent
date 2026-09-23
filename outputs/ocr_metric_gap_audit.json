@@ -1,0 +1,100 @@
+{
+  "scope": "regression set (11 images), fixture OCR engine, cached VLM",
+  "gold_value_count": 46,
+  "legacy_hits": 39,
+  "structured_hits": 36,
+  "legacy_rate_by_value": 0.8478260869565217,
+  "structured_rate_by_value": 0.782608695652174,
+  "gap_values": 3,
+  "gap_rows": [
+    {
+      "image_id": "OCR04",
+      "image": "FAN-A23-01.png",
+      "drawing_type": "fan_wiring",
+      "gold_field_name": "device_id",
+      "gold_value": "M-23",
+      "found_in_blob": [
+        "ocr",
+        "vlm"
+      ],
+      "field_pair_generated": false,
+      "field_pair_detail": [],
+      "field_evidence_generated": false,
+      "field_evidence_detail": [],
+      "entity_id": null,
+      "field_name": null,
+      "raw_value": null,
+      "normalized_value": null,
+      "structured_miss_reason": "label_value_pairing_failed+vlm_device_id_suppressed_by_flattening",
+      "vlm_value_present_as_device_id": [
+        "M-23"
+      ],
+      "vlm_unmapped_raw_names": [],
+      "route_reasons": [
+        "field_completeness_below_threshold",
+        "isolated_labels_without_values",
+        "repeated_boilerplate_text"
+      ],
+      "ocr_text_excerpt": "A23风机接线图\n电机 M-23\n严禁外传内部资料严禁外传内部资料\n部资料严禁外传内部资料严禁外传内部资料\n内部资料严禁外传内部资料严禁外传内部资料\n图号\n页码\n1/1\n断路器编号\n内部资料严禁外传内部资料\n严禁外传内部资料"
+    },
+    {
+      "image_id": "OCR04",
+      "image": "FAN-A23-01.png",
+      "drawing_type": "fan_wiring",
+      "gold_field_name": "device_id",
+      "gold_value": "QF-23",
+      "found_in_blob": [
+        "vlm"
+      ],
+      "field_pair_generated": false,
+      "field_pair_detail": [],
+      "field_evidence_generated": false,
+      "field_evidence_detail": [],
+      "entity_id": null,
+      "field_name": null,
+      "raw_value": null,
+      "normalized_value": null,
+      "structured_miss_reason": "vlm_device_id_suppressed_by_flattening",
+      "vlm_value_present_as_device_id": [
+        "QF-23"
+      ],
+      "vlm_unmapped_raw_names": [],
+      "route_reasons": [
+        "field_completeness_below_threshold",
+        "isolated_labels_without_values",
+        "repeated_boilerplate_text"
+      ],
+      "ocr_text_excerpt": "A23风机接线图\n电机 M-23\n严禁外传内部资料严禁外传内部资料\n部资料严禁外传内部资料严禁外传内部资料\n内部资料严禁外传内部资料严禁外传内部资料\n图号\n页码\n1/1\n断路器编号\n内部资料严禁外传内部资料\n严禁外传内部资料"
+    },
+    {
+      "image_id": "OCR10",
+      "image": "FAN-A24-01.png",
+      "drawing_type": "fan_wiring",
+      "gold_field_name": "控制柜型号",
+      "gold_value": "FAN-CAB-24",
+      "found_in_blob": [
+        "ocr",
+        "vlm"
+      ],
+      "field_pair_generated": false,
+      "field_pair_detail": [],
+      "field_evidence_generated": false,
+      "field_evidence_detail": [],
+      "entity_id": null,
+      "field_name": null,
+      "raw_value": null,
+      "normalized_value": null,
+      "structured_miss_reason": "label_value_pairing_failed+vlm_field_mapping_missing",
+      "vlm_value_present_as_device_id": [],
+      "vlm_unmapped_raw_names": [
+        "控制柜型号"
+      ],
+      "route_reasons": [
+        "ocr_confidence_below_threshold",
+        "field_completeness_below_threshold"
+      ],
+      "ocr_text_excerpt": "A24风机接线图\n电.M.26\n QF 14\n资料仅供参考\nN\nFAN-A24-01\nne\nA4R\n\n1\n电r编号\nM-24\nE银行\nOF-24\n制编\nFAN-CAB-24"
+    }
+  ],
+  "entity_id_mismatch_rows": []
+}

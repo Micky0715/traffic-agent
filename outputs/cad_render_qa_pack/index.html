@@ -1,0 +1,104 @@
+<!doctype html><meta charset="utf-8"><title>渲染抽查包</title>
+<style>
+body{font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif;margin:24px;max-width:1100px}
+section{border-top:2px solid #ddd;padding-top:14px;margin-top:26px}
+img{max-width:100%;border:1px solid #bbb}
+table{border-collapse:collapse;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 8px}
+.blocked{background:#fff3f3;border-left:4px solid #c00;padding:10px 14px}
+.note{background:#fffbe6;border-left:4px solid #d9a400;padding:8px 12px}
+.q label{margin-right:14px}
+</style>
+<h1>CAD 渲染抽查包</h1>
+<p class="note">这是<b>人工审核包</b>，不是审核结果。下面的选项默认全部未选；
+未选的一律<b>不算通过</b>。报告中 <code>human_verified</code> 保持 false，
+直到你把结论写进 <code>qa_sample_manifest.jsonl</code>。</p><p>共抽 <b>6</b> 页。抽样规则见 <code>qa_sample_manifest.jsonl</code> 中每页的 <code>selection_reasons</code>。</p>
+<section>
+<h2>#1 D&amp;OM-25.pdf · 第 1 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>1f5b9bc4b24f…</code></td>
+    <th>图幅</th><td>17.0x11.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>5100×3300</td>
+    <th>期望尺寸 @300 DPI</th><td>5100×3300</td></tr>
+<tr><th>自动 QA</th><td><b>warning</b></td>
+    <th>reason codes</th><td>crop_risk_suspected</td></tr>
+<tr><th>选入原因</th><td colspan="3">reason code: crop_risk_suspected；sheet size: 17.0x11.0in</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0001.png" target="_blank"><img src="thumbs/cad-1f5b9bc4b24f-3b3786_p0001.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-orientation_correct"> 通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-orientation_correct"> 不通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-1f5b9bc4b24f-3b3786:p0001-page_matches_pdf"> 不确定</label></div>
+</section>
+<section>
+<h2>#2 70101-70183.pdf · 第 1 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>0bbefc174073…</code></td>
+    <th>图幅</th><td>34.0x22.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>10200×6600</td>
+    <th>期望尺寸 @300 DPI</th><td>10200×6600</td></tr>
+<tr><th>自动 QA</th><td><b>pass</b></td>
+    <th>reason codes</th><td>—</td></tr>
+<tr><th>选入原因</th><td colspan="3">sheet size: 34.0x22.0in；fill to minimum: document first page</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0001.png" target="_blank"><img src="thumbs/cad-0bbefc174073-06a985_p0001.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-0bbefc174073-06a985:p0001-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-0bbefc174073-06a985:p0001-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-0bbefc174073-06a985:p0001-orientation_correct"> 通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-orientation_correct"> 不通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-0bbefc174073-06a985:p0001-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-0bbefc174073-06a985:p0001-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-0bbefc174073-06a985:p0001-page_matches_pdf"> 不确定</label></div>
+</section>
+<section>
+<h2>#3 73001-73087.pdf · 第 1 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>4ff9dadac09b…</code></td>
+    <th>图幅</th><td>34.0x22.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>10200×6600</td>
+    <th>期望尺寸 @300 DPI</th><td>10200×6600</td></tr>
+<tr><th>自动 QA</th><td><b>pass</b></td>
+    <th>reason codes</th><td>—</td></tr>
+<tr><th>选入原因</th><td colspan="3">largest document (73001-73087.pdf): first page</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0001.png" target="_blank"><img src="thumbs/cad-4ff9dadac09b-f25016_p0001.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-orientation_correct"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-orientation_correct"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0001-page_matches_pdf"> 不确定</label></div>
+</section>
+<section>
+<h2>#4 73001-73087.pdf · 第 16 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>4ff9dadac09b…</code></td>
+    <th>图幅</th><td>34.0x22.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>10200×6600</td>
+    <th>期望尺寸 @300 DPI</th><td>10200×6600</td></tr>
+<tr><th>自动 QA</th><td><b>pass</b></td>
+    <th>reason codes</th><td>—</td></tr>
+<tr><th>选入原因</th><td colspan="3">largest document (73001-73087.pdf): middle page</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0016.png" target="_blank"><img src="thumbs/cad-4ff9dadac09b-f25016_p0016.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-orientation_correct"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-orientation_correct"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0016-page_matches_pdf"> 不确定</label></div>
+</section>
+<section>
+<h2>#5 73001-73087.pdf · 第 31 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>4ff9dadac09b…</code></td>
+    <th>图幅</th><td>34.0x22.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>10200×6600</td>
+    <th>期望尺寸 @300 DPI</th><td>10200×6600</td></tr>
+<tr><th>自动 QA</th><td><b>pass</b></td>
+    <th>reason codes</th><td>—</td></tr>
+<tr><th>选入原因</th><td colspan="3">largest document (73001-73087.pdf): last page</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0031.png" target="_blank"><img src="thumbs/cad-4ff9dadac09b-f25016_p0031.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-orientation_correct"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-orientation_correct"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-4ff9dadac09b-f25016:p0031-page_matches_pdf"> 不确定</label></div>
+</section>
+<section>
+<h2>#6 70301-70311.pdf · 第 1 页</h2>
+<table>
+<tr><th>PDF SHA256</th><td><code>bb9180ba6d20…</code></td>
+    <th>图幅</th><td>34.0x22.0in</td></tr>
+<tr><th>PNG 尺寸</th><td>10200×6600</td>
+    <th>期望尺寸 @300 DPI</th><td>10200×6600</td></tr>
+<tr><th>自动 QA</th><td><b>pass</b></td>
+    <th>reason codes</th><td>—</td></tr>
+<tr><th>选入原因</th><td colspan="3">fill to minimum: document first page</td></tr>
+</table>
+<a href="../../data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0001.png" target="_blank"><img src="thumbs/cad-bb9180ba6d20-34c6aa_p0001.jpg" alt="缩略图"></a>
+<p>点击缩略图打开原始 300 DPI PNG。</p>
+<div class="q">1. 文字是否明显发虚？（不发虚 = 通过） <label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-text_not_obviously_blurred"> 通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-text_not_obviously_blurred"> 不通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-text_not_obviously_blurred"> 不确定</label></div><div class="q">2. 细线是否明显缺失？（未缺失 = 通过） <label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-thin_lines_not_obviously_missing"> 通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-thin_lines_not_obviously_missing"> 不通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-thin_lines_not_obviously_missing"> 不确定</label></div><div class="q">3. 页面方向是否正确？ <label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-orientation_correct"> 通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-orientation_correct"> 不通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-orientation_correct"> 不确定</label></div><div class="q">4. 标题栏或边缘内容是否被裁切？（未裁切 = 通过） <label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-title_block_and_edges_not_cropped"> 通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-title_block_and_edges_not_cropped"> 不通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-title_block_and_edges_not_cropped"> 不确定</label></div><div class="q">5. 页面是否与 PDF 对应？ <label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-page_matches_pdf"> 通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-page_matches_pdf"> 不通过</label><label><input type="radio" name="cad-bb9180ba6d20-34c6aa:p0001-page_matches_pdf"> 不确定</label></div>
+</section>

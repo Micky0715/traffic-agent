@@ -1,0 +1,164 @@
+{
+  "case_count": 46,
+  "intent_set_exact": 1.0,
+  "intent_micro_f1": 1.0,
+  "tool_set_exact": 1.0,
+  "tool_micro_f1": 1.0,
+  "clarification_accuracy": 1.0,
+  "plan_mode_accuracy": 1.0,
+  "required_slot_accuracy": 1.0,
+  "end_to_end_case_success": 1.0,
+  "failures": [],
+  "tag_success": {
+    "ambiguous": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "chinese_numeral": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "clarification": {
+      "success": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "conditional": {
+      "success": 4,
+      "total": 4,
+      "rate": 1.0
+    },
+    "control": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "diagnosis": {
+      "success": 9,
+      "total": 9,
+      "rate": 1.0
+    },
+    "drawing": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "equipment": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "general": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "metric": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "missing_asset": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "missing_time": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "multi_entity": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "multi_intent": {
+      "success": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "multi_time": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "negative_split": {
+      "success": 5,
+      "total": 5,
+      "rate": 1.0
+    },
+    "normalization": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "parallel": {
+      "success": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "pronoun": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "regulation": {
+      "success": 4,
+      "total": 4,
+      "rate": 1.0
+    },
+    "safety": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "same_intent": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "same_tool": {
+      "success": 4,
+      "total": 4,
+      "rate": 1.0
+    },
+    "serial": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "single": {
+      "success": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "single_tool_synthesis": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "slot": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "station": {
+      "success": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "work_order": {
+      "success": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "write": {
+      "success": 2,
+      "total": 2,
+      "rate": 1.0
+    }
+  }
+}

@@ -2,6 +2,7 @@
 # hard-code a number that lives here.
 visual_fallback:
   min_ocr_confidence: 0.75
+  min_table_confidence: 0.5
   max_garbled_ratio: 0.15
   min_image_ratio: 0.3
   enable_complex_table: true
@@ -32,12 +33,252 @@ preprocess:
   skew_angle_threshold_deg: 1.5
   min_brightness_uniformity: 0.85
 
-# engine: "mock" uses src/vision/ocr_engine.py::MockOCREngine (stub results
-# from data/ocr_stub/*.json). "paddleocr" uses the real PaddleOCREngine
-# adapter — on this development machine its predict() call raises an
-# internal Paddle/oneDNN framework error (see interview/ocr_bad_cases.md),
-# so switching this to paddleocr here will fail until that environment issue
-# is fixed elsewhere. The adapter code itself is real, not a stub.
+# Which OCR engine backs the pipeline. Three deliberately-distinct options,
+# because "we ran OCR" means three different things here:
+#
+#   mock       src/vision/ocr_engine.py::MockOCREngine — hand-authored stubs
+#              from data/ocr_stub/*.json. NO recognition model runs. Default,
+#              because it is instant and needs no model weights.
+#   fixture    FixtureOCREngine — replays a SAVED real PaddleOCR run from
+#              data/ocr_fixtures/*.json, each stamped with image sha256,
+#              library/model versions, device and generation time. Real
+#              content, not live inference; use for offline regression.
+#   paddleocr  PaddleOCREngine — live inference right now. Verified working
+#              on all 11 eval images (see that class's docstring), at
+#              ~37s/image on CPU, which is why it is not the default.
+#
+# enable_mkldnn: oneDNN is Intel's CPU acceleration backend. On this machine
+# it is precisely what breaks PaddleOCR (the crash is raised from
+# onednn_instruction.cc, not from PaddleOCR or the models). Leaving it false
+# trades CPU speed for inference that actually completes. Set true only on a
+# machine where oneDNN is known good.
 ocr:
   engine: mock
   min_confidence: 0.6
+  enable_mkldnn: false
+
+# ---------------------------------------------------------------------------
+# Drawing types, for src/vision/field_completeness.py.
+#
+# A drawing's TYPE decides which fields it is supposed to carry, so "did OCR
+# read everything?" cannot be asked against one global field list: a pump
+# group drawing has no 电机编号, and FAN-A26-01 prints 版本 where the others
+# print 页码. Both would be scored as incomplete against a single list.
+#
+# Order matters — the first type whose title keyword matches wins. Group
+# types come first because "A16/A17/A18风机组接线图" contains BOTH 风机组
+# and 接线图, and the group reading is the correct one.
+#
+# Classification priority (see classify_drawing_type):
+#   1. title keywords        most reliable, it is what the drawing calls itself
+#   2. drawing-number prefix FAN-MULTI-* / PUMP-MULTI-* are unambiguous
+#   3. field combination     电机编号+断路器编号 -> wiring; repeated
+#                            功率/风量/扬程 columns -> a group/param table
+#   4. unknown               -> route to VLM; not knowing what a page even is
+#                               is the strongest possible incompleteness signal
+#
+# Never classify by file name: file names carry no meaning in production.
+# Note there is deliberately no "无框"/borderless keyword — that word is a
+# description of a test sample, not something printed on a real drawing.
+# ---------------------------------------------------------------------------
+drawing_types:
+  fan_group:
+    title_keywords: ["风机组"]
+    drawing_no_prefixes: ["FAN-MULTI"]
+    primary_entity_type: fan
+    per_device: true
+    required_label_suffixes: ["设备编号", "功率", "风量"]
+  pump_group:
+    title_keywords: ["水泵组"]
+    drawing_no_prefixes: ["PUMP-MULTI"]
+    primary_entity_type: pump
+    per_device: true
+    required_label_suffixes: ["设备编号", "流量", "扬程"]
+  fan_param_table:
+    title_keywords: ["风机参数", "设备参数"]
+    primary_entity_type: fan
+    required_labels: ["图号", "名称", "电机编号", "断路器编号", "控制柜编号"]
+  fan_wiring:
+    title_keywords: ["接线图"]
+    drawing_no_prefixes: ["FAN-"]
+    primary_entity_type: fan
+    required_labels: ["图号", "名称", "电机编号", "断路器编号", "控制柜编号"]
+    # A field GROUP, not two interchangeable names: FAN-A26-01 prints 版本 and
+    # no 页码, so either satisfies basic completeness. They are not synonyms
+    # though — if a user actually asks "which page is this", 页码 becomes a
+    # task-required field and 版本 cannot stand in for it. Task-required
+    # fields always outrank these type-level defaults.
+    one_of_groups:
+      - ["页码", "版本"]
+
+# Thresholds for the field-completeness / silent-miss signals. Tuned on the
+# 7 development cases only; the 4 regression cases are reported separately.
+field_completeness:
+  min_completeness: 0.8
+  max_isolated_labels: 0
+  max_watermark_repetition: 0.25
+  # A value sits on the same printed line as its label: to the right, roughly
+  # the same height, vertically overlapping. The height test is what keeps a
+  # page-spanning watermark block (190-433px tall vs a 25-35px text line)
+  # from being accepted as a field value.
+  label_value_max_gap_px: 260.0
+  label_value_height_tolerance: 2.0
+  label_value_min_vertical_overlap: 0.5
+  # Repeated-boilerplate (watermark) detection. n=4 counting any duplicate
+  # was measured to fire on 6 of 7 development pages including every clean
+  # one — normal drawings legitimately echo their title into the 名称 field.
+  # A watermark instead tiles one longer phrase many times, which these
+  # values isolate: watermarked page 0.573, clean group table 0.055, all
+  # others 0.000 on the development set.
+  watermark_ngram: 6
+  watermark_min_repeats: 3
+
+# ---------------------------------------------------------------------------
+# Field VALUE validation (src/vision/value_validation.py).
+#
+# Completeness asks whether a slot was filled. This asks whether what landed
+# in the slot could plausibly be that field. The gap between the two is where
+# a stamp lands on a cabinet number: slot occupied, OCR confident, value
+# wrong, every earlier signal silent.
+#
+# `origin` on each rule states what the rule's authority actually is, and is
+# copied into every violation report. Read it literally:
+#
+#   character_structure       the shape of equipment codes as they appear in
+#                             THIS project's drawings. Not asserted as a
+#                             universal property of all equipment codes
+#                             everywhere.
+#   project_domain_convention conventions these drawings follow (M- for
+#                             motors, QF- for breakers). These letter codes
+#                             are widely used in Chinese electrical drawings,
+#                             but this repo cites NO standard number, version
+#                             or clause for them, so they are recorded as a
+#                             project convention and nothing stronger.
+#   dataset_induced           generalized from the 11 drawings in this repo.
+#                             The weakest origin. The drawing-number format
+#                             rule is one of these and is labelled as such.
+#
+# Nothing here repairs a value. A violated rule routes the page for more
+# evidence; it never edits what OCR read.
+# ---------------------------------------------------------------------------
+value_validation:
+  min_valid_ratio: 0.8
+  min_checked_fields: 2
+
+  # NFKC folds full-width forms; it does NOT map these onto "-", and OCR
+  # returns them in place of a hyphen often enough to matter.
+  hyphen_variants: ["–", "—", "‒", "−", "‐", "﹣", "―"]
+  collapse_spaces_around_hyphen: true
+
+  value_rule_definitions:
+    equipment_code_charset:
+      pattern: "^[A-Za-z0-9][A-Za-z0-9 /-]*$"
+      origin: character_structure
+      reason: "设备编号在本项目图纸中由拉丁字母、数字与连字符组成；出现中文或其他非编码字符，通常意味着该位置被印章、水印或噪声覆盖后被误识别"
+    motor_prefix:
+      pattern: "^M-"
+      origin: project_domain_convention
+      reason: "本项目图纸中电机编号以 M- 开头（项目约定，未引用具体标准条款）"
+    breaker_prefix:
+      pattern: "^QF-"
+      origin: project_domain_convention
+      reason: "本项目图纸中断路器编号以 QF- 开头（项目约定，未引用具体标准条款）"
+    drawing_no_format:
+      pattern: "^[A-Za-z]+-[A-Za-z0-9]+-[0-9]+$"
+      origin: dataset_induced
+      reason: "图号在本仓库样本中呈 <字母段>-<字母数字段>-<数字段> 结构；该格式由数据集归纳而来，非外部标准"
+    page_number_format:
+      pattern: "^[0-9]+ ?/ ?[0-9]+$"
+      origin: dataset_induced
+      reason: "页码形如 n/m"
+    revision_format:
+      pattern: "^[Vv][0-9]+"
+      origin: dataset_induced
+      reason: "版本号形如 V 加数字"
+
+  # Field -> rule ids. Fields absent here return `unknown`, never `invalid`.
+  # 控制柜编号 deliberately gets ONLY the character-structure rule: a
+  # FAN-CAB-* prefix would be this dataset's answer written back as a rule,
+  # and would reject a pump cabinet outright. A project with a documented
+  # numbering scheme puts its prefix in that drawing type's
+  # field_value_rule_overrides instead.
+  field_value_rules:
+    图号: ["drawing_no_format"]
+    电机编号: ["equipment_code_charset", "motor_prefix"]
+    断路器编号: ["equipment_code_charset", "breaker_prefix"]
+    控制柜编号: ["equipment_code_charset"]
+    设备编号: ["equipment_code_charset"]
+    页码: ["page_number_format"]
+    版本: ["revision_format"]
+
+# How VLM output names line up with the printed labels OCR reads. Without this
+# the two sources cannot be compared at all, and a disagreement between them
+# would simply be invisible.
+vlm_field_mapping:
+  metadata:
+    drawing_id: 图号
+    drawing_name: 名称
+    revision: 版本
+  device:
+    device_id: 设备编号
+  parameter_names:
+    power: 功率
+    air_volume: 风量
+    flow: 流量
+    head: 扬程
+
+# ---------------------------------------------------------------------------
+# Entity typing and alignment (src/vision/entity_ref.py).
+#
+# A recognized equipment code cannot be the key that groups readings together:
+# if OCR reads M-19 and the VLM reads M-I9, keying on the code files them as
+# two unrelated entities and the disagreement — the thing being looked for —
+# is never reported. So entities are typed first, aligned across sources
+# second, and only then referred to by an entity_ref that depends on neither
+# source's reading.
+#
+# Mapping is exact-match or ANCHORED regex. Substring matching is not offered:
+# 控制柜 is a substring of 控制柜温控器, 泵 appears in things that are not
+# pumps, and a mistyped entity gets aligned against the wrong thing.
+# ---------------------------------------------------------------------------
+entity_types:
+  exact:
+    电机: motor
+    断路器: breaker
+    控制柜: cabinet
+    控制器: controller
+    风机: fan
+    水泵: pump
+
+  patterns:
+    # "2A号水泵" / "20号水泵" — the identifier is part of the name, so it is
+    # captured rather than thrown away. Anchored at both ends.
+    - pattern: "^(?P<label>[A-Za-z0-9]+)号水泵$"
+      entity_type: pump
+    - pattern: "^(?P<label>[A-Za-z0-9]+)号风机$"
+      entity_type: fan
+
+  # Which entity a canonical FIELD belongs to. 控制柜编号 and 控制柜型号 both
+  # belong to the cabinet and remain two distinct fields — same entity, not
+  # the same field, and neither is ever rewritten into the other. cabinet and
+  # controller stay separate entity types.
+  field_entity_type:
+    电机编号: motor
+    断路器编号: breaker
+    控制柜编号: cabinet
+    控制柜型号: cabinet
+    控制器编号: controller
+
+  # Belong to the page, not to any entity.
+  page_level_fields: ["图号", "名称", "页码", "版本"]
+
+  # The field carrying each entity type's own identifier.
+  identity_field:
+    motor: 电机编号
+    breaker: 断路器编号
+    cabinet: 控制柜编号
+    controller: 控制器编号
+    fan: 设备编号
+    pump: 设备编号
+
+  min_context_similarity: 0.5

@@ -1,0 +1,272 @@
+{
+  "stage": "cad_public_corpus/render_run_v1",
+  "environment": {
+    "pdftoppm": {
+      "path": "pdftoppm.EXE",
+      "version": "pdftoppm version 25.07.0"
+    },
+    "pdfinfo": {
+      "path": "pdfinfo.EXE",
+      "version": "pdfinfo version 25.07.0"
+    },
+    "dpi": 300,
+    "substitute_renderer_used": false
+  },
+  "facts": {
+    "pages_in_manifest": 131,
+    "pages_failed": 0,
+    "file_conflicts": 0,
+    "original_pdf_hashes_match_manifest": true,
+    "png_hashes_match_page_manifest": true,
+    "qa_status_counts": {
+      "failed": 0,
+      "pass": 110,
+      "warning": 21
+    },
+    "qa_thresholds": "uncalibrated",
+    "human_review_status": "pending",
+    "human_verified": false,
+    "ocr_calls": 0,
+    "vlm_calls": 0,
+    "api_cost_usd": 0
+  },
+  "supersedes": {
+    "cad_corpus_phase0": {
+      "manifest_sha256": "58c7357b62a22356a96e23ad78ca9953511377eb079f943243f7b97d81d3859b",
+      "left_unmodified": true,
+      "now_reports": "FREEZE VIOLATION (expected; not claimed OK)",
+      "explained_changes": [
+        {
+          "path": "data/cad_public_corpus/manifests/conversion_failures.jsonl",
+          "reason": "was 10 x renderer_unavailable; now empty after a successful render"
+        },
+        {
+          "path": "data/cad_public_corpus/manifests/duplicate_clusters.json",
+          "reason": "near-duplicate dHash candidates now computed over rendered pages"
+        }
+      ],
+      "unexplained_changes": []
+    },
+    "cad_render_qa_v1": {
+      "manifest_sha256": "7470dbc7ac8e864d49648ac03cfd1d7a73d4d0d462b8dfb8de34ddd62306c175",
+      "left_unmodified": true,
+      "now_reports": "FREEZE VIOLATION (expected; not claimed OK)",
+      "explained_changes": [
+        {
+          "path": "outputs/cad_render_qa_pack/index.html",
+          "reason": "refreshed: 6 sampled pages"
+        },
+        {
+          "path": "outputs/cad_render_qa_pack/qa_sample_manifest.jsonl",
+          "reason": "refreshed: 6 sampled pages"
+        }
+      ],
+      "unexplained_changes": []
+    }
+  },
+  "groups": {
+    "original_pdfs": {
+      "files": {
+        "data/70101-70183.pdf": "0bbefc174073794270c7f308d591e4e463a3ab81c88e6024909674951fe19b2c",
+        "data/70301-70311.pdf": "bb9180ba6d206d783d39ed4cc623ff5a2da9ca27e3a38ccfeed872eb446f3832",
+        "data/71001-71070.pdf": "a40dcf07392642e263a7c09ec463df94e9529d57f27b31a130577a9796bf66a7",
+        "data/72901-72933.pdf": "fc77d33e4972cbbc8d2b669dd4a170215c056ac800dc43a8481dfb96ad18917c",
+        "data/73001-73087.pdf": "4ff9dadac09b3db4654f1b968d1396c28bd6979087cef0b6d2e990b5b31d85a3",
+        "data/D&OM-25.pdf": "1f5b9bc4b24f686dde7e407f8ff5f7e9d22b54da933fa5704e21408aa904188e",
+        "data/DET4700_All.pdf": "f737837ade76c722df75115d14f50ec68c60df4d30128931cc45b4b506e3006f",
+        "data/RCD-25.pdf": "496b767a24bcfad5f5e5c63449958f3de5d192052521b4286b3150da7c5eadc2",
+        "data/SMD.pdf": "03796f2a4d017b8bf75c298d27c504e626593eb5333556ec6645a9912bb839e8",
+        "data/TSR.pdf": "12009bc077896d467db5f0294467e5587a503cc05d833c532d38c713530034ad"
+      },
+      "file_count": 10,
+      "total_bytes": 98189426
+    },
+    "rendered_pngs": {
+      "files": {
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0001.png": "ca6faa6cef42b8df642ec2e1dbdb3959d7883ce4eff2cf371a75c45a8d9e59e6",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0002.png": "9647c2d8ad598047ce2674b89294f6b954ef8f2b92249616668fac8b58298906",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0003.png": "6252da657715b1c4bd1904f69c3077acb7c21bc78db231dc754e03aa16cd8b08",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0004.png": "af84c3243302e077b96c8e0a49828b1088d2f4c44ac619f137f5666508288d7b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0005.png": "2b40bc842cd26b9a302f3c2403312ca6bb9fe32376bbb02c9e715e9454e963ff",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-03796f2a4d01-d0b38d__p0006.png": "368a0b237a18f9c31d671c4a0bab10acb573013fb12a12d4aa12777ef66b3cb7",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0001.png": "d0704d9eea2160b4e660e59e2c13ce597b053e26dfce5f157407083e52383884",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0002.png": "c4c582d7680a14a8891ef92867f7fab86a92a6cea4077670d8d68b3ea1d500f0",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0003.png": "f98e06a2b13166fe7c3fc0cf77de71f8ca1a768e6d662705f53fb3ac407f2c5b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0004.png": "6f195090662df9e952ae00720964c8c850f645f4550fbd2dfa6debeef60738e7",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0005.png": "4a3d33f4f01bc2923d8c7eb7f31e4459e69755f56f81fef069d7e52033b23738",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0006.png": "502caca11a6976efe883cfd7e036ecc8df0aa93f289f0440a31dd7d9095e3076",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0007.png": "bf8178c59e4cf332b841b6208d0548e64faa149e27bc8b50f36e2a6bbee745f6",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0008.png": "44820835c8cd01cf987689211641a85407ea28b2d4d0396548acbc6723153746",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0009.png": "a073db09ab48617f58647c86fa8df3555712b951bdc49e0ae59645d9cf0bad27",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0010.png": "8069f2e51023856f7868e796cdff946baae8791b03776a9a692dc28a8a40d833",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0011.png": "29446cb9881cc5ba608f01dfa8b831d67269e1a392c51666518c1991155fdb57",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0012.png": "e30da69a8a6bc0a77f0b216cb63b6587da96a53d2ef77baf4df58799c1046547",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0013.png": "185beab81911a387a8ab65cfa3beddd9c74eb792585b41913fd9deef6f95586e",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0014.png": "9fab9a2255b6c57f6c4af61541148c029b39c73202358f3fb4f6991c94b952ab",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0015.png": "f60cea38687135a1dad452eeaeadf2aba8bccd00c0fd490e0179637a878b84d9",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0016.png": "188e18582d4b5bc0e13ab0a6c0e22d889e01e0f23f7a3dd79acd518ea05ac405",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0017.png": "ee754dc14cfa75affa73f024a1ec922c2e0324c6a542d05633c6723bdcfe4d42",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-0bbefc174073-06a985__p0018.png": "9af4fdf311439bc022de33acfd316af342241b850474027f531c9a89bf57438e",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0001.png": "2fb6c092ca79a8eee3d9dea2f624319c765107e48c60c08a8f12cf3f435b37e4",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0002.png": "c0b0851f088b0aba61bd065407828218b551553c54c6c743cb531c0d918b4b39",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0003.png": "c24f0e1bed30f7b98259967cd6bcbb0470301ecbbe4381124de0eaed6340de7c",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0004.png": "e5a0753d5da079997a19a3acad7b747bb9b68f7a0fc68200810030a17f6bd1af",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-12009bc07789-5253c7__p0005.png": "f3ce0322a86fe4b31648b4a33e8b3a13cb66ce5c7a9511db9e4d1b207abe14a2",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0001.png": "170170e9730aef63bfdcfbd4d7909c9dc4ce19167b9cfb9f92fdc840949a2386",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0002.png": "5f7043d9c2a645b908f6ee418d451fa163131fe665698ce8e02bec90be343a45",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0003.png": "af198e56b44e934ec613a39711be6872e8fe30adcdb127b3859972616f50f041",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0004.png": "7cc95c22a6f2c3569fa6754ae4f3e497acb1b52ddf267f4e61663a812c7418ea",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0005.png": "943cd77189dd5064a8b314b5f66e0ce3d1a27249e1551a822711c33a21712875",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0006.png": "7a9042cfed1d071104e61b8e7d09d00f97b0048c66a9f4f2286bb00ff4c39327",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0007.png": "d22532d43554bb7ae2587073fb028e581a0b71aec15e7b3c9e075883187ecca3",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-1f5b9bc4b24f-3b3786__p0008.png": "b551ce9338be2721f3f9281a65af6d06185fd8d2455271dcb471f26c99f16787",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-496b767a24bc-557c37__p0001.png": "f78dd4fed1fcc40254120e1a13ab2906d124678e8848cfcb9bb508e7243e9c33",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-496b767a24bc-557c37__p0002.png": "816944ae4a4415d102dd192ccd1b898aa7cdd94f0d086643a4b22a22d59e5bd4",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0001.png": "8b90bc58fcdcfea18c595aebde61ffd903de81f1f332e55b41b16097559b14ae",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0002.png": "cb2485f0ce061b1a1578c6900f45ab1ff776a7bce684f937cef14e0606ccddb3",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0003.png": "688af4650000ce1cd9d0067d164152f08dcbd8d9eec96acca6ef62f5199f3ee6",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0004.png": "8426f2965fda217a3b51227aed46b4dad107097813f532a79a72c52fa5f238b1",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0005.png": "0d290d35fe8abb0f41ce90a909e93cf1e05a7f33821b2a224e99cc95e1086c91",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0006.png": "32a3fefbc3f32e28bb3e93cbe3e0aa3550ded0315139bdb0337f4b7d6165383d",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0007.png": "479ddb866237ddd104fca8542a515b6947186c9b709fa01a13e3adb66d1fb0f8",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0008.png": "c669ae67ffdc7d8df0f36c709cd4e5d07f41a3445fa7ca669416ed2184750643",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0009.png": "6ec181e87b46a5f34eba9341cb333cf2ed38b89449716ca323788a44a69827fe",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0010.png": "77a975812be40980148fe0db32f4e5d39daeb24390e3636d07ba6ae6b97bf70a",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0011.png": "9a95cef884c166515013979a3dad1c850f46fcf57152da241bb00ce825e4de85",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0012.png": "bc23a1454b5c618ec1a78ab21b4fc00ab32cf0b8ab6e1587d542b6c46f816790",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0013.png": "0a89234a499dd47aefe8b795ca07155c5001d04a6a7ed5cc5f721b1bf0f98e98",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0014.png": "3d71cd6f7d01fe02b95d5cb2121089592f2a6106e414d07f4e396ec4fefcb1ab",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0015.png": "f6c653871799d4833bd5b5faae4ff241c445ea3c4b723b4308eaee57077a39a8",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0016.png": "bf5f56a433f2be111959b15950285a34fed2ab958b3e913c8b384e937e868ea9",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0017.png": "605e05adc40ef011bf920b3c4e5c458fcf848b1a235cb5c44a76e748122cee31",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0018.png": "b65e3d2a95c7ce91c7c777886c25f897282e99e47c25b3659d7e6bf8364b8fa3",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0019.png": "c29371344d96dddf2ccd23e57a5ef8e43cd9e210c2a23aceb02e65c80d71ea00",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0020.png": "cc08868ef9c469bfd46007ed23dd632d85feec6ff41a9277e2d8fb2c2c2dbfd6",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0021.png": "14a2a530b3b3db2df6d468cee5a5f197d2bcbb8fece3a620aafa2a7280b27a85",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0022.png": "c2b13df8f1534c4512d142c0167ab7cec0802bec8b0a3878f46154e68e583d26",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0023.png": "fbe60f1140557ead1e33fee30440740aa04c18eb36f9a890a0bc4a6236b6875e",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0024.png": "fcd49609558d6e90a707eeb9483861dac7897585e4c85778e31afafa92b33d48",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0025.png": "4c844b21ffd8e6c9e27da0a7fa0ad19aa864e63ebddeb20cc9eb25cacc402bda",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0026.png": "e8c9652b5947c1023057ca9e5cd2643b165ecf6278d5ea15e1d296928b0c1aee",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0027.png": "f138ba89ab64fb35f1b631469206748eb36c141d8ad0bb5dbd369fe4f4aa0327",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0028.png": "066161e609573c4248006a301792ee61acffc3642ae1116fdc14cf67c53821a2",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0029.png": "2ea1c25560b33010020ab27870fb0e66c4358c8926891c58633e9e77df8ba4ce",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0030.png": "9ee9a9243c3bca9ecf8f135e8bcfdb6af9c9069ad5a85290b8191050d0baf1e8",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-4ff9dadac09b-f25016__p0031.png": "e2cb5842bb2a8107aa5f0aa1b9c654b8ccc80ea018bfc89d61dab1c9a396607e",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0001.png": "6980eca9b33463c1fd2c7829abf5d1b051e8016e2a943d7adaac4e76d9fa59c0",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0002.png": "df21e3e1133433c45c7cd06e9f126afcc7407a4c297acfce4baa82c48ad26d3a",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0003.png": "324ad2be4ad0722c56d7869557ddca6a27df2d00c69ed5ba7f7b9a5781fc35b5",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0004.png": "8c39cee248c669627c446414311fc3781c2d8c8283169cadab0670d6e2ad9f4a",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0005.png": "04e838401bf769f63f79ef611255056af9f250b44f9354d4bd264b4f29ad9428",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0006.png": "637ecb91fd23cf181df950d9592e7ef33d99c423a28a06d5667eb4cd58455791",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0007.png": "6bb3fa94591792e4b3b6735f7b01191189920fd35849f71fc9a8fc3477002a4b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0008.png": "c7ea9b2b1ca6ec1c5b441a92b36574d3fb44c15e1925d3818b7309bdafbd8790",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0009.png": "33d178e5cbc190c90d713c7a593232d302764007527bd8206f5da5b638ebb746",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0010.png": "35935df468205e17ef0372869d65fe78b7fc256f37b379651fbca842138061d5",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0011.png": "9a0e51fea4f48e9a15dfd2af57c6ddf48e97db64c7e122764bba20b2b23b99e8",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0012.png": "a6ccd23c4d9f031ab1734149033e6abb1410e81536433b2c17ab9203093fb845",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0013.png": "3b1e2467b0bef196066b5f6837189cef3645431d48b1f41995d9303906ab3c7d",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0014.png": "37969fc55cdc00e9dcd2d391f2d920f859ffd56468644937013d6b954490b052",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0015.png": "d3041aa8a5708fd07d7f7916b0305ef5613550d3ead0dba5ba3eafc19817d675",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0016.png": "2964c7e214b658a04f0bcb1e2b6c159dbd4f6cffe0db78b9f8e6590b0bc675a3",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0017.png": "bbe15b851d3ed2eef3651b5950d0bead36d39f57853a6daa00eaec23aedeea48",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0018.png": "157e115c14518bbde6e074bfb2cc61a8a3c6ae281b69f61c6f6fbfba16cd1d76",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0019.png": "873b911c709367e4de43d52050b655b0ac66a4eefc971535529d63cfb81dcf00",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0020.png": "fb12c660340062441e55c137fb03bbf06cf95babf632cb97a3d28638d189f142",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0021.png": "001ef4965bb17c5ced5324cf061232ac908b990da215dad909a81260d01bca73",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0022.png": "dcb02e6fb8f7bb6dfb93310cb6eb8d084253a558a7b2e5d5b9ae5fdfecec5863",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0023.png": "d84807cf6d447970e0d14824b6f6a07c5e7f5b50eb861c2bf78668476a499f62",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0024.png": "0b5fe08935030c988cc1e859a5ea77ec84532e62bb9694997101b9d1de12fcf5",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0025.png": "b9a175954f349937ac43c526ae71bde22a0c6fdf79463dd553ae8771592b8f23",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0026.png": "39f6766cb21a21a89c6815cb0dc98e1a935d83af9b22d0d26e98ce6c2a25e581",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-a40dcf073926-58cb7e__p0027.png": "80e9b3a978588137b53445a01cb30dda03a4ff1d7f977dbdd8793e5ee4d9ba51",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0001.png": "05287f4154153be2f35848a349beb68d30b2d9aec44d1416cfbd724537cb2f36",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0002.png": "b3581d1ff86b73e67fd201263f1b42bbf0ab8d5b9bd392f673a5512762f49581",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0003.png": "172341ad4cba76af9c7184ecda9f044c97a79d7bfd32598192046f5c6db73bb0",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-bb9180ba6d20-34c6aa__p0004.png": "9d09d501ea53513515f50e8f5be7cbb0bba80c442755de7c821f5e30c85a6544",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0001.png": "0906ebfcb0b266d64287598c7ea544f8ab8ec0645a704e7f9029ed93a516f6bc",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0002.png": "de0b43d6bc9f930ed2a75e9df58f4bc31628b0bf10ee5a21495d50a7b2572963",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0003.png": "df4829390dec7c340dfff77e0c4cf31f1621ce95a16f7e001e3b1efe3420821b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0004.png": "8b1a88ccf6e418ab2674966765fd021eee389ddb23ae9cd1ecffa3ca5300016d",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0005.png": "1ba8f347bb48b3f80dc55fceae65828f6e531c1ad90b5a80d3e147d86e16747f",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0006.png": "2ae4264e30646f0f5a963ab5620fd85afa11588d68383967d711f0072ff6ce22",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0007.png": "de6793347a3b9ec9584f2d6439c7594a9f1d82fc9e385fd721c0dffe788b7ab5",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0008.png": "6380ae7e60b6ca922dd7328b3723a32b40949577f8a684c58fbbb3bb32d4867a",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0009.png": "1cdf16f567120721910d21308c865c12bc55718f3473e3736f90eb72ffa0a059",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0010.png": "5d9d438b1c874981e72eecd8d8d179c0c554289f2d9fcee5d63df6df9afaa3ac",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0011.png": "b6af4b77bc4495c02e6f292eb1fcb40a943683b25c118d7215dca08ada64b1b6",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0012.png": "bd9c12eca219d397c56f3c4fbb3b15773c531cf222d91edbe597274b26e0be44",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0013.png": "91a66136304a0f78fea710d1a9cc16a741d6ca4d230c26f1a7a1170b9ac87f55",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0014.png": "e39854c460a539642d191218031db14f6272147e8fa7ffff6d2f368a0649bca7",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0015.png": "1db87c8704142a0dc30880b5be24631f59994e9e06873f54327dd109101a4c6d",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0016.png": "bcafd4d8ee21bab2a154a3ca28006efd07fb512548ccd99941cabe7c80cde90b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0017.png": "f9797e70120b7e36a736bf21bbcd618b9375a245196fe9c5292574c54bce2f15",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0018.png": "c0d8782fa6f66642cc8c31e50ddb54e77f2a8984b782142ba33980e3c4062005",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0019.png": "ab0acfe0377cf15c7995f92d62f63c128999519d9faf4b63bac31e40067fcafb",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0020.png": "f9fa51a3d46bbc0dd2e67c51546466da2f95d32b6c91aad14dfc3de71fa6f0aa",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-f737837ade76-b2131d__p0021.png": "8c4fdc6b32ddf8dd724d0cfa7eb91e6e08c391c14d65f03dd81346c37dea519c",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0001.png": "255e5a084cf6e3410ee567f36bf3285b377208b1983e1658204539a496574dae",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0002.png": "39f38744d8f70584898d8de5bc4bee9d018c0250b453745fe9dbd9beb2f1b544",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0003.png": "ae2211bb530a31285632110e35c83c8e142070746dfff6709c99f34abb228fd5",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0004.png": "79c69142c7f7e42ff48d77c6064dcb92d100dc3488f6b34f68f73a9285cad234",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0005.png": "d65093815d9982507ac081f35d5899a1469ad2db2f11ad81751627708077ff53",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0006.png": "7b9031a367fddcb2fef57825c5aab587172dd24bc038d6160ea020921a805cba",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0007.png": "0db27e7cd29f664cfd2527bd00ffc80516365f5274d5cb0f99bb2e5328f42e87",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0008.png": "9a566da1b68423e8bba6a95ccabb581ec98bb34bd8c1d50c2c3a22495a838b6b",
+        "data/cad_public_corpus/rendered_png_300dpi/cad-fc77d33e4972-8d8e06__p0009.png": "696bffcad8bd177860d38ea9ef3545e596bcd068ba23c7d82bc229c1e3507486"
+      },
+      "file_count": 131,
+      "total_bytes": 240665997
+    },
+    "page_and_corpus_manifests": {
+      "files": {
+        "data/cad_public_corpus/manifests/conversion_failures.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data/cad_public_corpus/manifests/duplicate_clusters.json": "4cb7e6811236c6320068d8460fbb94bc36614bc075d41a61586505eab430df80",
+        "data/cad_public_corpus/manifests/inventory_scope.json": "4589485edb430cb3e7278e6d6e36579e3f266b3bc05c757fc844c9cc66d89760",
+        "data/cad_public_corpus/manifests/page_manifest_unreviewed.jsonl": "f85b2de5d0c7132d246e9e948d69178c961ebb6ede61142623956cd10ac76a76",
+        "data/cad_public_corpus/manifests/source_manifest_unreviewed.jsonl": "f1fb2ee1485887e904ac7b68c328df16064f2d5a791ec155e6dff3764320bd85",
+        "data/cad_public_corpus/splits/split_candidates_unreviewed.jsonl": "72c5d77ada45b336daa1410ab211a8d5f2b860e5714995d6da13eba7592a2c4d"
+      },
+      "file_count": 6,
+      "total_bytes": 117434
+    },
+    "runtime_code": {
+      "files": {
+        "src/cad_corpus/__init__.py": "ae87db43f7e6aaff85d47f33aa70af3a9cfc014ab434404964bb5cff87477dc3",
+        "src/cad_corpus/corpus.py": "e2b5f87940983ad7774772f76f1657944230718d978f31528cddc80b7602cec1",
+        "src/cad_corpus/render_qa.py": "f0816dbfb8cf8d0c21eb10eb6645c3390e2ab1af6527379cb360acabc9ac1ad4",
+        "scripts/render_cad_pdf.py": "672efcb6ff495c4fcb7974e16f4d2f764ebabd8f9cbe8b361de14444e20ecc2a",
+        "scripts/cad_render_quality_audit.py": "672f8827c3894d2301ed363eee4465fdf8718d38b7c4c6d2cd09e8802242578a",
+        "scripts/cad_render_runtime_report.py": "bc47c61eb4dc1e18d82beac619c59b0630d934e0df247df3608c17091bccb6f8",
+        "scripts/cad_render_run_freeze.py": "25728e2bd3b94e01a0f1b2a4907847fb368849a8384b565bf2efffc6762d3fa9"
+      },
+      "file_count": 7,
+      "total_bytes": 88821
+    },
+    "qa_config": {
+      "files": {
+        "configs/cad_render_qa.yaml": "834fd4c55f3457c9f6e7132d04ea340f9d3e5b04d9296f8148d4e86ce6dacb37",
+        "configs/cad_corpus.yaml": "94e47ed6693d7b8edb73cd4f81c7c6994857cf6853694b871048a63630db350b"
+      },
+      "file_count": 2,
+      "total_bytes": 4182
+    },
+    "qa_reports_v1": {
+      "files": {
+        "outputs/cad_render_quality_report_v1.json": "a62236d3665eed66bb72da34d1bd1a6f49564257da306fc6598b71aec329281d",
+        "outputs/cad_render_quality_report_v1.md": "942240c4c690db06fd5c5b47715b5e784047973d99dd3540626d13b66315af76"
+      },
+      "file_count": 2,
+      "total_bytes": 220212
+    },
+    "sample_pack_manifest": {
+      "files": {
+        "outputs/cad_render_qa_pack/qa_sample_manifest.jsonl": "7e35313d6e1df601684b73af1b50f1b80cf72280cf44bd52f805c6379210145c",
+        "outputs/cad_render_qa_pack/index.html": "4c2bc6aafd3ea7e338db004b72d3e32ad6db1611b8f317a95b10f35c927b8964"
+      },
+      "file_count": 2,
+      "total_bytes": 20280
+    }
+  },
+  "frozen_at": "2026-09-18T09:52:54+00:00"
+}

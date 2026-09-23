@@ -4,8 +4,11 @@ from typing import List, Optional
 
 from src.vision.config import VisualFallbackConfig
 from src.vision.schemas import (
-    ImageQualityMetrics, PageParseResult, PageRouteDecision, Region, RegionType,
+    FieldCompleteness, ImageQualityMetrics, OCRResult, OCRRouteDecision,
+    PageParseResult, PageRouteDecision, Region, RegionType, TableStructure,
+    ValueValidationResult,
 )
+from src.vision.value_validation import value_validity_below_threshold
 
 
 def _native_text_ratio(page: PageParseResult) -> float:
@@ -153,3 +156,72 @@ def route_regions(regions: List[Region], cfg: VisualFallbackConfig) -> List[str]
         if needs_structural_read or low_confidence:
             selected.append(region.region_id)
     return selected
+
+
+def route_ocr_page(
+    ocr: OCRResult,
+    table: TableStructure,
+    completeness: FieldCompleteness,
+    cfg: VisualFallbackConfig,
+    validation: Optional[ValueValidationResult] = None,
+) -> OCRRouteDecision:
+    """Decide whether a page needs VLM fallback, from OCR evidence alone.
+
+    Replaces a single confidence test. Confidence answers "am I sure about
+    what I returned" and is blind to what was never returned at all: the
+    watermarked page in this repo's eval set comes back at 0.996 average
+    confidence with 3 of 4 target fields missing, and sailed through.
+
+    The conditions are OR-ed on purpose. Missing a page that needed help costs
+    a wrong answer delivered confidently to someone dispatching a fault; an
+    unnecessary fallback costs one VLM call. Those are not symmetric, so the
+    bias is toward escalating.
+
+    Nothing here may consult expected/gold values — this runs before anyone
+    knows whether the page was read correctly, and feeding the answer in would
+    make the recall and false-trigger numbers circular.
+    """
+    reasons: List[str] = []
+
+    if ocr.average_confidence < cfg.min_ocr_confidence:
+        reasons.append("ocr_confidence_below_threshold")
+    # Deliberately NOT a trigger on its own. Table recovery is a MEANS of
+    # getting fields; field completeness measures the END. Most drawings here
+    # are title blocks rather than bordered tables, and detect_table_structure
+    # scores grid REGULARITY, not whether any content was lost — measured on
+    # the development set it sat at 0.30 for a pristine page and 0.30 for the
+    # watermarked one, firing on 7 of 7 pages and reproducing exactly the
+    # 100%-fallback behaviour this change exists to fix. Failed recovery still
+    # matters for multi-device drawings, where it removes the second source
+    # needed to trust the device count — it arrives via
+    # group_cardinality_uncertain below.
+    if completeness.drawing_type == "unknown":
+        # Not knowing what kind of page this even is makes every field-level
+        # check meaningless; escalate rather than score an empty checklist.
+        reasons.append("drawing_type_unknown")
+    if completeness.completeness < cfg.field_completeness.min_completeness:
+        reasons.append("field_completeness_below_threshold")
+    if len(completeness.isolated_labels) > cfg.field_completeness.max_isolated_labels:
+        reasons.append("isolated_labels_without_values")
+    if completeness.watermark_repetition > cfg.field_completeness.max_watermark_repetition:
+        reasons.append("repeated_boilerplate_text")
+    if completeness.group_cardinality_uncertain:
+        # "Every device I found looks complete" is worthless if a whole
+        # device row was never found. See _evaluate_per_device_type.
+        reasons.append("group_cardinality_uncertain")
+
+    if validation is not None:
+        # A value whose shape cannot belong to its field is the one failure
+        # mode every earlier signal misses: the slot is filled, OCR is
+        # confident, completeness is 1.0. Fires per-field, independently of
+        # the page-level rate, because a single corrupted equipment code is
+        # already enough to dispatch someone to the wrong machine.
+        if validation.invalid_fields:
+            reasons.append("invalid_field_value")
+        if value_validity_below_threshold(validation, cfg.value_validation):
+            reasons.append("value_validity_below_threshold")
+
+    # The page is escalated for MORE EVIDENCE. Nothing above deletes an OCR
+    # value, rewrites one to fit a pattern, or picks a winner between sources
+    # — see src/vision/evidence.py, where disagreements are recorded unresolved.
+    return OCRRouteDecision(need_vlm=bool(reasons), reasons=reasons)

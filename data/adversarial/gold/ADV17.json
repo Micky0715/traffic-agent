@@ -1,0 +1,39 @@
+{
+  "id": "ADV17",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-F52-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-F52",
+      "fields": {
+        "电机编号": "M-F52"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-F52",
+      "fields": {
+        "断路器编号": "QF-F52"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-F52",
+      "fields": {
+        "控制柜编号": "FAN-CAB-F52"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-F52-01",
+    "F52风机接线图",
+    "1/1",
+    "M-F52",
+    "QF-F52",
+    "FAN-CAB-F52"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "visual_watermark",
+  "notes": "tiled watermark across the value column"
+}

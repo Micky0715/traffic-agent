@@ -1,0 +1,133 @@
+{
+  "static_analysis_limitation": "代码范围来自静态 import 闭包；图片、配置与 OCR fixture 无法由 import 分析发现，因此显式列入。",
+  "groups": {
+    "table_runtime_code": {
+      "source": "static import closure",
+      "files": {
+        "src/tables/cells.py": "1006d0b48ab1e6d18b63131536cd93cd279ce8753a0b0f23ddc35b30306f262b",
+        "src/tables/chunks.py": "5a922ad52b642de971224222632a650d422abc7f6877581c25459c4b4d7ed572",
+        "src/tables/config.py": "9f1ea601e2af1bcaebe6d3f404d29d0e11e3de12ff9b6273a68f86d1773df034",
+        "src/tables/continuation.py": "a71c422bf9f40e898dc913770946900dfa4bf6de3b5fc4107c9719fa15ed6dbe",
+        "src/tables/crop.py": "01ace10836d94b7eacca4ecd7597b2c19519a7a7b3150094144c3b88a869aad1",
+        "src/tables/grid.py": "96204e4d2f2198f6638140a475e66922e1bae9adb63da064ca785640078b34af",
+        "src/tables/headers.py": "709184028b1b2c983a9e4c948dfaae6bc5805af23c367d3ea0e65e7067962223",
+        "src/tables/review.py": "892741aab378e0805244030219fb9a1d18d51d031e558c07b28c727580f3084a",
+        "src/tables/schemas.py": "9e86ae350e96260e70034bcb0bf810da14352c8116f4df94a1db0a22fd995e3e",
+        "src/vision/schemas.py": "7d3dddb4e122bcba537fdbf46d7af8f62b7a6514d48d0b2cf4c37ecbdd726889"
+      },
+      "file_count": 10,
+      "sha256": "f97a742e9f0150a093c483d8e04044c5c3f70a35c770293a2b43afdf21e82bb4"
+    },
+    "table_config": {
+      "source": "explicit list",
+      "files": {
+        "configs/tables.yaml": "32fcfe7ef1ad751dc9411d065a453584b56efd48b65b5f77c2017b53a22279fe"
+      },
+      "file_count": 1,
+      "sha256": "e95342a4d2769dd59e787b9f38574761517f17e41e608068c8c846e299d5959b"
+    },
+    "table_images": {
+      "source": "explicit glob",
+      "files": {
+        "data/drawings/FAN-A13-02.png": "bba517ec1b22ea2b739cce0f3d1175d6c1b3f08b022f3bcce2050157ad28fa37",
+        "data/drawings/FAN-A14-01.png": "6edfd8310003fe75730190a9c4641dedf4ecb768ed33af06b67e9684b6f6bf45",
+        "data/drawings/FAN-A15-01.png": "f41878ba5bcb4902dd229530abbcaf3b5831eab41f30779cc0792bf5b709911b",
+        "data/drawings/FAN-A16-02.png": "26b12e641781ef696a5ab619c97adb8bcda3d3804d0e93c64cf650ea2659b170",
+        "data/drawings/FAN-A17-01-lowres.png": "35f37f6a4973e95f636b6e51c17e04ca43c4deea810a40f5b86322dda02f2ecb",
+        "data/drawings/FAN-A17-01.png": "f93b29337207fe74be3635b41c7662b148501306bfefb7618fbb33f8438dfeea",
+        "data/drawings/FAN-A18-01.png": "6c4e85a936166ff2249a60f71896761f4594241eb512a9e7f2636f5bce6b4ed1",
+        "data/drawings/FAN-A19-01.png": "1289d886bc6243378541018d9ccf5152159db2a428d2040b75bb8b5c4d7ba385",
+        "data/drawings/FAN-A20-01.png": "678cfd3200e032f09ab9d37613098c5c2aebae1a8cb1cfa88242370843851de5",
+        "data/drawings/FAN-A21-01.png": "654d26e58a7a4f08c58f085ad333e653c54c88c1a2817fd4e540227480be70bb",
+        "data/drawings/FAN-A21-02.png": "3bf0eacab436862ad7948148a07163de55944ca2ee3f972b1c5070df06339fcf",
+        "data/drawings/FAN-A22-01-heavyblur.png": "f84516a96b11075a5096ec358395dcc2819464ed16a655b72a0332662c83c561",
+        "data/drawings/FAN-A23-01.png": "919ad953659c8cafc317800af0355d5e10ae6dbf3f0b03dc7c78b5c177f992e4",
+        "data/drawings/FAN-A24-01.png": "f4eb7b169841b144d3f99a6ed8ecfccc540a84c67256d9cfd42e7c9123e30849",
+        "data/drawings/FAN-A25-01.png": "4c081b8c50fc436c583e89726fe8b05afabb1ea4f8b380339ac9f0ee25708582",
+        "data/drawings/FAN-A26-01.png": "308d657fc5f4b178549a6d9acb70c359f3835c6315e844629a501346675624d7",
+        "data/drawings/FAN-A27-01-skewed.png": "a05f009a93800117bd66f0fb97aa349ccaad5af68641a79733df93b68fbbfa0f",
+        "data/drawings/FAN-A28-01-borderless.png": "005b4eaf13a4cd20ea16a9a0ce1623a83592c16d0fbe44941b67ff910a1cb5bf",
+        "data/drawings/FAN-MULTI-01.png": "b2d6b5c9f91610eda7d474a06c85943378aa1d0f22521625102ac9257c9a4bd4",
+        "data/drawings/FAN-RELATION-01.png": "b7579abc6feaad43e3c71103a05c7f469e06da1b29263f53c3269f3c74d852ee",
+        "data/drawings/FAN-RELATION-02.png": "e09dae044c93acbf5de672467a11180006e647ee03615b687de098aba1227c5f",
+        "data/drawings/PSD-B08-01.png": "72f568370533e5c3bdecd26ce49ed22e25dd8cc45a81e12b5267e9b0dc3c1ce7",
+        "data/drawings/PSD-MULTI-01.png": "f44576010938e5e88cbe3eb133dcd38e367f6c7fa928dd5acbdef643c321cb7d",
+        "data/drawings/PUMP-02-01.png": "bc61a59809f5d2965794c9620d7c67a53e03c90fb999cfe80385469c02115960",
+        "data/drawings/PUMP-MULTI-02.png": "db08aefc324d45a4aaa51698f33d399a4a7106710380a40b094e372cbe71c756",
+        "data/adversarial/ADV01.png": "114e61c03192ea2b2075c5b5a5b44a662b436ae702fe49b83e63640a2c248527",
+        "data/adversarial/ADV02.png": "365fddf2c053bd8458e566a26fc8e3d688b7bf271f1a3c3252ca2a49bd380b6a",
+        "data/adversarial/ADV03.png": "0e9d072bc7594000edc3c0923c65f85af0eb19a26ea7bed0800640b684fe4649",
+        "data/adversarial/ADV04.png": "c88879b22712b6b4d117dd74ca37139781476a0a14adb4e7f3a6b6184ce3ca00",
+        "data/adversarial/ADV05.png": "1977b1e9c84e651955242f2a85f7b53f832f23e0046efe91fc52cf081108bf5c",
+        "data/adversarial/ADV06.png": "18e5fe7676423faa904d1e8e288ed9c1c5e5f8e73a62359e311878fcbbf0e99b",
+        "data/adversarial/ADV07.png": "c4f5e3391d57e50557784c6173be050ec89da4eee589accbb53f5693daeb3e75",
+        "data/adversarial/ADV08.png": "5ee1e2c93328713cc932566d62347a7fda2788597864b8ab6cd9adf0ee18afb2",
+        "data/adversarial/ADV09.png": "a9d9cfd2fa1c0b46d87b0367cb22cf850f6bb0fb455e541aeb7f79f95d12901f",
+        "data/adversarial/ADV10.png": "bf59aa930a08d525c0bd5bf0ac9f83eb30536fcb1aa279e506c686b13311b49e",
+        "data/adversarial/ADV11.png": "3da2500af9540ffe537ba43b7abbaa1f3597337e2f2a03c6505d814a8deeade0",
+        "data/adversarial/ADV12.png": "a952c4dcb61a9a23a28d658d6e3da400d507bf451fbd84256e19643e617c90fd",
+        "data/adversarial/ADV13.png": "badcdb799f7c8d3f1302550fdd6fd96f32109566fbb700268b64058262e25059",
+        "data/adversarial/ADV14.png": "a4da6e06c897dca71b882fe97366bc3e85400f10c266939cd089eb7c5eef52cc",
+        "data/adversarial/ADV15.png": "9acf291137b48c9c2e9a5ef965d5a2fb2ebde079c018476fb284075d8dd70ceb",
+        "data/adversarial/ADV16.png": "33e51dac8ca1ad91ff8aa542c15afa6808bf48f4443bfc542b7524eb7f699b6c",
+        "data/adversarial/ADV17.png": "178eacde687da3550db7e30e54aef10e1b3bebd2c07859ee3a7e9ac4af70cd39",
+        "data/adversarial/ADV18.png": "f76c32a821d63e059ff5fd12ef89da29b6fe7ca339d14fb366911997144d6931",
+        "data/adversarial/ADV19.png": "0f06dc53844d3b5be24eeaa2afe11b7c971ea48adf42c167775786c24f8c41c8",
+        "data/adversarial/ADV20.png": "249bcc633958e9c1fb8d3cf70c1d6418660e4bde177e49a62fc03826f07fd2e7",
+        "data/adversarial/ADV21.png": "dd20ee3c59957821baf3d9faa6ef8d5085164dcf658d8dca11e7e861bdb05652"
+      },
+      "file_count": 46,
+      "sha256": "8cdc2400edb90711f388259a25473192cb60e941177281a67a05617e3259ce60"
+    },
+    "table_ocr_fixtures": {
+      "source": "explicit glob",
+      "files": {
+        "data/ocr_fixtures/FAN-A13-02.json": "235b06c365542dfdb067f0ed135d38f78e2606aa36f9affeaac3998b7d77618d",
+        "data/ocr_fixtures/FAN-A19-01.json": "63971dfa9aa121fd4d82789a3faca5d34e0c123136166c73917ebc26ebd6bce0",
+        "data/ocr_fixtures/FAN-A22-01-heavyblur.json": "a1631f6354c69236eb8ca7415dbf9842f512680c22ec829a2addd5cba7e97380",
+        "data/ocr_fixtures/FAN-A22-01-heavyblur.processed.json": "fdcb723b8acc9e55ed610389e94447172ea0892adfb1cd8c4cf6a4a3ae71214d",
+        "data/ocr_fixtures/FAN-A23-01.json": "6a45b85970f09f1ffd51e3463788d18de0a670219e4a0613e42e9e0c1bd70309",
+        "data/ocr_fixtures/FAN-A24-01.json": "a1c734e0d4a6effd96e65d4d40381573922d55597a689ac37b11e686f1747e3a",
+        "data/ocr_fixtures/FAN-A24-01.processed.json": "c01612fe6e19897cb094f41225e2567834399b4868441fe87c3eb43dccc3d70d",
+        "data/ocr_fixtures/FAN-A25-01.json": "5bb305c0806353d1638b0c3f084ef50e2a55c6f0aa651736a64d75bab9dd670b",
+        "data/ocr_fixtures/FAN-A26-01.json": "584f50f707893504bd10110cc9c8377dae9f3bd003076816c065013c5e149ce0",
+        "data/ocr_fixtures/FAN-A27-01-skewed.json": "e220285c126c7a6971e005f2df2d97faff699731ccfbbdce4caa2099c47f1e9a",
+        "data/ocr_fixtures/FAN-A27-01-skewed.processed.json": "23336057d9a9e601ff6bd82f3248b3f469a1f07cca0f5661f48f20e9ab41f4d6",
+        "data/ocr_fixtures/FAN-A28-01-borderless.json": "6bcc25de60f081150b1a9b7f5fc41bd7d99497c1a7c914571e36fb23e73f7f1f",
+        "data/ocr_fixtures/FAN-MULTI-01.json": "901021cd7398a205c0af170147cc83f84083c0f180b20598c03d2e806f7788a3",
+        "data/ocr_fixtures/PUMP-MULTI-02.json": "c7f5201f3a767a91e68934d1be3c3316e51b13ce4614f6ee35e675270e487709"
+      },
+      "file_count": 14,
+      "sha256": "822fef3e8746eb95652800fc69981059f30afc903d99488f1dff789add6509d6",
+      "provenance": {
+        "fixture_count": 14,
+        "with_real_ocr_provenance": 14,
+        "parser_versions": [
+          "paddleocr 3.7.0 / paddlepaddle 3.3.1"
+        ],
+        "is_live_inference": false,
+        "note": "fixtures replay a recorded real PaddleOCR run; real recognition output, not live inference"
+      }
+    },
+    "table_gold": {
+      "source": "explicit list",
+      "files": {},
+      "file_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "human_reviewed": false,
+      "note": "empty: no human-reviewed structure gold exists. No structure-accuracy number may be reported while this group is empty."
+    },
+    "table_evaluator": {
+      "source": "explicit list",
+      "files": {
+        "scripts/table_corpus_inventory.py": "50dfb192e73cdfea653f6cf410121b0fd09c9b83376eea45fa22fc8791eb5c2f",
+        "scripts/table_bad_case_audit.py": "96a1dda8a14b7168c6c77c9f42b33f34961c35f0d0322bffe18f0b03c3740d40",
+        "scripts/table_structure_audit.py": "330438775c2d80d629514ced225f67c8c49192a379c1344f0afa5fba1ba4211c"
+      },
+      "file_count": 3,
+      "sha256": "d138996edfd9dbdbf97cb3527babbfcc6e00d51be04deba08da20cdba81e5b07"
+    }
+  },
+  "parser_version": "tables/1.0",
+  "frozen_at": "2026-09-16T04:44:01+00:00"
+}

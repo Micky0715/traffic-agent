@@ -1,0 +1,957 @@
+{
+  "status": "evaluated",
+  "human_reviewed_count": 11,
+  "locatable_records": 6,
+  "unlocatable_records": 5,
+  "small_sample_warning": "6 locatable reviewed record(s). Every rate below moves by 16.7% per record; these are counts, not performance estimates, and generalisation must not be inferred.",
+  "metrics": {
+    "all": {
+      "n": 6,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": 0.2677
+    },
+    "precise": {
+      "n": 2,
+      "precise_localization_recall": {
+        "iou@0.3": 0.3333,
+        "iou@0.5": 0.3333,
+        "iou@0.75": 0.0
+      }
+    },
+    "structural": {
+      "n": 0,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": null
+    },
+    "contextual": {
+      "n": 4,
+      "candidate_oracle_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "top1_localization_recall": {
+        "iou@0.3": 0.0,
+        "iou@0.5": 0.0,
+        "iou@0.75": 0.0
+      },
+      "mean_best_iou": 0.079
+    },
+    "diagnostic": {
+      "n": 0,
+      "note": "full-page diagnostics are excluded from every localisation success count"
+    },
+    "by_strategy": {
+      "exact_label_right": {
+        "n": 2,
+        "candidate_oracle_recall": {
+          "iou@0.3": 1.0,
+          "iou@0.5": 1.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 1.0,
+          "iou@0.5": 1.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.6451
+      },
+      "table_or_title_block": {
+        "n": 4,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.079
+      }
+    },
+    "by_drawing_type": {
+      "fan_wiring": {
+        "n": 6,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.3333,
+          "iou@0.5": 0.3333,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.3333,
+          "iou@0.5": 0.3333,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.2677
+      }
+    },
+    "by_gold_region_type": {
+      "title_block": {
+        "n": 1,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.0,
+          "iou@0.5": 0.0,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.0
+      },
+      "value_cell": {
+        "n": 5,
+        "candidate_oracle_recall": {
+          "iou@0.3": 0.4,
+          "iou@0.5": 0.4,
+          "iou@0.75": 0.0
+        },
+        "top1_localization_recall": {
+          "iou@0.3": 0.4,
+          "iou@0.5": 0.4,
+          "iou@0.75": 0.0
+        },
+        "mean_best_iou": 0.3213
+      }
+    },
+    "unlocatable_detection_accuracy": 0.0,
+    "average_candidate_count": 1,
+    "area_ratio_p50": 0.2927,
+    "area_ratio_p95": 0.2927
+  },
+  "records": [
+    {
+      "record_id": "FAN-A23-01:p1:名称",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "名称",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A23-01:p1:图号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "图号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.6522,
+      "best_strategy": "exact_label_right",
+      "best_trust": "precise",
+      "top1_iou": 0.6522,
+      "top1_strategy": "exact_label_right",
+      "top1_trust": "precise",
+      "precise_best_iou": 0.6522,
+      "area_ratio_top1": 0.047314
+    },
+    {
+      "record_id": "FAN-A23-01:p1:控制柜编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "控制柜编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A23-01:p1:断路器编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "断路器编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.638,
+      "best_strategy": "exact_label_right",
+      "best_trust": "precise",
+      "top1_iou": 0.638,
+      "top1_strategy": "exact_label_right",
+      "top1_trust": "precise",
+      "precise_best_iou": 0.638,
+      "area_ratio_top1": 0.048366
+    },
+    {
+      "record_id": "FAN-A23-01:p1:电机编号",
+      "kind": "locatable",
+      "document_id": "FAN-A23-01",
+      "target_field": "电机编号",
+      "gold_region_type": "value_cell",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.1054,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.1054,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.292657
+    },
+    {
+      "record_id": "FAN-A24-01:p1:名称",
+      "kind": "locatable",
+      "document_id": "FAN-A24-01",
+      "target_field": "名称",
+      "gold_region_type": "title_block",
+      "drawing_type": "fan_wiring",
+      "candidate_count": 1,
+      "scoring_candidate_count": 1,
+      "best_iou": 0.0,
+      "best_strategy": "table_or_title_block",
+      "best_trust": "contextual",
+      "top1_iou": 0.0,
+      "top1_strategy": "table_or_title_block",
+      "top1_trust": "contextual",
+      "precise_best_iou": 0.0,
+      "area_ratio_top1": 0.295644
+    },
+    {
+      "record_id": "FAN-A24-01:p1:图号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:控制柜编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:断路器编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:电机编号",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    },
+    {
+      "record_id": "FAN-A24-01:p1:页码|版本",
+      "kind": "unlocatable",
+      "system_declined": false,
+      "candidate_count": 1
+    }
+  ],
+  "gold_status_summary": {
+    "unreviewed": 0,
+    "human_reviewed": 11,
+    "excluded": 0
+  },
+  "phase1": {
+    "evaluator_version": 2,
+    "definitions": {
+      "gold_coverage": "|pred ∩ gold| / |gold| — was the target inside the crop",
+      "prediction_precision": "|pred ∩ gold| / |pred| — how much of the crop was the target",
+      "iou": "|pred ∩ gold| / |pred ∪ gold| — how tight the crop is",
+      "reading": "IoU measures tightness; coverage measures inclusion. Coverage alone is maximised by cropping the whole page, so it is never reported without IoU and precision.",
+      "precise_match_iou": 0.75,
+      "covered_threshold": 0.8,
+      "coverage_thresholds": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "top1": "first candidate in resolver order with a bbox, full-page diagnostics excluded — identical to the legacy top1",
+      "contextual_never_precise": true,
+      "diagnostic_never_local_success": true
+    },
+    "coverage": {
+      "all": {
+        "n": 6,
+        "top1_gold_coverage_recall": {
+          "coverage@0.5": {
+            "count": 5,
+            "n": 6,
+            "rate": 0.8333
+          },
+          "coverage@0.8": {
+            "count": 5,
+            "n": 6,
+            "rate": 0.8333
+          },
+          "coverage@0.95": {
+            "count": 5,
+            "n": 6,
+            "rate": 0.8333
+          }
+        },
+        "top1_iou_recall": {
+          "iou@0.3": {
+            "count": 2,
+            "n": 6,
+            "rate": 0.3333
+          },
+          "iou@0.5": {
+            "count": 2,
+            "n": 6,
+            "rate": 0.3333
+          },
+          "iou@0.75": {
+            "count": 0,
+            "n": 6,
+            "rate": 0.0
+          }
+        },
+        "mean_top1_prediction_precision": 0.2677
+      },
+      "candidate_oracle_gold_coverage_recall": {
+        "coverage@0.5": {
+          "count": 5,
+          "n": 6,
+          "rate": 0.8333
+        },
+        "coverage@0.8": {
+          "count": 5,
+          "n": 6,
+          "rate": 0.8333
+        },
+        "coverage@0.95": {
+          "count": 5,
+          "n": 6,
+          "rate": 0.8333
+        }
+      },
+      "by_trust_level": {
+        "precise": {
+          "n": 2,
+          "top1_gold_coverage_recall": {
+            "coverage@0.5": {
+              "count": 2,
+              "n": 2,
+              "rate": 1.0
+            },
+            "coverage@0.8": {
+              "count": 2,
+              "n": 2,
+              "rate": 1.0
+            },
+            "coverage@0.95": {
+              "count": 2,
+              "n": 2,
+              "rate": 1.0
+            }
+          },
+          "top1_iou_recall": {
+            "iou@0.3": {
+              "count": 2,
+              "n": 2,
+              "rate": 1.0
+            },
+            "iou@0.5": {
+              "count": 2,
+              "n": 2,
+              "rate": 1.0
+            },
+            "iou@0.75": {
+              "count": 0,
+              "n": 2,
+              "rate": 0.0
+            }
+          },
+          "mean_top1_prediction_precision": 0.6451
+        },
+        "structural": {
+          "n": 0,
+          "top1_gold_coverage_recall": {
+            "coverage@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.8": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.95": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "top1_iou_recall": {
+            "iou@0.3": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.75": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "mean_top1_prediction_precision": null
+        },
+        "contextual": {
+          "n": 4,
+          "top1_gold_coverage_recall": {
+            "coverage@0.5": {
+              "count": 3,
+              "n": 4,
+              "rate": 0.75
+            },
+            "coverage@0.8": {
+              "count": 3,
+              "n": 4,
+              "rate": 0.75
+            },
+            "coverage@0.95": {
+              "count": 3,
+              "n": 4,
+              "rate": 0.75
+            }
+          },
+          "top1_iou_recall": {
+            "iou@0.3": {
+              "count": 0,
+              "n": 4,
+              "rate": 0.0
+            },
+            "iou@0.5": {
+              "count": 0,
+              "n": 4,
+              "rate": 0.0
+            },
+            "iou@0.75": {
+              "count": 0,
+              "n": 4,
+              "rate": 0.0
+            }
+          },
+          "mean_top1_prediction_precision": 0.079
+        },
+        "diagnostic": {
+          "n": 0,
+          "top1_gold_coverage_recall": {
+            "coverage@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.8": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.95": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "top1_iou_recall": {
+            "iou@0.3": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.75": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "mean_top1_prediction_precision": null
+        },
+        "unavailable": {
+          "n": 0,
+          "top1_gold_coverage_recall": {
+            "coverage@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.8": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "coverage@0.95": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "top1_iou_recall": {
+            "iou@0.3": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.5": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            },
+            "iou@0.75": {
+              "count": 0,
+              "n": 0,
+              "rate": null
+            }
+          },
+          "mean_top1_prediction_precision": null
+        }
+      }
+    },
+    "unlocatable": {
+      "n": 5,
+      "unlocatable_auto_answer_false_positive_rate": {
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "kind": "SAFETY",
+        "meaning": "a human could not locate the field, yet the region the system selected was answer_eligible"
+      },
+      "unlocatable_review_trigger_rate": {
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "kind": "COST",
+        "meaning": "a human could not locate the field, yet a review region was produced for it"
+      },
+      "selected_trust_distribution": {
+        "precise": 0,
+        "structural": 1,
+        "contextual": 4,
+        "diagnostic": 0,
+        "unavailable": 0
+      },
+      "scope_note": "answer_eligible measures the REGION GATE only. It is not proof that an answer was emitted: value validation and the evidence policy still run after it."
+    },
+    "verdict_counts": {
+      "precise_match": 0,
+      "covered_but_loose": 2,
+      "context_only": 3,
+      "missed": 1,
+      "correctly_abstained": 0,
+      "unnecessary_review": 5,
+      "unsafe_auto_answer": 0
+    },
+    "records": [
+      {
+        "record_id": "FAN-A23-01:p1:名称",
+        "document_id": "FAN-A23-01",
+        "target_field": "名称",
+        "gold_region_type": "value_cell",
+        "gold_bbox": [
+          220,
+          510,
+          940,
+          540
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "top1_strategy": "table_or_title_block",
+        "top1_trust": "contextual",
+        "answer_eligible": false,
+        "top1_iou": 0.1054,
+        "top1_gold_coverage": 1.0,
+        "top1_prediction_precision": 0.1054,
+        "best_iou_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_iou": 0.1054,
+        "best_coverage_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_gold_coverage": 1.0,
+        "verdict": "context_only",
+        "verdict_reason": "contextual region contains the target; not a field-level localisation"
+      },
+      {
+        "record_id": "FAN-A23-01:p1:图号",
+        "document_id": "FAN-A23-01",
+        "target_field": "图号",
+        "gold_region_type": "value_cell",
+        "gold_bbox": [
+          220,
+          480,
+          940,
+          510
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          212.0,
+          473.0,
+          948.0,
+          518.0
+        ],
+        "top1_strategy": "exact_label_right",
+        "top1_trust": "precise",
+        "answer_eligible": true,
+        "top1_iou": 0.6522,
+        "top1_gold_coverage": 1.0,
+        "top1_prediction_precision": 0.6522,
+        "best_iou_bbox": [
+          212.0,
+          473.0,
+          948.0,
+          518.0
+        ],
+        "best_iou": 0.6522,
+        "best_coverage_bbox": [
+          212.0,
+          473.0,
+          948.0,
+          518.0
+        ],
+        "best_gold_coverage": 1.0,
+        "verdict": "covered_but_loose",
+        "verdict_reason": "precise grade, target inside but IoU below 0.75"
+      },
+      {
+        "record_id": "FAN-A23-01:p1:控制柜编号",
+        "document_id": "FAN-A23-01",
+        "target_field": "控制柜编号",
+        "gold_region_type": "value_cell",
+        "gold_bbox": [
+          220,
+          630,
+          940,
+          660
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "top1_strategy": "table_or_title_block",
+        "top1_trust": "contextual",
+        "answer_eligible": false,
+        "top1_iou": 0.1054,
+        "top1_gold_coverage": 1.0,
+        "top1_prediction_precision": 0.1054,
+        "best_iou_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_iou": 0.1054,
+        "best_coverage_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_gold_coverage": 1.0,
+        "verdict": "context_only",
+        "verdict_reason": "contextual region contains the target; not a field-level localisation"
+      },
+      {
+        "record_id": "FAN-A23-01:p1:断路器编号",
+        "document_id": "FAN-A23-01",
+        "target_field": "断路器编号",
+        "gold_region_type": "value_cell",
+        "gold_bbox": [
+          220,
+          600,
+          940,
+          630
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          212.0,
+          592.0,
+          948.0,
+          638.0
+        ],
+        "top1_strategy": "exact_label_right",
+        "top1_trust": "precise",
+        "answer_eligible": true,
+        "top1_iou": 0.638,
+        "top1_gold_coverage": 1.0,
+        "top1_prediction_precision": 0.638,
+        "best_iou_bbox": [
+          212.0,
+          592.0,
+          948.0,
+          638.0
+        ],
+        "best_iou": 0.638,
+        "best_coverage_bbox": [
+          212.0,
+          592.0,
+          948.0,
+          638.0
+        ],
+        "best_gold_coverage": 1.0,
+        "verdict": "covered_but_loose",
+        "verdict_reason": "precise grade, target inside but IoU below 0.75"
+      },
+      {
+        "record_id": "FAN-A23-01:p1:电机编号",
+        "document_id": "FAN-A23-01",
+        "target_field": "电机编号",
+        "gold_region_type": "value_cell",
+        "gold_bbox": [
+          220,
+          570,
+          940,
+          600
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "top1_strategy": "table_or_title_block",
+        "top1_trust": "contextual",
+        "answer_eligible": false,
+        "top1_iou": 0.1054,
+        "top1_gold_coverage": 1.0,
+        "top1_prediction_precision": 0.1054,
+        "best_iou_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_iou": 0.1054,
+        "best_coverage_bbox": [
+          39.519999999999996,
+          459.52,
+          962.48,
+          681.48
+        ],
+        "best_gold_coverage": 1.0,
+        "verdict": "context_only",
+        "verdict_reason": "contextual region contains the target; not a field-level localisation"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:名称",
+        "document_id": "FAN-A24-01",
+        "target_field": "名称",
+        "gold_region_type": "title_block",
+        "gold_bbox": [
+          36,
+          40,
+          255,
+          80
+        ],
+        "candidate_count": 1,
+        "locatable": true,
+        "top1_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "top1_strategy": "table_or_title_block",
+        "top1_trust": "contextual",
+        "answer_eligible": false,
+        "top1_iou": 0.0,
+        "top1_gold_coverage": 0.0,
+        "top1_prediction_precision": 0.0,
+        "best_iou_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "best_iou": 0.0,
+        "best_coverage_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "best_gold_coverage": 0.0,
+        "verdict": "missed",
+        "verdict_reason": "coverage 0.00 < 0.8"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:图号",
+        "document_id": "FAN-A24-01",
+        "target_field": "图号",
+        "gold_region_type": "unlocatable",
+        "gold_bbox": null,
+        "candidate_count": 1,
+        "locatable": false,
+        "selected_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "selected_strategy": "table_or_title_block",
+        "selected_trust": "contextual",
+        "answer_eligible": false,
+        "any_candidate_answer_eligible": false,
+        "verdict": "unnecessary_review",
+        "verdict_reason": "a review region was produced for a field no human could locate; costs a review, cannot feed an answer"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:控制柜编号",
+        "document_id": "FAN-A24-01",
+        "target_field": "控制柜编号",
+        "gold_region_type": "unlocatable",
+        "gold_bbox": null,
+        "candidate_count": 1,
+        "locatable": false,
+        "selected_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "selected_strategy": "table_or_title_block",
+        "selected_trust": "contextual",
+        "answer_eligible": false,
+        "any_candidate_answer_eligible": false,
+        "verdict": "unnecessary_review",
+        "verdict_reason": "a review region was produced for a field no human could locate; costs a review, cannot feed an answer"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:断路器编号",
+        "document_id": "FAN-A24-01",
+        "target_field": "断路器编号",
+        "gold_region_type": "unlocatable",
+        "gold_bbox": null,
+        "candidate_count": 1,
+        "locatable": false,
+        "selected_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "selected_strategy": "table_or_title_block",
+        "selected_trust": "contextual",
+        "answer_eligible": false,
+        "any_candidate_answer_eligible": false,
+        "verdict": "unnecessary_review",
+        "verdict_reason": "a review region was produced for a field no human could locate; costs a review, cannot feed an answer"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:电机编号",
+        "document_id": "FAN-A24-01",
+        "target_field": "电机编号",
+        "gold_region_type": "unlocatable",
+        "gold_bbox": null,
+        "candidate_count": 1,
+        "locatable": false,
+        "selected_bbox": [
+          212.0,
+          562.0,
+          947.0,
+          638.0
+        ],
+        "selected_strategy": "alias_label_right",
+        "selected_trust": "structural",
+        "answer_eligible": false,
+        "any_candidate_answer_eligible": false,
+        "verdict": "unnecessary_review",
+        "verdict_reason": "a review region was produced for a field no human could locate; costs a review, cannot feed an answer"
+      },
+      {
+        "record_id": "FAN-A24-01:p1:页码|版本",
+        "document_id": "FAN-A24-01",
+        "target_field": "页码|版本",
+        "gold_region_type": "unlocatable",
+        "gold_bbox": null,
+        "candidate_count": 1,
+        "locatable": false,
+        "selected_bbox": [
+          37.400000000000006,
+          458.4,
+          964.6,
+          681.6
+        ],
+        "selected_strategy": "table_or_title_block",
+        "selected_trust": "contextual",
+        "answer_eligible": false,
+        "any_candidate_answer_eligible": false,
+        "verdict": "unnecessary_review",
+        "verdict_reason": "a review region was produced for a field no human could locate; costs a review, cannot feed an answer"
+      }
+    ]
+  },
+  "legacy_metric_notes": {
+    "metrics.unlocatable_detection_accuracy": "LEGACY, kept for compatibility. It scores 'the system declined' and counts ANY non-diagnostic region as a failure, so it merges a safety failure (an answer-eligible region) with a cost (a review region that cannot feed an answer). A value of 0/5 reads like five safety errors when, in this repo, it has been five unnecessary reviews. Use phase1.unlocatable.unlocatable_auto_answer_false_positive_rate (safety) and phase1.unlocatable.unlocatable_review_trigger_rate (cost) instead."
+  },
+  "real_vlm_calls": 0,
+  "excluded_from_denominator": {
+    "unreviewed": 0,
+    "excluded": 0
+  }
+}

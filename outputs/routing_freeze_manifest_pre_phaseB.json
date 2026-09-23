@@ -1,0 +1,138 @@
+{
+  "static_analysis_limitation": "代码依赖范围来自静态 import 分析，动态导入、配置加载、Prompt、模型文件和 subprocess 依赖无法仅靠 import 闭包发现，因此非代码输入采用显式清单补充。",
+  "groups": {
+    "routing_runtime_code": {
+      "source": "static import closure of the routing entry points",
+      "entry_points": {
+        "rule_v1": "src/router_v1.py",
+        "rule_v2": "src/router_v2.py",
+        "rule_v3": "src/router_v3.py",
+        "llm": "src/llm_router.py",
+        "validator": "src/validator.py"
+      },
+      "per_entry_closure": {
+        "rule_v1": {
+          "entry": "src/router_v1.py",
+          "files": [
+            "src/extractors.py",
+            "src/models.py",
+            "src/normalize.py",
+            "src/router_v1.py"
+          ],
+          "file_count": 4
+        },
+        "rule_v2": {
+          "entry": "src/router_v2.py",
+          "files": [
+            "src/extractors.py",
+            "src/models.py",
+            "src/normalize.py",
+            "src/router_v2.py"
+          ],
+          "file_count": 4
+        },
+        "rule_v3": {
+          "entry": "src/router_v3.py",
+          "files": [
+            "src/extractors.py",
+            "src/models.py",
+            "src/normalize.py",
+            "src/router_v2.py",
+            "src/router_v3.py"
+          ],
+          "file_count": 5
+        },
+        "llm": {
+          "entry": "src/llm_router.py",
+          "files": [
+            "src/llm_router.py",
+            "src/models.py"
+          ],
+          "file_count": 2
+        },
+        "validator": {
+          "entry": "src/validator.py",
+          "files": [
+            "src/models.py",
+            "src/validator.py"
+          ],
+          "file_count": 2
+        }
+      },
+      "union_files": {
+        "src/extractors.py": "fdaf05a739ce63823fedcba2cbaa8f26950d7afc311a21af8b5680b86244103c",
+        "src/llm_router.py": "3f3328c60bb8e71d08c2f0ca6f28a4bc7036089efaf1ff20d6ffdf2f05766fb0",
+        "src/models.py": "04acf61c7cba92dcb6e72d3ee71bd816d3653e048cb76018692ee6bcc5ae3478",
+        "src/normalize.py": "b9f7984e29d9df0ccad42b1c4b48951492c2830d9c050d4e18867c9dc75057d7",
+        "src/router_v1.py": "5c58cac75f19acbea8f80b18828174719a1608a952552343f444144a25133f31",
+        "src/router_v2.py": "0851d8c0912f0842b715d60a5267fa591572867351803db8fe01158453d4b7b9",
+        "src/router_v3.py": "af0f3a1f9fd9084eef4899af1da5fc226ac500a9ae08c70edabba91395fb2f16",
+        "src/validator.py": "65a7569b80d9649f50811f727430a9ccb204f9a107c58c8657ff82c42ebc7e8d"
+      },
+      "file_count": 8,
+      "sha256": "7378a70df43662a264a41635488abd85abfba60f189e2ecd8797f6e69cb470d3"
+    },
+    "routing_config_and_prompts": {
+      "source": "explicit list: prompts are loaded by a runtime string and cannot be found by import analysis",
+      "files": {
+        "configs/routing.yaml": "5490463d3dccc282c960ac96a79416f0e12eef7d06d8252e39ab78d2b3099648",
+        "prompts/00_intent_router_v1_bad.md": "6a10d67806873ebb46eb96ed272b2fbd25d22af95b337e1f3d10f166a8da5d1b",
+        "prompts/01_intent_router_v2.md": "158b7fdc109457114faedc3fd5ce46d2dbd05c9368d95fd0ef2d80490bf0190b"
+      },
+      "file_count": 3,
+      "sha256": "b8ba7b0a1ce29a4bdbed50eb7d3cc4b85585ea2c4402006f14f82a2c1de5814a"
+    },
+    "routing_evaluator": {
+      "source": "explicit list",
+      "files": {
+        "src/evaluator.py": "c871f23b149f1a0893495e3ca2dc4d7cd59d66f3a9315e009fa5fb744176ed4d",
+        "src/run_eval.py": "13d189fb82525bb25cf4b7c2ea73cc74116fc4cf61fc1f678c17dd5527987b56",
+        "src/run_llm_eval.py": "47c2a41c04bdf3f8fc0b348afc844878540fd1ef11afdd9eabc9f5e3c3771ecc",
+        "scripts/audit_routing_baseline.py": "b126624489553b23de464622fd744ea75b6694c6f7a5e48b52d010ff1676cf93"
+      },
+      "file_count": 4,
+      "sha256": "f85c291da97a07cb01c60264c95779262e3279b9bfa7be5600e2f09dce37539f"
+    },
+    "routing_datasets": {
+      "source": "explicit list",
+      "files": {
+        "data/eval_cases.jsonl": "fbbe37e8e6394d76f5dde5e35e860508c1e949b13b969e9e71a89244a65c73a2",
+        "data/challenge_cases.jsonl": "aef12d84b15871e28e8352c7d69daef251c5d132199876b80a354ded83e2e6a6"
+      },
+      "file_count": 2,
+      "sha256": "9bb8c25001c2afce847397697e7631e52b780ee9df20b85779aa0f0ee1209e93",
+      "case_counts": {
+        "data/eval_cases.jsonl": 46,
+        "data/challenge_cases.jsonl": 75
+      }
+    },
+    "historical_llm_predictions": {
+      "source": "the six ORIGINAL prediction files; converted copies under outputs/unified_routing_predictions/ are excluded as derivatives",
+      "files": {
+        "outputs/llm_challenge_llm_v1_naive_predictions.jsonl": "ed4149b93401db5db7a6be8e6269f73c840fbdc0d8dd95ff0f6092eef0f6dd9a",
+        "outputs/llm_challenge_llm_v2_structured_predictions.jsonl": "b063477b547eff8d64577002b1cf7f4b4db6b8b9229b68101be3c9c54d25cf79",
+        "outputs/llm_challenge_v2_llm_v1_naive_predictions.jsonl": "8cbc54bb3f3e1ddad5e7cec99b49dbd40dddb67d5a0b1aea918f6a91236ef0b3",
+        "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl": "69d8684d87ef73bf0347dac02ee4e34611f4f04a71e3770a1383c411e9dbd9de",
+        "outputs/llm_llm_v1_naive_predictions.jsonl": "e058e21f53744776f63ee6e9d6e751422422c3aa12616a3a694f5a11271f9b77",
+        "outputs/llm_llm_v2_structured_predictions.jsonl": "218fda26c2905249f89961e5383bc9f31eb53c749b294c824aaca922bceb83c5"
+      },
+      "file_count": 6,
+      "sha256": "3e477bd4e2f773fc5c5e585e9e33b2faf894dd2d9436bda47fe982152bbcf427"
+    }
+  },
+  "runtime_environment": {
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "dependency_versions": {
+      "pydantic": "2.12.4",
+      "openai": "2.53.0",
+      "yaml": "6.0.2",
+      "langgraph": null
+    },
+    "git_head": "86c3cf820d493f0f78ee2ad87c894ad6a0b16086",
+    "git_dirty": true
+  },
+  "unresolved_dependencies": [],
+  "frozen_at": "2026-09-15T14:33:07+00:00"
+}

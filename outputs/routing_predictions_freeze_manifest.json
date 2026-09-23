@@ -1,0 +1,159 @@
+{
+  "frozen_at": "2026-09-15T09:12:22+00:00",
+  "purpose": "Phase-2 will change how routing plans are represented. These files are the only real-LLM routing evidence in the repo; their bytes are recorded here so they stay comparable afterwards.",
+  "source_tree_sha256": "4fee535f3d1b20da43fae3e169ad92ca06d52ffa4f644a71515a9443efea73dc",
+  "git": {
+    "head": "86c3cf820d493f0f78ee2ad87c894ad6a0b16086",
+    "dirty": true
+  },
+  "file_count": 6,
+  "total_cases": 262,
+  "reason_code_glossary": {
+    "MODEL_INFO_UNAVAILABLE_LEGACY": "prediction file records no model name; not inferred",
+    "PROMPT_VERSION_UNAVAILABLE_LEGACY": "prediction file records no prompt version; not inferred",
+    "GENERATION_TIME_UNAVAILABLE_LEGACY": "prediction file records no generation timestamp",
+    "SOURCE_DATASET_FILE_MISSING": "the dataset these predictions were produced against is no longer present in the repo"
+  },
+  "files": [
+    {
+      "path": "outputs/llm_challenge_llm_v1_naive_predictions.jsonl",
+      "sha256": "ed4149b93401db5db7a6be8e6269f73c840fbdc0d8dd95ff0f6092eef0f6dd9a",
+      "size_bytes": 6755,
+      "case_count": 10,
+      "dataset_name": "challenge10_original",
+      "dataset_file": null,
+      "cases_matched_to_dataset": null,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY",
+        "SOURCE_DATASET_FILE_MISSING"
+      ]
+    },
+    {
+      "path": "outputs/llm_challenge_llm_v2_structured_predictions.jsonl",
+      "sha256": "b063477b547eff8d64577002b1cf7f4b4db6b8b9229b68101be3c9c54d25cf79",
+      "size_bytes": 10122,
+      "case_count": 10,
+      "dataset_name": "challenge10_original",
+      "dataset_file": null,
+      "cases_matched_to_dataset": null,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY",
+        "SOURCE_DATASET_FILE_MISSING"
+      ]
+    },
+    {
+      "path": "outputs/llm_challenge_v2_llm_v1_naive_predictions.jsonl",
+      "sha256": "8cbc54bb3f3e1ddad5e7cec99b49dbd40dddb67d5a0b1aea918f6a91236ef0b3",
+      "size_bytes": 50452,
+      "case_count": 75,
+      "dataset_name": "challenge75",
+      "dataset_file": "data/challenge_cases.jsonl",
+      "cases_matched_to_dataset": 75,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY"
+      ]
+    },
+    {
+      "path": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "sha256": "69d8684d87ef73bf0347dac02ee4e34611f4f04a71e3770a1383c411e9dbd9de",
+      "size_bytes": 77557,
+      "case_count": 75,
+      "dataset_name": "challenge75",
+      "dataset_file": "data/challenge_cases.jsonl",
+      "cases_matched_to_dataset": 75,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY"
+      ]
+    },
+    {
+      "path": "outputs/llm_llm_v1_naive_predictions.jsonl",
+      "sha256": "e058e21f53744776f63ee6e9d6e751422422c3aa12616a3a694f5a11271f9b77",
+      "size_bytes": 29770,
+      "case_count": 46,
+      "dataset_name": "base46",
+      "dataset_file": "data/eval_cases.jsonl",
+      "cases_matched_to_dataset": 46,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY"
+      ]
+    },
+    {
+      "path": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "sha256": "218fda26c2905249f89961e5383bc9f31eb53c749b294c824aaca922bceb83c5",
+      "size_bytes": 55135,
+      "case_count": 46,
+      "dataset_name": "base46",
+      "dataset_file": "data/eval_cases.jsonl",
+      "cases_matched_to_dataset": 46,
+      "model_name": null,
+      "prompt_version": null,
+      "generated_at": null,
+      "row_fields": [
+        "error",
+        "plan",
+        "query"
+      ],
+      "rows_with_error": 0,
+      "reason_codes": [
+        "MODEL_INFO_UNAVAILABLE_LEGACY",
+        "PROMPT_VERSION_UNAVAILABLE_LEGACY",
+        "GENERATION_TIME_UNAVAILABLE_LEGACY"
+      ]
+    }
+  ]
+}

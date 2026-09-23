@@ -1,0 +1,53 @@
+# Public CAD drawing corpus — Phase 0 (inventory, deterministic render, dedup).
+#
+# Nothing here classifies drawing CONTENT. No field rule, device type or title
+# block template is derived from these files in this phase.
+
+cad_corpus:
+  # There is deliberately no default input directory. The CLI requires one.
+  source_classes:
+    pdf: [".pdf"]
+    raster: [".png", ".jpg", ".jpeg", ".tif", ".tiff"]
+    native_cad: [".dwg", ".dxf", ".dgn"]
+
+  # Repository material that must never be swept into the corpus, whatever
+  # directory the caller names. Matched against every path component.
+  excluded_directory_names:
+    - drawings             # the original 11-image OCR evaluation set
+    - processed            # preprocessed variants of those images
+    - adversarial          # self-authored adversarial images
+    - ocr_fixtures         # recorded OCR output
+    - ocr_stub
+    - multimodal_cache     # VLM cache and its crops
+    - review_region_annotation_pack
+    - cad_public_corpus    # this corpus's own outputs
+
+  # Refused as a RECURSIVE input root: scanning it would pull in everything
+  # listed above. A non-recursive scan of its top level is allowed when named
+  # explicitly.
+  forbidden_recursive_roots:
+    - data
+
+  render:
+    renderer: pdftoppm      # the only renderer. No silent fallback.
+    dpi: 300
+    color_mode: rgb         # pdftoppm -png default; recorded, not assumed
+    output_format: png
+    # PIL refuses images above its default ~89 MP as a decompression-bomb
+    # guard. An ANSI E sheet at 300 dpi exceeds that; the limit used is
+    # recorded rather than silently disabled.
+    max_image_pixels: 250000000
+
+  near_duplicate:
+    method: dhash
+    hash_size: 8
+    max_hamming_distance: 6
+    threshold_status: uncalibrated   # no human-reviewed duplicate labels exist
+    note: >-
+      Candidates for a person to look at. Never merged, never deleted.
+
+  split:
+    # The unit a split is made over. A page is NEVER a unit: pages of one
+    # document share a title block, a revision table and a drafter.
+    unit: source_document_then_agency_then_template
+    unknown_agency_split: unassigned

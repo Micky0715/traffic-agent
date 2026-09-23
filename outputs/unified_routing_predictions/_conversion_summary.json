@@ -1,0 +1,229 @@
+{
+  "note": "Offline conversion of frozen historical LLM predictions. Source files unmodified; zero API calls.",
+  "totals": {
+    "total": 262,
+    "converted": 242,
+    "missing_model_info": 242,
+    "missing_query_span": 242,
+    "decision_execute": 224,
+    "failed": 20,
+    "decision_reject": 14,
+    "decision_clarify": 4
+  },
+  "reason_code_counts": {
+    "ENTITY_SOURCE_UNAVAILABLE_LEGACY": 242,
+    "MODEL_INFO_UNAVAILABLE_LEGACY": 242,
+    "PROMPT_VERSION_UNAVAILABLE_LEGACY": 242,
+    "QUERY_SPAN_UNAVAILABLE_LEGACY": 242,
+    "REASON_UNMAPPED": 280,
+    "REQUIRED_SLOT_MISSING": 4,
+    "TIME_RANGE_MISSING": 4,
+    "TOOL_CANDIDATES_UNAVAILABLE_LEGACY": 242,
+    "TOOL_PROHIBITED": 14
+  },
+  "per_file": [
+    {
+      "source": "outputs/llm_challenge_llm_v1_naive_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_challenge_llm_v1_naive_predictions.unified.jsonl",
+      "total": 10,
+      "case_id_from_row_index": 10,
+      "converted": 10
+    },
+    {
+      "source": "outputs/llm_challenge_llm_v2_structured_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_challenge_llm_v2_structured_predictions.unified.jsonl",
+      "total": 10,
+      "case_id_from_row_index": 10,
+      "converted": 8,
+      "failed": 2
+    },
+    {
+      "source": "outputs/llm_challenge_v2_llm_v1_naive_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_challenge_v2_llm_v1_naive_predictions.unified.jsonl",
+      "total": 75,
+      "converted": 75
+    },
+    {
+      "source": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_challenge_v2_llm_v2_structured_predictions.unified.jsonl",
+      "total": 75,
+      "converted": 64,
+      "failed": 11
+    },
+    {
+      "source": "outputs/llm_llm_v1_naive_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_llm_v1_naive_predictions.unified.jsonl",
+      "total": 46,
+      "converted": 46
+    },
+    {
+      "source": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "output": "outputs/unified_routing_predictions/llm_llm_v2_structured_predictions.unified.jsonl",
+      "total": 46,
+      "converted": 39,
+      "failed": 7
+    }
+  ],
+  "failures": [
+    {
+      "file": "outputs/llm_challenge_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge10_original",
+      "case_id": "row002",
+      "query": "查询 A12风机最近3天，也就是2026-08-01至2026-08-02的告警次数。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge10_original",
+      "case_id": "row005",
+      "query": "查询 A12风机告警次数，但不要访问设备数据库。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B03",
+      "query": "查询 A12风机最近3天，也就是2026-08-01至2026-08-02的告警次数。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B06",
+      "query": "查询 A12风机告警次数，但不要访问设备数据库。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B26",
+      "query": "查规范里“告警”这个词都出现在哪几条。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B27",
+      "query": "帮我看下图纸里“接线图”这个标题下面写了什么。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B28",
+      "query": "‘现在状态’这四个字在系统里对应哪个字段？",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B46",
+      "query": "别用工单系统，查一下A12风机最近处理记录。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B53",
+      "query": "查一下那个设备最近的工单和规范要求。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B54",
+      "query": "帮我查一下它这周异常几次，并且看看有没有相关规范。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B55",
+      "query": "统计一下告警次数。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B56",
+      "query": "查一下检修规范和那台设备的工单，顺便给个建议。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_challenge_v2_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "challenge75",
+      "case_id": "B57",
+      "query": "这台设备最近状态怎么样，需不需要停机。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q01",
+      "query": "查一下它最近报警几次，顺便看看规范要求。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q02",
+      "query": "查一下这个设备的工单。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q03",
+      "query": "查图纸。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q04",
+      "query": "A12风机报警多少次？",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q05",
+      "query": "最近告警次数是多少？",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "Q07",
+      "query": "看看这个图纸里的控制柜编号。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    },
+    {
+      "file": "outputs/llm_llm_v2_structured_predictions.jsonl",
+      "dataset_name": "base46",
+      "case_id": "U05",
+      "query": "A12。",
+      "stage": "to_unified",
+      "error": "empty plan: legacy plan has no subtasks. Refusing to emit a placeholder plan or downgrade to general_qa."
+    }
+  ]
+}

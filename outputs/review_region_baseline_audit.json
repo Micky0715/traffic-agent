@@ -1,0 +1,562 @@
+{
+  "note": "AUDIT ONLY. Current code, unchanged. No algorithm was modified, no VLM called, no previous report or cache touched.",
+  "real_vlm_calls": 0,
+  "code_locations": {
+    "review_request_generation": "src/multimodal/triggers.py:32 TriggerCollector (legacy: src/tables/review.py:57 collect_review_requests)",
+    "locate_label_bbox": "src/multimodal/pipeline.py:35",
+    "crop_generation": "src/multimodal/crop.py:106 resolve_review_crop",
+    "table_and_cell_bbox": "src/tables/grid.py:142 recover_grid; src/tables/schemas.py TableCell.bbox",
+    "drawing_type_classification": "src/vision/field_completeness.py:118 classify_drawing_type",
+    "field_completeness": "src/vision/field_completeness.py:315 evaluate_field_completeness",
+    "vlm_executor": "src/multimodal/executor.py:44 VisionReviewExecutor",
+    "second_evidence_policy": "src/multimodal/decision.py:120 run_second_pass -> src/rag/policy.py RequiredEvidencePolicy",
+    "multimodal_report": "scripts/multimodal_review_eval.py",
+    "multimodal_freeze": "scripts/multimodal_freeze.py"
+  },
+  "totals": {
+    "total_review_targets": 11,
+    "crop_available": 2,
+    "crop_unavailable": 9,
+    "crop_unavailable_rate": 0.8182
+  },
+  "q1_why_each_target_was_produced": {
+    "required_field_missing": 11
+  },
+  "q2_targets_with_bbox": [
+    {
+      "document_id": "FAN-A23-01",
+      "field_name": "图号",
+      "region_scope": "label_right"
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "field_name": "断路器编号",
+      "region_scope": "label_right"
+    }
+  ],
+  "q3_q4_failure_stage_counts": {
+    "no_label_bbox_but_table_exists": 9,
+    "none": 2
+  },
+  "q5_fallbacks_available_on_failing_pages": [
+    {
+      "document_id": "FAN-A23-01",
+      "field_name": "名称",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": false,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "field_name": "控制柜编号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": false,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "field_name": "电机编号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": false,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "名称",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "图号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "控制柜编号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "断路器编号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "电机编号",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "field_name": "页码|版本",
+      "page_image": true,
+      "table_bbox": true,
+      "any_cell_bbox": true,
+      "key_value_layout": true,
+      "title_block_region": true,
+      "neighbouring_ocr_anchors": true
+    }
+  ],
+  "q6_cell_spans_columns_requests_in_table_stage": {
+    "CELL_SPANS_COLUMNS": 57
+  },
+  "q7_pages_with_zero_targets": [
+    {
+      "document_id": "FAN-A22-01-heavyblur",
+      "drawing_type": "unknown",
+      "drawing_type_known": false,
+      "required_field_list_available": false,
+      "ocr_blocks": 0,
+      "why": "drawing type unknown -> no required-field list -> nothing to declare missing -> no review request"
+    },
+    {
+      "document_id": "FAN-MULTI-01",
+      "drawing_type": "fan_group",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "ocr_blocks": 28,
+      "why": "evidence was complete"
+    },
+    {
+      "document_id": "FAN-A13-02",
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "ocr_blocks": 16,
+      "why": "evidence was complete"
+    }
+  ],
+  "q8_duplicate_crops_on_one_page": [
+    {
+      "a": "图号",
+      "b": "断路器编号",
+      "document_id": "FAN-A23-01",
+      "note": "same page, both cropped separately"
+    }
+  ],
+  "documents": [
+    {
+      "case_id": "MM1_watermark_silent_miss",
+      "document_id": "FAN-A23-01",
+      "image_present": true,
+      "ocr_blocks": 11,
+      "ocr_average_confidence": 0.9957,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号"
+      ],
+      "isolated_labels": [
+        "图号",
+        "断路器编号"
+      ],
+      "grid_recovered": true,
+      "grid_shape": "6x2",
+      "key_value_layout": false,
+      "cells_with_bbox": 12,
+      "table_regions_found": 1,
+      "targets_generated": 5,
+      "crops_available": 2
+    },
+    {
+      "case_id": "MM2_stamp_contaminated_value",
+      "document_id": "FAN-A24-01",
+      "image_present": true,
+      "ocr_blocks": 16,
+      "ocr_average_confidence": 0.6141,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "missing_fields": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码|版本"
+      ],
+      "isolated_labels": [],
+      "grid_recovered": true,
+      "grid_shape": "4x2",
+      "key_value_layout": true,
+      "cells_with_bbox": 8,
+      "table_regions_found": 1,
+      "targets_generated": 6,
+      "crops_available": 0
+    },
+    {
+      "case_id": "MM3_heavy_blur",
+      "document_id": "FAN-A22-01-heavyblur",
+      "image_present": true,
+      "ocr_blocks": 0,
+      "ocr_average_confidence": 0.0,
+      "drawing_type": "unknown",
+      "drawing_type_known": false,
+      "required_field_list_available": false,
+      "missing_fields": [],
+      "isolated_labels": [],
+      "grid_recovered": false,
+      "grid_shape": null,
+      "key_value_layout": false,
+      "cells_with_bbox": 0,
+      "table_regions_found": 0,
+      "targets_generated": 0,
+      "crops_available": 0
+    },
+    {
+      "case_id": "MM4_ocr_right_vlm_wrong",
+      "document_id": "FAN-MULTI-01",
+      "image_present": true,
+      "ocr_blocks": 28,
+      "ocr_average_confidence": 0.9998,
+      "drawing_type": "fan_group",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "missing_fields": [],
+      "isolated_labels": [],
+      "grid_recovered": true,
+      "grid_shape": "12x2",
+      "key_value_layout": true,
+      "cells_with_bbox": 24,
+      "table_regions_found": 1,
+      "targets_generated": 0,
+      "crops_available": 0
+    },
+    {
+      "case_id": "MM5_clean_page",
+      "document_id": "FAN-A13-02",
+      "image_present": true,
+      "ocr_blocks": 16,
+      "ocr_average_confidence": 0.9976,
+      "drawing_type": "fan_wiring",
+      "drawing_type_known": true,
+      "required_field_list_available": true,
+      "missing_fields": [],
+      "isolated_labels": [],
+      "grid_recovered": true,
+      "grid_shape": "6x2",
+      "key_value_layout": false,
+      "cells_with_bbox": 12,
+      "table_regions_found": 1,
+      "targets_generated": 0,
+      "crops_available": 0
+    }
+  ],
+  "targets": [
+    {
+      "document_id": "FAN-A23-01",
+      "case_id": "MM1_watermark_silent_miss",
+      "field_name": "名称",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": false,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "case_id": "MM1_watermark_silent_miss",
+      "field_name": "图号",
+      "review_reasons": [
+        "required_field_missing",
+        "isolated_label_without_value"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": true,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": true,
+      "region_scope": "label_right",
+      "crop_reason": "",
+      "failure_stage": "none",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": false,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "case_id": "MM1_watermark_silent_miss",
+      "field_name": "控制柜编号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": false,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "case_id": "MM1_watermark_silent_miss",
+      "field_name": "断路器编号",
+      "review_reasons": [
+        "required_field_missing",
+        "isolated_label_without_value"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": true,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": true,
+      "region_scope": "label_right",
+      "crop_reason": "",
+      "failure_stage": "none",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": false,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "case_id": "MM1_watermark_silent_miss",
+      "field_name": "电机编号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": false,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "名称",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "图号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "控制柜编号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "断路器编号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "电机编号",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "case_id": "MM2_stamp_contaminated_value",
+      "field_name": "页码|版本",
+      "review_reasons": [
+        "required_field_missing"
+      ],
+      "produced_because": "required_field_missing",
+      "label_bbox_found": false,
+      "value_bbox_found": false,
+      "cell_bbox_found": false,
+      "row_bbox_found": false,
+      "crop_available": false,
+      "region_scope": "unavailable",
+      "crop_reason": "no value, label, cell or row bbox is known",
+      "failure_stage": "no_label_bbox_but_table_exists",
+      "fallbacks_that_existed_on_the_page": {
+        "page_image": true,
+        "table_bbox": true,
+        "any_cell_bbox": true,
+        "key_value_layout": true,
+        "title_block_region": true,
+        "neighbouring_ocr_anchors": true
+      }
+    }
+  ]
+}

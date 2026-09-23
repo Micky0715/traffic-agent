@@ -1,0 +1,39 @@
+{
+  "id": "ADV02",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "TR_01_A",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M_01_A",
+      "fields": {
+        "电机编号": "M_01_A"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF_01_A",
+      "fields": {
+        "断路器编号": "QF_01_A"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "TR_CAB_01",
+      "fields": {
+        "控制柜编号": "TR_CAB_01"
+      }
+    }
+  ],
+  "expected_values": [
+    "TR_01_A",
+    "1号主变压器接线图",
+    "V2",
+    "M_01_A",
+    "QF_01_A",
+    "TR_CAB_01"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "heterogeneous_id",
+  "notes": "underscore scheme"
+}

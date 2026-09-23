@@ -1,0 +1,39 @@
+{
+  "id": "ADV11",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-A23-07",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-23",
+      "fields": {
+        "电机编号": "M-23"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-2B",
+      "fields": {
+        "断路器编号": "QF-2B"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-23",
+      "fields": {
+        "控制柜编号": "FAN-CAB-23"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-A23-07",
+    "A23风机接线图",
+    "1/1",
+    "M-23",
+    "QF-2B",
+    "FAN-CAB-23"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "near_miss_id",
+  "notes": "QF-2B against the neighbouring QF-23 convention"
+}

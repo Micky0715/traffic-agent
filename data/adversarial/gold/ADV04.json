@@ -1,0 +1,39 @@
+{
+  "id": "ADV04",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "PSD-B08-03",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-B08",
+      "fields": {
+        "电机编号": "M-B08"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-B08",
+      "fields": {
+        "断路器编号": "QF-B08"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "PSD-CAB-B08",
+      "fields": {
+        "控制柜编号": "PSD-CAB-B08"
+      }
+    }
+  ],
+  "expected_values": [
+    "PSD-B08-03",
+    "B08屏蔽门控制图",
+    "2/4",
+    "M-B08",
+    "QF-B08",
+    "PSD-CAB-B08"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "unknown_type",
+  "notes": "platform screen door: no mapped entity type"
+}

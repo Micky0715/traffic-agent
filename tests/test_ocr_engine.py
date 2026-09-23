@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from src.vision.ocr_engine import MockOCREngine, get_ocr_engine
+from src.vision.ocr_engine import FixtureOCREngine, MockOCREngine, PaddleOCREngine, get_ocr_engine
 
 DRAWINGS = Path(__file__).resolve().parents[1] / "data" / "drawings"
 
@@ -66,3 +66,19 @@ def test_get_ocr_engine_defaults_to_mock():
 def test_get_ocr_engine_unknown_name_falls_back_to_mock():
     engine = get_ocr_engine("something_else")
     assert isinstance(engine, MockOCREngine)
+
+
+def test_get_ocr_engine_selects_each_of_the_three_tiers():
+    """mock / fixture / paddleocr are three different claims about where the
+    text came from, and the config must be able to say which one."""
+    assert isinstance(get_ocr_engine("mock"), MockOCREngine)
+    assert isinstance(get_ocr_engine("fixture"), FixtureOCREngine)
+    assert isinstance(get_ocr_engine("paddleocr"), PaddleOCREngine)
+
+
+def test_paddle_engine_defaults_to_onednn_disabled():
+    """Default False is not a style choice: oneDNN is what crashes inference
+    on this machine, so an engine constructed without arguments has to be the
+    one that works."""
+    assert PaddleOCREngine()._enable_mkldnn is False
+    assert PaddleOCREngine(enable_mkldnn=True)._enable_mkldnn is True

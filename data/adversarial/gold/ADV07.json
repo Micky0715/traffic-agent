@@ -1,0 +1,43 @@
+{
+  "id": "ADV07",
+  "drawing_type": "fan_group",
+  "drawing_no": "FAN-MULTI-C2",
+  "entities": [
+    {
+      "entity_type": "fan",
+      "identifier": "C21",
+      "fields": {
+        "设备编号": "C21",
+        "功率": "45kW",
+        "风量": "28000m3/h"
+      }
+    },
+    {
+      "entity_type": "fan",
+      "identifier": "C22",
+      "fields": {
+        "设备编号": "C22",
+        "功率": "55kW",
+        "风量": "32000m3/h"
+      }
+    },
+    {
+      "entity_type": "fan",
+      "identifier": "C23",
+      "fields": {
+        "设备编号": "C23",
+        "功率": "37kW",
+        "风量": "24000m3/h"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-MULTI-C2",
+    "C21",
+    "C22",
+    "C23"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "entity_count_mismatch",
+  "notes": "middle device drawn blank: gold has 3 fans, the page shows 2"
+}

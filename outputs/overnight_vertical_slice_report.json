@@ -1,0 +1,654 @@
+{
+  "note": "Overnight vertical slice: structured chunking -> hybrid retrieval -> evidence policy. Zero API calls.",
+  "data_provenance": {
+    "repo_mock_drawings": "data/mock_drawings.json — repo MOCK data, not enterprise data",
+    "synthetic_test_fixture": "structural shapes constructed for this run (multi-level headers, merged cells); structural counts only, never an effectiveness claim",
+    "independent_gold": null,
+    "recall_at_5": "NOT COMPUTED: no independent retrieval gold exists in this repo. Deriving one from the system's own output would make any recall number circular."
+  },
+  "capabilities": {
+    "sparse": {
+      "name": "bm25_local",
+      "real_service": false,
+      "algorithm": "okapi_bm25",
+      "backend": "in_process"
+    },
+    "dense": {
+      "name": "dense_offline_deterministic",
+      "real_service": false,
+      "real_model": false
+    },
+    "reranker": {
+      "status": "not_invoked",
+      "reason": "no reranker model installed in this environment"
+    },
+    "elasticsearch": {
+      "status": "not_connected"
+    },
+    "milvus": {
+      "status": "not_connected"
+    }
+  },
+  "structural_metrics": {
+    "chunk_count": 16,
+    "chunk_type_distribution": {
+      "clause": 2,
+      "drawing_field": 5,
+      "section": 2,
+      "table_parent": 2,
+      "table_row": 5
+    },
+    "chunk_provenance": {
+      "repo_mock_drawings": 5,
+      "synthetic_test_fixture": 11
+    },
+    "header_path_retention": {
+      "numerator": 7,
+      "denominator": 7
+    },
+    "entity_id_retention": {
+      "numerator": 10,
+      "denominator": 10
+    },
+    "page_traceability": {
+      "numerator": 16,
+      "denominator": 16
+    },
+    "bbox_traceability": {
+      "numerator": 14,
+      "denominator": 16
+    },
+    "stable_chunk_id_coverage": {
+      "numerator": 16,
+      "denominator": 16
+    },
+    "cross_device_contamination": {
+      "numerator": 0,
+      "denominator": 10,
+      "offending_chunk_ids": []
+    }
+  },
+  "retrieval_probes": [
+    {
+      "probe": "exact_device_id",
+      "query": "A17",
+      "hit_count": 1,
+      "latency_ms": 0.13,
+      "top": [
+        {
+          "chunk_id": "table_row:synthetic_fan_doc:c4ca6e9c42b2291e",
+          "content_type": "table_row",
+          "entity_id": "A17",
+          "text": "风机参数表；设备A17；参数.功率=55kW；参数.风量=32000m3/h；备注=备用",
+          "sparse_rank": 1,
+          "dense_rank": 1,
+          "rrf_score": 0.032787,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        }
+      ]
+    },
+    {
+      "probe": "exact_drawing_no",
+      "query": "FAN-A12-01",
+      "hit_count": 3,
+      "latency_ms": 0.12,
+      "top": [
+        {
+          "chunk_id": "drawing_field:drawing_000:6cc00d436c67b030",
+          "content_type": "drawing_field",
+          "entity_id": "A12风机",
+          "text": "图号 FAN-A12-01；设备 A12风机；motor M-12",
+          "sparse_rank": 1,
+          "dense_rank": 1,
+          "rrf_score": 0.032787,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 3,
+          "bbox": [
+            [
+              40.0,
+              100.0,
+              600.0,
+              130.0
+            ]
+          ],
+          "parser_source": "ocr"
+        },
+        {
+          "chunk_id": "drawing_field:drawing_000:c4b7379d6818adc3",
+          "content_type": "drawing_field",
+          "entity_id": "A12风机",
+          "text": "图号 FAN-A12-01；设备 A12风机；breaker QF-12",
+          "sparse_rank": 2,
+          "dense_rank": 2,
+          "rrf_score": 0.032258,
+          "fused_rank": 2,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 3,
+          "bbox": [
+            [
+              40.0,
+              130.0,
+              600.0,
+              160.0
+            ]
+          ],
+          "parser_source": "ocr"
+        },
+        {
+          "chunk_id": "drawing_field:drawing_000:199281a3a637761f",
+          "content_type": "drawing_field",
+          "entity_id": "A12风机",
+          "text": "图号 FAN-A12-01；设备 A12风机；cabinet FAN-CAB-2",
+          "sparse_rank": 3,
+          "dense_rank": 3,
+          "rrf_score": 0.031746,
+          "fused_rank": 3,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 3,
+          "bbox": [
+            [
+              40.0,
+              160.0,
+              600.0,
+              190.0
+            ]
+          ],
+          "parser_source": "ocr"
+        }
+      ]
+    },
+    {
+      "probe": "field_path",
+      "query": "参数.功率",
+      "hit_count": 7,
+      "latency_ms": 0.17,
+      "top": [
+        {
+          "chunk_id": "table_row:synthetic_fan_doc:c4ca6e9c42b2291e",
+          "content_type": "table_row",
+          "entity_id": "A17",
+          "text": "风机参数表；设备A17；参数.功率=55kW；参数.风量=32000m3/h；备注=备用",
+          "sparse_rank": 2,
+          "dense_rank": 1,
+          "rrf_score": 0.032522,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        },
+        {
+          "chunk_id": "table_row:synthetic_fan_doc:24414ca380491779",
+          "content_type": "table_row",
+          "entity_id": "A16",
+          "text": "风机参数表；设备A16；参数.功率=45kW；参数.风量=28000m3/h；备注=常用",
+          "sparse_rank": 1,
+          "dense_rank": 3,
+          "rrf_score": 0.032266,
+          "fused_rank": 2,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        },
+        {
+          "chunk_id": "table_parent:synthetic_fan_doc:9368e6904f95538f",
+          "content_type": "table_parent",
+          "entity_id": null,
+          "text": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "sparse_rank": 4,
+          "dense_rank": 2,
+          "rrf_score": 0.031754,
+          "fused_rank": 3,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        }
+      ]
+    },
+    {
+      "probe": "synonym_expansion",
+      "query": "A16 额定功率",
+      "hit_count": 5,
+      "latency_ms": 0.13,
+      "top": [
+        {
+          "chunk_id": "table_row:synthetic_fan_doc:24414ca380491779",
+          "content_type": "table_row",
+          "entity_id": "A16",
+          "text": "风机参数表；设备A16；参数.功率=45kW；参数.风量=28000m3/h；备注=常用",
+          "sparse_rank": 1,
+          "dense_rank": 1,
+          "rrf_score": 0.032787,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        },
+        {
+          "chunk_id": "table_row:synthetic_fan_doc:c4ca6e9c42b2291e",
+          "content_type": "table_row",
+          "entity_id": "A17",
+          "text": "风机参数表；设备A17；参数.功率=55kW；参数.风量=32000m3/h；备注=备用",
+          "sparse_rank": 2,
+          "dense_rank": 2,
+          "rrf_score": 0.032258,
+          "fused_rank": 2,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        },
+        {
+          "chunk_id": "table_parent:synthetic_fan_doc:9368e6904f95538f",
+          "content_type": "table_parent",
+          "entity_id": null,
+          "text": "风机参数表；第4章 通风；列：设备，参数.功率，参数.风量，备注",
+          "sparse_rank": 4,
+          "dense_rank": 3,
+          "rrf_score": 0.031498,
+          "fused_rank": 3,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 3,
+          "bbox": [
+            [
+              10.0,
+              20.0,
+              700.0,
+              400.0
+            ]
+          ],
+          "parser_source": "table_parser"
+        }
+      ]
+    },
+    {
+      "probe": "clause_lookup",
+      "query": "应急照明 持续供电",
+      "hit_count": 3,
+      "latency_ms": 0.12,
+      "top": [
+        {
+          "chunk_id": "clause:synthetic_reg_doc:03d9bc95cf7b1d39",
+          "content_type": "clause",
+          "entity_id": null,
+          "text": "JTG D81-2017 第4章 照明 4.2.1\n应急照明应保证不小于30分钟的持续供电。",
+          "sparse_rank": 1,
+          "dense_rank": 1,
+          "rrf_score": 0.032787,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 1,
+          "bbox": [],
+          "parser_source": "regulation_parser"
+        },
+        {
+          "chunk_id": "clause:synthetic_reg_doc:94f35867d5188ec9",
+          "content_type": "clause",
+          "entity_id": null,
+          "text": "JTG D81-2017 第4章 照明 4.2.2\n疏散指示标志应连续设置，间距不大于20米。",
+          "sparse_rank": 2,
+          "dense_rank": 2,
+          "rrf_score": 0.032258,
+          "fused_rank": 2,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 1,
+          "bbox": [],
+          "parser_source": "regulation_parser"
+        },
+        {
+          "chunk_id": "section:synthetic_text_doc:0cabb1baef511763",
+          "content_type": "section",
+          "entity_id": null,
+          "text": "第4章 通风 > 4.2 风机\n风机应每季度检修一次。检修内容包括轴承润滑与振动检测。",
+          "sparse_rank": 3,
+          "dense_rank": 3,
+          "rrf_score": 0.031746,
+          "fused_rank": 3,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 2,
+          "bbox": [
+            [
+              30.0,
+              60.0,
+              700.0,
+              160.0
+            ]
+          ],
+          "parser_source": "native_text"
+        }
+      ]
+    },
+    {
+      "probe": "no_match",
+      "query": "完全不存在的查询词组合",
+      "hit_count": 3,
+      "latency_ms": 0.12,
+      "top": [
+        {
+          "chunk_id": "clause:synthetic_reg_doc:03d9bc95cf7b1d39",
+          "content_type": "clause",
+          "entity_id": null,
+          "text": "JTG D81-2017 第4章 照明 4.2.1\n应急照明应保证不小于30分钟的持续供电。",
+          "sparse_rank": 1,
+          "dense_rank": 1,
+          "rrf_score": 0.032787,
+          "fused_rank": 1,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 1,
+          "bbox": [],
+          "parser_source": "regulation_parser"
+        },
+        {
+          "chunk_id": "clause:synthetic_reg_doc:94f35867d5188ec9",
+          "content_type": "clause",
+          "entity_id": null,
+          "text": "JTG D81-2017 第4章 照明 4.2.2\n疏散指示标志应连续设置，间距不大于20米。",
+          "sparse_rank": 2,
+          "dense_rank": 3,
+          "rrf_score": 0.032002,
+          "fused_rank": 2,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 1,
+          "bbox": [],
+          "parser_source": "regulation_parser"
+        },
+        {
+          "chunk_id": "section:synthetic_text_doc:f714d1ccaa9fbfe4",
+          "content_type": "section",
+          "entity_id": null,
+          "text": "第4章 通风 > 4.1 概述\n本章规定隧道通风系统的设计与检修要求。",
+          "sparse_rank": 3,
+          "dense_rank": 2,
+          "rrf_score": 0.032002,
+          "fused_rank": 3,
+          "rerank_score": null,
+          "rerank_status": "not_invoked",
+          "parent_context": "",
+          "page": 1,
+          "bbox": [
+            [
+              30.0,
+              60.0,
+              700.0,
+              120.0
+            ]
+          ],
+          "parser_source": "native_text"
+        }
+      ]
+    }
+  ],
+  "retrieval_source_mix": {
+    "sparse_only": 0,
+    "dense_only": 0,
+    "both": 16
+  },
+  "latency_ms": {
+    "p50": 0.13,
+    "p95": 0.13,
+    "note": "in-process retrieval only; no network, no model inference"
+  },
+  "decision_scenarios": {
+    "complete_evidence": {
+      "decision": "execute",
+      "routing_decision": "execute",
+      "answerable_fields": {
+        "功率": "45kW"
+      },
+      "missing_fields": [],
+      "conflicts": [],
+      "unmet_requirements": [],
+      "reason_codes": [],
+      "evidence_refs": [
+        {
+          "document_id": "drawing_000",
+          "page": 1,
+          "bbox": [
+            40.0,
+            100.0,
+            600.0,
+            130.0
+          ],
+          "chunk_id": null,
+          "source": "ocr"
+        }
+      ],
+      "remediation": []
+    },
+    "missing_user_parameter": {
+      "decision": "clarify",
+      "routing_decision": "clarify",
+      "answerable_fields": {
+        "告警次数": "12"
+      },
+      "missing_fields": [],
+      "conflicts": [],
+      "unmet_requirements": [
+        "entity_resolved"
+      ],
+      "reason_codes": [
+        "USER_PARAMETER_MISSING"
+      ],
+      "evidence_refs": [
+        {
+          "document_id": "drawing_000",
+          "page": 1,
+          "bbox": [
+            40.0,
+            100.0,
+            600.0,
+            130.0
+          ],
+          "chunk_id": null,
+          "source": "tool"
+        }
+      ],
+      "remediation": [
+        "ask_user"
+      ]
+    },
+    "partial_coverage": {
+      "decision": "partial",
+      "routing_decision": "partial",
+      "answerable_fields": {
+        "功率": "45kW"
+      },
+      "missing_fields": [
+        "控制柜编号"
+      ],
+      "conflicts": [],
+      "unmet_requirements": [],
+      "reason_codes": [
+        "PARTIAL_FIELD_COVERAGE"
+      ],
+      "evidence_refs": [
+        {
+          "document_id": "drawing_000",
+          "page": 1,
+          "bbox": [
+            40.0,
+            100.0,
+            600.0,
+            130.0
+          ],
+          "chunk_id": null,
+          "source": "ocr"
+        }
+      ],
+      "remediation": []
+    },
+    "non_high_risk_conflict": {
+      "decision": "abstain",
+      "routing_decision": "fallback",
+      "answerable_fields": {},
+      "missing_fields": [],
+      "conflicts": [
+        {
+          "field_name": "功率",
+          "value": "45kW",
+          "conflicting_value": "55kW",
+          "source": "ocr",
+          "resolution": "unresolved"
+        }
+      ],
+      "unmet_requirements": [
+        "no_unresolved_conflict"
+      ],
+      "reason_codes": [
+        "UNRESOLVED_FIELD_CONFLICT"
+      ],
+      "evidence_refs": [],
+      "remediation": []
+    },
+    "high_risk_conflict": {
+      "decision": "human_review",
+      "routing_decision": "fallback",
+      "answerable_fields": {},
+      "missing_fields": [],
+      "conflicts": [
+        {
+          "field_name": "控制柜编号",
+          "value": "FAN-CAB-12",
+          "conflicting_value": "审核专用章",
+          "source": "ocr",
+          "resolution": "unresolved"
+        }
+      ],
+      "unmet_requirements": [
+        "no_unresolved_conflict"
+      ],
+      "reason_codes": [
+        "HIGH_RISK_FIELD_CONFLICT"
+      ],
+      "evidence_refs": [],
+      "remediation": []
+    },
+    "untraceable_value": {
+      "decision": "fallback",
+      "routing_decision": "fallback",
+      "answerable_fields": {
+        "功率": "45kW"
+      },
+      "missing_fields": [],
+      "conflicts": [],
+      "unmet_requirements": [
+        "source_traceable"
+      ],
+      "reason_codes": [
+        "REQUIRED_EVIDENCE_MISSING"
+      ],
+      "evidence_refs": [],
+      "remediation": [
+        "hybrid_retrieval",
+        "parent_expansion",
+        "local_vlm_reidentify:not_invoked"
+      ]
+    },
+    "remediation_exhausted": {
+      "decision": "abstain",
+      "routing_decision": "fallback",
+      "answerable_fields": {},
+      "missing_fields": [
+        "控制柜编号"
+      ],
+      "conflicts": [],
+      "unmet_requirements": [
+        "target_field_present",
+        "source_traceable"
+      ],
+      "reason_codes": [
+        "REMEDIATION_EXHAUSTED"
+      ],
+      "evidence_refs": [],
+      "remediation": []
+    }
+  },
+  "decision_distribution": {
+    "execute": 1,
+    "clarify": 1,
+    "partial": 1,
+    "abstain": 2,
+    "human_review": 1,
+    "fallback": 1
+  }
+}

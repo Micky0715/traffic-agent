@@ -1,0 +1,39 @@
+{
+  "id": "ADV16",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-F51-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-F51",
+      "fields": {
+        "电机编号": "M-F51"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-F51",
+      "fields": {
+        "断路器编号": "QF-F51"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-F51",
+      "fields": {
+        "控制柜编号": "FAN-CAB-F51"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-F51-01",
+    "F51风机接线图",
+    "1/1",
+    "M-F51",
+    "QF-F51",
+    "FAN-CAB-F51"
+  ],
+  "human_needs_fallback": true,
+  "difficulty_type": "visual_stamp",
+  "notes": "stamp over the cabinet row"
+}

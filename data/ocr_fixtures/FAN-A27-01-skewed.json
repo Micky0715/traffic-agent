@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "image": "FAN-A27-01-skewed.png",
+    "image_sha256": "a05f009a93800117bd66f0fb97aa349ccaad5af68641a79733df93b68fbbfa0f",
+    "generated_at": "2026-09-14T14:32:32+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 35.14,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A27风机接线图\n电机 M-27\n断路器 QF-27\n图号\nFAN-A27-01\n名称\nA27风机接线图\n页码\n1/1\n电机编号\nM-27\n断路器编号\nQF-27\n控制柜编号\nFAN-CAB-27",
+    "blocks": [
+      {
+        "text": "A27风机接线图",
+        "bbox": [
+          25.0,
+          32.0,
+          247.0,
+          68.0
+        ],
+        "confidence": 0.9999825358390808
+      },
+      {
+        "text": "电机 M-27",
+        "bbox": [
+          60.0,
+          109.0,
+          151.0,
+          140.0
+        ],
+        "confidence": 0.9952403903007507
+      },
+      {
+        "text": "断路器 QF-27",
+        "bbox": [
+          317.0,
+          111.0,
+          430.0,
+          135.0
+        ],
+        "confidence": 0.9589000344276428
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          53.0,
+          540.0,
+          100.0,
+          567.0
+        ],
+        "confidence": 0.9999856352806091
+      },
+      {
+        "text": "FAN-A27-01",
+        "bbox": [
+          229.0,
+          539.0,
+          351.0,
+          563.0
+        ],
+        "confidence": 0.9999924898147583
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          53.0,
+          574.0,
+          99.0,
+          602.0
+        ],
+        "confidence": 0.9999918937683105
+      },
+      {
+        "text": "A27风机接线图",
+        "bbox": [
+          228.0,
+          572.0,
+          368.0,
+          600.0
+        ],
+        "confidence": 0.9999874830245972
+      },
+      {
+        "text": "页码",
+        "bbox": [
+          52.0,
+          609.0,
+          98.0,
+          637.0
+        ],
+        "confidence": 0.999943733215332
+      },
+      {
+        "text": "1/1",
+        "bbox": [
+          228.0,
+          608.0,
+          266.0,
+          637.0
+        ],
+        "confidence": 0.9997603297233582
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          52.0,
+          643.0,
+          139.0,
+          671.0
+        ],
+        "confidence": 0.9999758005142212
+      },
+      {
+        "text": "M-27",
+        "bbox": [
+          229.0,
+          643.0,
+          287.0,
+          669.0
+        ],
+        "confidence": 0.9999784231185913
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          53.0,
+          678.0,
+          160.0,
+          706.0
+        ],
+        "confidence": 0.9999370574951172
+      },
+      {
+        "text": "QF-27",
+        "bbox": [
+          231.0,
+          678.0,
+          295.0,
+          704.0
+        ],
+        "confidence": 0.9999702572822571
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          53.0,
+          710.0,
+          162.0,
+          740.0
+        ],
+        "confidence": 0.999921441078186
+      },
+      {
+        "text": "FAN-CAB-27",
+        "bbox": [
+          233.0,
+          714.0,
+          357.0,
+          735.0
+        ],
+        "confidence": 0.9999929666519165
+      }
+    ],
+    "average_confidence": 0.9969040314356487,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "exact_file_duplicates": [],
+  "near_duplicate_page_candidates": {
+    "clusters": [
+      [
+        "cad-0bbefc174073-06a985:p0017",
+        "cad-0bbefc174073-06a985:p0018"
+      ],
+      [
+        "cad-4ff9dadac09b-f25016:p0021",
+        "cad-4ff9dadac09b-f25016:p0022"
+      ],
+      [
+        "cad-4ff9dadac09b-f25016:p0025",
+        "cad-4ff9dadac09b-f25016:p0026",
+        "cad-4ff9dadac09b-f25016:p0030",
+        "cad-4ff9dadac09b-f25016:p0031"
+      ],
+      [
+        "cad-a40dcf073926-58cb7e:p0023",
+        "cad-a40dcf073926-58cb7e:p0024",
+        "cad-a40dcf073926-58cb7e:p0026",
+        "cad-a40dcf073926-58cb7e:p0027"
+      ],
+      [
+        "cad-f737837ade76-b2131d:p0017",
+        "cad-f737837ade76-b2131d:p0018"
+      ],
+      [
+        "cad-f737837ade76-b2131d:p0019",
+        "cad-f737837ade76-b2131d:p0020"
+      ],
+      [
+        "cad-fc77d33e4972-8d8e06:p0001",
+        "cad-fc77d33e4972-8d8e06:p0002"
+      ]
+    ],
+    "hash_size": 8,
+    "max_hamming_distance": 6,
+    "method": "dhash",
+    "note": "review candidates only; threshold uncalibrated; nothing merged or deleted",
+    "pages_hashed": 131,
+    "pairs": [
+      {
+        "a": "cad-0bbefc174073-06a985:p0017",
+        "b": "cad-0bbefc174073-06a985:p0018",
+        "cross_source": false,
+        "distance": 2
+      },
+      {
+        "a": "cad-4ff9dadac09b-f25016:p0021",
+        "b": "cad-4ff9dadac09b-f25016:p0022",
+        "cross_source": false,
+        "distance": 5
+      },
+      {
+        "a": "cad-4ff9dadac09b-f25016:p0025",
+        "b": "cad-4ff9dadac09b-f25016:p0026",
+        "cross_source": false,
+        "distance": 4
+      },
+      {
+        "a": "cad-4ff9dadac09b-f25016:p0025",
+        "b": "cad-4ff9dadac09b-f25016:p0030",
+        "cross_source": false,
+        "distance": 6
+      },
+      {
+        "a": "cad-4ff9dadac09b-f25016:p0030",
+        "b": "cad-4ff9dadac09b-f25016:p0031",
+        "cross_source": false,
+        "distance": 6
+      },
+      {
+        "a": "cad-a40dcf073926-58cb7e:p0023",
+        "b": "cad-a40dcf073926-58cb7e:p0024",
+        "cross_source": false,
+        "distance": 4
+      },
+      {
+        "a": "cad-a40dcf073926-58cb7e:p0023",
+        "b": "cad-a40dcf073926-58cb7e:p0026",
+        "cross_source": false,
+        "distance": 5
+      },
+      {
+        "a": "cad-a40dcf073926-58cb7e:p0023",
+        "b": "cad-a40dcf073926-58cb7e:p0027",
+        "cross_source": false,
+        "distance": 6
+      },
+      {
+        "a": "cad-a40dcf073926-58cb7e:p0024",
+        "b": "cad-a40dcf073926-58cb7e:p0026",
+        "cross_source": false,
+        "distance": 5
+      },
+      {
+        "a": "cad-a40dcf073926-58cb7e:p0024",
+        "b": "cad-a40dcf073926-58cb7e:p0027",
+        "cross_source": false,
+        "distance": 4
+      },
+      {
+        "a": "cad-f737837ade76-b2131d:p0017",
+        "b": "cad-f737837ade76-b2131d:p0018",
+        "cross_source": false,
+        "distance": 4
+      },
+      {
+        "a": "cad-f737837ade76-b2131d:p0019",
+        "b": "cad-f737837ade76-b2131d:p0020",
+        "cross_source": false,
+        "distance": 4
+      },
+      {
+        "a": "cad-fc77d33e4972-8d8e06:p0001",
+        "b": "cad-fc77d33e4972-8d8e06:p0002",
+        "cross_source": false,
+        "distance": 6
+      }
+    ],
+    "threshold_status": "uncalibrated"
+  },
+  "status": "computed"
+}

@@ -1,0 +1,266 @@
+{
+  "crop_conclusion": "insufficient evidence: only ['D&OM-25.pdf'] had a crop-warning page reviewed. The result cannot be generalised to ['RCD-25.pdf', 'SMD.pdf', 'TSR.pdf']; their warnings stay unreviewed.",
+  "crop_confirmed": 0,
+  "crop_documents_without_reviewed_page": [
+    "RCD-25.pdf",
+    "SMD.pdf",
+    "TSR.pdf"
+  ],
+  "crop_warning_by_document": {
+    "D&OM-25.pdf": {
+      "reviewed": 1,
+      "reviewed_pages": [
+        "cad-1f5b9bc4b24f-3b3786:p0001"
+      ],
+      "warnings": 8
+    },
+    "RCD-25.pdf": {
+      "reviewed": 0,
+      "reviewed_pages": [],
+      "warnings": 2
+    },
+    "SMD.pdf": {
+      "reviewed": 0,
+      "reviewed_pages": [],
+      "warnings": 6
+    },
+    "TSR.pdf": {
+      "reviewed": 0,
+      "reviewed_pages": [],
+      "warnings": 5
+    }
+  },
+  "crop_warning_false_positive": 1,
+  "crop_warning_labels": {
+    "cad-03796f2a4d01-d0b38d:p0001": "unreviewed",
+    "cad-03796f2a4d01-d0b38d:p0002": "unreviewed",
+    "cad-03796f2a4d01-d0b38d:p0003": "unreviewed",
+    "cad-03796f2a4d01-d0b38d:p0004": "unreviewed",
+    "cad-03796f2a4d01-d0b38d:p0005": "unreviewed",
+    "cad-03796f2a4d01-d0b38d:p0006": "unreviewed",
+    "cad-12009bc07789-5253c7:p0001": "unreviewed",
+    "cad-12009bc07789-5253c7:p0002": "unreviewed",
+    "cad-12009bc07789-5253c7:p0003": "unreviewed",
+    "cad-12009bc07789-5253c7:p0004": "unreviewed",
+    "cad-12009bc07789-5253c7:p0005": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0001": "false_positive_warning",
+    "cad-1f5b9bc4b24f-3b3786:p0002": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0003": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0004": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0005": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0006": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0007": "unreviewed",
+    "cad-1f5b9bc4b24f-3b3786:p0008": "unreviewed",
+    "cad-496b767a24bc-557c37:p0001": "unreviewed",
+    "cad-496b767a24bc-557c37:p0002": "unreviewed"
+  },
+  "crop_warning_total": 21,
+  "crop_warning_true_positive": 0,
+  "crop_warning_unreviewed": 20,
+  "failed_pages": [],
+  "human_reviewed_pages": [
+    "cad-0bbefc174073-06a985:p0001",
+    "cad-bb9180ba6d20-34c6aa:p0001",
+    "cad-4ff9dadac09b-f25016:p0001",
+    "cad-4ff9dadac09b-f25016:p0016",
+    "cad-4ff9dadac09b-f25016:p0031",
+    "cad-1f5b9bc4b24f-3b3786:p0001"
+  ],
+  "human_verified_scope": {
+    "count": 6,
+    "of_total_pages": 131,
+    "pages": [
+      "cad-0bbefc174073-06a985:p0001",
+      "cad-bb9180ba6d20-34c6aa:p0001",
+      "cad-4ff9dadac09b-f25016:p0001",
+      "cad-4ff9dadac09b-f25016:p0016",
+      "cad-4ff9dadac09b-f25016:p0031",
+      "cad-1f5b9bc4b24f-3b3786:p0001"
+    ],
+    "statement": "Only these 6 page(s) were looked at by a person. The other 125 page(s) are covered by automated integrity checks only."
+  },
+  "ocr_calls": 0,
+  "orientation_error_confirmed": 0,
+  "pass_pages": [
+    "cad-0bbefc174073-06a985:p0001",
+    "cad-bb9180ba6d20-34c6aa:p0001",
+    "cad-4ff9dadac09b-f25016:p0001",
+    "cad-4ff9dadac09b-f25016:p0016",
+    "cad-4ff9dadac09b-f25016:p0031",
+    "cad-1f5b9bc4b24f-3b3786:p0001"
+  ],
+  "pdf_mismatch_confirmed": 0,
+  "pending_pages": [],
+  "per_document": {
+    "70101-70183.pdf": {
+      "pass": 1
+    },
+    "70301-70311.pdf": {
+      "pass": 1
+    },
+    "73001-73087.pdf": {
+      "pass": 3
+    },
+    "D&OM-25.pdf": {
+      "pass": 1
+    }
+  },
+  "per_page": [
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "pass",
+      "auto_reason_codes": [],
+      "comparison": "agree",
+      "file_name": "70101-70183.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-0bbefc174073-06a985:p0001",
+      "page_no": 1,
+      "page_sha256": "d0704d9eea2160b4e660e59e2c13ce597b053e26dfce5f157407083e52383884",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    },
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "pass",
+      "auto_reason_codes": [],
+      "comparison": "agree",
+      "file_name": "70301-70311.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-bb9180ba6d20-34c6aa:p0001",
+      "page_no": 1,
+      "page_sha256": "05287f4154153be2f35848a349beb68d30b2d9aec44d1416cfbd724537cb2f36",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    },
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "pass",
+      "auto_reason_codes": [],
+      "comparison": "agree",
+      "file_name": "73001-73087.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-4ff9dadac09b-f25016:p0001",
+      "page_no": 1,
+      "page_sha256": "8b90bc58fcdcfea18c595aebde61ffd903de81f1f332e55b41b16097559b14ae",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    },
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "pass",
+      "auto_reason_codes": [],
+      "comparison": "agree",
+      "file_name": "73001-73087.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-4ff9dadac09b-f25016:p0016",
+      "page_no": 16,
+      "page_sha256": "bf5f56a433f2be111959b15950285a34fed2ab958b3e913c8b384e937e868ea9",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    },
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "pass",
+      "auto_reason_codes": [],
+      "comparison": "agree",
+      "file_name": "73001-73087.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-4ff9dadac09b-f25016:p0031",
+      "page_no": 31,
+      "page_sha256": "e2cb5842bb2a8107aa5f0aa1b9c654b8ccc80ea018bfc89d61dab1c9a396607e",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    },
+    {
+      "annotator": "jdh07",
+      "auto_qa_status": "warning",
+      "auto_reason_codes": [
+        "crop_risk_suspected"
+      ],
+      "comparison": "auto_warning_human_pass",
+      "file_name": "D&OM-25.pdf",
+      "human_answers": {
+        "orientation_correct": "pass",
+        "page_matches_pdf": "pass",
+        "text_not_obviously_blurred": "pass",
+        "thin_lines_not_obviously_missing": "pass",
+        "title_block_and_edges_not_cropped": "pass"
+      },
+      "human_verdict": "pass",
+      "in_sample": true,
+      "notes": "Reviewer reviewed all 6 sampled pages in outputs/cad_render_qa_pack/index.html and stated in chat that every check passed (\"文件我已经看过了 都通过\"). The static pack had no export, so answers were captured from that statement, not from a file export. reviewed_at is when the statement was recorded.",
+      "page_id": "cad-1f5b9bc4b24f-3b3786:p0001",
+      "page_no": 1,
+      "page_sha256": "170170e9730aef63bfdcfbd4d7909c9dc4ce19167b9cfb9f92fdc840949a2386",
+      "review_capture": "chat_statement",
+      "reviewed_at": "2026-09-18T10:18:16Z"
+    }
+  ],
+  "review_capture": [
+    "chat_statement"
+  ],
+  "selected_pages": [
+    "cad-1f5b9bc4b24f-3b3786:p0001",
+    "cad-0bbefc174073-06a985:p0001",
+    "cad-4ff9dadac09b-f25016:p0001",
+    "cad-4ff9dadac09b-f25016:p0016",
+    "cad-4ff9dadac09b-f25016:p0031",
+    "cad-bb9180ba6d20-34c6aa:p0001"
+  ],
+  "source_review_file": "data/cad_public_corpus/manifests/cad_render_human_review_v1.jsonl",
+  "source_review_sha256": "b23f20ad7474b8296989c4809a09af3dc41807474f9545cf29fc5a122197d213",
+  "supplement_pages": [
+    "cad-496b767a24bc-557c37:p0001",
+    "cad-03796f2a4d01-d0b38d:p0001",
+    "cad-12009bc07789-5253c7:p0001"
+  ],
+  "text_blur_confirmed": 0,
+  "thin_line_loss_confirmed": 0,
+  "thresholds_changed": false,
+  "vlm_calls": 0
+}

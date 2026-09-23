@@ -8,8 +8,19 @@ numpy>=1.24
 # Optional: only required for the LangGraph workflow
 langgraph>=0.2
 langchain-core>=0.3
-# Optional: only required if configs/visual_parser.yaml sets ocr.engine=paddleocr
-# (real adapter code exists in src/vision/ocr_engine.py; on this dev machine
-# PaddleOCR's real inference crashes with an internal Paddle/oneDNN error —
-# see interview/ocr_bad_cases.md and MockOCREngine, the default).
-# paddleocr>=3.0
+# Optional: only required when configs/visual_parser.yaml sets
+# ocr.engine=paddleocr (live inference) or when regenerating fixtures with
+# src/run_ocr_fixture_dump.py. Not needed for ocr.engine=mock or =fixture.
+#
+# Versions below are the ones this repo's real OCR run was actually verified
+# on, not aspirational floors — PaddleOCR's result dict shape and the
+# oneDNN crash are both version-sensitive, so a range would make the
+# recorded numbers unreproducible:
+#   paddleocr    3.7.0
+#   paddlepaddle 3.3.1  (CPU build, commit 7688495)
+#   models       PP-OCRv6_medium_det / PP-OCRv6_medium_rec /
+#                PP-LCNet_x1_0_doc_ori / PP-LCNet_x1_0_textline_ori / UVDoc
+#   verified on  Python 3.12.10, Windows 11, Intel64 CPU, no CUDA
+# Install with: pip install paddleocr==3.7.0 paddlepaddle==3.3.1
+# paddleocr==3.7.0
+# paddlepaddle==3.3.1

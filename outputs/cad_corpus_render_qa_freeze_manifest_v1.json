@@ -1,0 +1,79 @@
+{
+  "stage": "cad_public_corpus/phase0_render_qa",
+  "facts": {
+    "qa_status": "blocked_poppler_unavailable",
+    "pages_rendered_and_readable": 0,
+    "qa_status_counts": {
+      "failed": 0,
+      "pass": 0,
+      "warning": 0
+    },
+    "sample_pages": 0,
+    "human_review_status": "pending",
+    "human_verified": false,
+    "original_pdf_hashes_match_manifest": true,
+    "poppler_available": false,
+    "substitute_renderer_used": false,
+    "thresholds": "uncalibrated",
+    "ocr_calls": 0,
+    "vlm_calls": 0
+  },
+  "groups": {
+    "qa_code": {
+      "files": {
+        "src/cad_corpus/render_qa.py": "f0816dbfb8cf8d0c21eb10eb6645c3390e2ab1af6527379cb360acabc9ac1ad4",
+        "scripts/cad_render_quality_audit.py": "672f8827c3894d2301ed363eee4465fdf8718d38b7c4c6d2cd09e8802242578a",
+        "scripts/cad_render_qa_freeze.py": "6c51d1b21e218ce5546f9b433746768e8f98cb483a5dce2804dfa278fd8c1a30"
+      },
+      "file_count": 3
+    },
+    "qa_config": {
+      "files": {
+        "configs/cad_render_qa.yaml": "834fd4c55f3457c9f6e7132d04ea340f9d3e5b04d9296f8148d4e86ce6dacb37"
+      },
+      "file_count": 1
+    },
+    "qa_tests": {
+      "files": {
+        "tests/test_cad_render_qa.py": "4c517fc688cae03e995c0a90b84ced031cf2a32edf84ced192fbe170ee9f5de4"
+      },
+      "file_count": 1
+    },
+    "qa_reports": {
+      "files": {
+        "outputs/cad_render_quality_report.json": "387442ca7338ff20f916af5358ab6a49518bc35c3e30ebf07f8dfd66e975add9",
+        "outputs/cad_render_quality_report.md": "d8b1309837b4fc507d3d8bb4d7d8085305f36ae54a7a36d2764f906639990e7e"
+      },
+      "file_count": 2
+    },
+    "render_config_unchanged": {
+      "files": {
+        "configs/cad_corpus.yaml": "94e47ed6693d7b8edb73cd4f81c7c6994857cf6853694b871048a63630db350b"
+      },
+      "file_count": 1
+    },
+    "qa_pack": {
+      "files": {
+        "outputs/cad_render_qa_pack/index.html": "d9f652ca52e97e4b2f1967f68b33e361517f4870c0abee5d458a199c63807e4f",
+        "outputs/cad_render_qa_pack/qa_sample_manifest.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "file_count": 2
+    },
+    "original_sources_reference": {
+      "files": {
+        "data/70101-70183.pdf": "0bbefc174073794270c7f308d591e4e463a3ab81c88e6024909674951fe19b2c",
+        "data/70301-70311.pdf": "bb9180ba6d206d783d39ed4cc623ff5a2da9ca27e3a38ccfeed872eb446f3832",
+        "data/71001-71070.pdf": "a40dcf07392642e263a7c09ec463df94e9529d57f27b31a130577a9796bf66a7",
+        "data/72901-72933.pdf": "fc77d33e4972cbbc8d2b669dd4a170215c056ac800dc43a8481dfb96ad18917c",
+        "data/73001-73087.pdf": "4ff9dadac09b3db4654f1b968d1396c28bd6979087cef0b6d2e990b5b31d85a3",
+        "data/D&OM-25.pdf": "1f5b9bc4b24f686dde7e407f8ff5f7e9d22b54da933fa5704e21408aa904188e",
+        "data/DET4700_All.pdf": "f737837ade76c722df75115d14f50ec68c60df4d30128931cc45b4b506e3006f",
+        "data/RCD-25.pdf": "496b767a24bcfad5f5e5c63449958f3de5d192052521b4286b3150da7c5eadc2",
+        "data/SMD.pdf": "03796f2a4d017b8bf75c298d27c504e626593eb5333556ec6645a9912bb839e8",
+        "data/TSR.pdf": "12009bc077896d467db5f0294467e5587a503cc05d833c532d38c713530034ad"
+      },
+      "file_count": 10
+    }
+  },
+  "frozen_at": "2026-09-18T07:06:40+00:00"
+}

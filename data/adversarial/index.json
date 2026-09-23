@@ -1,0 +1,145 @@
+{
+  "warning": "规则作者与压力测试设计者相同，本测试只能用于证伪和发现边界，不能证明泛化能力。",
+  "count": 21,
+  "by_difficulty": {
+    "heterogeneous_id": 3,
+    "unknown_type": 3,
+    "entity_count_mismatch": 3,
+    "near_miss_id": 3,
+    "format_valid_nonexistent": 3,
+    "visual_stamp": 1,
+    "visual_watermark": 1,
+    "visual_blur": 1,
+    "visual_skew": 1,
+    "visual_low_contrast": 1,
+    "visual_stamp_watermark": 1
+  },
+  "cases": [
+    {
+      "id": "ADV01",
+      "difficulty_type": "heterogeneous_id",
+      "human_needs_fallback": false,
+      "notes": "slash-separated scheme; drawing-number rule expects hyphen segments"
+    },
+    {
+      "id": "ADV02",
+      "difficulty_type": "heterogeneous_id",
+      "human_needs_fallback": false,
+      "notes": "underscore scheme"
+    },
+    {
+      "id": "ADV03",
+      "difficulty_type": "heterogeneous_id",
+      "human_needs_fallback": false,
+      "notes": "CJK identifiers plus dot separators; charset rule assumes latin codes"
+    },
+    {
+      "id": "ADV04",
+      "difficulty_type": "unknown_type",
+      "human_needs_fallback": false,
+      "notes": "platform screen door: no mapped entity type"
+    },
+    {
+      "id": "ADV05",
+      "difficulty_type": "unknown_type",
+      "human_needs_fallback": false,
+      "notes": "transformer and isolator: unmapped types"
+    },
+    {
+      "id": "ADV06",
+      "difficulty_type": "unknown_type",
+      "human_needs_fallback": false,
+      "notes": "escalator and brake: unmapped types"
+    },
+    {
+      "id": "ADV07",
+      "difficulty_type": "entity_count_mismatch",
+      "human_needs_fallback": true,
+      "notes": "middle device drawn blank: gold has 3 fans, the page shows 2"
+    },
+    {
+      "id": "ADV08",
+      "difficulty_type": "entity_count_mismatch",
+      "human_needs_fallback": true,
+      "notes": "last device drawn blank"
+    },
+    {
+      "id": "ADV09",
+      "difficulty_type": "entity_count_mismatch",
+      "human_needs_fallback": false,
+      "notes": "devices drawn out of numeric order; pairing must not use position"
+    },
+    {
+      "id": "ADV10",
+      "difficulty_type": "near_miss_id",
+      "human_needs_fallback": true,
+      "notes": "capital I where a 1 is expected; sources likely to disagree"
+    },
+    {
+      "id": "ADV11",
+      "difficulty_type": "near_miss_id",
+      "human_needs_fallback": true,
+      "notes": "QF-2B against the neighbouring QF-23 convention"
+    },
+    {
+      "id": "ADV12",
+      "difficulty_type": "near_miss_id",
+      "human_needs_fallback": true,
+      "notes": "A1G sits between A16 and A18; G/6 confusion across sources"
+    },
+    {
+      "id": "ADV13",
+      "difficulty_type": "format_valid_nonexistent",
+      "human_needs_fallback": false,
+      "notes": "every code passes its shape rule; none of this equipment exists"
+    },
+    {
+      "id": "ADV14",
+      "difficulty_type": "format_valid_nonexistent",
+      "human_needs_fallback": false,
+      "notes": "degenerate but shape-valid numbering"
+    },
+    {
+      "id": "ADV15",
+      "difficulty_type": "format_valid_nonexistent",
+      "human_needs_fallback": false,
+      "notes": "page 9 of 1 is impossible but matches the n/m rule"
+    },
+    {
+      "id": "ADV16",
+      "difficulty_type": "visual_stamp",
+      "human_needs_fallback": true,
+      "notes": "stamp over the cabinet row"
+    },
+    {
+      "id": "ADV17",
+      "difficulty_type": "visual_watermark",
+      "human_needs_fallback": true,
+      "notes": "tiled watermark across the value column"
+    },
+    {
+      "id": "ADV18",
+      "difficulty_type": "visual_blur",
+      "human_needs_fallback": true,
+      "notes": "heavy gaussian blur"
+    },
+    {
+      "id": "ADV19",
+      "difficulty_type": "visual_skew",
+      "human_needs_fallback": true,
+      "notes": "rotated page"
+    },
+    {
+      "id": "ADV20",
+      "difficulty_type": "visual_low_contrast",
+      "human_needs_fallback": true,
+      "notes": "washed-out print"
+    },
+    {
+      "id": "ADV21",
+      "difficulty_type": "visual_stamp_watermark",
+      "human_needs_fallback": true,
+      "notes": "stamp and watermark combined"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ADV03",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "SIG.03.2026",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "电机三号",
+      "fields": {
+        "电机编号": "电机三号"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF.03",
+      "fields": {
+        "断路器编号": "QF.03"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "信号柜三号",
+      "fields": {
+        "控制柜编号": "信号柜三号"
+      }
+    }
+  ],
+  "expected_values": [
+    "SIG.03.2026",
+    "三号信号机接线图",
+    "1/1",
+    "电机三号",
+    "QF.03",
+    "信号柜三号"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "heterogeneous_id",
+  "notes": "CJK identifiers plus dot separators; charset rule assumes latin codes"
+}

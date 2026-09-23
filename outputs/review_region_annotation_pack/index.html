@@ -1,0 +1,123 @@
+<!doctype html><meta charset="utf-8">
+<title>bbox Gold 人工审核包</title>
+<style>
+ body{font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif;margin:24px;max-width:1200px}
+ section{border-top:2px solid #ddd;padding-top:16px;margin-top:32px}
+ img.page{max-width:100%;border:1px solid #bbb}
+ table{border-collapse:collapse;width:100%;margin:8px 0;font-size:13px}
+ th,td{border:1px solid #ccc;padding:4px 6px;text-align:left;vertical-align:top}
+ th{background:#f4f4f4}
+ td.blank{background:#fffbe6;font-family:monospace}
+ .crops{display:flex;flex-wrap:wrap;gap:12px}
+ .crops img{max-height:150px;border:1px solid #bbb}
+ figcaption{font-size:12px;color:#666}
+ .chip{display:inline-block;padding:2px 8px;margin:2px;border:3px solid;border-radius:4px;font-size:12px}
+ .meta{color:#555}
+ .warn{background:#fff3f3;border-left:4px solid #c00;padding:8px 12px}
+</style>
+<h1>bbox Gold 人工审核包</h1>
+<p class="warn"><b>不要顺着系统候选框标。</b>先看原图判断字段值在哪里，再看候选框。
+候选框是被评测的对象，不是参考答案。若某字段肉眼不可见，标 <code>field_visible=false</code>
+并写 <code>unlocatable_reason</code>，不要勉强画一个框。</p>
+<p>图例：<span class="chip" style="border-color:rgb(60,170,60)">exact_label_right</span><span class="chip" style="border-color:rgb(40,160,200)">alias_label_right</span><span class="chip" style="border-color:rgb(200,90,200)">table_value_cell</span><span class="chip" style="border-color:rgb(255,140,200)">structural_row_inference</span><span class="chip" style="border-color:rgb(240,140,40)">table_or_title_block</span><span class="chip" style="border-color:rgb(220,60,60)">full_page_diagnostic</span>
+<span class="chip" style="border-color:#b4b4b4">OCR 块</span>
+<span class="chip" style="border-color:#e6c878">表格单元格</span></p>
+<p>填写方法见 <code>docs/review_region_annotation_guide.md</code>。
+填完请编辑 <code>data/review_region_gold_unreviewed.jsonl</code>，
+然后运行 <code>python scripts/validate_review_region_gold.py</code>。</p>
+
+<section>
+  <h2>FAN-A13-02</h2>
+  <p class="meta">尺寸 1000×700 ·
+     图纸类型 <code>fan_wiring</code>
+     （已知：是） ·
+     OCR 块 16 ·
+     表格 6x2</p>
+  <p class="meta">（原始尺寸）</p>
+  <img class="page" src="overlays/FAN-A13-02.overlay.png">
+  <h3>系统候选（全部，不只是被选中的）</h3>
+  <table><thead><tr><th>#</th><th>strategy</th><th>trust</th><th>字段</th>
+    <th>bbox</th><th>面积</th><th>定位不确定</th><th>可自动答</th><th>锚点</th>
+  </tr></thead><tbody><tr><td colspan=9>无候选</td></tr></tbody></table>
+  <h3>候选裁剪预览</h3>
+  <div class="crops">无</div>
+  <h3>需要你填写的 Gold（逐字段）</h3>
+  <table><thead><tr><th>字段</th><th>触发原因</th><th colspan=4>人工填写</th>
+  </tr></thead><tbody><tr><td colspan=6>本页无待审字段</td></tr></tbody></table>
+</section>
+<section>
+  <h2>FAN-A22-01-heavyblur</h2>
+  <p class="meta">尺寸 1000×700 ·
+     图纸类型 <code>unknown</code>
+     （已知：<b>否</b>） ·
+     OCR 块 0 ·
+     表格 —</p>
+  <p class="meta">（原始尺寸）</p>
+  <img class="page" src="overlays/FAN-A22-01-heavyblur.overlay.png">
+  <h3>系统候选（全部，不只是被选中的）</h3>
+  <table><thead><tr><th>#</th><th>strategy</th><th>trust</th><th>字段</th>
+    <th>bbox</th><th>面积</th><th>定位不确定</th><th>可自动答</th><th>锚点</th>
+  </tr></thead><tbody><tr><td>0</td><td><code>full_page_diagnostic</code></td><td>diagnostic</td><td>*</td><td>[0, 0, 1000, 700]</td><td>100.0%</td><td>是</td><td>否</td><td>whole page</td></tr></tbody></table>
+  <h3>候选裁剪预览</h3>
+  <div class="crops"><figure><img src="crops/FAN-A22-01-heavyblur.0.full_page_diagnostic.png"><figcaption>候选 0</figcaption></figure></div>
+  <h3>需要你填写的 Gold（逐字段）</h3>
+  <table><thead><tr><th>字段</th><th>触发原因</th><th colspan=4>人工填写</th>
+  </tr></thead><tbody><tr><td colspan=6>本页无待审字段</td></tr></tbody></table>
+</section>
+<section>
+  <h2>FAN-A23-01</h2>
+  <p class="meta">尺寸 1000×700 ·
+     图纸类型 <code>fan_wiring</code>
+     （已知：是） ·
+     OCR 块 11 ·
+     表格 6x2</p>
+  <p class="meta">（原始尺寸）</p>
+  <img class="page" src="overlays/FAN-A23-01.overlay.png">
+  <h3>系统候选（全部，不只是被选中的）</h3>
+  <table><thead><tr><th>#</th><th>strategy</th><th>trust</th><th>字段</th>
+    <th>bbox</th><th>面积</th><th>定位不确定</th><th>可自动答</th><th>锚点</th>
+  </tr></thead><tbody><tr><td>0</td><td><code>exact_label_right</code></td><td>precise</td><td>图号</td><td>[212, 473, 948, 518]</td><td>4.7%</td><td>否</td><td>是</td><td>label:图号</td></tr><tr><td>1</td><td><code>exact_label_right</code></td><td>precise</td><td>断路器编号</td><td>[212, 592, 948, 638]</td><td>4.8%</td><td>否</td><td>是</td><td>label:断路器编号</td></tr><tr><td>2</td><td><code>table_or_title_block</code></td><td>contextual</td><td>名称, 控制柜编号, 电机编号</td><td>[40, 460, 962, 681]</td><td>29.3%</td><td>是</td><td>否</td><td>table:T0:3d527d661ae44ba4</td></tr></tbody></table>
+  <h3>候选裁剪预览</h3>
+  <div class="crops"><figure><img src="crops/FAN-A23-01.0.exact_label_right.png"><figcaption>候选 0</figcaption></figure><figure><img src="crops/FAN-A23-01.1.exact_label_right.png"><figcaption>候选 1</figcaption></figure><figure><img src="crops/FAN-A23-01.2.table_or_title_block.png"><figcaption>候选 2</figcaption></figure></div>
+  <h3>需要你填写的 Gold（逐字段）</h3>
+  <table><thead><tr><th>字段</th><th>触发原因</th><th colspan=4>人工填写</th>
+  </tr></thead><tbody><tr><td><b>名称</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>图号</b></td><td>required_field_missing, isolated_label_without_value</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>控制柜编号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>断路器编号</b></td><td>required_field_missing, isolated_label_without_value</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>电机编号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr></tbody></table>
+</section>
+<section>
+  <h2>FAN-A24-01</h2>
+  <p class="meta">尺寸 1000×700 ·
+     图纸类型 <code>fan_wiring</code>
+     （已知：是） ·
+     OCR 块 16 ·
+     表格 4x2</p>
+  <p class="meta">（原始尺寸）</p>
+  <img class="page" src="overlays/FAN-A24-01.overlay.png">
+  <h3>系统候选（全部，不只是被选中的）</h3>
+  <table><thead><tr><th>#</th><th>strategy</th><th>trust</th><th>字段</th>
+    <th>bbox</th><th>面积</th><th>定位不确定</th><th>可自动答</th><th>锚点</th>
+  </tr></thead><tbody><tr><td>0</td><td><code>alias_label_right</code></td><td>structural</td><td>电机编号</td><td>[212, 562, 947, 638]</td><td>8.0%</td><td>是</td><td>否</td><td>alias:电r编号</td></tr><tr><td>1</td><td><code>table_or_title_block</code></td><td>contextual</td><td>名称, 图号, 控制柜编号, 断路器编号, 页码|版本</td><td>[37, 458, 965, 682]</td><td>29.6%</td><td>是</td><td>否</td><td>table:T0:48b59e1067ee8fab</td></tr></tbody></table>
+  <h3>候选裁剪预览</h3>
+  <div class="crops"><figure><img src="crops/FAN-A24-01.0.alias_label_right.png"><figcaption>候选 0</figcaption></figure><figure><img src="crops/FAN-A24-01.1.table_or_title_block.png"><figcaption>候选 1</figcaption></figure></div>
+  <h3>需要你填写的 Gold（逐字段）</h3>
+  <table><thead><tr><th>字段</th><th>触发原因</th><th colspan=4>人工填写</th>
+  </tr></thead><tbody><tr><td><b>名称</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>图号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>控制柜编号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>断路器编号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>电机编号</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr><tr><td><b>页码|版本</b></td><td>required_field_missing</td><td class=blank>gold_bbox = ____________</td><td class=blank>region_type = ____________</td><td class=blank>field_visible = ___</td><td class=blank>value_visible = ___</td></tr></tbody></table>
+</section>
+<section>
+  <h2>FAN-MULTI-01</h2>
+  <p class="meta">尺寸 1000×800 ·
+     图纸类型 <code>fan_group</code>
+     （已知：是） ·
+     OCR 块 28 ·
+     表格 12x2</p>
+  <p class="meta">（原始尺寸）</p>
+  <img class="page" src="overlays/FAN-MULTI-01.overlay.png">
+  <h3>系统候选（全部，不只是被选中的）</h3>
+  <table><thead><tr><th>#</th><th>strategy</th><th>trust</th><th>字段</th>
+    <th>bbox</th><th>面积</th><th>定位不确定</th><th>可自动答</th><th>锚点</th>
+  </tr></thead><tbody><tr><td colspan=9>无候选</td></tr></tbody></table>
+  <h3>候选裁剪预览</h3>
+  <div class="crops">无</div>
+  <h3>需要你填写的 Gold（逐字段）</h3>
+  <table><thead><tr><th>字段</th><th>触发原因</th><th colspan=4>人工填写</th>
+  </tr></thead><tbody><tr><td colspan=6>本页无待审字段</td></tr></tbody></table>
+</section>

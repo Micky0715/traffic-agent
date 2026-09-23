@@ -1,0 +1,822 @@
+{
+  "note": "Shadow only. Every candidate carries promotion_status=shadow_only, nothing here is imported by resolve_review_regions or any decision path, and no production behaviour changed.",
+  "production_behavior_changed": false,
+  "real_vlm_calls": 0,
+  "external_api_calls": 0,
+  "human_reviewed_bbox_gold": false,
+  "cannot_report": [
+    "which candidate is correct",
+    "localization accuracy or recall",
+    "whether candidate coverage of all rows constitutes recall"
+  ],
+  "threshold_provenance": "engineering_initial_value",
+  "calibrated_with_human_gold": false,
+  "field_order_provenance": "dataset_or_project_convention",
+  "evidence_terms": [
+    "cell_content",
+    "field_order",
+    "grid_consistency",
+    "neighbor_anchor",
+    "text_similarity"
+  ],
+  "weights": {
+    "text_similarity": 0.4,
+    "neighbor_anchor": 0.3,
+    "field_order": 0.1,
+    "grid_consistency": 0.1,
+    "cell_content": 0.1
+  },
+  "summary": {
+    "fields_examined": 11,
+    "fields_with_at_least_one_candidate": 6,
+    "fields_with_no_candidate": 5,
+    "total_candidates": 19,
+    "candidates_per_field_p50": 3.0,
+    "max_candidates_for_one_field": 4,
+    "fields_with_ambiguity_gt_1": 6,
+    "top1_minus_top2_p50": 0.0187,
+    "top1_minus_top2_min": 0.0,
+    "candidates_by_strategy": {
+      "single_sided_anchor": 6,
+      "field_order_only": 12,
+      "kv_row_candidate": 1
+    },
+    "assumptions_recorded": {
+      "bounded on one side only; the row could lie further in the unbounded direction": 6,
+      "no identified neighbour places this row": 10,
+      "placed by layout convention alone; no text and no anchor": 12,
+      "field is not in this drawing type's order": 3
+    }
+  },
+  "pages": [
+    {
+      "document_id": "FAN-A13-02",
+      "drawing_type": "fan_wiring",
+      "key_value_table": false,
+      "grid_shape": "6x2",
+      "identified_rows": {},
+      "field_order_used": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码",
+        "版本"
+      ],
+      "fields": []
+    },
+    {
+      "document_id": "FAN-A22-01-heavyblur",
+      "drawing_type": "unknown",
+      "key_value_table": false,
+      "grid_shape": null,
+      "identified_rows": {},
+      "field_order_used": [],
+      "fields": []
+    },
+    {
+      "document_id": "FAN-A23-01",
+      "drawing_type": "fan_wiring",
+      "key_value_table": false,
+      "grid_shape": "6x2",
+      "identified_rows": {},
+      "field_order_used": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码",
+        "版本"
+      ],
+      "fields": [
+        {
+          "target_field": "名称",
+          "candidate_count": 0,
+          "ambiguity_count": 0,
+          "top1_minus_top2": null,
+          "candidates": [],
+          "no_candidate_reason": "page has no confirmed key/value table"
+        },
+        {
+          "target_field": "图号",
+          "candidate_count": 0,
+          "ambiguity_count": 0,
+          "top1_minus_top2": null,
+          "candidates": [],
+          "no_candidate_reason": "page has no confirmed key/value table"
+        },
+        {
+          "target_field": "控制柜编号",
+          "candidate_count": 0,
+          "ambiguity_count": 0,
+          "top1_minus_top2": null,
+          "candidates": [],
+          "no_candidate_reason": "page has no confirmed key/value table"
+        },
+        {
+          "target_field": "断路器编号",
+          "candidate_count": 0,
+          "ambiguity_count": 0,
+          "top1_minus_top2": null,
+          "candidates": [],
+          "no_candidate_reason": "page has no confirmed key/value table"
+        },
+        {
+          "target_field": "电机编号",
+          "candidate_count": 0,
+          "ambiguity_count": 0,
+          "top1_minus_top2": null,
+          "candidates": [],
+          "no_candidate_reason": "page has no confirmed key/value table"
+        }
+      ]
+    },
+    {
+      "document_id": "FAN-A24-01",
+      "drawing_type": "fan_wiring",
+      "key_value_table": true,
+      "grid_shape": "4x2",
+      "identified_rows": {
+        "2": "电机编号"
+      },
+      "field_order_used": [
+        "图号",
+        "名称",
+        "电机编号",
+        "断路器编号",
+        "控制柜编号",
+        "页码",
+        "版本"
+      ],
+      "fields": [
+        {
+          "target_field": "名称",
+          "candidate_count": 3,
+          "ambiguity_count": 3,
+          "top1_minus_top2": 0.0,
+          "candidates": [
+            {
+              "target_field": "名称",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.3208,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 0.8333,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [
+                "below:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "名称",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.3208,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 0.8333,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [
+                "below:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "名称",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2167,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.1667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        },
+        {
+          "target_field": "图号",
+          "candidate_count": 3,
+          "ambiguity_count": 3,
+          "top1_minus_top2": 0.0183,
+          "candidates": [
+            {
+              "target_field": "图号",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.33,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 1.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [
+                "below:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "图号",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.3117,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 0.6667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [
+                "below:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "图号",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        },
+        {
+          "target_field": "控制柜编号",
+          "candidate_count": 3,
+          "ambiguity_count": 3,
+          "top1_minus_top2": 0.125,
+          "candidates": [
+            {
+              "target_field": "控制柜编号",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.3917,
+              "evidence": {
+                "text_similarity_score": 0.3636,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 0.6667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [
+                "above:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "控制柜编号",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2667,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.6667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "控制柜编号",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2333,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.3333,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        },
+        {
+          "target_field": "断路器编号",
+          "candidate_count": 3,
+          "ambiguity_count": 3,
+          "top1_minus_top2": 0.0192,
+          "candidates": [
+            {
+              "target_field": "断路器编号",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "single_sided_anchor",
+              "score": 0.3025,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 1.0,
+                "field_order_score": 0.5,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "bounded on one side only; the row could lie further in the unbounded direction"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [
+                "above:row2=电机编号"
+              ],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "断路器编号",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2833,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.8333,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "断路器编号",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.25,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.5,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        },
+        {
+          "target_field": "电机编号",
+          "candidate_count": 4,
+          "ambiguity_count": 4,
+          "top1_minus_top2": 0.2667,
+          "candidates": [
+            {
+              "target_field": "电机编号",
+              "bbox": [
+                220.0,
+                570.0,
+                939.0,
+                630.0
+              ],
+              "strategy": "kv_row_candidate",
+              "score": 0.5667,
+              "evidence": {
+                "text_similarity_score": 0.75,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.6667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row"
+              ],
+              "ambiguity_count": 4,
+              "promotion_status": "shadow_only",
+              "row_index": 2,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "电机编号",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.3,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 1.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 4,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "电机编号",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2667,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.6667,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 4,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "电机编号",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2333,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.3333,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "no identified neighbour places this row",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 4,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        },
+        {
+          "target_field": "页码|版本",
+          "candidate_count": 3,
+          "ambiguity_count": 3,
+          "top1_minus_top2": 0.0,
+          "candidates": [
+            {
+              "target_field": "页码|版本",
+              "bbox": [
+                220.0,
+                482.0,
+                939.0,
+                511.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "field is not in this drawing type's order",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 0,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "页码|版本",
+              "bbox": [
+                220.0,
+                511.0,
+                939.0,
+                570.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "field is not in this drawing type's order",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 1,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            },
+            {
+              "target_field": "页码|版本",
+              "bbox": [
+                220.0,
+                630.0,
+                939.0,
+                659.0
+              ],
+              "strategy": "field_order_only",
+              "score": 0.2,
+              "evidence": {
+                "text_similarity_score": 0.0,
+                "neighbor_anchor_score": 0.0,
+                "field_order_score": 0.0,
+                "grid_consistency_score": 1.0,
+                "cell_content_score": 1.0
+              },
+              "assumptions": [
+                "field is not in this drawing type's order",
+                "placed by layout convention alone; no text and no anchor"
+              ],
+              "ambiguity_count": 3,
+              "promotion_status": "shadow_only",
+              "row_index": 3,
+              "anchors": [],
+              "provenance": {
+                "field_order": "dataset_or_project_convention",
+                "drawing_type": "fan_wiring",
+                "calibrated_with_human_gold": "False"
+              }
+            }
+          ],
+          "no_candidate_reason": null
+        }
+      ]
+    },
+    {
+      "document_id": "FAN-MULTI-01",
+      "drawing_type": "fan_group",
+      "key_value_table": true,
+      "grid_shape": "12x2",
+      "identified_rows": {
+        "0": "图号",
+        "1": "名称",
+        "2": "页码"
+      },
+      "field_order_used": [
+        "图号",
+        "名称",
+        "页码"
+      ],
+      "fields": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+# Shadow structural candidates.
+#
+# A SEPARATE file rather than an addition to configs/review_regions.yaml, so
+# the previous round's freeze manifest stays valid and this experiment cannot
+# be mistaken for a change to the shipped resolver.
+#
+# Nothing configured here affects production. Every candidate this produces
+# carries promotion_status=shadow_only and is never consulted by
+# resolve_review_regions(), the evidence policy, or any decision.
+
+structural_shadow:
+  enabled: true
+  promotion_status: shadow_only
+
+  threshold_provenance: engineering_initial_value
+  calibrated_with_human_gold: false
+  # Weights were chosen to reflect how much each signal is TRUSTED, not to make
+  # the eleven targets in this repo score well. They have not been tuned
+  # against any outcome, because there is no outcome to tune against yet.
+  weights:
+    # Reading the label, even damaged, is the strongest signal: it is about
+    # this row specifically.
+    text_similarity: 0.40
+    # Neighbours above and below bound the row without reading it at all.
+    neighbor_anchor: 0.30
+    # Field order is a project convention, not a standard. Weakest on purpose.
+    field_order: 0.10
+    # The row exists in a recovered grid with sane bounds.
+    grid_consistency: 0.10
+    # The cell holds something that could be a value at all.
+    cell_content: 0.10
+
+  # A single-sided anchor still produces a candidate in shadow mode — that is
+  # the whole point of the experiment — but it is multiplied down and its
+  # assumption is recorded.
+  single_sided_anchor_penalty: 0.55
+
+  # Below this a candidate is not emitted at all. Deliberately low: the
+  # experiment is about coverage and ambiguity, not about picking a winner.
+  min_candidate_score: 0.05
+  max_candidates_per_field: 6
+
+  # A left cell this similar to a field name counts as text evidence. Lower
+  # than the resolver's 0.72 admission threshold because here it only
+  # contributes to a score; it never decides anything on its own.
+  text_evidence_floor: 0.30
+
+  # Recorded on every candidate that uses field order, so a reader knows the
+  # ordering is a local convention rather than a specification.
+  field_order_provenance: dataset_or_project_convention
+
+  # Per drawing type. A different drawing type must NOT borrow another's
+  # ordering — a fan wiring title block and a pump schedule are not laid out
+  # the same way, and reusing the list would invent evidence.
+  field_order_by_drawing_type:
+    fan_wiring:
+      - 图号
+      - 名称
+      - 电机编号
+      - 断路器编号
+      - 控制柜编号
+      - 页码
+      - 版本
+    fan_group:
+      - 图号
+      - 名称
+      - 页码

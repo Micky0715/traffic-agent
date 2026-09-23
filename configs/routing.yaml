@@ -1,0 +1,117 @@
+# Routing data contract configuration.
+#
+# Everything the adapter needs to map legacy plans onto UnifiedIntentPlan lives
+# here. Nothing in src/routing/ may branch on a case id, a tag or a gold label —
+# those exist only for scoring, and letting them influence a conversion would
+# make every downstream number circular.
+#
+# This file is descriptive in phase 1: allowed_tools and required_slots are
+# used to VALIDATE and to populate the new contract's fields. They do not change
+# what router_v1/v2/v3 or llm_router emit.
+
+taxonomy_version: "metro-intent-2026.09"
+
+# ---------------------------------------------------------------------------
+# Intents. `requires_tool` says whether an execute-decision subtask of this
+# intent must carry a selected_tool — diagnosis and general QA legitimately
+# call nothing, so a missing tool there is not an error.
+# ---------------------------------------------------------------------------
+intents:
+  regulation_lookup:
+    description: "查规范、条文、标准、限值"
+    requires_tool: true
+    allowed_tools: ["hybrid_search"]
+    required_slots: []
+  equipment_status:
+    description: "查设备实时运行状态"
+    requires_tool: true
+    allowed_tools: ["nl2api_query"]
+    required_slots: ["asset_id"]
+  work_order_query:
+    description: "查工单、维修记录"
+    requires_tool: true
+    allowed_tools: ["nl2api_query"]
+    required_slots: ["asset_id", "time_range"]
+  metric_query:
+    description: "统计类查询：次数、趋势、完成率"
+    requires_tool: true
+    allowed_tools: ["nl2api_query"]
+    required_slots: ["asset_id", "time_range"]
+  drawing_lookup:
+    description: "查图纸、图号、接线图"
+    requires_tool: true
+    allowed_tools: ["drawing_search"]
+    required_slots: []
+  fault_diagnosis:
+    description: "原因分析与处置建议；本身不调用工具，依赖上游证据"
+    requires_tool: false
+    allowed_tools: ["none"]
+    required_slots: []
+  general_qa:
+    description: "不需要外部工具的一般问答"
+    requires_tool: false
+    allowed_tools: ["none"]
+    required_slots: []
+  unsupported:
+    description: "系统不允许执行：写操作、设备控制、用户禁止必要数据源"
+    requires_tool: false
+    allowed_tools: ["none"]
+    required_slots: []
+
+# Intents whose presence means the request cannot be executed as asked. Used to
+# derive a subtask decision of `reject`.
+reject_intents: ["unsupported"]
+
+# ---------------------------------------------------------------------------
+# slot key -> entity type. Slots not listed here are carried as plain slots and
+# do not become ResolvedEntity objects; a slot is not automatically an entity.
+# ---------------------------------------------------------------------------
+slot_entity_types:
+  asset_id: asset
+  regulation_code: regulation
+  drawing_no: drawing
+  time_range: time_range
+  metric: metric
+  threshold: threshold
+
+# Slots that name a piece of equipment or document. A missing one of these
+# raises ENTITY_MISSING as well as REQUIRED_SLOT_MISSING.
+entity_slots: ["asset_id", "regulation_code", "drawing_no"]
+
+# ---------------------------------------------------------------------------
+# legacy plan_mode -> structural meaning.
+#
+#   parallel_group: subtasks with no dependencies share this group and may run
+#                   concurrently; null means "no grouping claim".
+#   dependency    : "declared" keeps whatever depends_on the legacy plan set;
+#                   "none" means the mode carries no dependency claim.
+#
+# The legacy plan_mode is ALSO preserved verbatim on the plan, because the
+# existing evaluation scores against it.
+# ---------------------------------------------------------------------------
+plan_mode_rules:
+  none:                     {parallel_group: null, dependency: none}
+  single:                   {parallel_group: null, dependency: none}
+  parallel:                 {parallel_group: "G1", dependency: none}
+  parallel_then_synthesize: {parallel_group: "G1", dependency: declared}
+  serial:                   {parallel_group: null, dependency: declared}
+  conditional:              {parallel_group: null, dependency: declared}
+  clarify:                  {parallel_group: null, dependency: none}
+
+# ---------------------------------------------------------------------------
+# Legacy free-text reason -> reason code. Matching is by substring against the
+# Chinese text the rule routers write. Anything unmatched becomes
+# REASON_UNMAPPED and the original text is still kept in reason_texts — the
+# text is never dropped, only supplemented.
+# ---------------------------------------------------------------------------
+legacy_reason_patterns:
+  - match: "用户禁止访问完成该任务所必需的数据源"
+    code: TOOL_PROHIBITED
+  - match: "只允许只读查询"
+    code: TOOL_PROHIBITED
+  - match: "不执行删除、修改或设备控制操作"
+    code: TOOL_PROHIBITED
+  - match: "validator修复工具映射"
+    code: TOOL_NOT_ALLOWED_FOR_INTENT
+  - match: "出现规范"
+    code: REASON_UNMAPPED

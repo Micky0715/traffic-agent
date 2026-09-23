@@ -1,0 +1,39 @@
+{
+  "id": "ADV15",
+  "drawing_type": "fan_wiring",
+  "drawing_no": "FAN-A99-01",
+  "entities": [
+    {
+      "entity_type": "motor",
+      "identifier": "M-99",
+      "fields": {
+        "电机编号": "M-99"
+      }
+    },
+    {
+      "entity_type": "breaker",
+      "identifier": "QF-99",
+      "fields": {
+        "断路器编号": "QF-99"
+      }
+    },
+    {
+      "entity_type": "cabinet",
+      "identifier": "FAN-CAB-99",
+      "fields": {
+        "控制柜编号": "FAN-CAB-99"
+      }
+    }
+  ],
+  "expected_values": [
+    "FAN-A99-01",
+    "A99风机接线图",
+    "9/1",
+    "M-99",
+    "QF-99",
+    "FAN-CAB-99"
+  ],
+  "human_needs_fallback": false,
+  "difficulty_type": "format_valid_nonexistent",
+  "notes": "page 9 of 1 is impossible but matches the n/m rule"
+}

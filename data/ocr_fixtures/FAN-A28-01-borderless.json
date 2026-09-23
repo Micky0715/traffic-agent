@@ -1,0 +1,144 @@
+{
+  "provenance": {
+    "image": "FAN-A28-01-borderless.png",
+    "image_sha256": "005b4eaf13a4cd20ea16a9a0ce1623a83592c16d0fbe44941b67ff910a1cb5bf",
+    "generated_at": "2026-09-14T14:33:02+00:00",
+    "generated_by": "src/run_ocr_fixture_dump.py",
+    "inference_seconds": 29.18,
+    "paddleocr_version": "3.7.0",
+    "paddlepaddle_version": "3.3.1",
+    "paddlepaddle_commit": "7688495538f4d6c1893f084dd238a402e8f68ab6",
+    "models": [
+      "PP-OCRv6_medium_det",
+      "PP-OCRv6_medium_rec",
+      "PP-LCNet_x1_0_doc_ori",
+      "PP-LCNet_x1_0_textline_ori",
+      "UVDoc"
+    ],
+    "device": "cpu",
+    "compiled_with_cuda": false,
+    "enable_mkldnn": false,
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "result": {
+    "text": "A28风机参数（无框表格）\n图号\nFAN-A28-01\n名称\nA28风机参数表\n电机编号\nM-28\n断路器编号\nQF-28\n控制柜编号\nFAN-CAB-28",
+    "blocks": [
+      {
+        "text": "A28风机参数（无框表格）",
+        "bbox": [
+          12.0,
+          19.0,
+          328.0,
+          62.0
+        ],
+        "confidence": 0.9750375747680664
+      },
+      {
+        "text": "图号",
+        "bbox": [
+          50.0,
+          103.0,
+          102.0,
+          140.0
+        ],
+        "confidence": 0.9999932050704956
+      },
+      {
+        "text": "FAN-A28-01",
+        "bbox": [
+          285.0,
+          106.0,
+          416.0,
+          138.0
+        ],
+        "confidence": 0.9999958872795105
+      },
+      {
+        "text": "名称",
+        "bbox": [
+          49.0,
+          155.0,
+          100.0,
+          191.0
+        ],
+        "confidence": 0.9999913573265076
+      },
+      {
+        "text": "A28风机参数表",
+        "bbox": [
+          283.0,
+          158.0,
+          434.0,
+          190.0
+        ],
+        "confidence": 0.9999589920043945
+      },
+      {
+        "text": "电机编号",
+        "bbox": [
+          46.0,
+          210.0,
+          137.0,
+          243.0
+        ],
+        "confidence": 0.9999505281448364
+      },
+      {
+        "text": "M-28",
+        "bbox": [
+          280.0,
+          210.0,
+          346.0,
+          250.0
+        ],
+        "confidence": 0.9999825358390808
+      },
+      {
+        "text": "断路器编号",
+        "bbox": [
+          39.0,
+          262.0,
+          155.0,
+          301.0
+        ],
+        "confidence": 0.999921441078186
+      },
+      {
+        "text": "QF-28",
+        "bbox": [
+          280.0,
+          264.0,
+          351.0,
+          303.0
+        ],
+        "confidence": 0.9999746084213257
+      },
+      {
+        "text": "控制柜编号",
+        "bbox": [
+          34.0,
+          317.0,
+          154.0,
+          355.0
+        ],
+        "confidence": 0.9998933672904968
+      },
+      {
+        "text": "FAN-CAB-28",
+        "bbox": [
+          280.0,
+          322.0,
+          414.0,
+          354.0
+        ],
+        "confidence": 0.9999949336051941
+      }
+    ],
+    "average_confidence": 0.9976994937116449,
+    "engine": "paddleocr",
+    "engine_available": true,
+    "error": null
+  }
+}
